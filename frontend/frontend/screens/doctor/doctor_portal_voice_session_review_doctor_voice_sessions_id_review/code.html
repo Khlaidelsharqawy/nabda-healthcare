@@ -1,0 +1,701 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AegisHealth Clinical AI Ecosystem</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#dee2ee", "primary": "#005932", "inverse-primary": "#7ed99e", "tertiary-container": "#ae4202", "error": "#ba1a1a", "surface": "#f9f9ff", "surface-tint": "#006d3e", "primary-container": "#087443", "surface-bright": "#f9f9ff", "secondary-fixed-dim": "#c0c1ff", "secondary-container": "#5d62f3", "on-primary-container": "#9af7b9", "tertiary-fixed-dim": "#ffb597", "background": "#f9f9ff", "on-primary-fixed-variant": "#00522d", "on-tertiary-fixed-variant": "#7d2d00", "inverse-on-surface": "#ecf1fd", "inverse-surface": "#2c313a", "on-error": "#ffffff", "tertiary": "#873100", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdbcd", "outline": "#6f7a70", "on-primary": "#ffffff", "secondary": "#4347d9", "outline-variant": "#becabe", "surface-variant": "#dee2ee", "primary-fixed-dim": "#7ed99e", "surface-container-low": "#f0f3ff", "surface-dim": "#d6dae6", "on-secondary-fixed": "#04006d", "on-error-container": "#93000a", "on-surface": "#171c24", "primary-fixed": "#99f6b9", "on-secondary-fixed-variant": "#2a2bc4", "secondary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#360f00", "on-tertiary": "#ffffff", "on-surface-variant": "#3f4941", "surface-container-high": "#e4e8f4", "surface-container": "#eaeefa", "on-primary-fixed": "#00210f", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-sm": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-lg": "2rem", "margin": "2rem", "space-md": "1rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "margin-lg": "3rem" }, "fontFamily": { "headline-5": ["Plus Jakarta Sans"], "headline-1-mobile": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "headline-4": ["Plus Jakarta Sans"], "clinical-data": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "micro-copy": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-1": ["Plus Jakarta Sans"] }, "fontSize": { "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Clinical AI Platform</span></div><div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">domain</span><span class="font-label-sm text-label-sm font-semibold truncate max-w-[200px]">[Clinic Name]</span><span class="text-on-surface-variant font-micro-copy text-micro-copy font-normal">/ [اسم العيادة]</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span class="">EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><div class="flex items-center gap-space-xs pl-space-xs rtl:pr-space-xs"><div class="hidden sm:flex flex-col items-end rtl:items-start text-right rtl:text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">[Doctor Name] / [اسم الطبيب]</span><span class="font-micro-copy text-micro-copy text-primary-container font-medium">Attending Physician</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 rtl:left-auto rtl:right-0 top-16 bottom-0 w-64 bg-surface-container-low/80 backdrop-blur-md z-40 flex flex-col justify-between py-space-md shadow-[1px_0_8px_rgba(0,0,0,0.02)] rtl:shadow-[-1px_0_8px_rgba(0,0,0,0.02)] overflow-y-auto"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">health_metrics</span><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">Doctor Workspace</span></div><span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">ACTIVE</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><div class="px-space-xs pt-space-xs pb-1 font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">Clinical Care</div><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="doctor-clinical-dashboard" href="#">Clinical Dashboard</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="appointments-and-schedule-management" href="#">Appointments &amp; Schedule</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="patient-directory" href="#">Patient Directory</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="clinical-workspace-and-ai-scribe" href="#">Clinical Workspace &amp; AI Scribe</a><div class="px-space-xs pt-space-sm pb-1 font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">AI &amp; Voice Ambient</div><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="doctor-ai-workspace" href="#">Doctor AI Workspace</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="patient-scoped-ai-workspace" href="#">Patient-Scoped AI</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="new-voice-session" href="#">New Voice Session</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="active-voice-session" href="#">Active Voice Session</a><a aria-current="page" class="px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="voice-session-review" href="#">Voice Session Review</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="clinical-draft-review" href="#">Clinical Draft Review</a></nav></div><div class="flex flex-col gap-space-xs px-space-md pt-space-md"><div class="p-space-sm rounded-xl bg-surface-container border-l-2 border-primary rtl:border-l-0 rtl:border-r-2 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Doctor AI Status</span><span class="h-2 w-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><p class="font-micro-copy text-micro-copy text-on-surface-variant">Aegis Scribe Copilot Ready &amp; Verified</p></div></div></aside><div class="pl-64 rtl:pl-0 rtl:pr-64"><main class="w-full pt-16 bg-background min-h-screen px-margin-sm lg:px-margin pb-margin-lg"><div class="flex flex-col w-full gap-space-md">
+<!-- Status Feedback Banner (Dynamic) -->
+<div class="hidden items-center justify-between px-space-md py-space-sm rounded-xl bg-surface-container-high shadow-sm text-on-surface" id="statusNotification">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<span class="font-label-md text-label-md font-medium" id="statusMessage">Draft updated to Physician Edited state.</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('statusNotification').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- 1. Review Header & Lifecycle Breadcrumb Card -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-md flex flex-col gap-space-md">
+<!-- Meta and Patient Identifier Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-primary shadow-sm flex-shrink-0">
+<span class="material-symbols-outlined text-[32px]">record_voice_over</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-space-xs"><h1 class="font-headline-3 text-headline-3 text-on-surface tracking-tight truncate">[Patient Name]</h1><span class="font-headline-4 text-headline-4 text-on-surface-variant font-normal">/ [اسم المريض]</span><span class="px-2 py-0.5 rounded-lg bg-surface-container font-clinical-data text-clinical-data text-primary font-bold tracking-wider">PID: [Patient ID]</span></div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant pt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">event</span>
+              Session: Oct 24, 2024 • 10:45 AM
+            </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+              Duration: 08m 42s
+            </span>
+<span class="flex items-center gap-1 font-clinical-data text-clinical-data"><span class="material-symbols-outlined text-[16px]">tag</span>VSID: [Voice Session ID] • Apt: [Appointment ID]</span>
+</div>
+</div>
+</div>
+<!-- Quick Context Stat Pill Box -->
+<div class="flex items-center gap-space-sm self-start lg:self-auto">
+<div class="flex flex-col px-space-sm py-1.5 rounded-xl bg-surface-container-low text-on-surface text-right rtl:text-left">
+<span class="font-micro-copy text-micro-copy uppercase text-on-surface-variant tracking-wider font-semibold">Model Confidence</span>
+<div class="flex items-center gap-1 justify-end rtl:justify-start">
+<span class="h-2 w-2 rounded-full bg-primary-container"></span>
+<span class="font-headline-5 text-headline-5 text-primary font-bold">98.4%</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Deterministic</span>
+</div>
+</div>
+<div class="flex flex-col px-space-sm py-1.5 rounded-xl bg-surface-container text-on-surface text-right rtl:text-left">
+<span class="font-micro-copy text-micro-copy uppercase text-on-surface-variant tracking-wider font-semibold">Language Detection</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Bilingual Mixed (AR-EG / EN)</span>
+</div>
+</div>
+</div>
+<!-- Progress Lifecycle Bar: RECORDED → TRANSCRIBED → AI DRAFT → PHYSICIAN REVIEW (Active) → EDITED → SIGNED → CLINICAL RECORD -->
+<div class="w-full pt-space-xs">
+<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-space-xs font-clinical-data text-clinical-data">
+<!-- 1. RECORDED -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">mic</span>
+<div class="flex flex-col truncate">
+<span class="font-bold text-on-surface">1. RECORDED</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Audio captured</span>
+</div>
+</div>
+<!-- 2. TRANSCRIBED -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">speech_to_text</span>
+<div class="flex flex-col truncate">
+<span class="font-bold text-on-surface">2. TRANSCRIBED</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Diarization ready</span>
+</div>
+</div>
+<!-- 3. AI DRAFT -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_awesome</span>
+<div class="flex flex-col truncate">
+<span class="font-bold text-on-surface">3. AI DRAFT</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">SOAP Extracted</span>
+</div>
+</div>
+<!-- 4. PHYSICIAN REVIEW (ACTIVE) -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-primary-container text-on-primary-container shadow-sm" id="stepReview">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<div class="flex flex-col truncate">
+<span class="font-bold tracking-wide">4. IN REVIEW</span>
+<span class="font-micro-copy text-micro-copy text-on-primary-container">Current Phase</span>
+</div>
+</div>
+<!-- 5. EDITED -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low text-on-surface-variant transition-colors" id="stepEdited">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<div class="flex flex-col truncate">
+<span class="font-bold text-on-surface">5. EDITED</span>
+<span class="font-micro-copy text-micro-copy">Doctor tailored</span>
+</div>
+</div>
+<!-- 6. SIGNED -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low text-on-surface-variant transition-colors" id="stepSigned">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+<div class="flex flex-col truncate">
+<span class="font-bold text-on-surface">6. SIGNED</span>
+<span class="font-micro-copy text-micro-copy">Cryptographic attestation</span>
+</div>
+</div>
+<!-- 7. CLINICAL RECORD -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low text-on-surface-variant transition-colors" id="stepRecord">
+<span class="material-symbols-outlined text-[16px]">folder_managed</span>
+<div class="flex flex-col truncate">
+<span class="font-bold text-on-surface">7. RECORD</span>
+<span class="font-micro-copy text-micro-copy">EMR Committed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 2. Multi-Tab Navigation Controls -->
+<div class="flex items-center justify-between flex-wrap gap-space-sm bg-surface-container-lowest p-1.5 rounded-xl shadow-sm">
+<div class="flex items-center gap-1 overflow-x-auto w-full sm:w-auto" role="tablist">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg font-label-md text-label-md font-semibold bg-primary text-on-primary shadow-sm transition-all" id="btn-tab-soap" onclick="switchTab('tab-soap')">
+<span class="material-symbols-outlined text-[18px]">clinical_notes</span>
+<span class="">1. SOAP Note Draft</span>
+<span class="font-micro-copy text-micro-copy px-1.5 py-0.2 rounded-lg bg-white/20">AI Raw</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg font-label-md text-label-md font-medium text-on-surface-variant hover:bg-surface-container transition-all" id="btn-tab-transcript" onclick="switchTab('tab-transcript')">
+<span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+<span class="">2. Audio &amp; Diarized Transcript</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">08:42</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-lg font-label-md text-label-md font-medium text-on-surface-variant hover:bg-surface-container transition-all" id="btn-tab-actions" onclick="switchTab('tab-actions')">
+<span class="material-symbols-outlined text-[18px]">rule</span>
+<span class="">3. Extracted Orders &amp; Actions</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed font-clinical-data text-clinical-data font-bold">2 Pending</span>
+</button>
+</div>
+<!-- Visual State Badges -->
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock</span>
+<span class="font-micro-copy text-micro-copy font-semibold text-on-surface">STRICT ISOLATION: [Doctor ID]</span>
+</div>
+</div>
+<!-- Tab 1: Structured SOAP Note Draft (Editable Text Areas) -->
+<div class="flex flex-col gap-space-md" id="tab-soap">
+<!-- Context Header Alert -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm p-space-sm rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">psychology</span>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider block">
+            AI-GENERATED DRAFT • EDITABLE BY ATTENDING PHYSICIAN
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            Generated via AegisMed Ambient Core v4.1 • Human modification is tracked with complete audit trail.
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<span class="font-clinical-data text-clinical-data px-2 py-1 rounded-lg bg-surface-container text-on-surface-variant font-semibold" id="auditBadge">
+          STATUS: UNALTERED AI ARTIFACT
+        </span>
+</div>
+</div>
+<!-- 2x2 or Stacked SOAP Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+<!-- S: Subjective -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-headline-5 text-headline-5 font-bold">
+              S
+            </span>
+<div>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Subjective</h2>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">الأعراض والشكوى السريرية للمريض</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" onclick="enableEditing('soap-s', this)">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="">Edit Text / تعديل الصياغة</span>
+</button>
+</div>
+<div class="relative">
+<textarea class="w-full rounded-lg bg-surface p-space-sm font-body-md text-body-md text-on-surface resize-none focus:outline-none focus:bg-surface-container-lowest transition-all" id="soap-s" oninput="triggerEditState()" readonly="" rows="5">Patient is a 54-year-old female presenting with a 4-day history of worsening fronto-orbital headache, facial pressure over the maxillary sinuses, and mucopurulent nasal discharge. Patient reports mild fever (home temp 38.1°C) responsive to paracetamol. Mentions chronic hypertension managed with Amlodipine. Denies photophobia, neck stiffness, or shortness of breath. Reports decreased appetite due to postnasal drip.
+تشكو المريضة من صداع جبهي حاد مستمر منذ 4 أيام مصحوب بإفرازات أنفية صديدية وشعور بالضغط في الجيوب الفكية.</textarea>
+<div class="mt-1 flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_fix_high</span> Source: Audio segment 00:14 - 02:40</span>
+<span class="">Entity Density: High (4 symptoms identified)</span>
+</div>
+</div>
+</div>
+<!-- O: Objective -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-headline-5 text-headline-5 font-bold">
+              O
+            </span>
+<div>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Objective</h2>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">العلامات الحيوية والفحص السريري</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" onclick="enableEditing('soap-o', this)">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="">Edit Text / تعديل الصياغة</span>
+</button>
+</div>
+<div class="relative">
+<textarea class="w-full rounded-lg bg-surface p-space-sm font-body-md text-body-md text-on-surface resize-none focus:outline-none focus:bg-surface-container-lowest transition-all" id="soap-o" oninput="triggerEditState()" readonly="" rows="5">Vitals: [Blood Pressure], [Heart Rate], [Temperature], [SpO2], [Respiratory Rate].
+General: Alert, oriented x3, in mild discomfort due to facial tension.
+HEENT: Marked tenderness on bilateral maxillary sinus percussion. Erythematous nasal turbinates with purulent exudate in middle meatus. Tympanic membranes clear bilaterally, intact light reflex. Pharynx mildly hyperemic without tonsillar exudate.
+Chest: Clear to auscultation bilaterally, no wheezes or crackles. Cardiovascular: S1/S2 normal, no murmurs.</textarea>
+<div class="mt-1 flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_fix_high</span> Source: Verbal examination dictation 03:10 - 05:15</span>
+<span class="">Vitals telemetry paired via Al-Nour IoT triage bed</span>
+</div>
+</div>
+</div>
+<!-- A: Assessment -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-lg bg-primary text-on-primary flex items-center justify-center font-headline-5 text-headline-5 font-bold">
+              A
+            </span>
+<div>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Assessment</h2>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">التقييم والتشخيص التفريقي</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" onclick="enableEditing('soap-a', this)">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="">Edit Text / تعديل الصياغة</span>
+</button>
+</div>
+<div class="relative">
+<textarea class="w-full rounded-lg bg-surface p-space-sm font-body-md text-body-md text-on-surface resize-none focus:outline-none focus:bg-surface-container-lowest transition-all" id="soap-a" oninput="triggerEditState()" readonly="" rows="5">Primary Diagnosis:
+1. Acute Bacterial Rhinosinusitis (ICD-10: J01.00) - Supported by unilateral maxillary tenderness, duration &gt; 4 days with fever, and purulent nasal discharge.
+Secondary Findings:
+2. Essential Hypertension (ICD-10: I10) - Currently well-controlled on maintenance Amlodipine 5mg.
+Differential ruled out: Migraine without aura, acute dental abscess.</textarea>
+<div class="mt-1 flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">psychology</span> Diagnostic confidence: 96%</span>
+<span class="">ICD-10 mapped deterministically</span>
+</div>
+</div>
+</div>
+<!-- P: Plan -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col gap-space-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-7 h-7 rounded-lg bg-primary text-on-primary flex items-center justify-center font-headline-5 text-headline-5 font-bold">
+              P
+            </span>
+<div>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Plan</h2>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">الخطة العلاجية والتعليمات السريرية</p>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" onclick="enableEditing('soap-p', this)">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span class="">Edit Text / تعديل الصياغة</span>
+</button>
+</div>
+<div class="relative">
+<textarea class="w-full rounded-lg bg-surface p-space-sm font-body-md text-body-md text-on-surface resize-none focus:outline-none focus:bg-surface-container-lowest transition-all" id="soap-p" oninput="triggerEditState()" readonly="" rows="5">1. Therapeutics:
+   - Amoxicillin/Clavulanate (Augmentin) 1000mg PO twice daily with meals for 7 days.
+   - Saline nasal irrigation (isotonic rinse) TID as needed.
+   - Fluticasone propionate nasal spray 50 mcg, 2 sprays in each nostril daily for 10 days.
+   - Paracetamol 500mg, 1-2 tablets PO Q6H PRN headache/fever (max 3g/day).
+2. Diagnostic Orders:
+   - Complete Blood Count (CBC) with differential &amp; CRP to monitor inflammatory kinetics.
+3. Patient Guidance &amp; Red Flags:
+   - Advised adequate hydration and rest. Red flag return precautions reviewed (visual changes, periorbital swelling, persistent stiff neck). Follow-up in clinic in 7 days if no resolution.</textarea>
+<div class="mt-1 flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">medication</span> 2 Medication drafts &amp; 1 Lab order prepared</span>
+<span class="">Safety: No active contraindications detected</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 2: Full Audio Transcript & Synchronized Diarization -->
+<div class="hidden flex-col gap-space-md" id="tab-transcript">
+<!-- Audio Player Interface -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<button class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-all shadow-md" id="playAudioBtn" onclick="toggleAudioPlayback()">
+<span class="material-symbols-outlined text-[28px]" id="playIcon">play_arrow</span>
+</button>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-5 text-headline-5 text-on-surface">Consultation Audio Track #VS-99824</span>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container font-clinical-data text-clinical-data text-primary">LOSSLESS FLAC</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ambient Multichannel Array (Mic 01 Doctor, Mic 02 Patient)</span>
+</div>
+</div>
+<!-- Controls: Speed, Scrubber, Time -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center bg-surface-container rounded-lg p-0.5">
+<button class="speed-btn px-2.5 py-1 rounded font-clinical-data text-clinical-data font-semibold bg-surface-container-lowest text-primary" onclick="setSpeed(1, this)">1.0x</button>
+<button class="speed-btn px-2.5 py-1 rounded font-clinical-data text-clinical-data text-on-surface-variant hover:text-on-surface" onclick="setSpeed(1.25, this)">1.25x</button>
+<button class="speed-btn px-2.5 py-1 rounded font-clinical-data text-clinical-data text-on-surface-variant hover:text-on-surface" onclick="setSpeed(1.5, this)">1.5x</button>
+</div>
+<span class="font-clinical-data text-clinical-data font-bold text-on-surface tabular-nums" id="audioTimer">02:14 / 08:42</span>
+</div>
+</div>
+<!-- Interactive Scrubber & Waveform visualizer -->
+<div class="w-full flex flex-col gap-1 pt-space-xs">
+<div class="relative w-full h-8 bg-surface-container-low rounded-lg overflow-hidden flex items-center px-2 cursor-pointer" onclick="scrubAudio(event)">
+<!-- Dynamic waveform simulator -->
+<div class="absolute inset-0 flex items-center gap-[3px] px-3 opacity-30">
+<span class="w-1 h-3 bg-primary rounded-full"></span>
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<span class="w-1 h-7 bg-primary rounded-full"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+<span class="w-1 h-3 bg-primary rounded-full"></span>
+<span class="w-1 h-8 bg-primary rounded-full"></span>
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+<span class="w-1 h-7 bg-primary rounded-full"></span>
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<span class="w-1 h-3 bg-primary rounded-full"></span>
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+<span class="w-1 h-8 bg-primary rounded-full"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-2 bg-primary rounded-full"></span>
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+<span class="w-1 h-7 bg-primary rounded-full"></span>
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+<span class="w-1 h-3 bg-primary rounded-full"></span>
+<span class="w-1 h-8 bg-primary rounded-full"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-6 bg-primary rounded-full"></span>
+<span class="w-1 h-5 bg-primary rounded-full"></span>
+</div>
+<!-- Progress scrub bar -->
+<div class="h-1.5 bg-primary rounded-full relative transition-all duration-150" id="scrubProgress" style="width: 25.6%;">
+<div class="w-3.5 h-3.5 rounded-full bg-primary-container absolute -right-1.5 -top-1 shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Diarized Transcript Flow -->
+<div class="flex flex-col gap-space-sm">
+<!-- Utterance 1: Doctor -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md hover:bg-surface transition-colors">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+          DR
+        </div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Dr. Tamer Mansour</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-semibold">Attending Clinician</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-semibold tabular-nums">00:04</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+            "صباح الخير يا سيدة مريم، طمنيني عليكِ، إيه المشكلة الأساسية اللي مسببالك تعب النهاردة؟"
+            <br>
+<span class="text-on-surface-variant font-body-sm text-body-sm">(Good morning, Mrs. Mariam. Please tell me, what has been bothering you most today?)</span>
+</p>
+</div>
+</div>
+<!-- Utterance 2: Patient -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md hover:bg-surface transition-colors">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+          PT
+        </div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Mariam Mostafa (Patient)</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-semibold">مريم مصطفى</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-semibold tabular-nums">00:15</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+            "دكتور تامر، من أربع أيام تقريباً عندي صداع شديد جداً فوق عيني وجبهتي، وحاسة بضغط شديد على جانبي مناخيري، ومعاه سخونية خفيفة وإفرازات سميكة مصفرة من الأنف مش بتوقف."
+          </p>
+<div class="mt-2 flex flex-wrap gap-1">
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-low font-clinical-data text-clinical-data text-primary">Identified: Headache (Severe)</span>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-low font-clinical-data text-clinical-data text-primary">Identified: Facial Pressure</span>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-low font-clinical-data text-clinical-data text-primary">Identified: Purulent Rhinorrhea</span>
+</div>
+</div>
+</div>
+<!-- Utterance 3: Doctor Examination -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md hover:bg-surface transition-colors">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+          DR
+        </div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Dr. Tamer Mansour</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-semibold">Examination Dictation</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-semibold tabular-nums">03:12</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+            "سأبدأ بفحص الجيوب الأنفية بالضغط البسيط هنا... نعم، يوجد ألم واضح عند الضغط على الجيوب الفكية بالجانبين. الأغشية المخاطية محتقنة بوضوح. النبض 78 والضغط 132 على 84."
+          </p>
+</div>
+</div>
+<!-- Utterance 4: Doctor Recommendations -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md hover:bg-surface transition-colors">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center font-label-md text-label-md font-bold flex-shrink-0">
+          DR
+        </div>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Dr. Tamer Mansour</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-semibold">Treatment Directions</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-semibold tabular-nums">06:40</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+            "هذا التهاب بكتيري حاد في الجيوب الأنفية. سنصف كورس أوجمانتين 1 جم قرص كل 12 ساعة لمدة 7 أيام بعد الأكل، بالإضافة إلى بخاخ كورتيزون موضعي ومحلول ملحي للغسيل. ونحتاج أيضاً عمل تحليل صورة دم كاملة وبروتين سي التفاعلي."
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 3: Extracted Clinical Actions (Staged Drafts Only, Not Issued) -->
+<div class="hidden flex-col gap-space-md" id="tab-actions">
+<!-- Informational callout -->
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">pending_actions</span>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface uppercase tracking-wider block">
+            STAGED CLINICAL INTENTS (UNCOMMITTED)
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+            These orders are staged directly from natural speech. They are not transmitted to the pharmacy or laboratory until committed through their dedicated modules.
+          </span>
+</div>
+</div>
+<span class="font-clinical-data text-clinical-data px-2.5 py-1 rounded-lg bg-surface-container-lowest text-secondary font-bold">
+        2 DETECTED
+      </span>
+</div>
+<!-- Prescriptions Staged Lane -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">pill</span>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Detected Prescriptions</h2>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">STAGED DRAFT</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Rx Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-primary">Amoxicillin / Clavulanate (Augmentin)</span>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container font-clinical-data text-clinical-data text-on-surface-variant">Oral Solid</span>
+</div>
+<div class="font-headline-4 text-headline-4 text-on-surface">1000 mg • BID (Every 12 hours)</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Duration: 7 Days (14 Tablets total) • Instructions: Take immediately after meals with plenty of water.
+            </p>
+<div class="flex items-center gap-2 pt-1 font-micro-copy text-micro-copy text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+<span class="">Allergy check: No penicillin allergies on patient profile</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="w-full py-2 px-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors" href="/doctor/prescriptions/new?med=Augmentin&amp;dose=1000mg&amp;pt=88421">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="">Send to Prescription Writer (/doctor/prescriptions/new)</span>
+</a>
+</div>
+</div>
+<!-- Rx Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-primary">Fluticasone Propionate Nasal Spray</span>
+<span class="px-2 py-0.5 rounded-lg bg-surface-container font-clinical-data text-clinical-data text-on-surface-variant">Topical Intranasal</span>
+</div>
+<div class="font-headline-4 text-headline-4 text-on-surface">50 mcg/actuation • 2 sprays each nostril QD</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Duration: 10 Days • Instructions: Prime bottle before first use, rinse mouth if postnasal drip occurs.
+            </p>
+<div class="flex items-center gap-2 pt-1 font-micro-copy text-micro-copy text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">check_circle</span>
+<span class="">Drug interaction: Zero conflict with baseline Amlodipine</span>
+</div>
+</div>
+<div class="pt-space-xs">
+<a class="w-full py-2 px-space-md rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm transition-colors" href="/doctor/prescriptions/new?med=Fluticasone&amp;dose=50mcg&amp;pt=88421">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="">Send to Prescription Writer (/doctor/prescriptions/new)</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Diagnostic Laboratory Staged Lane -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">biotech</span>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Detected Diagnostic Orders</h2>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">STAGED LAB REQUISITION</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-5 text-headline-5 text-on-surface">CBC (Complete Blood Count) + High Sensitivity CRP</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Clinical Indication: Assess leukocytosis and inflammatory systemic response in acute rhinosinusitis.
+            </span>
+<div class="flex items-center gap-space-sm pt-1">
+<span class="font-clinical-data text-clinical-data text-on-surface-variant font-semibold">Priority: Routine (Same Day)</span>
+<span class="font-micro-copy text-micro-copy px-1.5 py-0.5 rounded bg-surface-container text-on-surface">Specimen: Venous EDTA &amp; Serum</span>
+</div>
+</div>
+</div>
+<a class="py-2 px-space-md rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center gap-2 self-start sm:self-center transition-colors shadow-sm" href="/doctor/orders/lab/new?test=CBC,CRP&amp;pt=88421">
+<span class="material-symbols-outlined text-[18px] text-secondary">arrow_forward</span>
+<span class="">Send to Lab Order (/doctor/orders/lab/new)</span>
+</a>
+</div>
+</div>
+</div>
+<!-- 3. Consequential Action & Attestation Footer -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-md flex flex-col gap-space-md mt-space-xs">
+<!-- Mandatory Physician Attestation Checkbox -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-start gap-space-sm">
+<div class="pt-0.5">
+<input class="w-5 h-5 rounded cursor-pointer accent-primary focus:ring-0" id="physicianAttestationCheck" onchange="toggleAttestationState(this.checked)" type="checkbox">
+</div>
+<label class="flex flex-col cursor-pointer select-none" for="physicianAttestationCheck">
+<span class="font-label-md text-label-md font-bold text-on-surface">
+          I have reviewed and verified this clinical documentation as the attending physician.
+        </span>
+<span class="font-label-md text-label-md font-medium text-on-surface-variant">
+          أقر بصفتي الطبيب المعالج بمراجعة وتدقيق هذه الملاحظة السريرية واعتماد صحتها الطبية ومسؤوليتي عنها بالكامل.
+        </span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant pt-1">In accordance with established clinical governance and physician review protocols / وفقاً لضوابط التدقيق والمسؤولية السريرية المعمول بها.</span>
+</label>
+</div>
+<!-- Consequential Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<!-- Destructive / Rejection Action -->
+<button class="w-full sm:w-auto px-space-md py-2.5 rounded-lg bg-surface-container text-error hover:bg-error-container hover:text-on-error-container font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors" onclick="discardDraft()">
+<span class="material-symbols-outlined text-[18px]">delete_sweep</span>
+<span class="">Reject &amp; Discard AI Draft / رفض وإلغاء المسودة</span>
+</button>
+<!-- Secondary & Primary Finalizers -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm w-full sm:w-auto">
+<button class="w-full sm:w-auto px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-colors" onclick="saveIncompleteDraft()">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span class="">Save as Incomplete Draft / حفظ كمسودة غير مكتملة</span>
+</button>
+<button class="w-full sm:w-auto px-space-lg py-2.5 rounded-lg bg-surface-container-high text-on-surface-variant opacity-60 cursor-not-allowed font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm transition-all" disabled="" id="approveSignBtn" onclick="approveAndSignRecord()" title="Physician attestation checkbox must be selected">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="">Approve &amp; Sign to EMR / اعتماد وتوقيع في السجل الطبي</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Tab Switcher
+  function switchTab(targetId) {
+    const tabs = ['tab-soap', 'tab-transcript', 'tab-actions'];
+    tabs.forEach(t => {
+      const el = document.getElementById(t);
+      const btn = document.getElementById('btn-' + t);
+      if (t === targetId) {
+        el.classList.remove('hidden');
+        el.classList.add('flex');
+        btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container');
+      } else {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+        btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        btn.classList.add('text-on-surface-variant', 'hover:bg-surface-container');
+      }
+    });
+  }
+
+  // Textarea Editing & Transitioning to "EDITED" Lifecycle State
+  function enableEditing(id, btn) {
+    const textarea = document.getElementById(id);
+    if (textarea.hasAttribute('readonly')) {
+      textarea.removeAttribute('readonly');
+      textarea.focus();
+      btn.classList.add('bg-primary-container', 'text-on-primary-container');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span><span>Finish Editing / تم التعديل</span>';
+      triggerEditState();
+    } else {
+      textarea.setAttribute('readonly', 'true');
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">edit</span><span>Edit Text / تعديل الصياغة</span>';
+    }
+  }
+
+  function triggerEditState() {
+    const stepEdited = document.getElementById('stepEdited');
+    stepEdited.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+    stepEdited.classList.add('bg-primary-container', 'text-on-primary-container', 'shadow-sm');
+
+    const auditBadge = document.getElementById('auditBadge');
+    if (auditBadge) {
+      auditBadge.className = 'font-clinical-data text-clinical-data px-2 py-1 rounded-lg bg-surface-container-high text-primary font-bold';
+      auditBadge.textContent = 'STATUS: PHYSICIAN EDITED (MODIFIED)';
+    }
+  }
+
+  // Attestation and Button Activation
+  function toggleAttestationState(isChecked) {
+    const signBtn = document.getElementById('approveSignBtn');
+    if (isChecked) {
+      signBtn.removeAttribute('disabled');
+      signBtn.classList.remove('bg-surface-container-high', 'text-on-surface-variant', 'opacity-60', 'cursor-not-allowed');
+      signBtn.classList.add('bg-primary', 'text-on-primary', 'hover:bg-primary-container', 'shadow-md');
+      signBtn.title = "Ready for cryptographic sign-off";
+    } else {
+      signBtn.setAttribute('disabled', 'true');
+      signBtn.classList.add('bg-surface-container-high', 'text-on-surface-variant', 'opacity-60', 'cursor-not-allowed');
+      signBtn.classList.remove('bg-primary', 'text-on-primary', 'hover:bg-primary-container', 'shadow-md');
+      signBtn.title = "Physician attestation checkbox must be selected";
+    }
+  }
+
+  // Consequential Workflow Handlers
+  function approveAndSignRecord() {
+    const stepSigned = document.getElementById('stepSigned');
+    const stepRecord = document.getElementById('stepRecord');
+    stepSigned.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+    stepSigned.classList.add('bg-primary-container', 'text-on-primary-container');
+
+    stepRecord.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+    stepRecord.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+
+    showNotification("Encounter note signed cryptographically and committed to Al-Nour EMR.");
+  }
+
+  function saveIncompleteDraft() {
+    showNotification("Progress saved. Encounter flagged as Incomplete Physician Draft.");
+  }
+
+  function discardDraft() {
+    if (confirm("Are you sure you want to discard this AI consultation draft? This action cannot be undone.")) {
+      showNotification("AI Draft discarded. Session archived with zero clinical note attachments.");
+    }
+  }
+
+  function showNotification(msg) {
+    const banner = document.getElementById('statusNotification');
+    const label = document.getElementById('statusMessage');
+    label.textContent = msg;
+    banner.classList.remove('hidden');
+    banner.classList.add('flex');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Audio Playback Simulation
+  let isPlaying = false;
+  function toggleAudioPlayback() {
+    isPlaying = !isPlaying;
+    const playIcon = document.getElementById('playIcon');
+    if (isPlaying) {
+      playIcon.textContent = 'pause';
+    } else {
+      playIcon.textContent = 'play_arrow';
+    }
+  }
+
+  function setSpeed(speed, btn) {
+    document.querySelectorAll('.speed-btn').forEach(b => {
+      b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-semibold');
+      b.classList.add('text-on-surface-variant');
+    });
+    btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold');
+    btn.classList.remove('text-on-surface-variant');
+  }
+
+  function scrubAudio(e) {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const percent = Math.min(Math.max((clickX / rect.width) * 100, 0), 100);
+    document.getElementById('scrubProgress').style.width = percent + '%';
+  }
+</script></main></div>
+
+</body></html>

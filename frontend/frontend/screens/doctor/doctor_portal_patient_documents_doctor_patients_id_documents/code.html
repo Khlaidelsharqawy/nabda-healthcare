@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>AegisHealth Clinical AI Ecosystem</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#dee2ee", "on-secondary-container": "#fffbff", "primary-fixed-dim": "#7ed99e", "secondary-fixed": "#e1e0ff", "surface-container-high": "#e4e8f4", "background": "#f9f9ff", "surface-tint": "#006d3e", "on-error-container": "#93000a", "outline-variant": "#becabe", "on-tertiary-fixed": "#360f00", "surface-container-lowest": "#ffffff", "on-surface": "#171c24", "primary-container": "#087443", "on-tertiary": "#ffffff", "outline": "#6f7a70", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#2a2bc4", "surface": "#f9f9ff", "inverse-primary": "#7ed99e", "surface-dim": "#d6dae6", "tertiary-container": "#ae4202", "on-primary-container": "#9af7b9", "surface-container": "#eaeefa", "surface-container-highest": "#dee2ee", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "secondary-fixed-dim": "#c0c1ff", "on-tertiary-fixed-variant": "#7d2d00", "secondary": "#4347d9", "surface-container-low": "#f0f3ff", "on-secondary": "#ffffff", "error": "#ba1a1a", "primary-fixed": "#99f6b9", "inverse-on-surface": "#ecf1fd", "primary": "#005932", "on-error": "#ffffff", "on-primary-fixed": "#00210f", "on-primary": "#ffffff", "secondary-container": "#5d62f3", "tertiary": "#873100", "tertiary-fixed-dim": "#ffb597", "inverse-surface": "#2c313a", "tertiary-fixed": "#ffdbcd", "on-surface-variant": "#3f4941", "on-secondary-fixed": "#04006d", "surface-bright": "#f9f9ff", "on-primary-fixed-variant": "#00522d" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-sm": "1rem", "margin-lg": "3rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-lg": "2rem", "margin": "2rem" }, "fontFamily": { "body-lg": ["Inter"], "micro-copy": ["Inter"], "headline-4": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-1": ["Plus Jakarta Sans"], "body-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-5": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "clinical-data": ["Inter"], "headline-1-mobile": ["Plus Jakarta Sans"], "body-sm": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"/><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Clinical Intelligence</span></div><div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">domain</span><span class="font-label-sm text-label-sm font-semibold truncate max-w-[190px]">Al-Nour Medical Center</span><span class="text-on-surface-variant font-micro-copy text-micro-copy font-normal">/ عيادة النور</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden xl:flex items-center gap-space-xs px-space-xs py-1 rounded-xl bg-surface-container-low"><span class="font-micro-copy text-micro-copy text-on-surface-variant px-1 font-semibold uppercase tracking-wider">Role Preview:</span><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="super-admin-control" href="#">Super Admin</a><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="doctor-workspace" href="#">Doctor</a><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="assistant-triage-lane" href="#">Assistant</a><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="patient-health-portal" href="#">Patient</a></div><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span>EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><div class="flex items-center gap-space-xs pl-space-xs rtl:pr-space-xs"><div class="hidden sm:flex flex-col items-end rtl:items-start text-right rtl:text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Tamer Mansour</span><span class="font-micro-copy text-micro-copy text-primary-container font-medium">Attending Cardiologist</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 rtl:left-auto rtl:right-0 top-16 bottom-0 w-64 bg-surface-container-low/80 backdrop-blur-md z-40 flex flex-col justify-between py-space-md shadow-[1px_0_8px_rgba(0,0,0,0.02)] rtl:shadow-[-1px_0_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">health_metrics</span><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">Doctor Workspace</span></div><span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">ACTIVE</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="doctor-workspace" href="#"><span class="material-symbols-outlined text-[20px]">clinical_notes</span><span class="font-body-md text-body-md">Active Consultation</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="encounter-triage" href="#"><span class="material-symbols-outlined text-[20px]">vital_signs</span><span class="font-body-md text-body-md">Patient Encounters</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="ai-scribe-copilot" href="#"><span class="material-symbols-outlined text-[20px]">mic</span><span class="font-body-md text-body-md">Ambient Scribe</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="prescription-orders" href="#"><span class="material-symbols-outlined text-[20px]">prescriptions</span><span class="font-body-md text-body-md">Rx &amp; Drug Safety</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-space-container hover:text-on-surface transition-all" data-path="diagnostic-labs" href="#"><span class="material-symbols-outlined text-[20px]">biotech</span><span class="font-body-md text-body-md">Diagnostic Labs</span></a></nav></div><div class="flex flex-col gap-space-xs px-space-md"><div class="p-space-sm rounded-xl bg-surface-container border-l-2 border-primary rtl:border-l-0 rtl:border-r-2 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">AI Engine Status</span><span class="h-2 w-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><p class="font-micro-copy text-micro-copy text-on-surface-variant">Human-in-the-Loop Verified. Aegis Guard 3.4 Operational.</p></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="clinical-audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">security</span><span class="font-body-sm text-body-sm">Audit &amp; Compliance</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="clinic-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-sm text-body-sm">Tenant Settings</span></a></nav></div></aside><div class="pl-64 rtl:pl-0 rtl:pr-64"><main class="w-full pt-16 bg-background min-h-screen px-margin-sm lg:px-margin pb-margin-lg"><div class="flex flex-col w-full">
+<!-- Dynamic Clinical Context Bar (Breadcrumb + Role Scope Pill) -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm mb-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span>Patients</span>
+<span class="text-on-surface-variant/50">/</span>
+<span class="font-micro-copy text-micro-copy">المرضى</span>
+</a>
+<span class="text-on-surface-variant/40">›</span>
+<span class="text-on-surface font-semibold flex items-center gap-1">
+<span>[Patient Name]</span>
+<span class="text-on-surface-variant font-normal">/ [اسم المريض]</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-clinical-data text-clinical-data ml-1">(MRN: [Patient ID])</span>
+</span>
+<span class="text-on-surface-variant/40">›</span>
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">folder_shared</span>
+<span>Clinical Documents</span>
+<span class="text-on-surface-variant font-normal">/ المستندات السريرية</span>
+</span>
+</div>
+<!-- Bound Clinical AI & Scope Badge -->
+<div class="flex items-center gap-space-xs self-start md:self-auto">
+<div class="flex items-center gap-1 px-space-sm py-1 rounded bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Doctor Vault Scope: EMR Sealed</span>
+</div>
+<div class="flex items-center gap-1 px-space-sm py-1 rounded bg-primary-fixed/40 text-primary font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span>Aegis Guard 3.4 Active</span>
+</div>
+</div>
+</div>
+<!-- Patient Context Banner (Level 1 Elevation, Monospaced Vitals, Bilingual Alignment) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md relative overflow-hidden">
+<div class="absolute top-0 right-0 w-80 h-full bg-gradient-to-l from-primary/5 via-transparent to-transparent pointer-events-none"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md relative">
+<!-- Patient Identity Unit -->
+<div class="flex items-start gap-space-md">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-headline-3 text-headline-3 font-bold">
+            [P]
+          </div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-on-primary rounded-full p-0.5" title="Doctor Workspace Verified">
+<span class="material-symbols-outlined text-[14px] block">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h1 class="font-headline-3 text-headline-3 text-on-surface font-semibold">[Patient Name]</h1>
+<span class="font-headline-4 text-headline-4 text-on-surface-variant font-normal">/ [اسم المريض]</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/10 text-primary font-clinical-data text-clinical-data">INPATIENT CARE</span>
+</div>
+<div class="flex items-center gap-x-4 gap-y-1 flex-wrap mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<strong class="text-on-surface font-medium">MRN:</strong>
+<span class="font-clinical-data text-clinical-data text-on-surface">[Patient ID]</span>
+</span>
+<span class="h-3 w-px bg-surface-variant"></span>
+<span class="flex items-center gap-1">
+<strong class="text-on-surface font-medium">DOB:</strong>
+<span class="font-clinical-data text-clinical-data">[Date of Birth]</span>
+</span>
+<span class="h-3 w-px bg-surface-variant"></span>
+<span class="flex items-center gap-1">
+<strong class="text-on-surface font-medium">Blood Group:</strong>
+<span class="font-clinical-data text-clinical-data text-tertiary">[Blood Group]</span>
+</span>
+<span class="h-3 w-px bg-surface-variant"></span>
+<span class="flex items-center gap-1">
+<strong class="text-on-surface font-medium">Attending Clinician:</strong>
+<span class="text-on-surface">Dr. [Doctor Name]</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Critical Allergy & Vital Alert Flag -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="bg-error-container/40 p-space-sm rounded-lg flex items-center gap-space-sm min-w-[210px]">
+<div class="p-2 rounded bg-error text-on-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider text-on-error-container font-semibold">Flagged Allergies</span>
+<span class="font-label-sm text-label-sm font-semibold text-error">[Allergy Record]</span>
+</div>
+</div>
+<!-- Document Quick Stats Capsule -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase">EHR Documents</span>
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">24 <span class="text-body-sm font-normal text-on-surface-variant">files</span></span>
+</div>
+<div class="h-7 w-px bg-surface-variant"></div>
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase">Pending Sign-off</span>
+<span class="font-headline-4 text-headline-4 text-tertiary-container font-bold">1 <span class="text-body-sm font-normal text-on-surface-variant">item</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Bar -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low/40 -mx-space-md -mb-space-md px-space-md py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Storage Compliance: ISO-27799 Medical Health Informatics Isolation ([Clinic Name])</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1.5 transition-all shadow-sm" id="uploadTriggerBtn">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>Upload Document</span>
+<span class="font-micro-copy text-micro-copy opacity-80">/ رفع مستند</span>
+</button>
+<button class="px-space-sm py-1.5 rounded bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Export Summary</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Document Filter & Clinical Registry Section -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- Main Repository Section (8 cols on XL or full) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Filtering Toolbar & Search Matrix -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm">
+<!-- Search input -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 rtl:left-auto rtl:right-3 top-2.5 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 rtl:pl-4 rtl:pr-10 py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container transition-all" id="docSearchInput" placeholder="Search by title, tag, author, or diagnostic code... / ابحث باسم المستند..." type="text"/>
+</div>
+<!-- Date Range & Secondary Action Filter -->
+<div class="flex items-center gap-space-xs">
+<div class="flex items-center gap-1.5 px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_month</span>
+<span>All Encounters (2024)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_drop_down</span>
+</div>
+<button class="p-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface" title="Refresh records">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Categorization Filter Pills (Bi-directional & Color-Categorized) -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-label-sm font-label-sm">
+<button class="category-pill active-pill px-space-sm py-1 rounded-full bg-primary text-on-primary font-medium flex items-center gap-1 whitespace-nowrap" data-filter="all">
+<span>All Documents</span>
+<span class="opacity-75 font-micro-copy text-micro-copy">/ كافة المستندات</span>
+<span class="ml-1 px-1 rounded-full bg-on-primary/20 text-on-primary font-clinical-data text-micro-copy">4</span>
+</button>
+<button class="category-pill px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-normal flex items-center gap-1 whitespace-nowrap transition-colors" data-filter="diagnostic">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary"></span>
+<span>Diagnostic Reports</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">/ تقارير تشخيصية</span>
+</button>
+<button class="category-pill px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-normal flex items-center gap-1 whitespace-nowrap transition-colors" data-filter="pathology">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary-container"></span>
+<span>Pathology</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">/ تحاليل باثولوجية</span>
+</button>
+<button class="category-pill px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-normal flex items-center gap-1 whitespace-nowrap transition-colors" data-filter="surgical">
+<span class="h-1.5 w-1.5 rounded-full bg-primary-container"></span>
+<span>Surgical Records</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">/ سجلات جراحية</span>
+</button>
+<button class="category-pill px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-normal flex items-center gap-1 whitespace-nowrap transition-colors" data-filter="discharge">
+<span class="h-1.5 w-1.5 rounded-full bg-secondary-container"></span>
+<span>Hospital Discharge</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">/ إخطارات خروج</span>
+</button>
+<button class="category-pill px-space-sm py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-normal flex items-center gap-1 whitespace-nowrap transition-colors" data-filter="referral">
+<span class="h-1.5 w-1.5 rounded-full bg-outline"></span>
+<span>External Referrals</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">/ إحالات خارجية</span>
+</button>
+</div>
+</div>
+<!-- Clinical Document Registry Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Metadata Bar -->
+<div class="px-space-md py-space-sm bg-surface-container-low/70 flex items-center justify-between">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">
+            Registry Index • Filtered Encounters (4 records)
+          </span>
+<span class="font-clinical-data text-clinical-data text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+            Non-repudiation Hash: SHA-256 Validated
+          </span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left rtl:text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md font-semibold">Document Title / المستند</th>
+<th class="py-space-sm px-space-sm font-semibold">Category / التصنيف</th>
+<th class="py-space-sm px-space-sm font-semibold">Uploaded / تاريخ</th>
+<th class="py-space-sm px-space-sm font-semibold">Author / المصدر</th>
+<th class="py-space-sm px-space-sm font-semibold">File &amp; Size</th>
+<th class="py-space-sm px-space-sm font-semibold">Attestation / الحالة</th>
+<th class="py-space-sm px-space-md font-semibold text-right rtl:text-left">Actions / الإجراءات</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md" id="documentTableBody">
+<!-- Row 1: Hospital Discharge Summary -->
+<tr class="doc-row hover:bg-surface-container-low/50 transition-colors cursor-pointer" data-cat="discharge" data-id="doc-1" onclick="selectDocument('doc-1')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-secondary-fixed text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-5 text-headline-5 text-on-surface font-semibold truncate">[Clinical Discharge Summary]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-normal">[ملخص خروج سريري شامل] • Post-Angioplasty</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/50 text-secondary font-label-sm text-label-sm font-medium whitespace-nowrap">
+                    Hospital Discharge
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface whitespace-nowrap">
+                  [Date] <span class="text-on-surface-variant font-micro-copy block">10:42 AM</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface block font-medium">Dr. [Doctor Name]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Attending Cardiologist</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded bg-surface-container text-on-surface whitespace-nowrap">PDF • 2.4 MB</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed/40 text-primary font-label-sm text-label-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Physician Verified</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary" onclick="event.stopPropagation(); selectDocument('doc-1');" title="Preview / معاينة">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); triggerDownload('doc-1');" title="Download / تحميل">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); showAuditTrail();" title="Audit Log / سجل التدقيق">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Histopathology Specimen Analysis -->
+<tr class="doc-row hover:bg-surface-container-low/50 transition-colors cursor-pointer" data-cat="pathology" data-id="doc-2" onclick="selectDocument('doc-2')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">biotech</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-5 text-headline-5 text-on-surface font-semibold truncate">[Histopathology Specimen Analysis]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-normal">[فحص عينة الأنسجة السريرية] • Surgical Biopsy</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/50 text-tertiary font-label-sm text-label-sm font-medium whitespace-nowrap">
+                    Pathology
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface whitespace-nowrap">
+                  [Date] <span class="text-on-surface-variant font-micro-copy block">08:15 AM</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface block font-medium">[Specialist Clinician]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Pathology Dept</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded bg-surface-container text-on-surface whitespace-nowrap">PDF • 1.8 MB</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed/40 text-primary font-label-sm text-label-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Lab Validated</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary" onclick="event.stopPropagation(); selectDocument('doc-2');" title="Preview">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); triggerDownload('doc-2');" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); showAuditTrail();" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Cardiac Ultrasound Evaluation -->
+<tr class="doc-row hover:bg-surface-container-low/50 transition-colors cursor-pointer" data-cat="diagnostic" data-id="doc-3" onclick="selectDocument('doc-3')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">vital_signs</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-5 text-headline-5 text-on-surface font-semibold truncate">[Cardiac Ultrasound Diagnostic Evaluation]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-normal">[تقرير أشعة إيكو للقلب] • Transthoracic Echo</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/40 text-secondary font-label-sm text-label-sm font-medium whitespace-nowrap">
+                    Diagnostic Reports
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface whitespace-nowrap">
+                  [Date] <span class="text-on-surface-variant font-micro-copy block">03:30 PM</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface block font-medium">Dr. [Doctor Name]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Attending Cardiologist</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded bg-surface-container text-on-surface whitespace-nowrap">DICOM PDF • 4.2 MB</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed/40 text-primary font-label-sm text-label-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Physician Signed</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary" onclick="event.stopPropagation(); selectDocument('doc-3');" title="Preview">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); triggerDownload('doc-3');" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); showAuditTrail();" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: External Specialist Referral Letter -->
+<tr class="doc-row hover:bg-surface-container-low/50 transition-colors cursor-pointer" data-cat="referral" data-id="doc-4" onclick="selectDocument('doc-4')">
+<td class="py-space-sm px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">forward_to_inbox</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-5 text-headline-5 text-on-surface font-semibold truncate">[External Specialist Referral Letter]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-normal">[خطاب إحالة تخصصية خارجية] • Nephrology Consult</span>
+</div>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-sm text-label-sm font-medium whitespace-nowrap">
+                    External Referrals
+                  </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface whitespace-nowrap">
+                  [Date] <span class="text-on-surface-variant font-micro-copy block">11:10 AM</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface block font-medium">[Specialist Clinician]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">External Health System</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded bg-surface-container text-on-surface whitespace-nowrap">Scanned PDF • 850 KB</span>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-tertiary-fixed/50 text-tertiary font-label-sm text-label-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+<span>Review Pending</span>
+</span>
+</td>
+<td class="py-space-sm px-space-md text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary" onclick="event.stopPropagation(); selectDocument('doc-4');" title="Preview">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); triggerDownload('doc-4');" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant" onclick="event.stopPropagation(); showAuditTrail();" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">history</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Regulatory Safe Footer -->
+<div class="p-space-sm bg-surface-container-low/50 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span>Showing 4 of 4 authorized patient records</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-micro-copy text-micro-copy">All transfers zero-knowledge encrypted</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant disabled:opacity-40" disabled="">Previous</button>
+<span class="px-2 py-1 rounded bg-primary text-on-primary font-semibold">1</span>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant disabled:opacity-40" disabled="">Next</button>
+</div>
+</div>
+</div>
+<!-- Clinical Diagnostic Visual Matrix (Rich SVG Data Presentation) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">monitor_heart</span>
+<h3 class="font-headline-4 text-headline-4 text-on-surface font-semibold">Ejection Fraction &amp; Telemetry Trend Timeline</h3>
+</div>
+<span class="font-clinical-data text-clinical-data px-2 py-0.5 rounded bg-primary-fixed/30 text-primary font-semibold">Matched to DICOM Reports</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Integrated biomarker progression extracted from approved ultrasound records and serial evaluations.</p>
+<!-- Inline Clinical SVG Chart -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-sm overflow-hidden">
+<svg class="w-full h-32" preserveaspectratio="none" viewbox="0 0 600 120">
+<!-- Grid Lines -->
+<line class="text-surface-variant" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="600" y1="20" y2="20"></line>
+<line class="text-surface-variant" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="600" y1="60" y2="60"></line>
+<line class="text-surface-variant" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="600" y1="100" y2="100"></line>
+<!-- Area Fill -->
+<polygon class="text-primary/10" fill="currentColor" points="40,90 160,75 280,60 400,45 520,35 520,110 40,110"></polygon>
+<!-- Trend Line -->
+<polyline class="text-primary" fill="none" points="40,90 160,75 280,60 400,45 520,35" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<!-- Data Points -->
+<circle class="text-primary-container" cx="40" cy="90" fill="currentColor" r="4"></circle>
+<circle class="text-primary-container" cx="160" cy="75" fill="currentColor" r="4"></circle>
+<circle class="text-primary-container" cx="280" cy="60" fill="currentColor" r="4"></circle>
+<circle class="text-primary-container" cx="400" cy="45" fill="currentColor" r="4"></circle>
+<circle class="text-primary" cx="520" cy="35" fill="currentColor" r="5"></circle>
+<!-- Labels -->
+<text class="text-[10px] fill-current text-on-surface-variant font-clinical-data" x="40" y="115">Admission</text>
+<text class="text-[10px] fill-current text-on-surface-variant font-clinical-data" x="160" y="115">Day 2</text>
+<text class="text-[10px] fill-current text-on-surface-variant font-clinical-data" x="280" y="115">Day 5 (Echo)</text>
+<text class="text-[10px] fill-current text-on-surface-variant font-clinical-data" x="400" y="115">Day 9</text>
+<text class="text-[10px] fill-current text-primary font-bold font-clinical-data" x="520" y="115">Today (58% EF)</text>
+</svg>
+</div>
+</div>
+</div>
+<!-- Persistent Document Inspector / Preview Drawer (Level 2 Elevation, 4 cols on XL) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Selected Document Inspector -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-md flex flex-col gap-space-md sticky top-20" id="inspectorPanel">
+<!-- Drawer Header -->
+<div class="flex items-start justify-between gap-space-xs pb-space-sm bg-surface-container-low/30 -mx-space-md -mt-space-md p-space-md rounded-t-xl">
+<div class="flex flex-col min-w-0">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider text-primary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+              Confidential Patient Record
+            </span>
+<h2 class="font-headline-4 text-headline-4 text-on-surface font-semibold truncate mt-0.5" id="inspectorTitle">
+              [Clinical Discharge Summary]
+            </h2>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate" id="inspectorSub">
+              [ملخص خروج سريري شامل] • Document ID: DOC-2024-8831
+            </span>
+</div>
+<span class="p-1.5 rounded bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+<!-- Rendered Document Preview Sandbox -->
+<div class="relative rounded-lg bg-surface-container-low p-space-sm flex flex-col items-center justify-center min-h-[220px] overflow-hidden group">
+<div class="w-full h-44 bg-surface-container-lowest rounded shadow-sm p-4 flex flex-col justify-between relative pointer-events-none">
+<!-- Simulated Clinical Document Header -->
+<div class="flex justify-between items-center border-b pb-2 text-on-surface">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">local_hospital</span>
+<span class="font-label-sm text-label-sm font-bold">[Clinic Name] Clinical Health</span>
+</div>
+<span class="font-clinical-data text-[10px] text-on-surface-variant">CONFIDENTIAL</span>
+</div>
+<!-- Mock Content Blocks -->
+<div class="flex flex-col gap-1.5 my-2">
+<div class="h-2 w-3/4 bg-surface-container rounded"></div>
+<div class="h-2 w-full bg-surface-container-high rounded"></div>
+<div class="h-2 w-5/6 bg-surface-container-high rounded"></div>
+<div class="h-2 w-1/2 bg-surface-container rounded"></div>
+</div>
+<!-- Mock Seal & Stamp -->
+<div class="flex justify-between items-end pt-1">
+<div class="text-[9px] text-on-surface-variant font-clinical-data">Hash: 8f9b...3c12</div>
+<div class="px-2 py-0.5 rounded bg-primary/10 text-primary font-clinical-data text-[10px] font-bold">DIGITALLY SEALED</div>
+</div>
+</div>
+<div class="absolute inset-0 bg-inverse-surface/10 backdrop-blur-[1px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="px-3 py-1.5 rounded bg-primary text-on-primary font-label-sm text-label-sm shadow-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">open_in_full</span>
+<span>Full View</span>
+</button>
+</div>
+</div>
+<!-- Clinical Metadata List (Key-Value Density Grid) -->
+<div class="flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="flex justify-between items-center py-1">
+<span class="text-on-surface-variant">Uploaded On:</span>
+<span class="font-clinical-data text-clinical-data text-on-surface font-semibold" id="metaDate">[Date] (10:42 AM)</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-on-surface-variant">Authored By:</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold" id="metaAuthor">Dr. [Doctor Name]</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-on-surface-variant">Tenant Isolation:</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">[Clinic Name]</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-on-surface-variant">Access Scope:</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/50 text-secondary font-clinical-data text-clinical-data font-semibold">Authorized Care Team Only</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-on-surface-variant">Security Protocol:</span>
+<span class="font-clinical-data text-clinical-data text-on-surface">HIPAA / GDPR / Egyptian Health E-ID</span>
+</div>
+</div>
+<!-- Doctor Signature & Attestation Pill -->
+<div class="bg-primary-fixed/20 p-space-sm rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">verified_user</span>
+<div class="flex flex-col text-on-surface">
+<span class="font-label-sm text-label-sm font-semibold">Attestation Verified</span>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">Digitally attested with Dr. [Doctor Name] cryptographic token. Immutably recorded in the clinic audit log.</p>
+</div>
+</div>
+<!-- Quick Action Primary Controls -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full py-2 px-space-md rounded bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+<span>Open in Clinical Full Viewer</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-2 px-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Download Copy</span>
+</button>
+<button class="py-2 px-space-sm rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Print Authenticated</span>
+</button>
+</div>
+<button class="py-1.5 px-space-sm rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 transition-colors" onclick="showAuditTrail()">
+<span class="material-symbols-outlined text-[16px]">manage_search</span>
+<span>View Access History &amp; Security Trail</span>
+</button>
+</div>
+</div>
+<!-- Quick AI Ambient Clinical Summary Pill (Deterministic, Scoped) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">neurology</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Document Extraction Copilot</span>
+</div>
+<span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded bg-secondary-fixed/60 text-secondary font-semibold">DETERMINISTIC</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Clinical parameters identified in this batch: <strong>Troponin-I (0.02 ng/mL)</strong>, <strong>LVEF (58%)</strong>, <strong>No regional wall motion abnormality</strong>.
+        </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm">
+<button class="text-primary hover:underline flex items-center gap-0.5">
+<span>Transfer to Active Consultation Notes</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Upload Modal Dialog (Hidden by Default, Triggerable) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm flex items-center justify-center p-space-md hidden" id="uploadModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="p-2 rounded bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+</div>
+<div>
+<h3 class="font-headline-4 text-headline-4 text-on-surface font-semibold">Upload Clinical Document</h3>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Scope: [Patient Name] (MRN: [Patient ID])</span>
+</div>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" id="closeUploadModal">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Document Title / اسم المستند</label>
+<input class="px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none" placeholder="e.g. Post-Procedure Angiogram or Lab Panel" type="text"/>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Category / التصنيف</label>
+<select class="w-full mt-1 px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none">
+<option>Diagnostic Reports</option>
+<option>Pathology</option>
+<option>Surgical Records</option>
+<option>Hospital Discharge</option>
+<option>External Referrals</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Ordering Clinician</label>
+<input class="w-full mt-1 px-space-sm py-2 rounded bg-surface-container-low text-on-surface font-body-md text-body-md" readonly="" type="text" value="Dr. [Doctor Name]"/>
+</div>
+</div>
+<!-- Drag and Drop Dropzone -->
+<div class="mt-2 rounded-lg bg-surface-container-low p-space-lg flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary text-[36px] mb-1">upload_file</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Select PDF, DICOM, or High-Resolution Scans</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant mt-0.5">Maximum file size: 50MB. Cryptographically encrypted in [Clinic Name] store.</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-xs pt-space-xs">
+<button class="px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md" id="cancelUploadBtn">
+          Cancel
+        </button>
+<button class="px-space-md py-2 rounded bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1" onclick="simulateUpload()">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Authenticate &amp; Upload</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Audit Trail Flyout Panel (Hidden by Default) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm flex items-center justify-center p-space-md hidden" id="auditModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-space-lg shadow-xl flex flex-col gap-space-md relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">security</span>
+<h3 class="font-headline-4 text-headline-4 text-on-surface font-semibold">Access &amp; Audit Trail</h3>
+</div>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" id="closeAuditModal">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Immutable access log for patient file under HIPAA and Egyptian Ministry of Health digital privacy mandate.
+      </p>
+<div class="flex flex-col gap-2 font-micro-copy text-micro-copy">
+<div class="p-2 rounded bg-surface-container-low flex justify-between items-center">
+<div>
+<span class="font-semibold text-on-surface block">Previewed by Dr. [Doctor Name]</span>
+<span class="text-on-surface-variant">Role: Attending Cardiologist (Active Session)</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">Just now</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex justify-between items-center">
+<div>
+<span class="font-semibold text-on-surface block">Document Verified &amp; Signed</span>
+<span class="text-on-surface-variant">Signer: Dr. [Doctor Name] (PIN Auth)</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">[Date] 10:42 AM</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low flex justify-between items-center">
+<div>
+<span class="font-semibold text-on-surface block">Uploaded to Clinic Vault</span>
+<span class="text-on-surface-variant">Origin: Clinical Lab System ([Clinic Name])</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">[Date] 10:40 AM</span>
+</div>
+</div>
+<div class="pt-2 flex justify-end">
+<button class="px-space-md py-1.5 rounded bg-primary text-on-primary font-label-sm text-label-sm" onclick="document.getElementById('auditModal').classList.add('hidden')">
+          Close Audit Record
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Behaviors -->
+<script>
+  // Document Selection & State Management
+  const docData = {
+    'doc-1': {
+      title: '[Clinical Discharge Summary]',
+      sub: '[ملخص خروج سريري شامل] • Post-Angioplasty',
+      date: '[Date] (10:42 AM)',
+      author: 'Dr. [Doctor Name]',
+      category: 'Hospital Discharge',
+      size: 'PDF • 2.4 MB'
+    },
+    'doc-2': {
+      title: '[Histopathology Specimen Analysis]',
+      sub: '[فحص عينة الأنسجة السريرية] • Surgical Biopsy',
+      date: '[Date] (08:15 AM)',
+      author: '[Specialist Clinician]',
+      category: 'Pathology',
+      size: 'PDF • 1.8 MB'
+    },
+    'doc-3': {
+      title: '[Cardiac Ultrasound Diagnostic Evaluation]',
+      sub: '[تقرير أشعة إيكو للقلب] • Transthoracic Echo',
+      date: '[Date] (03:30 PM)',
+      author: 'Dr. [Doctor Name]',
+      category: 'Diagnostic Reports',
+      size: 'DICOM PDF • 4.2 MB'
+    },
+    'doc-4': {
+      title: '[External Specialist Referral Letter]',
+      sub: '[خطاب إحالة تخصصية خارجية] • Nephrology Consult',
+      date: '[Date] (11:10 AM)',
+      author: '[Specialist Clinician]',
+      category: 'External Referrals',
+      size: 'Scanned PDF • 850 KB'
+    }
+  };
+
+  function selectDocument(id) {
+    const item = docData[id];
+    if (!item) return;
+
+    // Update inspector labels
+    document.getElementById('inspectorTitle').innerText = item.title;
+    document.getElementById('inspectorSub').innerText = item.sub;
+    document.getElementById('metaDate').innerText = item.date;
+    document.getElementById('metaAuthor').innerText = item.author;
+
+    // Highlight row
+    document.querySelectorAll('.doc-row').forEach(row => {
+      row.classList.remove('bg-surface-container');
+    });
+    const targetRow = document.querySelector(`[data-id="${id}"]`);
+    if (targetRow) {
+      targetRow.classList.add('bg-surface-container');
+    }
+  }
+
+  // Category Filtering Logic
+  document.querySelectorAll('.category-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.category-pill').forEach(p => {
+        p.classList.remove('bg-primary', 'text-on-primary', 'active-pill');
+        p.classList.add('bg-surface-container', 'text-on-surface');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary', 'active-pill');
+      btn.classList.remove('bg-surface-container', 'text-on-surface');
+
+      const filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('.doc-row').forEach(row => {
+        if (filter === 'all' || row.getAttribute('data-cat') === filter) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Search Filter Logic
+  const searchInput = document.getElementById('docSearchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      document.querySelectorAll('.doc-row').forEach(row => {
+        const text = row.innerText.toLowerCase();
+        if (text.includes(term)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  }
+
+  // Modal Open/Close Controls
+  const uploadModal = document.getElementById('uploadModal');
+  const uploadTrigger = document.getElementById('uploadTriggerBtn');
+  const closeUpload = document.getElementById('closeUploadModal');
+  const cancelUpload = document.getElementById('cancelUploadBtn');
+
+  if (uploadTrigger) uploadTrigger.onclick = () => uploadModal.classList.remove('hidden');
+  if (closeUpload) closeUpload.onclick = () => uploadModal.classList.add('hidden');
+  if (cancelUpload) cancelUpload.onclick = () => uploadModal.classList.add('hidden');
+
+  const auditModal = document.getElementById('auditModal');
+  const closeAudit = document.getElementById('closeAuditModal');
+  if (closeAudit) closeAudit.onclick = () => auditModal.classList.add('hidden');
+
+  function showAuditTrail() {
+    auditModal.classList.remove('hidden');
+  }
+
+  function triggerDownload(id) {
+    const item = docData[id] || { title: 'Document' };
+    alert('Initiating zero-knowledge encrypted clinical download: ' + item.title);
+  }
+
+  function simulateUpload() {
+    alert('Document uploaded, quarantined, and SHA-256 attested by Dr. [Doctor Name].');
+    uploadModal.classList.add('hidden');
+  }
+</script></main></div></body></html>

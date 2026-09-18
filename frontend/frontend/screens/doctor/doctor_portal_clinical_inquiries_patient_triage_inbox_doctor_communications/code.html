@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>AegisHealth Clinical AI Ecosystem</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#dee2ee", "on-secondary-container": "#fffbff", "primary-fixed-dim": "#7ed99e", "secondary-fixed": "#e1e0ff", "surface-container-high": "#e4e8f4", "background": "#f9f9ff", "surface-tint": "#006d3e", "on-error-container": "#93000a", "outline-variant": "#becabe", "on-tertiary-fixed": "#360f00", "surface-container-lowest": "#ffffff", "on-surface": "#171c24", "primary-container": "#087443", "on-tertiary": "#ffffff", "outline": "#6f7a70", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#2a2bc4", "surface": "#f9f9ff", "inverse-primary": "#7ed99e", "surface-dim": "#d6dae6", "tertiary-container": "#ae4202", "on-primary-container": "#9af7b9", "surface-container": "#eaeefa", "surface-container-highest": "#dee2ee", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "secondary-fixed-dim": "#c0c1ff", "on-tertiary-fixed-variant": "#7d2d00", "secondary": "#4347d9", "surface-container-low": "#f0f3ff", "on-secondary": "#ffffff", "error": "#ba1a1a", "primary-fixed": "#99f6b9", "inverse-on-surface": "#ecf1fd", "primary": "#005932", "on-error": "#ffffff", "on-primary-fixed": "#00210f", "on-primary": "#ffffff", "secondary-container": "#5d62f3", "tertiary": "#873100", "tertiary-fixed-dim": "#ffb597", "inverse-surface": "#2c313a", "tertiary-fixed": "#ffdbcd", "on-surface-variant": "#3f4941", "on-secondary-fixed": "#04006d", "surface-bright": "#f9f9ff", "on-primary-fixed-variant": "#00522d" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-sm": "1rem", "margin-lg": "3rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-lg": "2rem", "margin": "2rem" }, "fontFamily": { "body-lg": ["Inter"], "micro-copy": ["Inter"], "headline-4": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-1": ["Plus Jakarta Sans"], "body-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-5": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "clinical-data": ["Inter"], "headline-1-mobile": ["Plus Jakarta Sans"], "body-sm": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"/><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Clinical Intelligence</span></div><div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">domain</span><span class="font-label-sm text-label-sm font-semibold truncate max-w-[190px]">Al-Nour Medical Center</span><span class="text-on-surface-variant font-micro-copy text-micro-copy font-normal">/ عيادة النور</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span></div></div><div class="flex items-center gap-space-sm"><div class="hidden xl:flex items-center gap-space-xs px-space-xs py-1 rounded-xl bg-surface-container-low"><span class="font-micro-copy text-micro-copy text-on-surface-variant px-1 font-semibold uppercase tracking-wider">Role Preview:</span><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="super-admin-control" href="#">Super Admin</a><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="doctor-workspace" href="#">Doctor</a><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="assistant-triage-lane" href="#">Assistant</a><a class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors" data-path="patient-health-portal" href="#">Patient</a></div><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span>EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><div class="flex items-center gap-space-xs pl-space-xs rtl:pr-space-xs"><div class="hidden sm:flex flex-col items-end rtl:items-start text-right rtl:text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Tamer Mansour</span><span class="font-micro-copy text-micro-copy text-primary-container font-medium">Attending Cardiologist</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 rtl:left-auto rtl:right-0 top-16 bottom-0 w-64 bg-surface-container-low/80 backdrop-blur-md z-40 flex flex-col justify-between py-space-md shadow-[1px_0_8px_rgba(0,0,0,0.02)] rtl:shadow-[-1px_0_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">health_metrics</span><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">Doctor Workspace</span></div><span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">ACTIVE</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="doctor-workspace" href="#"><span class="material-symbols-outlined text-[20px]">clinical_notes</span><span class="font-body-md text-body-md">Active Consultation</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="encounter-triage" href="#"><span class="material-symbols-outlined text-[20px]">vital_signs</span><span class="font-body-md text-body-md">Patient Encounters</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="ai-scribe-copilot" href="#"><span class="material-symbols-outlined text-[20px]">mic</span><span class="font-body-md text-body-md">Ambient Scribe</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="prescription-orders" href="#"><span class="material-symbols-outlined text-[20px]">prescriptions</span><span class="font-body-md text-body-md">Rx &amp; Drug Safety</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-space-container hover:text-on-surface transition-all" data-path="diagnostic-labs" href="#"><span class="material-symbols-outlined text-[20px]">biotech</span><span class="font-body-md text-body-md">Diagnostic Labs</span></a></nav></div><div class="flex flex-col gap-space-xs px-space-md"><div class="p-space-sm rounded-xl bg-surface-container border-l-2 border-primary rtl:border-l-0 rtl:border-r-2 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">AI Engine Status</span><span class="h-2 w-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><p class="font-micro-copy text-micro-copy text-on-surface-variant">Human-in-the-Loop Verified. Aegis Guard 3.4 Operational.</p></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="clinical-audit-logs" href="#"><span class="material-symbols-outlined text-[20px]">security</span><span class="font-body-sm text-body-sm">Audit &amp; Compliance</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="clinic-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-sm text-body-sm">Tenant Settings</span></a></nav></div></aside><div class="pl-64 rtl:pl-0 rtl:pr-64"><main class="w-full pt-16 bg-background min-h-screen px-margin-sm lg:px-margin pb-margin-lg"><div class="flex flex-col w-full">
+<!-- Top Command & Triage Summary Header -->
+<header class="w-full mb-space-lg flex flex-col gap-space-md">
+<!-- Breadcrumbs and Protocol Pill -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Doctor Portal</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Patient Communications</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Clinical Inquiries Inbox (/doctor/communications)</span>
+</nav>
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-high text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-primary">verified_user</span>
+<span class="font-clinical-data text-clinical-data uppercase text-primary font-bold">Physician Clinical Response Gateway</span>
+<span class="h-1.5 w-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-medium">Zero Autonomous Outbound Patient Messaging</span>
+</div>
+</div>
+<!-- Title and Tenant Context -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-2 text-headline-2 text-on-surface tracking-tight font-bold">
+            Clinical Inquiries &amp; Triage Inbox
+          </h1>
+<span class="font-headline-4 text-headline-4 text-on-surface-variant font-normal rtl:hidden">/ صندوق الاستفسارات الإكلينيكية وفرز الرسائل</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Review, triage, and author clinically verified responses for escalated patient inquiries, telemetry alerts, and post-consultation follow-up questions.
+        </p>
+</div>
+<!-- Quick Operational Action -->
+<div class="flex items-center gap-space-sm self-start lg:self-auto">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">local_hospital</span>
+<span>Al-Nour Medical Center [عيادة النور]</span>
+</div>
+</div>
+</div>
+<!-- Metrics Quad Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Unread Inquiries</span>
+<span class="font-headline-1 text-headline-1 font-bold text-error mt-0.5">03</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Immediate triage required</span>
+</div>
+<div class="h-12 w-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">mark_email_unread</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Pending Follow-up / Labs</span>
+<span class="font-headline-1 text-headline-1 font-bold text-on-surface mt-0.5">05</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Awaiting doctor review</span>
+</div>
+<div class="h-12 w-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Resolved Today</span>
+<span class="font-headline-1 text-headline-1 font-bold text-primary mt-0.5">11</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Attested &amp; documented</span>
+</div>
+<div class="h-12 w-12 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Avg. Triage Turnaround</span>
+<span class="font-headline-1 text-headline-1 font-bold text-on-surface mt-0.5">1.8 <span class="font-headline-4 text-headline-4 font-medium">hrs</span></span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Within target clinical SLA</span>
+</div>
+<div class="h-12 w-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">timer</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Filter & Search Toolbar -->
+<section class="w-full mb-space-md p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm">
+<!-- Search Bar -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 rtl:pl-4 rtl:pr-10 py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" placeholder="Search by Patient Name, ID, or Clinical Subject... (البحث باسم المريض أو الكود)" type="text"/>
+</div>
+<!-- Filter Pills & Category Dropdowns -->
+<div class="flex flex-wrap items-center gap-space-xs overflow-x-auto">
+<button class="px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-semibold bg-primary text-on-primary shadow-sm flex items-center gap-1">
+<span>All Inquiries</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary-container font-clinical-data text-clinical-data">3</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+<span>Urgent Clinical</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-high transition-colors">
+        Post-Consultation
+      </button>
+<button class="px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-high transition-colors">
+        Rx Clarification
+      </button>
+<button class="px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:bg-surface-container-high transition-colors">
+        Resolved
+      </button>
+<div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div>
+<!-- Department Category Filter -->
+<div class="relative">
+<select class="appearance-none pl-space-sm pr-8 rtl:pl-8 rtl:pr-space-sm py-1.5 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface font-medium cursor-pointer focus:outline-none">
+<option value="cardio">Cardiology Service (أمراض القلب)</option>
+<option value="internal">General Internal Medicine (طب باطني)</option>
+<option value="all">All Specialty Units</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 rtl:right-auto rtl:left-2 top-1/2 -translate-y-1/2 text-[16px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Split Clinical Workspace: Left Inquiry List + Right Studio -->
+<main class="w-full grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Patient Inquiry Triage Lane (5 Cols) -->
+<section class="lg:col-span-5 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface tracking-tight">Active Queue (3 Awaiting Attestation)</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Sorted by Priority</span>
+</div>
+<!-- Inquiry Item 1: Selected / High Priority -->
+<article class="p-space-md rounded-xl bg-surface-container-lowest shadow-md cursor-pointer transition-all duration-150 relative overflow-hidden bg-gradient-to-r from-primary/5 via-transparent to-transparent">
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-lg bg-error-container text-on-error-container font-clinical-data text-clinical-data font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">emergency</span>
+<span>High Clinical Priority</span>
+</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-medium">25 min ago</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-bold px-1.5 py-0.5 rounded bg-surface-container">PAT-1042</span>
+</div>
+<div class="flex flex-col gap-0.5 mb-space-xs">
+<h2 class="font-headline-5 text-headline-5 font-bold text-on-surface">[Patient Name: Patient A]</h2>
+<p class="font-label-md text-label-md font-semibold text-primary-container">
+            [Subject: Mild dizziness after starting adjusted medication dosage]
+          </p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+          "Patient called regarding lightheadedness in the morning. Current BP self-reported 118/74 mmHg. Inquired if dose should be withheld or adjusted..."
+        </p>
+<div class="pt-space-xs flex items-center justify-between font-micro-copy text-micro-copy text-on-surface-variant bg-surface-container-low p-space-xs rounded-lg">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">forward_to_inbox</span>
+<span>Escalated by: <strong class="font-semibold text-on-surface">[Staff: Assistant Staff AST-201]</strong></span>
+</div>
+<span class="font-semibold text-primary flex items-center gap-0.5">
+            Active Focus
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</article>
+<!-- Inquiry Item 2: Routine Lab Prep -->
+<article class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface font-clinical-data text-clinical-data font-semibold">
+              Routine / Lab Prep
+            </span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">1 hour ago</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant px-1.5 py-0.5 rounded bg-surface-container">PAT-2091</span>
+</div>
+<div class="flex flex-col gap-0.5 mb-space-xs">
+<h2 class="font-headline-5 text-headline-5 font-semibold text-on-surface">[Patient Name: Patient B]</h2>
+<p class="font-label-md text-label-md text-on-surface">
+            [Subject: Inquiry regarding preparation for fasting lipid panel]
+          </p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+          "Patient inquiring whether morning essential cardiac medications should be consumed with water before the 8:00 AM diagnostic phlebotomy."
+        </p>
+<div class="pt-space-xs flex items-center justify-between font-micro-copy text-micro-copy text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">call</span>
+<span>Escalated by: [Staff: Reception Triage]</span>
+</div>
+<span class="text-on-surface-variant">ENC-3942</span>
+</div>
+</article>
+<!-- Inquiry Item 3: Standard Follow-up -->
+<article class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-clinical-data text-clinical-data font-semibold">
+              Standard Follow-up
+            </span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">3 hours ago</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant px-1.5 py-0.5 rounded bg-surface-container">PAT-3105</span>
+</div>
+<div class="flex flex-col gap-0.5 mb-space-xs">
+<h2 class="font-headline-5 text-headline-5 font-semibold text-on-surface">[Patient Name: Patient C]</h2>
+<p class="font-label-md text-label-md text-on-surface">
+            [Subject: Clarification on inhaler administration technique]
+          </p>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-sm">
+          "Patient received maintenance inhaler renewal; requesting instructional confirmation regarding spacing intervals between bronchodilator doses."
+        </p>
+<div class="pt-space-xs flex items-center justify-between font-micro-copy text-micro-copy text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+<span>Channel: Patient Mobile Portal</span>
+</div>
+<span class="text-on-surface-variant">ENC-2810</span>
+</div>
+</article>
+<!-- Quick Triage Guideline Alert -->
+<div class="p-space-sm rounded-xl bg-surface-container text-on-surface flex items-start gap-space-xs mt-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">policy</span>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">
+          Physician responses are automatically transmitted to the patient's verified portal and mirrored into the unified longitudinal health record.
+        </p>
+</div>
+</section>
+<!-- RIGHT COLUMN: Clinical Response & Resolution Studio (7 Cols) -->
+<section class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Active Thread Patient Identity & Clinical Context Drawer -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<!-- Thread Identity Header -->
+<div class="p-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="h-10 w-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-5 text-headline-5 font-bold">
+              PA
+            </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-4 text-headline-4 font-bold text-on-surface">[Patient Name: Patient A]</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-clinical-data text-clinical-data font-semibold text-on-surface">[PAT-1042]</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">54 Y • Male • Attending: Dr. Tamer Mansour • Encounter Ref: <strong class="text-on-surface">[ENC-4819]</strong></span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-xs py-1 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-variant font-label-sm text-label-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">folder_shared</span>
+<span>Full Chart</span>
+</button>
+<button class="px-space-xs py-1 rounded-lg bg-surface-container-highest text-on-surface hover:bg-surface-variant font-label-sm text-label-sm flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span>Rx History</span>
+</button>
+</div>
+</div>
+<!-- Structured Context Grid (Embedded Electronic Medical Record Baseline) -->
+<div class="p-space-md bg-surface-container-lowest grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Active Problem</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">[Primary Essential Hypertension]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">ICD-10 I10 • Monitored 18 mo</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Current Medication</span>
+<span class="font-label-md text-label-md font-semibold text-primary">[Sample Antihypertensive Agent 10mg]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Oral Daily • Increased from 5mg (May 10)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Allergies &amp; Alerts</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">[No Known Drug Allergies (NKDA)]</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Verified by Pharmacy: 2025-05-10</span>
+</div>
+<!-- Last Enc Note Summary Row -->
+<div class="md:col-span-3 p-space-sm rounded-lg bg-surface-container flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary flex-shrink-0 mt-0.5">clinical_notes</span>
+<div class="flex flex-col">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider font-semibold text-on-surface">Last Consultation Note (Dr. Tamer Mansour — May 10, 2025)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+                "Reviewed clinic BP (142/88). Adjusted dosage of antihypertensive agent to 10mg daily. Instructed patient to maintain daily morning log and immediately report orthostatic dizziness or syncope."
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Inbound Patient Inquiry Card -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">chat_bubble</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Patient Portal Message</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container text-on-surface-variant font-micro-copy text-micro-copy">Encrypted Transmission</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">[Date: 2025-05-14 09:10 AST]</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md leading-relaxed">
+          "Doctor, I took the new 10mg tablet this morning as instructed. Around 10:30 I felt slightly lightheaded when standing up quickly from my office desk. It resolved after sitting back down for a couple of minutes. My blood pressure just now was 118/74. Should I continue the same dose tomorrow or check back with the clinic?"
+        </div>
+<div class="flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy px-1">
+<span>Telemetry Snapshot Attached: Systolic 118 mmHg, Diastolic 74 mmHg, Pulse 72 bpm</span>
+<span>Verified Device ID: OMRON-HEM-7120</span>
+</div>
+</div>
+<!-- AI-Assisted Clinical Draft Helper (Purely Assistive — Human in the Loop) -->
+<div class="rounded-xl bg-surface-container-lowest shadow-md overflow-hidden bg-gradient-to-br from-surface-container-low via-surface-container-lowest to-surface-container-low">
+<!-- Draft Status Banner -->
+<div class="px-space-md py-space-xs bg-surface-container-high flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">smart_toy</span>
+<span class="font-clinical-data text-clinical-data text-primary font-bold tracking-wider uppercase">
+              AI-ASSISTED CLINICAL DRAFT • MANDATORY PHYSICIAN VERIFICATION &amp; SIGN-OFF
+            </span>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-medium">Model: Aegis Clinical Assistant v3.4 (Bounded Context)</span>
+</div>
+<!-- Suggestion Content -->
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm font-body-md text-body-md text-on-surface leading-relaxed relative" id="aiSuggestionText">
+            "Hello [Patient Name], mild lightheadedness when rising quickly (orthostatic effect) can occur during the first few days of adjusting your medication. Please ensure adequate hydration and rise slowly from seated or lying positions. Please continue monitoring your blood pressure seated and standing, and log the readings directly into your patient portal. If dizziness persists beyond 48 hours or you feel faint, please visit our clinic promptly or contact our triage nurse."
+          </div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-semibold">Clinical Intent Check:</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data">Orthostatic Triage Guideline</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-clinical-data text-clinical-data text-on-surface">No Red Flags Detected</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors flex items-center gap-1 shadow-sm" onclick="applyDraftToEditor()">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>Apply Draft to Editor</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-highest transition-colors flex items-center gap-1" onclick="discardDraft()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Discard Draft</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Physician Clinical Response Editor -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-primary">rate_review</span>
+<label class="font-headline-5 text-headline-5 font-bold text-on-surface" for="doctorResponseTextarea">Physician Attested Response (رد الطبيب المعتمد)</label>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Authorized Signatory: Dr. Tamer Mansour (License #EGY-MED-44910)</span>
+</div>
+<!-- Editable Area -->
+<div class="relative">
+<textarea class="w-full p-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md leading-relaxed focus:bg-surface-container-lowest focus:outline-none transition-colors" id="doctorResponseTextarea" placeholder="Review, author, or edit your clinical instructions here before cryptographic signing and patient dispatch..." rows="6"></textarea>
+</div>
+<!-- Action Matrix -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<!-- Primary Actions Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="px-space-sm py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1.5" onclick="executeTriageAction('Escalated to Triage Nurse')">
+<span class="material-symbols-outlined text-[16px] text-error">phone_in_talk</span>
+<span>Escalate to Nurse Phone Call</span>
+</button>
+<button class="px-space-sm py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1.5" onclick="executeTriageAction('Follow-up Ordered')">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_add_on</span>
+<span>Order Follow-up Clinic Consultation</span>
+</button>
+<button class="px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors flex items-center gap-1" onclick="executeTriageAction('Marked Resolved')">
+<span class="material-symbols-outlined text-[16px]">done_all</span>
+<span>Mark as Resolved</span>
+</button>
+</div>
+<!-- Primary Dispatch Button -->
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold hover:bg-primary transition-all shadow-md flex items-center gap-2" onclick="signAndSendResponse()">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Sign &amp; Send Clinical Response</span>
+</button>
+</div>
+<div class="hidden p-space-xs rounded bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data" id="actionFeedback"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Legal & Clinical Governance Footer -->
+<footer class="w-full mt-space-xl p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-3xl">
+<span class="material-symbols-outlined text-[24px] text-primary mt-0.5 flex-shrink-0">gavel</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Clinical Governance &amp; AI Safety Standard</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Outbound medical advice must be attested and signed by a licensed physician. Zero autonomous AI patient dispatch permitted under Ministry of Health &amp; Aegis Clinical Safety protocols. All transmissions are permanently logged to the patient's legal electronic health record.
+        </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+<span>HIPAA / GDPR / MOH Certified</span>
+</div>
+<span class="hidden sm:inline">•</span>
+<span>Privacy-Aware Health Platform</span>
+</div>
+</footer>
+</div>
+<script>
+  function applyDraftToEditor() {
+    const rawSuggestion = document.getElementById('aiSuggestionText').innerText.replace(/^"|"$/g, '').trim();
+    const editor = document.getElementById('doctorResponseTextarea');
+    editor.value = rawSuggestion;
+    editor.focus();
+    
+    showFeedback("Draft applied to Physician Editor. Review and amend as required before signing.");
+  }
+
+  function discardDraft() {
+    const container = document.getElementById('aiSuggestionText').parentElement.parentElement;
+    container.classList.add('opacity-40');
+    showFeedback("AI Draft discarded. Physician custom authoring selected.");
+  }
+
+  function signAndSendResponse() {
+    const editor = document.getElementById('doctorResponseTextarea');
+    if (!editor.value.trim()) {
+      alert("Please author or accept a clinical message before signing.");
+      editor.focus();
+      return;
+    }
+    showFeedback("Cryptographically signed by Dr. Tamer Mansour. Dispatched to Patient A mobile portal and committed to [ENC-4819].");
+    editor.disabled = true;
+  }
+
+  function executeTriageAction(actionName) {
+    showFeedback("Action completed: " + actionName + " for [Patient A / PAT-1042].");
+  }
+
+  function showFeedback(msg) {
+    const bar = document.getElementById('actionFeedback');
+    bar.innerText = msg;
+    bar.classList.remove('hidden');
+    setTimeout(() => {
+      bar.classList.add('hidden');
+    }, 6000);
+  }
+</script></main></div></body></html>

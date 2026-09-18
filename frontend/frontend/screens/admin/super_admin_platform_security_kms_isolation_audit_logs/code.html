@@ -1,0 +1,642 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"outline-variant":"#becabe","on-primary-container":"#9af7b9","on-surface-variant":"#3f4941","on-error-container":"#93000a","on-primary":"#ffffff","on-error":"#ffffff","on-tertiary-container":"#ffdbcd","inverse-on-surface":"#ecf1fd","on-secondary-container":"#fffbff","tertiary-fixed":"#ffdbcd","secondary-fixed-dim":"#c0c1ff","background":"#f9f9ff","on-tertiary":"#ffffff","surface-dim":"#d6dae6","error":"#ba1a1a","surface-variant":"#dee2ee","tertiary-fixed-dim":"#ffb597","surface-container-high":"#e4e8f4","inverse-surface":"#2c313a","on-primary-fixed":"#00210f","on-surface":"#171c24","on-tertiary-fixed-variant":"#7d2d00","surface-container-low":"#f0f3ff","secondary-container":"#5d62f3","surface-container-highest":"#dee2ee","on-tertiary-fixed":"#360f00","outline":"#6f7a70","on-secondary":"#ffffff","error-container":"#ffdad6","secondary":"#4347d9","on-secondary-fixed":"#04006d","inverse-primary":"#7ed99e","primary-fixed":"#99f6b9","surface-tint":"#006d3e","surface-container-lowest":"#ffffff","on-background":"#171c24","tertiary":"#873100","on-secondary-fixed-variant":"#2a2bc4","secondary-fixed":"#e1e0ff","surface":"#f9f9ff","surface-bright":"#f9f9ff","surface-container":"#eaeefa","primary-container":"#087443","on-primary-fixed-variant":"#00522d","primary":"#005932","primary-fixed-dim":"#7ed99e","tertiary-container":"#ae4202"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.5rem","gutter-lg":"2rem","gutter-sm":"1rem","space-xl":"2.5rem","margin":"2rem","margin-sm":"1rem","space-xs":"0.25rem","space-sm":"0.5rem","space-md":"1rem","margin-lg":"3rem","gutter":"1.5rem"},"fontFamily":{"headline-5":["Plus Jakarta Sans"],"headline-4":["Plus Jakarta Sans"],"label-sm":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-1":["Plus Jakarta Sans"],"headline-1-mobile":["Plus Jakarta Sans"],"clinical-data":["Inter"],"display-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"body-sm":["Inter"],"micro-copy":["Inter"],"headline-3":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-2":["Plus Jakarta Sans"]},"fontSize":{"headline-5":["16px",{"lineHeight":"22px","fontWeight":"600"}],"headline-4":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-1":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-1-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"clinical-data":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"60px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"micro-copy":["11px",{"lineHeight":"14px","fontWeight":"400"}],"headline-3":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-2":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-md mb-space-lg flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #087443
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"><div class="flex flex-col"><span class="font-headline-5 text-headline-5 text-primary tracking-tight leading-none">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-widest mt-0.5">SecOps Core</span></div></div><div class="px-space-md mb-space-sm"><span class="font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">Tenancy &amp; Governance</span></div><nav class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-md text-label-md rounded-lg shadow-sm"><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="admin-dashboard" href="#">Admin Dashboard</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="clinics-and-tenants-directory" href="#">Clinics &amp; Tenants Directory</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="provision-clinic" href="#">Provision Clinic</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="subscriptions-and-quotas" href="#">Subscriptions &amp; Quotas</a><a class="px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="platform-users-and-rbac" href="#">Platform Users &amp; RBAC</a><a aria-current="page" class="px-space-md py-space-sm transition-all bg-primary-container text-on-primary font-label-md text-label-md rounded-lg shadow-sm" data-path="security-and-audit-logs" href="#">Security &amp; Audit Logs</a></nav></div><div class="px-space-md pt-space-sm border-t border-surface-variant/40"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-primary"><span class="material-symbols-outlined text-[18px]">verified_user</span><span class="font-clinical-data text-clinical-data">Zero-Trust Enforced</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-md"><div class="flex flex-col"><span class="font-clinical-data text-clinical-data text-primary uppercase tracking-wider">Super Admin — Platform Security &amp; Audit Logs / أمان المنظومة وسجلات التدقيق</span><nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span class="">Aegis Platform</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="text-on-surface font-medium">Platform Security &amp; Audit Logs</span></nav></div></div><div class="flex items-center gap-space-md"><div class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-primary-container/20 text-primary border border-primary/20"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-clinical-data text-clinical-data">Zero-Trust Active</span></div><button class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-sm text-label-sm" type="button"><span class="material-symbols-outlined text-[16px]">language</span><span class="">EN / عربي</span></button><button aria-label="Theme Switch" class="p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:block"><div class="font-label-md text-label-md text-on-surface font-semibold">Eng. Ahmed Rashed</div><div class="font-clinical-data text-clinical-data text-secondary font-medium">Root SecOps</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-20 bg-surface min-h-screen px-gutter py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- 1. Platform Zero-Trust Security Posture Header & Metrics -->
+<section class="flex flex-col gap-space-md">
+<!-- Cryptographic Boundary Enforcement Banner -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm p-space-md sm:p-space-lg">
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs mb-1"><span class="font-headline-4 text-headline-4 text-on-surface tracking-tight">Data Protection &amp; Encryption / حماية البيانات والتشفير</span><span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-clinical-data text-clinical-data tracking-wider uppercase">100% Active</span><span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-clinical-data text-clinical-data">Standard Compliant</span></div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+              Strict per-tenant AES-256 GCM envelope wrapping backed by hardware security modules (HSM). Row-Level Security (RLS) guarantees isolated execution contexts across all 48 licensed Egyptian healthcare providers.
+            </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-all shadow-sm" id="run-canary-btn">
+<span class="material-symbols-outlined text-[18px] text-secondary">radar</span>
+<span class="">Canary Leak Probe</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-normal">(فحص وهمي)</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-space-sm rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-all shadow-sm" id="export-ledger-btn">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="">Export Tamper-Proof Ledger</span>
+</button>
+</div>
+</div>
+<!-- Live Boundary Diagnostics Sub-strip -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-sm flex flex-wrap items-center justify-between gap-space-sm font-clinical-data text-clinical-data text-on-surface-variant">
+<div class="flex items-center gap-space-xs text-primary font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="">SOVEREIGN BOUNDARY: ZERO CROSS-TENANT EXFILTRATION DETECTED</span>
+</div>
+<div class="flex items-center gap-space-md"><span class="text-on-surface">Tenant Partitioning: <strong class="font-semibold text-primary">Enforced / عزل بيانات المستأجر نشط</strong></span><span class="hidden md:inline text-outline-variant">/</span><span class="text-on-surface">Data Boundary: <strong class="font-semibold text-primary">Verified Sovereign</strong></span></div>
+</div>
+</div>
+<!-- Security Metrics Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Audited Ops (24h)</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">fact_check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-2 text-headline-2 text-on-surface tracking-tight font-bold">1,489,204</span>
+<span class="font-clinical-data text-clinical-data text-primary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> All cryptographically signed
+          </span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Boundary Violations</span>
+<span class="material-symbols-outlined text-[18px] text-primary">qr_code_2</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-2 text-headline-2 text-primary tracking-tight font-bold">0</span>
+<span class="font-clinical-data text-clinical-data text-primary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> 100% Ingress containment
+          </span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">KMS Partition Keys</span>
+<span class="material-symbols-outlined text-[18px] text-primary">vpn_key</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-2 text-headline-2 text-on-surface tracking-tight font-bold">48 / 48</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant mt-1">
+            Next auto-rotation: <strong class="text-on-surface">14d</strong>
+</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Active HSM Clusters</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">memory</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-2 text-headline-2 text-on-surface tracking-tight font-bold">12</span>
+<span class="font-clinical-data text-clinical-data text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">lan</span> Redundant failover warm
+          </span>
+</div>
+</div>
+<!-- Metric 5 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-surface-variant mb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Compliance Posture</span>
+<span class="material-symbols-outlined text-[18px] text-primary">policy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-2 text-headline-2 text-on-surface tracking-tight font-bold">100%</span>
+<span class="font-clinical-data text-clinical-data text-primary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> ISO 27001 &amp; Law 151
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Cryptographic Tenant Partitioning & RLS Verification Matrix -->
+<section class="flex flex-col gap-space-sm bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-4 text-headline-4 text-on-surface">Tenant Partition &amp; RLS Boundary Matrix</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(جدول عزل المستأجرين والتشفير)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Continuous Postgres Row-Level Security verification coupled with dedicated AWS KMS envelope wrappers.</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="inline-flex items-center gap-1 px-space-sm py-space-xs rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors" id="force-rekey-all-btn">
+<span class="material-symbols-outlined text-[16px] text-primary">cached</span>
+<span class="">Force Bulk Re-Keying (توليد مفاتيح فورية)</span>
+</button>
+</div>
+</div>
+<!-- Tenant Grid -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[760px]">
+<thead>
+<tr class="bg-surface-container-low font-clinical-data text-clinical-data text-on-surface-variant uppercase">
+<th class="py-space-sm px-space-md">Clinic Slug &amp; Entity</th>
+<th class="py-space-sm px-space-sm">Isolation Guard</th>
+<th class="py-space-sm px-space-sm">Encryption Status</th>
+<th class="py-space-sm px-space-sm">Canary Status</th>
+<th class="py-space-sm px-space-sm text-right">Heartbeat &amp; Latency</th>
+<th class="py-space-sm px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y-0">
+<!-- Tenant 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Al-Nour Medical Center</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">alnour-cairo-01 · Heliopolis Clinic Complex</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/20 text-primary font-clinical-data text-clinical-data">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Postgres RLS STRICT
+              </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface"><div class="inline-flex items-center gap-1 bg-surface-container px-2 py-1 rounded"><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span><span class="">Protected (Active)</span></div></td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-primary font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                ISOLATED (Zero Leak)
+              </span>
+</td>
+<td class="py-space-sm px-space-sm text-right font-clinical-data text-clinical-data">
+<div class="text-on-surface">4s ago</div>
+<div class="text-primary font-bold">1.2ms</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors" onclick="rekeySingle('alnour-cairo-01')">
+                Re-Key
+              </button>
+</td>
+</tr>
+<!-- Tenant 2 -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Dar Al-Shifa PolyClinic</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">shifa-dokki · Giza South Division</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/20 text-primary font-clinical-data text-clinical-data">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Postgres RLS STRICT
+              </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface"><div class="inline-flex items-center gap-1 bg-surface-container px-2 py-1 rounded"><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span><span class="">Protected (Active)</span></div></td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-primary font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                ISOLATED (Zero Leak)
+              </span>
+</td>
+<td class="py-space-sm px-space-sm text-right font-clinical-data text-clinical-data">
+<div class="text-on-surface">12s ago</div>
+<div class="text-primary font-bold">1.8ms</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors" onclick="rekeySingle('shifa-dokki')">
+                Re-Key
+              </button>
+</td>
+</tr>
+<!-- Tenant 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Alexandria Spine &amp; Joint Center</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">alex-spine-04 · Smouha Medical Hub</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/20 text-primary font-clinical-data text-clinical-data">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Postgres RLS STRICT
+              </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface"><div class="inline-flex items-center gap-1 bg-surface-container px-2 py-1 rounded"><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span><span class="">Protected (Active)</span></div></td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-primary font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                ISOLATED (Zero Leak)
+              </span>
+</td>
+<td class="py-space-sm px-space-sm text-right font-clinical-data text-clinical-data">
+<div class="text-on-surface">8s ago</div>
+<div class="text-primary font-bold">2.1ms</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm transition-colors" onclick="rekeySingle('alex-spine-04')">
+                Re-Key
+              </button>
+</td>
+</tr>
+<!-- Tenant 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Al-Safa Oncology Group</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">safa-oncology · Mohandessin Specialized</span>
+</div>
+</td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-container/20 text-primary font-clinical-data text-clinical-data">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Postgres RLS STRICT
+              </span>
+</td>
+<td class="py-space-sm px-space-sm font-clinical-data text-clinical-data text-on-surface"><div class="inline-flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2 py-1 rounded"><span class="material-symbols-outlined text-[14px]">autorenew</span><span class="">Rotation Scheduled</span></div></td>
+<td class="py-space-sm px-space-sm">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-primary font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                ISOLATED (Guarded)
+              </span>
+</td>
+<td class="py-space-sm px-space-sm text-right font-clinical-data text-clinical-data">
+<div class="text-on-surface">1m ago</div>
+<div class="text-primary font-bold">1.4ms</div>
+</td>
+<td class="py-space-sm px-space-md text-right">
+<button class="px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-sm text-label-sm transition-colors" onclick="rekeySingle('safa-oncology')">
+                Complete Wrap
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Split Grid: Audit Logs Stream (Left 7 Cols) & Global Governance + AI Copilot (Right 5 Cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- 3. Immutable Real-Time Audit Log Stream (سجل التدقيق الأمني) -->
+<section class="lg:col-span-8 flex flex-col gap-space-md bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-4 text-headline-4 text-on-surface">Cryptographic Audit Stream</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-arabic">(سجل التدقيق الأمني الحي)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Streaming immutable, cryptographically chained records in compliance with Egyptian Personal Data Protection Authority (EDPA).</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-1 rounded bg-surface-container font-clinical-data text-clinical-data text-on-surface-variant">Chained SHA-256 Ledger</span>
+</div>
+</div>
+<!-- Log Filters Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-space-xs bg-surface-container-low p-space-xs rounded-lg">
+<div class="relative sm:col-span-2">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-on-surface-variant">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" id="log-search-input" placeholder="Search Principal, IP, Hash or Tenant..." type="text">
+</div>
+<div>
+<select class="w-full py-1.5 px-2 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface focus:outline-none" id="severity-filter">
+<option value="ALL">All Severities</option>
+<option value="CRITICAL">Critical / Blocked</option>
+<option value="WARNING">Warning</option>
+<option value="SUCCESS">Success / Info</option>
+</select>
+</div>
+<div>
+<select class="w-full py-1.5 px-2 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface focus:outline-none" id="event-type-filter">
+<option value="ALL">All Event Types</option>
+<option value="AUTH">AUTH &amp; JWT</option>
+<option value="CANARY">CROSS_TENANT_ATTEMPT</option>
+<option value="KMS">KMS Key Actions</option>
+<option value="QUOTA">Quota Thresholds</option>
+</select>
+</div>
+</div>
+<!-- Log Entries Chained Feed -->
+<div class="flex flex-col gap-space-xs" id="audit-log-feed">
+<!-- Entry 1 -->
+<article class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-clinical-data text-clinical-data">INFO</span>
+<span class="font-clinical-data text-clinical-data text-secondary font-bold">JWT_TOKEN_EXCHANGE</span>
+<span class="text-outline-variant">·</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">2 mins ago</span>
+</div>
+<div class="font-clinical-data text-clinical-data text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+<span class="">STATUS: GRANTED</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface">
+<div><span class="text-on-surface-variant font-label-sm">Principal:</span> <code class="font-clinical-data text-secondary">doctor:dr.tarek@alnour.aegishealth.io</code></div>
+<div><span class="text-on-surface-variant font-label-sm">Tenant:</span> <span class="font-semibold">alnour-cairo-01</span></div>
+<div class=""><span class="text-on-surface-variant font-label-sm">Origin IP:</span> <code>197.165.42.10</code> (WE Telecom Cairo)</div>
+<div><span class="text-on-surface-variant font-label-sm">Scope:</span> <span class="text-primary font-medium">PATIENT_EMR_READ (MRN #EG-9042)</span></div>
+</div>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-clinical-data text-clinical-data">
+<div class="truncate max-w-lg">
+<span class="text-outline">CHAIN_HASH:</span> <span class="text-on-surface select-all">sha256:4f1a9b83d7120aef8810b42f3a90...f92a10</span>
+</div>
+<button class="hover:text-primary transition-colors flex items-center gap-0.5" onclick="verifyHash('sha256:4f1a9b83d7120aef8810b42f3a90...f92a10')">
+<span class="material-symbols-outlined text-[12px]">verified</span> Verify Chaining
+            </button>
+</div>
+</article>
+<!-- Entry 2: Critical Blocked -->
+<article class="p-space-sm rounded-lg bg-error-container/40 hover:bg-error-container/60 transition-colors flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-error text-on-error font-clinical-data text-clinical-data font-bold">CRITICAL / BLOCKED</span>
+<span class="font-clinical-data text-clinical-data text-error font-bold">CROSS_TENANT_QUERY_ATTEMPT</span>
+<span class="text-outline-variant">·</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">14 mins ago</span>
+</div>
+<div class="font-clinical-data text-clinical-data text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">g_mobiledata</span>
+<span class="">ISOLATION REJECTED (Zero Leak)</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface">
+<div><span class="text-on-surface-variant font-label-sm">Suspicious Principal:</span> <code class="font-clinical-data text-error">guest_crawler_external</code></div>
+<div><span class="text-on-surface-variant font-label-sm">Target Vector:</span> <code class="text-error font-semibold">alsafa/clinical_records [NULL_TENANT_HDR]</code></div>
+<div class=""><span class="text-on-surface-variant font-label-sm">Origin IP:</span> <code>197.34.12.88</code> (Orange Egypt Fixed ASN)</div>
+<div><span class="text-on-surface-variant font-label-sm">Enforcement:</span> <span class="text-error font-semibold">RLS Firewall Drop + IP Shunted</span></div>
+</div>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-clinical-data text-clinical-data">
+<div class="truncate max-w-lg">
+<span class="text-outline">CHAIN_HASH:</span> <span class="text-on-surface select-all">sha256:d8e091fac8819001b2fe00994a31...ec742a</span>
+</div>
+<button class="hover:text-primary transition-colors flex items-center gap-0.5" onclick="verifyHash('sha256:d8e091fac8819001b2fe00994a31...ec742a')">
+<span class="material-symbols-outlined text-[12px]">verified</span> Verify Chaining
+            </button>
+</div>
+</article>
+<!-- Entry 3: KMS Key Auto-Rotation -->
+<article class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-clinical-data text-clinical-data">SUCCESS</span>
+<span class="font-clinical-data text-clinical-data text-secondary font-bold">KMS_KEY_AUTO_ROTATION</span>
+<span class="text-outline-variant">·</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">28 mins ago</span>
+</div>
+<div class="font-clinical-data text-clinical-data text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">published_with_changes</span>
+<span class="">RE-WRAPPED ENVELOPE</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface">
+<div><span class="text-on-surface-variant font-label-sm">Automated Actor:</span> <code class="font-clinical-data text-secondary">sys-kms-daemon:hsm-eg-cai-01</code></div>
+<div><span class="text-on-surface-variant font-label-sm">Tenant Affected:</span> <span class="font-semibold">shifa-dokki</span></div>
+<div class=""><span class="text-on-surface-variant font-label-sm">Action Type:</span> 90-day sovereign master envelope rotation</div>
+<div><span class="text-on-surface-variant font-label-sm">EHR Status:</span> <span class="text-primary font-medium">Re-encrypted (Zero Downtime)</span></div>
+</div>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-clinical-data text-clinical-data">
+<div class="truncate max-w-lg">
+<span class="text-outline">CHAIN_HASH:</span> <span class="text-on-surface select-all">sha256:77b2ca12fe68910bc441203d8aa...09c118</span>
+</div>
+<button class="hover:text-primary transition-colors flex items-center gap-0.5" onclick="verifyHash('sha256:77b2ca12fe68910bc441203d8aa...09c118')">
+<span class="material-symbols-outlined text-[12px]">verified</span> Verify Chaining
+            </button>
+</div>
+</article>
+<!-- Entry 4: Warning Quota Exceeded -->
+<article class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-clinical-data text-clinical-data">WARNING</span>
+<span class="font-clinical-data text-clinical-data text-tertiary font-bold">QUOTA_THRESHOLD_EXCEEDED</span>
+<span class="text-outline-variant">·</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">45 mins ago</span>
+</div>
+<div class="font-clinical-data text-clinical-data text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+<span class="">RATE LIMITED (99% Cap)</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface">
+<div><span class="text-on-surface-variant font-label-sm">Principal:</span> <code class="font-clinical-data text-on-surface">system-telemetry:quota_guard</code></div>
+<div><span class="text-on-surface-variant font-label-sm">Tenant:</span> <span class="font-semibold">safa-oncology</span></div>
+<div class=""><span class="text-on-surface-variant font-label-sm">Impact:</span> WhatsApp Patient Outreach channel capped</div>
+<div><span class="text-on-surface-variant font-label-sm">Action:</span> <span class="text-tertiary font-medium">Auto-restricted to Critical Care triage</span></div>
+</div>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-clinical-data text-clinical-data">
+<div class="truncate max-w-lg">
+<span class="text-outline">CHAIN_HASH:</span> <span class="text-on-surface select-all">sha256:33991209bca7114e0f09142ec88...91ea27</span>
+</div>
+<button class="hover:text-primary transition-colors flex items-center gap-0.5" onclick="verifyHash('sha256:33991209bca7114e0f09142ec88...91ea27')">
+<span class="material-symbols-outlined text-[12px]">verified</span> Verify Chaining
+            </button>
+</div>
+</article>
+</div>
+<!-- Real-time Status Footer -->
+<div class="flex items-center justify-between pt-space-xs text-on-surface-variant font-clinical-data text-clinical-data">
+<div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="">Live WebSocket ingestion connected / اتصال التدقيق المباشر نشط</span></div>
+<button class="text-primary hover:underline">Download raw JSON-LD stream</button>
+</div>
+</section>
+<!-- 4. Global Security Policy & Access Enforcement Panel + SecOps AI Forensics (Right 4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Global Access Enforcement Controls -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">admin_panel_settings</span>
+<span class="font-headline-5 text-headline-5 text-on-surface font-semibold">Zero-Trust Rules</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-clinical-data text-clinical-data">ROOT ENFORCED</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Policy Item 1: Strict Postgres RLS -->
+<div class="flex items-start justify-between p-space-sm rounded-lg bg-surface-container-low gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Strict Tenant Bound RLS</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PostgreSQL row-level filters at DB session init.</span>
+</div>
+<div class="flex items-center">
+<input checked="" class="accent-primary h-5 w-5 rounded" disabled="" type="checkbox">
+</div>
+</div>
+<!-- Policy Item 2: Zero Super Admin Clinical Access (CRITICAL PRIVACY RULE) -->
+<div class="flex items-start justify-between p-space-sm rounded-lg bg-primary-container/10 gap-space-sm">
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-primary font-semibold">Zero SuperAdmin EMR Access</span>
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SecOps engineers cannot decrypt patient notes or medical history.</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-clinical-data text-clinical-data font-bold">LOCKED</span>
+</div>
+<!-- Policy Item 3: Hardware Token Enforcement (FIDO2) -->
+<div class="flex items-start justify-between p-space-sm rounded-lg bg-surface-container-low gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">FIDO2 / YubiKey Mandatory</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Physical security keys required for Root SecOps actions.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="fido2-toggle" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Policy Item 4: Sovereign Data Residency Lock -->
+<div class="flex items-start justify-between p-space-sm rounded-lg bg-surface-container-low gap-space-sm">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Egyptian Sovereign Lock</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">All Whisper AI transcription models hosted within Cairo &amp; Alex.</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="residency-toggle" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- 5. Root SecOps AI Forensic Assistant (مساعد أمن المنظومة) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<span class="font-headline-5 text-headline-5 text-on-surface font-semibold">Root SecOps AI Copilot</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-clinical-data text-clinical-data">SANDBOXED FORENSICS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Strictly bounded to telemetry anomaly detection, audit query analysis, and ISO/Egyptian Data Law verification.
+        </p>
+<!-- Quick Prompt Chips (Bilingual Egyptian Context) -->
+<div class="flex flex-col gap-space-xs mt-1">
+<button class="text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors flex items-center justify-between" onclick="runAiQuery('unauthorized')">
+<span class="">هل يوجد أي محاولة وصول غير مصرح بها خلال الـ 24 ساعة الماضية؟</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+</button>
+<button class="text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors flex items-center justify-between" onclick="runAiQuery('law151')">
+<span class="">تقرير التوافق مع قانون حماية البيانات المصري رقم 151 لسنة 2020</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+</button>
+<button class="text-left p-space-xs rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors flex items-center justify-between" onclick="runAiQuery('kms-health')"><span class="">Audit Key Protection Entropies &amp; Encryption Latencies</span><span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span></button>
+</div>
+<!-- AI Output Box -->
+<div class="mt-2 p-space-sm rounded-lg bg-surface-container-low text-on-surface flex flex-col gap-space-xs" id="ai-response-box">
+<div class="flex items-center gap-space-xs text-secondary font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span class="">SEC_AGENT_v4.2 // SYNTHESIS</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface leading-relaxed" id="ai-response-text">
+            All 48 clinic databases evaluated. <strong>Zero boundary penetrations</strong> verified. 1 cross-tenant attempt from crawler IP <code class="text-error">197.34.12.88</code> was null-routed by PostgreSQL Row-Level Security before accessing schema cache.
+          </div>
+<div class="flex items-center justify-between pt-1 font-clinical-data text-clinical-data text-on-surface-variant">
+<span class="">Verification: Attested by Root SecOps Engine</span>
+<span class="text-primary font-semibold">100% Deterministic</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Toast Notification Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="toast-banner">
+<div class="bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-space-sm font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" id="toast-icon">check_circle</span>
+<span id="toast-message" class="">Action executed successfully</span>
+</div>
+</div>
+</div>
+<!-- Client-side Logic & Micro-interactions -->
+<script>
+  function showToast(msg, isError = false) {
+    const toast = document.getElementById('toast-banner');
+    const msgEl = document.getElementById('toast-message');
+    const iconEl = document.getElementById('toast-icon');
+    
+    msgEl.textContent = msg;
+    if (isError) {
+      iconEl.textContent = 'warning';
+      iconEl.className = 'material-symbols-outlined text-error text-[20px]';
+    } else {
+      iconEl.textContent = 'check_circle';
+      iconEl.className = 'material-symbols-outlined text-primary text-[20px]';
+    }
+
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    }, 3500);
+  }
+
+  function rekeySingle(tenantSlug) {
+    showToast(`Generating fresh AES-256 KMS Envelope for [${tenantSlug}]...`);
+    setTimeout(() => {
+      showToast(`Key-ARN rotated & zero downtime re-wrap verified for [${tenantSlug}].`);
+    }, 1200);
+  }
+
+  function verifyHash(hashVal) {
+    showToast(`Ledger Hash verified with Cairo HSM Cluster: [${hashVal.substring(0, 18)}...] MATCHED.`);
+  }
+
+  // Canary Probe Simulator
+  document.getElementById('run-canary-btn')?.addEventListener('click', () => {
+    showToast('Injecting synthetic cross-tenant query across 48 tenant partitions...');
+    setTimeout(() => {
+      showToast('Canary Probe complete: 48/48 boundaries successfully blocked traversal. 0 leaks.');
+    }, 1500);
+  });
+
+  // Export Ledger
+  document.getElementById('export-ledger-btn')?.addEventListener('click', () => {
+    showToast('Compiling ISO 27001 & Law 151 cryptographically signed audit ledger (PDF/JSON)...');
+  });
+
+  // Bulk Rekey
+  document.getElementById('force-rekey-all-btn')?.addEventListener('click', () => {
+    showToast('Queueing background rolling KMS re-wrapping across 48 tenants...');
+  });
+
+  // SecOps AI Query simulation
+  function runAiQuery(queryType) {
+    const textEl = document.getElementById('ai-response-text');
+    if (queryType === 'unauthorized') {
+      textEl.innerHTML = '<strong>تحليل محاولات الوصول:</strong> لم يتم تسجيل أي محاولة اختراق ناجحة خلال الـ 24 ساعة. تم حجب ومصادرة عنوان IP 197.34.12.88 فور محاولة الاستعلام دون ترويسة المستأجر (Tenant Header). نسبة الاحتواء: 100%.';
+      showToast('Executed forensic cross-tenant check.');
+    } else if (queryType === 'law151') {
+      textEl.innerHTML = '<strong>تقرير التوافق مع القانون 151/2020:</strong> التشفير الإقليمي ساري داخل مركزي بيانات القاهرة والإسكندرية. سجلات المرضى لا تتاح لأي مهندس منصة (Zero SuperAdmin EMR Access). التوافق القانوني: 100% كامل.';
+      showToast('Generated Egyptian Law 151 compliance report.');
+    } else {
+      textEl.innerHTML = '<strong>HSM & Envelope Entropy Assessment:</strong> All 12 Thales HSM clusters responding within 1.4ms. Envelope key entropy calculated at 7.998 bits/byte (Nominal AES-256).';
+      showToast('KMS entropy audit complete.');
+    }
+  }
+
+  // Search Filter Handler
+  document.getElementById('log-search-input')?.addEventListener('input', (e) => {
+    const term = e.target.value.toLowerCase();
+    const articles = document.querySelectorAll('#audit-log-feed article');
+    articles.forEach(art => {
+      const txt = art.textContent.toLowerCase();
+      art.style.display = txt.includes(term) ? 'flex' : 'none';
+    });
+  });
+
+  // Severity Filter Handler
+  document.getElementById('severity-filter')?.addEventListener('change', (e) => {
+    const val = e.target.value;
+    const articles = document.querySelectorAll('#audit-log-feed article');
+    articles.forEach(art => {
+      if (val === 'ALL') {
+        art.style.display = 'flex';
+      } else if (val === 'CRITICAL') {
+        art.style.display = art.textContent.includes('CRITICAL') ? 'flex' : 'none';
+      } else if (val === 'WARNING') {
+        art.style.display = art.textContent.includes('WARNING') ? 'flex' : 'none';
+      } else if (val === 'SUCCESS') {
+        art.style.display = (art.textContent.includes('SUCCESS') || art.textContent.includes('INFO')) ? 'flex' : 'none';
+      }
+    });
+  });
+</script></main></div>
+
+</body></html>

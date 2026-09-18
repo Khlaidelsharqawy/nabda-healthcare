@@ -1,0 +1,462 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AegisHealth Patient Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-container": "#087443", "on-tertiary-fixed-variant": "#7d2d00", "on-error": "#ffffff", "tertiary-fixed-dim": "#ffb597", "tertiary": "#873100", "tertiary-container": "#ae4202", "on-error-container": "#93000a", "surface-variant": "#dee2ee", "primary-fixed-dim": "#7ed99e", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#360f00", "primary": "#005932", "inverse-primary": "#7ed99e", "outline": "#6f7a70", "surface-bright": "#f9f9ff", "on-secondary-fixed": "#04006d", "on-primary-container": "#9af7b9", "on-secondary-fixed-variant": "#2a2bc4", "on-surface-variant": "#3f4941", "on-secondary-container": "#fffbff", "background": "#f9f9ff", "secondary": "#4347d9", "on-surface": "#171c24", "error-container": "#ffdad6", "surface-container-low": "#f0f3ff", "surface-container-highest": "#dee2ee", "primary-fixed": "#99f6b9", "surface-container-high": "#e4e8f4", "on-primary": "#ffffff", "secondary-container": "#5d62f3", "on-background": "#171c24", "error": "#ba1a1a", "outline-variant": "#becabe", "on-secondary": "#ffffff", "surface-container": "#eaeefa", "inverse-surface": "#2c313a", "secondary-fixed": "#e1e0ff", "on-primary-fixed-variant": "#00522d", "tertiary-fixed": "#ffdbcd", "secondary-fixed-dim": "#c0c1ff", "on-tertiary-container": "#ffdbcd", "surface-container-lowest": "#ffffff", "surface-dim": "#d6dae6", "on-primary-fixed": "#00210f", "inverse-on-surface": "#ecf1fd", "surface-tint": "#006d3e", "surface": "#f9f9ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-sm": "1rem", "margin-sm": "1rem", "gutter-lg": "2rem", "space-lg": "1.5rem", "margin": "2rem", "space-sm": "0.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "margin-lg": "3rem", "space-md": "1rem" }, "fontFamily": { "micro-copy": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "clinical-data": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "headline-1": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "headline-4": ["Plus Jakarta Sans"], "headline-5": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "headline-1-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><img alt="Brand logo. - Primary color: #087443
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-4 text-headline-4 text-primary tracking-tight">AegisHealth</span><span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline-block">| Patient Portal / بوابة المريض</span></div><div class="flex items-center gap-space-xs"><span class="font-micro-copy text-micro-copy bg-surface-container text-on-surface-variant px-space-xs py-0.5 rounded-lg border border-outline-variant/40">[Clinic Name] / [اسم العيادة]</span><span class="font-clinical-data text-clinical-data text-primary hidden lg:inline-flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">verified_user</span> Access Controlled • Protected Session</span></div></div></div><div class="flex items-center gap-space-sm shrink-0"><div class="flex items-center bg-surface-container-low rounded-lg p-0.5"><button aria-label="English" class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-primary font-semibold hover:bg-surface-container-highest hover:text-on-surface transition-colors">EN</button><span class="text-outline-variant font-micro-copy text-micro-copy">/</span><button aria-label="Arabic" class="font-label-sm text-label-sm px-space-xs py-1 rounded-lg text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-colors">عربي</button></div><button aria-label="Toggle Dark/Light Mode" class="p-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface rounded-lg transition-colors" title="Toggle Theme"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><div class="flex items-center gap-space-sm pl-space-xs border-l border-outline-variant/50"><div class="flex flex-col items-end text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface">[Patient Name]</span><span class="font-clinical-data text-clinical-data text-on-surface-variant">MRN: [Patient ID]</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div><div class="w-full bg-surface-container-lowest border-t border-outline-variant/20"><div class="w-full px-gutter flex items-center overflow-x-auto"><nav class="flex items-center gap-space-xs py-space-xs text-nowrap" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patient-dashboard" href="#">Dashboard / لوحة المتابعة</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patient-appointments" href="#">Appointments / المواعيد</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patient-medications" href="#">Medications / الأدوية</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patient-labs" href="#">Lab Results / الفحوصات والتحاليل</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patient-ai-assistant" href="#">AI Health Assistant / مساعد الصحة الذكي</a><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="patient-authorized-context" href="#">Authorized Context / سياق البيانات المصرح بها</a><a class="px-space-md py-space-xs rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patient-ai-history" href="#">AI Interaction History / سجل الاستفسارات</a></nav></div></div></header><main class="w-full pt-20 bg-surface flex-1"><div class="flex flex-col w-full">
+<!-- Architectural Ambient Glow Container (Bounded Canvas) -->
+<div class="relative w-full overflow-hidden px-gutter py-space-xl">
+<!-- Subtle architectural gradient overlay -->
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-80 h-80 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto flex flex-col gap-space-xl relative z-10">
+<!-- Context Header Panel (Bento Style with Rich Tonal Hierarchy) -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<!-- Scoped Metadata Ribbon -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              Authorized Patient Context • Tenant Isolated • [Clinic Name]
+            </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+              Protected Session
+            </span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Protected Session</span>
+</div>
+<h1 class="font-headline-1 text-headline-1 text-on-surface tracking-tight mt-space-xs">
+            Authorized Patient Context
+            <span class="block text-headline-3 font-headline-3 text-primary mt-0.5">سياق البيانات المصرح بها لمساعد الذكاء الاصطناعي</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Review the healthcare categories authorized to provide informational answers to your inquiries.
+            <span class="block text-body-sm font-body-sm text-on-surface-variant/80 mt-0.5">استعراض وتدقيق تصنيفات البيانات المصرح باستخدامها لتقديم إجابات إرشادية آمنة ومحددة.</span>
+</p>
+</div>
+<!-- Identity & Verification Badge Box -->
+<div class="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end justify-between bg-surface-container-low p-space-md rounded-xl gap-space-sm min-w-[280px]">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">[Patient Name]</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant font-mono">MRN: [Patient ID]</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2 sm:pt-0 lg:pt-2 border-t border-surface-container-high w-full justify-between sm:justify-end lg:justify-between text-on-surface-variant">
+<span class="font-micro-copy text-micro-copy flex items-center gap-1 text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Context Pipeline Synced
+            </span>
+<span class="font-micro-copy text-micro-copy">Encrypted Memory</span>
+</div>
+</div>
+</section>
+<!-- Security & Scope Overview Banner -->
+<section class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-primary mt-0.5">
+<span class="material-symbols-outlined text-[24px]">shield_person</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-5 text-headline-5 text-on-surface">Zero-Cross Boundary Verification</span>
+<span class="bg-primary/10 text-primary font-micro-copy text-micro-copy px-2 py-0.5 rounded-full font-semibold">Strict Airgap</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Protected Session • Access Controlled. AI assistance operates exclusively within your personal authorized medical context. Cross-patient data sharing is strictly prohibited by federal and clinical privacy charters.
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-center">
+<a class="inline-flex items-center gap-1.5 px-space-md py-space-xs rounded-lg bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+            Audit Logs
+          </a>
+</div>
+</section>
+<!-- Main Bento Grid: Context Categories Matrix (4 Cards) + Scope Control Deck -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- 4 Major Context Cards (Occupies 8 Cols on Desktop) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-4 text-headline-4 text-on-surface">Context Ingestion Domains</span>
+<span class="font-micro-copy text-micro-copy bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded">Authorized Domains Loaded</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant hidden sm:inline">RAG Deterministic Sync: ON</span>
+</div>
+<!-- Card 1: Active Appointments Context -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Active Appointments Context</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">[Appointment Information]</span>
+</div>
+</div>
+<span class="self-start sm:self-auto inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Active Ingestion / مفعّل للاستفسارات المتعلقة بالمواعيد
+              </span>
+</div>
+<!-- Ingested Data Stream Preview -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">
+                Ingested Entity Record
+              </span>
+<div class="font-clinical-data text-clinical-data text-on-surface font-mono bg-surface-container-lowest p-space-sm rounded">
+                [Appointment ID] • [Doctor Name] • [Appointment Information] • [Encounter ID]
+              </div>
+</div>
+<!-- Boundary & Operational Guardrails -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">rule</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Data Boundary:</span>
+<span class="font-body-sm text-body-sm">Scheduling and preparation guides only.</span>
+</div>
+<span class="font-micro-copy text-micro-copy bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">
+                Sync Frequency: Real-Time Webhook
+              </span>
+</div>
+</article>
+<!-- Card 2: Active Digital Prescriptions Context -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">prescriptions</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Active Digital Prescriptions Context</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">[Medication Information]</span>
+</div>
+</div>
+<span class="self-start sm:self-auto inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Active Ingestion / مفعّل للاستفسارات الدوائية الإرشادية
+              </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">
+                Ingested Entity Record
+              </span>
+<div class="font-clinical-data text-clinical-data text-on-surface font-mono bg-surface-container-lowest p-space-sm rounded">
+                [Medication Information] • [Prescription Information] • [Care Instruction]
+              </div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm pt-space-xs text-on-surface-variant">
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium text-tertiary">Clinical Guardrail &amp; Disclaimer:</span>
+<span class="font-body-sm text-body-sm">Strictly informational guidance; no dose alterations or autonomous medical advice permitted.</span>
+</div>
+</div>
+<span class="font-micro-copy text-micro-copy bg-surface-container px-2 py-0.5 rounded text-on-surface-variant shrink-0">
+                Schema: FHIR MedicationRequest
+              </span>
+</div>
+</article>
+<!-- Card 3: Authorized Diagnostic Results Context -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">chips</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-4 text-headline-4 text-on-surface">Authorized Diagnostic Results Context</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">[Lab Result]</span>
+</div>
+</div>
+<span class="self-start sm:self-auto inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">health_and_safety</span>
+                Patient-Authorized Results Only / النتائج المعتمدة من الطبيب فقط
+              </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">
+                Ingested Entity Record
+              </span>
+<div class="font-clinical-data text-clinical-data text-on-surface font-mono bg-surface-container-lowest p-space-sm rounded">
+                [Lab Result] • [Imaging Report Information] • [Care Instruction]
+              </div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">clinical_notes</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Data Boundary:</span>
+<span class="font-body-sm text-body-sm">Physician-verified reports only; non-final drafts strictly excluded.</span>
+</div>
+<span class="font-micro-copy text-micro-copy bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">
+                Human Attestation Required
+              </span>
+</div>
+</article>
+<!-- Card 4: General Care Instructions -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-4 text-headline-4 text-on-surface">General Care Instructions</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">[Care Instruction]</span>
+</div>
+</div>
+<span class="self-start sm:self-auto inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Active Ingestion / إرشادات المتابعة المعتمدة
+              </span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col gap-space-xs">
+<span class="font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">
+                Ingested Entity Record
+              </span>
+<div class="font-clinical-data text-clinical-data text-on-surface font-mono bg-surface-container-lowest p-space-sm rounded">
+                [Care Instruction] • [Clinic Preparation Guidelines]
+              </div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">fact_check</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Scope:</span>
+<span class="font-body-sm text-body-sm">Post-visit protocols, dietary pre-conditions &amp; home vital schedules.</span>
+</div>
+<span class="font-micro-copy text-micro-copy bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">
+                Context Weight: High
+              </span>
+</div>
+</article>
+</div>
+<!-- Privacy, Scope Controls & Contextual Telemetry (Occupies 4 Cols on Desktop) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Privacy & Granular Toggle Console -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</div>
+<h3 class="font-headline-4 text-headline-4 text-on-surface">Scope Controls</h3>
+</div>
+<span class="font-micro-copy text-micro-copy text-primary font-semibold">User Governed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Modify the granular boundaries permitted for real-time prompt generation. Disabling an item instantly revokes assistant recall for that category.
+            </p>
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<!-- Toggle 1: Appointments Context -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex flex-col pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Appointments Context</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Scheduling &amp; Clinic Arrival Guidance</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggle-appt" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle 2: Lab Explanations -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex flex-col pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Lab Explanations</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Diagnostic Metric Plain-Language Overviews</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggle-labs" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle 3: Medication Reminders -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex flex-col pr-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Medication Reminders</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Dosage Schedules &amp; Administration Tips</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="toggle-meds" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+<!-- Action Dispatch Buttons -->
+<div class="flex flex-col gap-space-xs pt-space-sm">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-label-md text-label-md font-semibold transition-all shadow-sm flex items-center justify-center gap-2" id="save-context-btn">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                Save Context Preferences / حفظ تفضيلات السياق
+              </button>
+<a class="w-full py-2.5 px-space-md rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md font-medium transition-all text-center flex items-center justify-center gap-2" data-path="patient-ai" href="#">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+                Return to AI Assistant (/patient/ai)
+              </a>
+</div>
+<div class="hidden p-space-xs text-center rounded bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data animate-pulse" id="save-feedback">
+              ✓ Context access policies successfully updated.
+            </div>
+</div>
+<!-- Context Token Density & Scope Chart Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-5 text-headline-5 text-on-surface">Active Context Allocation</span>
+<span class="font-clinical-data text-clinical-data text-primary font-semibold">Context Bound Active</span>
+</div>
+<!-- Visual Vector Gauge (Inline SVG Chart) -->
+<div class="flex items-center gap-space-md py-space-xs">
+<div class="relative w-24 h-24 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+<!-- Background circle -->
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<!-- Ingested Appointment Stroke -->
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="25, 100" stroke-width="3.5"></path>
+<!-- Ingested Rx Stroke -->
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="35, 100" stroke-dashoffset="-25" stroke-width="3.5"></path>
+<!-- Ingested Lab Stroke -->
+<path class="text-tertiary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="20, 100" stroke-dashoffset="-60" stroke-width="3.5"></path>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">34%</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase">Allocated</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 w-full text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span> Appointments</span>
+<span class="font-mono text-on-surface">355 tok</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Prescriptions</span>
+<span class="font-mono text-on-surface">497 tok</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span> Diagnostic Labs</span>
+<span class="font-mono text-on-surface">284 tok</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span> General Guidelines</span>
+<span class="font-mono text-on-surface">284 tok</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">memory</span>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">
+                Context cache updates synchronously upon every clinical note sign-off by [Doctor Name].
+              </p>
+</div>
+</div>
+<!-- Clinical Safety Enclave Verification (Photo & Telemetry) -->
+<div class="w-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<div class="relative h-32 w-full">
+<img class="w-full h-full object-cover" data-alt="A serene modern hospital laboratory clean room with state of the art server racks and clinical data encryption terminals bathed in gentle mint green and navy blue lighting representing high security medical health informatics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP61s5tjynP_ka27h9ox19GTkyODjUWFCGchTMhd4bt8mCdYCLgOr2wTmwSTM_QLbOnKLt322Wk0TRJgEE8q8doxzYqeNO98tpjdB82hEpMWQMBNjnFS5ieuJ5fPdoitlZ0MilmLXlkSF6b09fxXTkdzik0L01GG7dM7JT_EvvY9tgdx7OEg9whEE2zE7bkUhzfawCIipz5cTrRWSvlbqArooUya0P4XqalB-aLniKBTEXo70xKcNE">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-3 font-micro-copy text-micro-copy bg-primary-container text-on-primary-container px-2 py-0.5 rounded font-medium">
+                Clinic Data Vault Verified
+              </span>
+</div>
+<div class="p-space-md flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Tenant Isolation Boundary</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Data pipelines for [Clinic Name] strictly isolate all patient memory vectors to dedicated tenant silos. No prompt or query ever participates in third-party model retraining.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Historical Context Audit Log (Bento Table Section) -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-4 text-headline-4 text-on-surface">Recent Authorized Context Events</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time log of data injection requests by the conversational engine.</p>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm flex items-center gap-1.5 self-start sm:self-auto">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+            Refresh Log
+          </button>
+</div>
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-clinical-data text-clinical-data uppercase tracking-wider">
+<th class="py-space-sm px-space-md rounded-l-lg">Timestamp</th>
+<th class="py-space-sm px-space-md">Category Vector</th>
+<th class="py-space-sm px-space-md">Entity Payload Reference</th>
+<th class="py-space-sm px-space-md">Attestation</th>
+<th class="py-space-sm px-space-md rounded-r-lg">Disposition</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-md font-mono text-on-surface-variant">2025-05-14 09:42</td>
+<td class="py-space-sm px-space-md font-medium">Digital Prescriptions</td>
+<td class="py-space-sm px-space-md font-mono text-primary">[Medication Information]</td>
+<td class="py-space-sm px-space-md">[Doctor Name]</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 text-primary font-semibold font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Injected (Permitted)
+                  </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-md font-mono text-on-surface-variant">2025-05-12 14:18</td>
+<td class="py-space-sm px-space-md font-medium">Diagnostic Results</td>
+<td class="py-space-sm px-space-md font-mono text-primary">[Lab Result]</td>
+<td class="py-space-sm px-space-md">[Doctor Name]</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 text-primary font-semibold font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Injected (Permitted)
+                  </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-space-sm px-space-md font-mono text-on-surface-variant">2025-05-10 11:05</td>
+<td class="py-space-sm px-space-md font-medium">Draft Encounter Note</td>
+<td class="py-space-sm px-space-md font-mono text-on-surface-variant">[Encounter ID] (Unverified)</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">Pending Signature</td>
+<td class="py-space-sm px-space-md">
+<span class="inline-flex items-center gap-1 text-tertiary font-semibold font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[14px]">block</span> Filtered (Draft Guardrail)
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const saveBtn = document.getElementById('save-context-btn');
+      const feedback = document.getElementById('save-feedback');
+
+      if (saveBtn && feedback) {
+        saveBtn.addEventListener('click', () => {
+          saveBtn.classList.add('opacity-75');
+          saveBtn.textContent = 'Updating Context Permissions...';
+
+          setTimeout(() => {
+            saveBtn.classList.remove('opacity-75');
+            saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">done_all</span> Preferences Saved / تم الحفظ';
+            feedback.classList.remove('hidden');
+
+            setTimeout(() => {
+              saveBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">save</span> Save Context Preferences / حفظ تفضيلات السياق';
+              feedback.classList.add('hidden');
+            }, 4000);
+          }, 600);
+        });
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-auto py-space-lg"><div class="w-full px-gutter flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm"><div><span class="">© AegisHealth Clinical Operations. Protected Health Information System.</span></div><div class="flex items-center gap-space-lg"><span class="font-micro-copy text-micro-copy bg-surface-container-highest px-space-xs py-0.5 rounded-lg text-on-surface-variant">Privacy-Aware Health Platform</span><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Patient Terms of Service</a></div></div></footer>
+
+</body></html>

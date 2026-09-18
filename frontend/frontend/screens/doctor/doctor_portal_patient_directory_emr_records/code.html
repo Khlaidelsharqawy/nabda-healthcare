@@ -1,0 +1,565 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AegisHealth Clinical AI Ecosystem - Doctor Workspace</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#dee2ee", "primary": "#005932", "inverse-primary": "#7ed99e", "tertiary-container": "#ae4202", "error": "#ba1a1a", "surface": "#f9f9ff", "surface-tint": "#006d3e", "primary-container": "#087443", "surface-bright": "#f9f9ff", "secondary-fixed-dim": "#c0c1ff", "secondary-container": "#5d62f3", "on-primary-container": "#9af7b9", "tertiary-fixed-dim": "#ffb597", "background": "#f9f9ff", "on-primary-fixed-variant": "#00522d", "on-tertiary-fixed-variant": "#7d2d00", "inverse-on-surface": "#ecf1fd", "inverse-surface": "#2c313a", "on-error": "#ffffff", "tertiary": "#873100", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdbcd", "outline": "#6f7a70", "on-primary": "#ffffff", "secondary": "#4347d9", "outline-variant": "#becabe", "surface-variant": "#dee2ee", "primary-fixed-dim": "#7ed99e", "surface-container-low": "#f0f3ff", "surface-dim": "#d6dae6", "on-secondary-fixed": "#04006d", "on-error-container": "#93000a", "on-surface": "#171c24", "primary-fixed": "#99f6b9", "on-secondary-fixed-variant": "#2a2bc4", "secondary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#360f00", "on-tertiary": "#ffffff", "on-surface-variant": "#3f4941", "surface-container-high": "#e4e8f4", "surface-container": "#eaeefa", "on-primary-fixed": "#00210f", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-sm": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-lg": "2rem", "margin": "2rem", "space-md": "1rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "margin-lg": "3rem" }, "fontFamily": { "headline-5": ["Plus Jakarta Sans"], "headline-1-mobile": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "headline-4": ["Plus Jakarta Sans"], "clinical-data": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "micro-copy": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-1": ["Plus Jakarta Sans"] }, "fontSize": { "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Clinical AI Platform</span></div><div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">domain</span><span class="font-label-sm text-label-sm font-semibold truncate max-w-[200px]">Al-Nour Medical Center</span><span class="text-on-surface-variant font-micro-copy text-micro-copy font-normal">/ عيادة النور</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span class="">EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><div class="flex items-center gap-space-xs pl-space-xs rtl:pr-space-xs"><div class="hidden sm:flex flex-col items-end rtl:items-start text-right rtl:text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Tamer Mansour</span><span class="font-micro-copy text-micro-copy text-primary-container font-medium">Attending Physician</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 rtl:left-auto rtl:right-0 top-16 bottom-0 w-64 bg-surface-container-low/80 backdrop-blur-md z-40 flex flex-col justify-between py-space-md shadow-[1px_0_8px_rgba(0,0,0,0.02)] rtl:shadow-[-1px_0_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">health_metrics</span><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">Doctor Workspace</span></div><span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">ACTIVE</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="doctor-clinical-dashboard" href="#">Clinical Dashboard</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="appointments-and-schedule-management" href="#">Appointments &amp; Schedule</a><a aria-current="page" class="px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="patient-directory" href="#">Patient Directory / دليل المرضى</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="clinical-workspace-and-ai-scribe" href="#">Clinical Workspace &amp; AI Scribe</a></nav></div><div class="flex flex-col gap-space-xs px-space-md"><div class="p-space-sm rounded-xl bg-surface-container border-l-2 border-primary rtl:border-l-0 rtl:border-r-2 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Doctor AI Status</span><span class="h-2 w-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><p class="font-micro-copy text-micro-copy text-on-surface-variant">Aegis Scribe Copilot Ready &amp; Verified</p></div></div></aside><div class="pl-64 rtl:pl-0 rtl:pr-64"><main class="w-full pt-16 bg-background min-h-screen px-margin-sm lg:px-margin pb-margin-lg"><div class="flex flex-col w-full gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-clinical-data text-clinical-data tracking-wider uppercase flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span> Archived Prototype — Legacy Reference / مرجع غير معتمد</span>
+<span class="text-outline font-micro-copy text-micro-copy">•</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant font-medium">Department of Cardiology &amp; Internal Medicine / قسم أمراض القلب والباطنة العامة</span>
+<span class="text-outline font-micro-copy text-micro-copy">•</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Dr. Tarek El-Kabbani (License #EG-MD-44821)</span>
+</div>
+<div class="flex items-baseline gap-space-sm flex-wrap"><h1 class="font-headline-2 text-headline-2 text-on-surface tracking-tight">Archived Prototype — Patient Directory (Legacy Reference)</h1><span class="font-headline-3 text-headline-3 text-on-surface-variant font-normal">/ نموذج هيكلي سابق • مرجع غير معتمد</span></div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+        Unified longitudinal records, continuous cardiometabolic vitals, algorithmic drug interaction safeguards, and physician-attested encounter documentation for Al-Nour Medical Center.
+      </p>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap self-start lg:self-center">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-all flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">download</span>
+<span class="">Export Clinical Cohort (HL7 / FHIR)</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md transition-all flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span class="">+ Register New Clinical Patient / إضافة مريض جديد</span>
+</button>
+</div>
+</div>
+<section class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter-sm">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-primary/5 transition-transform group-hover:scale-125"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-clinical-data text-clinical-data text-on-surface-variant uppercase tracking-wider">Total Active Cohort</span>
+<span class="font-headline-1 text-headline-1 text-on-surface mt-1">412</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="font-label-sm text-label-sm">Registered Under Care</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-semibold">٤١٢ ملف مفعل</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-error/5 transition-transform group-hover:scale-125"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-clinical-data text-clinical-data text-tertiary uppercase tracking-wider">High-Risk / Chronic Monitoring</span>
+<span class="font-headline-1 text-headline-1 text-tertiary-container mt-1">38</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">vital_signs</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">HTN, T2DM, Post-PCI, CAD</span>
+<span class="px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-clinical-data text-clinical-data font-semibold">٩.٢% من الحالات</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-secondary/5 transition-transform group-hover:scale-125"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-clinical-data text-clinical-data text-secondary uppercase tracking-wider">Pending Lab Attestations</span>
+<span class="font-headline-1 text-headline-1 text-secondary mt-1">7</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">biotech</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Unreviewed Diagnostics</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-secondary font-semibold">٧ نتائج بانتظار الاعتماد</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-primary/5 transition-transform group-hover:scale-125"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-clinical-data text-clinical-data text-on-surface-variant uppercase tracking-wider">Scheduled Follow-ups</span>
+<span class="font-headline-1 text-headline-1 text-on-surface mt-1">24</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Scheduled for Current Week</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-clinical-data text-clinical-data font-semibold">٢٤ موعداً هذا الأسبوع</span>
+</div>
+</div>
+</section>
+<section class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-sm items-center">
+<div class="xl:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 rtl:left-auto rtl:right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-10 rtl:pl-4 rtl:pr-10 pr-4 bg-surface-container-low text-on-surface rounded-lg font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none transition-all placeholder:text-on-surface-variant/70" placeholder="Search patient by name, National ID, MRN, or phone number / ابحث باسم المريض، الرقم القومي، رقم الملف..." type="text">
+</div>
+<div class="xl:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-space-xs">
+<div class="relative">
+<select class="w-full h-11 px-3 appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg focus:outline-none cursor-pointer">
+<option>All Cohorts / جميع المجموعات</option>
+<option>Hypertension (HTN)</option>
+<option>Type 2 Diabetes (T2DM)</option>
+<option>Post-Stent Follow-up (PCI)</option>
+<option>Heart Failure (HFrEF / HFpEF)</option>
+<option>Dyslipidemia Management</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 rtl:right-auto rtl:left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">keyboard_arrow_down</span>
+</div>
+<div class="relative">
+<select class="w-full h-11 px-3 appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg focus:outline-none cursor-pointer">
+<option>Risk Level: All / كل المستويات</option>
+<option>High Risk / حرج (38)</option>
+<option>Moderate / متوسط (142)</option>
+<option>Stable / مستقر (232)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 rtl:right-auto rtl:left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">tune</span>
+</div>
+<div class="relative">
+<select class="w-full h-11 px-3 appearance-none bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg focus:outline-none cursor-pointer">
+<option>Sort: Last Encounter Date</option>
+<option>Next Appointment Date</option>
+<option>Patient Name (A-Z)</option>
+<option>Highest Risk Score First</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 rtl:right-auto rtl:left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">sort</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between flex-wrap gap-space-xs pt-space-xs text-on-surface-variant">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-clinical-data text-clinical-data uppercase text-outline">Active Filters:</span>
+<span class="px-2 py-1 rounded-md bg-surface-container-high text-on-surface font-micro-copy text-micro-copy flex items-center gap-1">
+          Internal Medicine &amp; Cardiology
+          <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-error">close</span>
+</span>
+<span class="px-2 py-1 rounded-md bg-surface-container-high text-on-surface font-micro-copy text-micro-copy flex items-center gap-1">
+          Assigned to Dr. Tarek El-Kabbani
+          <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-error">close</span>
+</span>
+<button class="font-micro-copy text-micro-copy text-primary underline ml-2">Clear all filters</button>
+</div>
+<div class="font-clinical-data text-clinical-data text-on-surface-variant">
+        Showing <span class="text-on-surface font-bold">1–5</span> of <span class="text-on-surface font-bold">412</span> patients (٢٥ مريض بالصفحة)
+      </div>
+</div>
+</section>
+<div class="grid grid-cols-1 2xl:grid-cols-12 gap-gutter-sm items-start">
+<div class="2xl:col-span-9 flex flex-col gap-space-md">
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left rtl:text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-clinical-data text-clinical-data uppercase tracking-wider">
+<th class="py-3.5 px-space-md">Patient &amp; Demographics</th>
+<th class="py-3.5 px-space-md">Active Problem List</th>
+<th class="py-3.5 px-space-md">Vitals &amp; Last Lab</th>
+<th class="py-3.5 px-space-md">Current Medications</th>
+<th class="py-3.5 px-space-md">Visit &amp; Attestation</th>
+<th class="py-3.5 px-space-md">Next Encounter</th>
+<th class="py-3.5 px-space-md text-right rtl:text-left">Workspace</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface">
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md align-top">
+<div class="flex items-start gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-variant flex-shrink-0" data-alt="Close up professional documentary style medical portrait of an elderly Egyptian male patient with kind expression and gentle eyes under clean clinic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrU8Iy0SsEBJrDDcxrO597Vu1arwDztRJC34tUwJTuwhFr9fXo-2VqJjtyPym7iFCde7AVVHDZKZpPheTjIk4vK4-kqQBpBp0fs6McN9FqVNhE0G-AzqUuwRl_qHUGAi4EcqZ3x7Wby2qHlKjglwjZN5YsC-N8jaghNDwvup5KJCn182QN32krvtMJfV-G01jXmpm5dhjopyeZD1qkmbGw_LZ3sP-2Ltl47VoIYgSPHWoiTKaCUF-t">
+<div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-5 text-headline-5 text-on-surface font-bold truncate">[Patient A]</span><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-clinical-data text-[10px] font-semibold">[COHORT A]</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">[مريض أ] • [Patient Record]</span><div class="flex items-center gap-2 mt-0.5 font-clinical-data text-[11px] text-outline"><span class="">MRN: <strong class="text-on-surface">[Patient ID]</strong></span><span class="">•</span><span class="">NID: [Protected / محجوب]</span></div></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-1"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">Clinical Record / سجل سريري</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-micro-copy text-micro-copy">Archived Diagnosis Entry</span></div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 font-clinical-data text-clinical-data">
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant">BP:</span>
+<span class="font-bold text-error">148/92 mmHg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="">HbA1c:</span>
+<span class="font-semibold text-tertiary">7.8% (12 Jan)</span>
+</div>
+<div class="text-outline font-micro-copy text-micro-copy">eGFR: 68 mL/min/1.73m²</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 max-w-[190px]">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Rosuvastatin 20mg</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Metformin 1000mg BID</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Bisoprolol 5mg, Ticagrelor</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Today 10:00 AM</span>
+<div class="inline-flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span class="font-clinical-data text-clinical-data font-semibold">Signed by Dr. Tarek</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<span class="px-2 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed font-clinical-data text-clinical-data font-bold inline-flex items-center gap-1 animate-pulse">
+<span class="material-symbols-outlined text-[14px]">door_open</span>
+                    In Consultation Now
+                  </span>
+</td>
+<td class="py-3.5 px-space-md align-top text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold transition-all shadow-sm flex items-center gap-1">
+<span class="">Workspace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors" title="Patient WhatsApp Alert Log">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/20">
+<td class="py-3.5 px-space-md align-top">
+<div class="flex items-start gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-variant flex-shrink-0" data-alt="Natural clinical headshot of a middle aged Egyptian female with modest hijab looking attentively at the physician in an illuminated hospital office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmCUXY3ZyK7nm63IU9w8WMjLoBjWZ1cRDN91xvnZIsQiDRWGQd5QeoOWg99bFOvwp6FvKBiSt6ruU3_12Curjka8gCAGymxRTKzsLGAoBgqmjq5AjRcOE1dm2TXO5kneBuSuewc4mMbmJntzOzf_ue6w4ngma8QBM-27It3a0qwXVFlJw1W14I0M0uQHKCgwqiiASvMkVipoj1GPXSP5qvORLTJL5rctsYTjdmblE6Om3nEchVSzIC">
+<div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-5 text-headline-5 text-on-surface font-bold truncate">[Patient B]</span><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-clinical-data text-[10px] font-semibold">[COHORT B]</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">[مريض ب] • [Patient Record]</span><div class="flex items-center gap-2 mt-0.5 font-clinical-data text-[11px] text-outline"><span class="">MRN: <strong class="text-on-surface">[Patient ID]</strong></span><span class="">•</span><span class="">NID: [Protected / محجوب]</span></div></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-1"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">Clinical Record / سجل سريري</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-micro-copy text-micro-copy">Archived Diagnosis Entry</span></div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 font-clinical-data text-clinical-data">
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant">BP:</span>
+<span class="font-bold text-on-surface">124/82 mmHg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="">HR:</span>
+<span class="font-semibold text-secondary">88 bpm (Sinus)</span>
+</div>
+<div class="text-outline font-micro-copy text-micro-copy">TSH: 2.1 mIU/L (Euthyroid)</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 max-w-[190px]">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Levothyroxine 75mcg</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Ivabradine 5mg (PRN)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">14 Feb 2025</span>
+<div class="inline-flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span class="font-clinical-data text-clinical-data font-semibold">Signed Note</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-primary">Today 10:45 AM</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Checked in waiting room</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1">
+<span class="">Workspace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors" title="Patient WhatsApp Alert Log">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md align-top">
+<div class="flex items-start gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-variant flex-shrink-0" data-alt="Portrait of an older Egyptian gentleman with silver hair and warm professional attire inside modern healthcare clinic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjBxyDcoy07gMyaCSVmhnCoOn1-w0bSf3MkeKlwBTbIY4Ny6wC-7lGvPac7s6mm0hx2Z5GvFs1HNW3hR2ZXxrMon3ySnGhJr4OcOExbaGso1USIbUSG0n7MvUEzUSlA0kOFHLNmXDLVvyQi25SLAsoP6irtBsyvH3bIFl7hsK7XE2pSmUtEhZVLWgs27dgVjS2oU8qf0rAkP_NOJ8GD94_mXKioXJTPNNlUQh3XsxyCvTT_MYje9Mj">
+<div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-5 text-headline-5 text-on-surface font-bold truncate">[Patient C]</span><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-clinical-data text-[10px] font-semibold">[COHORT C]</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">[مريض ج] • [Patient Record]</span><div class="flex items-center gap-2 mt-0.5 font-clinical-data text-[11px] text-outline"><span class="">MRN: <strong class="text-on-surface">[Patient ID]</strong></span><span class="">•</span><span class="">NID: [Protected / محجوب]</span></div></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-1"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">Clinical Record / سجل سريري</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-micro-copy text-micro-copy">Archived Diagnosis Entry</span></div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 font-clinical-data text-clinical-data">
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant">BP:</span>
+<span class="font-bold text-on-surface">118/74 mmHg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="">NT-proBNP:</span>
+<span class="font-bold text-error">1,420 pg/mL</span>
+</div>
+<div class="text-outline font-micro-copy text-micro-copy">Potassium: 4.6 mEq/L</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 max-w-[190px]">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Sacubitril/Valsartan 49/51</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Empagliflozin 10mg QD</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Spironolactone 25mg</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Yesterday 18:20</span>
+<div class="inline-flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+<span class="font-clinical-data text-clinical-data font-semibold">Pending Attestation</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">27 Feb 2025</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Echocardiogram Review</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1">
+<span class="">Workspace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors" title="Patient WhatsApp Alert Log">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/20">
+<td class="py-3.5 px-space-md align-top">
+<div class="flex items-start gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-variant flex-shrink-0" data-alt="Portrait of a young adult Egyptian woman with light head covering and smiling expression seated in a clean bright modern outpatient room." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3FyhbPKc5xs6S1DPuz62EUDwdqEiaYVQpf9vHSYwaFoDglHhEPrHQ5mLxHT2dThvtmjJydVg3BMM3skbBmkilYEkq3dzHcVmgYorlIdw_nI3N-LaYNdEWeowZ56WShjNOMmSEp8jG6H9BTeo8Xis_4jc3ls_fmFACMfIeDag6O255T3VRbgy7cAW9DqtwqyNg4T_IB44fVblbP4e2ErvAXDQiI9DaeyoduWPNCF0RiMlNAlu4kObQ">
+<div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-5 text-headline-5 text-on-surface font-bold truncate">[Patient D]</span><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-clinical-data text-[10px] font-semibold">[COHORT D]</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">[مريض د] • [Patient Record]</span><div class="flex items-center gap-2 mt-0.5 font-clinical-data text-[11px] text-outline"><span class="">MRN: <strong class="text-on-surface">[Patient ID]</strong></span><span class="">•</span><span class="">NID: [Protected / محجوب]</span></div></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-1"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">Clinical Record / سجل سريري</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-micro-copy text-micro-copy">Archived Diagnosis Entry</span></div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 font-clinical-data text-clinical-data">
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant">BP:</span>
+<span class="font-bold text-on-surface">112/70 mmHg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="">Hb:</span>
+<span class="font-semibold text-on-surface">12.8 g/dL</span>
+</div>
+<div class="text-outline font-micro-copy text-micro-copy">Ferritin: 48 ng/mL</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 max-w-[190px]">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Electrolyte Hydration</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Compression Socks 20-30</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">08 Feb 2025</span>
+<div class="inline-flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span class="font-clinical-data text-clinical-data font-semibold">Signed Note</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">12 Mar 2025</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">6-Month Tilt Assessment</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1">
+<span class="">Workspace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors" title="Patient WhatsApp Alert Log">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-md align-top">
+<div class="flex items-start gap-space-sm">
+<img class="w-10 h-10 rounded-full object-cover bg-surface-variant flex-shrink-0" data-alt="Close up realistic portrait of a mature Egyptian male patient in his late forties with glasses and focused composed facial features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPw8ezjzg8G6bgn7DhCwBqevIIGOYEuDzfR12YyasF3g3oeebBL23kczFELxqlcGGIWR6gIMQGGDM3SN6M_sUYJ96S4cwB3GvGpTyTn969nW9vj3PgU3UwMJ5HxKgWa8VbSJwfuk__wX0DfPp72aIXxuSHcuYHgQW32kxv1s4DowdpXcTRM57iwh3Dxf2rEfhr7Zf1RMF1dCjXlf3oMnWHjmxXIkrdHzPsMQEOVpyJRR7uPfz9AIg6">
+<div class="flex flex-col min-w-0"><div class="flex items-center gap-1.5"><span class="font-headline-5 text-headline-5 text-on-surface font-bold truncate">[Patient E]</span><span class="px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-clinical-data text-[10px] font-semibold">[COHORT E]</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">[مريض هـ] • [Patient Record]</span><div class="flex items-center gap-2 mt-0.5 font-clinical-data text-[11px] text-outline"><span class="">MRN: <strong class="text-on-surface">[Patient ID]</strong></span><span class="">•</span><span class="">NID: [Protected / محجوب]</span></div></div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-1"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold inline-flex items-center gap-1">Clinical Record / سجل سريري</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-micro-copy text-micro-copy">Archived Diagnosis Entry</span></div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 font-clinical-data text-clinical-data">
+<div class="flex items-center gap-1">
+<span class="text-on-surface-variant">BP:</span>
+<span class="font-bold text-error">154/96 mmHg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="">Creatinine:</span>
+<span class="font-semibold text-on-surface">1.1 mg/dL</span>
+</div>
+<div class="text-outline font-micro-copy text-micro-copy">BMI: 31.4 kg/m²</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5 max-w-[190px]">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Amlodipine 10mg QD</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Telmisartan 80mg / HCTZ 12.5</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant truncate">Spironolactone 12.5mg</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">01 Feb 2025</span>
+<div class="inline-flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span class="font-clinical-data text-clinical-data font-semibold">Signed Note</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">03 Mar 2025</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">24hr Holter BP Check</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md align-top text-right rtl:text-left">
+<div class="flex items-center justify-end rtl:justify-start gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm font-semibold transition-all flex items-center gap-1">
+<span class="">Workspace</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface-variant transition-colors" title="Patient WhatsApp Alert Log">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-clinical-data text-clinical-data">
+<span class="">عرض ٢٥ مريض لكل صفحة</span>
+<span class="">•</span>
+<span class="">الصفحة ١ من ١٧</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-sm text-label-sm flex items-center gap-1 disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span class="">Previous</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-clinical-data text-clinical-data font-bold">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-clinical-data text-clinical-data font-medium">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-clinical-data text-clinical-data font-medium">3</button>
+<span class="px-1 text-on-surface-variant font-clinical-data">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-clinical-data text-clinical-data font-medium">17</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-label-sm flex items-center gap-1">
+<span class="">Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<aside class="2xl:col-span-3 flex flex-col gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">monitor_heart</span>
+<span class="font-headline-5 text-headline-5 text-on-surface">Remote Telemetry &amp; Adherence</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-bold">LIVE</span>
+</div>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">
+          Continuous cellular blood pressure &amp; glucometer feeds across active cardiology cohorts.
+        </p>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Cohort BP Control (&lt;130/80)</span>
+<span class="text-primary font-bold">78.4%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 78.4%"></div>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Target met by 323 / 412 active patients</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Medication Refill Adherence</span>
+<span class="text-secondary font-bold">91.2%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 91.2%"></div>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Validated via Egyptian E-Prescription Portal</span>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-xs"><span class="font-clinical-data text-clinical-data text-on-surface-variant uppercase">Recent Automated Telemetry Alerts</span><div class="p-space-xs rounded-lg bg-surface-container text-on-surface flex items-start gap-2"><span class="material-symbols-outlined text-[18px] text-outline mt-0.5">info</span><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm font-bold truncate">[Patient A] ([Patient ID])</span><span class="font-micro-copy text-micro-copy">Clinical Record / سجل سريري: Telemetry alert archived for reference.</span></div></div><div class="p-space-xs rounded-lg bg-surface-container text-on-surface flex items-start gap-2"><span class="material-symbols-outlined text-[18px] text-outline mt-0.5">fact_check</span><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm font-bold truncate">[Patient B] ([Patient ID])</span><span class="font-micro-copy text-micro-copy">Clinical Record / سجل سريري: Telemetry sync completed.</span></div></div></div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">clinical_notes</span>
+<span class="font-headline-5 text-headline-5 text-on-surface">Quick Clinical Actions</span>
+</div>
+<div class="flex flex-col gap-2">
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md text-left rtl:text-right flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">rule</span>
+<span class="">Batch Attest 7 Pending Diagnostics</span>
+</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-clinical-data text-[11px] font-bold">7</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md text-left rtl:text-right flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">send_time_extension</span>
+<span class="">Send Refill Broadcast (SMS/WhatsApp)</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_forward</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md text-left rtl:text-right flex items-center justify-between transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">summarize</span>
+<span class="">Generate Weekly Morbidity Summary</span>
+</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">arrow_forward</span>
+</button>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low mt-space-xs flex items-center gap-2 text-on-surface-variant"><span class="font-clinical-data text-clinical-data text-on-surface-variant uppercase">Recent Automated Telemetry Alerts</span><div class="p-space-xs rounded-lg bg-surface-container text-on-surface flex items-start gap-2"><span class="material-symbols-outlined text-[18px] text-outline mt-0.5">info</span><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm font-bold truncate">[Patient A] ([Patient ID])</span><span class="font-micro-copy text-micro-copy">Clinical Record / سجل سريري: Telemetry alert archived for reference.</span></div></div><div class="p-space-xs rounded-lg bg-surface-container text-on-surface flex items-start gap-2"><span class="material-symbols-outlined text-[18px] text-outline mt-0.5">fact_check</span><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm font-bold truncate">[Patient B] ([Patient ID])</span><span class="font-micro-copy text-micro-copy">Clinical Record / سجل سريري: Telemetry sync completed.</span></div></div></div>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  // Filter and command bar micro-interactions
+  const searchInput = document.querySelector('input[type="text"]');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value.toLowerCase().trim();
+      const rows = document.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(val) ? '' : 'none';
+      });
+    });
+  }
+</script></main></div>
+
+</body></html>

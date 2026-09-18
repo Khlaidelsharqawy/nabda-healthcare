@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>AegisHealth Clinical AI Ecosystem - Assistant Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#dee2ee", "primary": "#005932", "inverse-primary": "#7ed99e", "tertiary-container": "#ae4202", "error": "#ba1a1a", "surface": "#f9f9ff", "surface-tint": "#006d3e", "primary-container": "#087443", "surface-bright": "#f9f9ff", "secondary-fixed-dim": "#c0c1ff", "secondary-container": "#5d62f3", "on-primary-container": "#9af7b9", "tertiary-fixed-dim": "#ffb597", "background": "#f9f9ff", "on-primary-fixed-variant": "#00522d", "on-tertiary-fixed-variant": "#7d2d00", "inverse-on-surface": "#ecf1fd", "inverse-surface": "#2c313a", "on-error": "#ffffff", "tertiary": "#873100", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdbcd", "outline": "#6f7a70", "on-primary": "#ffffff", "secondary": "#4347d9", "outline-variant": "#becabe", "surface-variant": "#dee2ee", "primary-fixed-dim": "#7ed99e", "surface-container-low": "#f0f3ff", "surface-dim": "#d6dae6", "on-secondary-fixed": "#04006d", "on-error-container": "#93000a", "on-surface": "#171c24", "primary-fixed": "#99f6b9", "on-secondary-fixed-variant": "#2a2bc4", "secondary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#360f00", "on-tertiary": "#ffffff", "on-surface-variant": "#3f4941", "surface-container-high": "#e4e8f4", "surface-container": "#eaeefa", "on-primary-fixed": "#00210f", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-sm": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-lg": "2rem", "margin": "2rem", "space-md": "1rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "margin-lg": "3rem" }, "fontFamily": { "headline-5": ["Plus Jakarta Sans"], "headline-1-mobile": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "headline-4": ["Plus Jakarta Sans"], "clinical-data": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "micro-copy": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-1": ["Plus Jakarta Sans"] }, "fontSize": { "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"/><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Front Desk &amp; Triage</span></div><div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">domain</span><span class="font-label-sm text-label-sm font-semibold truncate max-w-[200px]">Al-Nour Medical Center</span><span class="text-on-surface-variant font-micro-copy text-micro-copy font-normal">/ عيادة النور</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span>EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><div class="flex items-center gap-space-xs pl-space-xs rtl:pr-space-xs"><div class="hidden sm:flex flex-col items-end rtl:items-start text-right rtl:text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">Nurse Mariam Adel</span><span class="font-micro-copy text-micro-copy text-primary-container font-medium">Clinical Assistant</span></div><div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-semibold text-label-sm">MA</div></div></div></div></header><aside class="fixed left-0 rtl:left-auto rtl:right-0 top-16 bottom-0 w-64 bg-surface-container-low/80 backdrop-blur-md z-40 flex flex-col justify-between py-space-md shadow-[1px_0_8px_rgba(0,0,0,0.02)] rtl:shadow-[-1px_0_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">how_to_reg</span><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">Reception Desk</span></div><span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">TRIAGE</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><a aria-current="page" class="px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="patient-registration-and-check-in" href="#">Patient Registration / تسجيل مريض</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="operational-waiting-queue" href="#">Operational Waiting Queue</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="assistant-triage-intake" href="#">Vitals &amp; Rapid Intake</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="appointment-desk" href="#">Daily Schedule</a></nav></div><div class="flex flex-col gap-space-xs px-space-md"><div class="p-space-sm rounded-xl bg-surface-container border-l-2 border-primary rtl:border-l-0 rtl:border-r-2 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Clinic Flow Status</span><span class="h-2 w-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><p class="font-micro-copy text-micro-copy text-on-surface-variant">Reception Triage Active • Syncing Live</p></div></div></aside><div class="pl-64 rtl:pl-0 rtl:pr-64"><main class="w-full pt-16 bg-background min-h-screen px-margin-sm lg:px-margin pb-margin-lg"><div class="flex flex-col w-full gap-space-lg pb-margin-lg">
+<!-- Operational Scope Boundary Banner -->
+<section class="w-full bg-secondary-fixed/40 rounded-xl p-space-md shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start md:items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-clinical-data text-clinical-data px-2 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-semibold tracking-wider uppercase">Administrative Scope</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">نطاق الاستقبال الإداري والفرز الأولي</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            Assistant Triage Scope — Patient Intake &amp; Identity Verification. Clinical diagnostics and prescription modification strictly restricted.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 self-end md:self-auto">
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container-lowest text-on-surface font-clinical-data text-clinical-data shadow-sm">
+<span class="h-2 w-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>DESK-01 • Mona Radwan</span>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant font-medium">Shift 08:00 - 16:00</span>
+</div>
+</div>
+</section>
+<!-- Main Workflow Bento Grid: Left Form Area (65%) & Right Queue Preview (35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Registration & Clinical Triage Intake Form (Col 1-8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Patient Identity & Demographics Panel -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">badge</span>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">1. Patient Identification &amp; Demographics <span class="text-on-surface-variant font-label-md text-label-md font-normal">/ بيانات المريض والهوية</span></h2>
+</div>
+<span class="font-clinical-data text-clinical-data px-2 py-1 rounded-lg bg-surface-container text-on-surface-variant font-medium">STEP 01 OF 04</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Legal Arabic Name -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface flex justify-between items-center">
+<span>Full Legal Name (Arabic) <span class="text-error">*</span></span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">الاسم الرباعي بالعربية</span>
+</label>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder:text-outline-variant" dir="rtl" placeholder="أدخل اسم المريض كما بالرقم القومي" type="text" value="طارق منصور حسن عبد الرحيم"/>
+</div>
+<!-- Legal English Name -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface flex justify-between items-center">
+<span>Full Name (Latin Script)</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">الاسم بالأحرف اللاتينية</span>
+</label>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary transition-all placeholder:text-outline-variant" placeholder="As written in passport or e-ID" type="text" value="Tariq Mansoor Hassan Abdelrahim"/>
+</div>
+<!-- Egyptian National ID with Auto Validation -->
+<div class="flex flex-col gap-space-xs sm:col-span-2">
+<div class="flex justify-between items-center">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface flex items-center gap-1">
+<span>National ID (الرقم القومي المصري)</span>
+<span class="text-error">*</span>
+</label>
+<div class="flex items-center gap-1 text-primary font-clinical-data text-clinical-data">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>Verified: Cairo Citizen • Born 14/08/1984</span>
+</div>
+</div>
+<div class="relative flex items-center">
+<input class="w-full tracking-widest bg-surface-container-low focus:bg-surface-container-lowest text-on-surface pl-space-sm pr-12 py-2 rounded-lg font-clinical-data text-clinical-data focus:outline-none focus:ring-2 focus:ring-primary transition-all" maxlength="14" type="text" value="28408140103914"/>
+<div class="absolute right-3 flex items-center text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Date of Birth -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Date of Birth • تاريخ الميلاد</label>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary" type="date" value="1984-08-14"/>
+</div>
+<!-- Gender Radio -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Gender • النوع</label>
+<div class="grid grid-cols-2 gap-space-xs h-full">
+<label class="flex items-center justify-center gap-2 p-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold cursor-pointer shadow-sm">
+<input checked="" class="hidden" name="gender" type="radio" value="male"/>
+<span class="material-symbols-outlined text-[18px]">male</span>
+<span>Male (ذكر)</span>
+</label>
+<label class="flex items-center justify-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md font-medium cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="hidden" name="gender" type="radio" value="female"/>
+<span class="material-symbols-outlined text-[18px]">female</span>
+<span>Female (أنثى)</span>
+</label>
+</div>
+</div>
+<!-- Mobile & WhatsApp Integration -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface flex justify-between items-center">
+<span>Egyptian Mobile Number</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">رقم الموبايل للتواصل</span>
+</label>
+<div class="flex items-center gap-2">
+<span class="px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant font-clinical-data text-clinical-data shrink-0">+20</span>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-clinical-data text-clinical-data focus:outline-none focus:ring-2 focus:ring-primary" type="tel" value="01098234711"/>
+</div>
+<label class="flex items-center gap-2 mt-1 text-primary cursor-pointer select-none">
+<input checked="" class="rounded bg-surface-container-low text-primary focus:ring-0" type="checkbox"/>
+<span class="font-micro-copy text-micro-copy font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">chat</span>
+                Opt-in WhatsApp instant alerts / تفعيل تنبيهات واتساب
+              </span>
+</label>
+</div>
+<!-- Emergency Contact -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface flex justify-between items-center">
+<span>Emergency Contact &amp; Kin</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">جهة اتصال للطوارئ والصلة</span>
+</label>
+<div class="grid grid-cols-2 gap-2">
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Name &amp; Relation" type="text" value="Salma Mansoor (Sister)"/>
+<input class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-clinical-data text-clinical-data focus:outline-none focus:ring-2 focus:ring-primary" placeholder="01X XXXX XXXX" type="tel" value="01224589012"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Visit Classification & Attending Clinic Desk -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">domain_verification</span>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">2. Visit Classification &amp; Doctor Assignment <span class="text-on-surface-variant font-label-md text-label-md font-normal">/ تصنيف الزيارة والعيادة المختصة</span></h2>
+</div>
+<span class="font-clinical-data text-clinical-data px-2 py-1 rounded-lg bg-surface-container text-on-surface-variant font-medium">STEP 02 OF 04</span>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Visit Type Selector -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">calendar_today</span>
+<span class="h-2 w-2 rounded-full bg-surface-variant"></span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Scheduled Appointment</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">حجز مسبق مع الطبيب</span>
+</div>
+<div class="p-space-sm rounded-xl bg-primary-container text-on-primary cursor-pointer shadow-sm flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-on-primary text-[20px]">bolt</span>
+<span class="material-symbols-outlined text-on-primary-container text-[16px]">check_circle</span>
+</div>
+<span class="font-label-md text-label-md font-bold">Direct Walk-in Intake</span>
+<span class="font-micro-copy text-micro-copy text-on-primary-container">كشف فوري بدون موعد مسبق</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">biotech</span>
+<span class="h-2 w-2 rounded-full bg-surface-variant"></span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Lab Review Only</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">استشارة ومراجعة نتائج تحاليل</span>
+</div>
+</div>
+<!-- Doctor & Clinic Room Split -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-space-xs">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface">Assigned Attending Physician • الطبيب المعالج</label>
+<select class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
+<option selected="">Dr. Tarek El-Kabbani (Cardiology &amp; Vascular • Rm 01)</option>
+<option>Dr. Mona El-Shazly (Internal Medicine • Rm 02)</option>
+<option>Dr. Khaled El-Sayed (General Practice • Rm 03)</option>
+</select>
+</div>
+<div class="flex flex-col justify-between p-space-sm rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Triage Queue Status</span>
+<span class="font-clinical-data text-clinical-data text-primary font-semibold">Active • Rm 01</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy">
+<span>Estimated Wait Time: <strong class="text-on-surface font-semibold font-body-md">~18 mins</strong></span>
+<span>Ahead in queue: <strong class="text-on-surface font-semibold font-body-md">2 patients</strong></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rapid Bedside / Reception Vitals Intake -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">vital_signs</span>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">3. Initial Intake Telemetry &amp; Chief Complaint <span class="text-on-surface-variant font-label-md text-label-md font-normal">/ العلامات الحيوية والشكوى الرئيسية</span></h2>
+</div>
+<span class="font-clinical-data text-clinical-data px-2 py-1 rounded-lg bg-surface-container text-on-surface-variant font-medium">STEP 03 OF 04</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<!-- Blood Pressure -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-semibold">Blood Pressure</span>
+<span class="material-symbols-outlined text-[16px] text-error">favorite</span>
+</div>
+<div class="flex items-baseline gap-1">
+<input class="w-full bg-surface-container-lowest px-2 py-1 rounded-lg font-clinical-data text-headline-5 text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="138/88"/>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant shrink-0">mmHg</span>
+</div>
+<span class="font-micro-copy text-micro-copy text-tertiary font-semibold">Stage 1 Elevated</span>
+</div>
+<!-- Heart Rate -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-semibold">Pulse Rate</span>
+<span class="material-symbols-outlined text-[16px] text-primary">ecg_heart</span>
+</div>
+<div class="flex items-baseline gap-1">
+<input class="w-full bg-surface-container-lowest px-2 py-1 rounded-lg font-clinical-data text-headline-5 text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="84"/>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant shrink-0">bpm</span>
+</div>
+<span class="font-micro-copy text-micro-copy text-primary font-medium">Normal Rhythm</span>
+</div>
+<!-- Temperature -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-semibold">Temperature</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">device_thermostat</span>
+</div>
+<div class="flex items-baseline gap-1">
+<input class="w-full bg-surface-container-lowest px-2 py-1 rounded-lg font-clinical-data text-headline-5 text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="36.8"/>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant shrink-0">°C</span>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Afebrile</span>
+</div>
+<!-- Weight -->
+<div class="p-space-sm rounded-xl bg-surface-container flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm font-semibold">Body Mass</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">scale</span>
+</div>
+<div class="flex items-baseline gap-1">
+<input class="w-full bg-surface-container-lowest px-2 py-1 rounded-lg font-clinical-data text-headline-5 text-on-surface focus:outline-none focus:ring-1 focus:ring-primary" type="text" value="82.4"/>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant shrink-0">kg</span>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Est. BMI 26.2</span>
+</div>
+</div>
+<!-- Chief Complaint (Patient Voice Direct Capture) -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface flex justify-between items-center">
+<span>Chief Complaint (Patient's Own Words)</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">وصف الأعراض بكلمات المريض</span>
+</label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface px-space-sm py-2 rounded-lg font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary resize-none transition-all placeholder:text-outline-variant" dir="rtl" placeholder="مثال: صداع نصفي مستمر منذ يومين مصحوب بخفقان خفيف عند صعود الدرج..." rows="3">صداع نابض متكرر في مؤخرة الرأس منذ ٣ أيام مع إحساس بالدوار وخفقان ملحوظ بعد المجهود الصباحي. لا توجد آلام حادة بالصدر.</textarea>
+<div class="absolute bottom-2 left-2 flex items-center gap-1 text-on-surface-variant font-micro-copy text-micro-copy bg-surface-container px-2 py-0.5 rounded-lg">
+<span class="material-symbols-outlined text-[14px]">record_voice_over</span>
+<span>Audio Dictation Ready</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment & Billing Intake -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">payments</span>
+<h2 class="font-headline-4 text-headline-4 text-on-surface">4. Payment &amp; Billing Classification <span class="text-on-surface-variant font-label-md text-label-md font-normal">/ طرق السداد وتأكيد الرسوم</span></h2>
+</div>
+<span class="font-clinical-data text-clinical-data px-2 py-1 rounded-lg bg-surface-container text-on-surface-variant font-medium">STEP 04 OF 04</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<label class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors gap-1 text-center">
+<input class="hidden" name="payment" type="radio" value="cash"/>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">local_atm</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Cash / نقدي</span>
+</label>
+<label class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors gap-1 text-center">
+<input class="hidden" name="payment" type="radio" value="card"/>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">credit_card</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">POS Card / فيزا</span>
+</label>
+<label class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors gap-1 text-center">
+<input class="hidden" name="payment" type="radio" value="fawry"/>
+<span class="material-symbols-outlined text-on-surface-variant text-[24px]">contactless</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Fawry / فوري</span>
+</label>
+<label class="flex flex-col items-center justify-center p-space-sm rounded-xl bg-primary-container text-on-primary cursor-pointer shadow-sm gap-1 text-center">
+<input checked="" class="hidden" name="payment" type="radio" value="takaful"/>
+<span class="material-symbols-outlined text-on-primary text-[24px]">health_and_safety</span>
+<span class="font-label-md text-label-md font-bold">Takaful Gold Ins.</span>
+</label>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col sm:flex-row justify-between items-start sm:items-center gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0 font-headline-4">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-4 text-headline-4 text-on-surface">650 EGP</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">Takaful Copay: 65 EGP (10%)</span>
+</div>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Direct Consultation • Cardiology Specialty • Invoice #INV-2024-0981</span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<span class="font-label-sm text-label-sm font-semibold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+              Paid at Desk
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Queue Snapshot, Identity Scanner & Confirmation Dispatch (Col 9-12) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-20">
+<!-- Primary Action Card: Token Generation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-clinical-data text-clinical-data text-on-surface-variant tracking-wider uppercase font-semibold">Next Intake Action</span>
+<span class="h-2 w-2 rounded-full bg-primary animate-ping"></span>
+</div>
+<div class="flex flex-col items-center justify-center p-space-md rounded-xl bg-surface-container-low text-center gap-1">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-widest font-semibold">Generated Token Number</span>
+<span class="font-display-lg-mobile text-display-lg-mobile font-bold text-primary tracking-tight">CARD-04</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Room 01 • Dr. Tarek El-Kabbani</span>
+</div>
+<!-- Master Submission Button -->
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary py-space-md px-space-md rounded-xl font-label-md text-label-md font-bold flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span>Register &amp; Print Intake Slip</span>
+</button>
+<span class="text-center font-micro-copy text-micro-copy text-on-surface-variant">تسجيل المريض وطباعة تذكرة الدخول والباركود فوراً</span>
+<!-- WhatsApp Dispatch Toggle -->
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Auto-WhatsApp Slip</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">إرسال رابط التتبع لموبايل المريض</span>
+</div>
+</div>
+<input checked="" class="h-5 w-5 rounded text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</div>
+</div>
+<!-- Live Reception Queue Widget -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<h3 class="font-headline-5 text-headline-5 text-on-surface">Today's Clinic Queue</h3>
+</div>
+<span class="font-clinical-data text-clinical-data px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface font-semibold">4 Waiting</span>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Item 1: Active In Consultation -->
+<div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary font-clinical-data text-clinical-data font-bold flex items-center justify-center shrink-0">A-18</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Hassan Samir</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">In Consultation (12 min)</span>
+</div>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-bold">INSIDE</span>
+</div>
+<!-- Item 2: Up Next -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-variant text-on-surface font-clinical-data text-clinical-data font-semibold flex items-center justify-center shrink-0">A-19</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Nourhan Mahmoud</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Lobby Seat 4 • Vitals Done</span>
+</div>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">UP NEXT</span>
+</div>
+<!-- Item 3: Waiting -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-surface-variant text-on-surface font-clinical-data text-clinical-data font-semibold flex items-center justify-center shrink-0">A-20</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Gamal Fouad</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Arrival 09:12 AM</span>
+</div>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">8m wait</span>
+</div>
+<!-- Item 4: Target Patient (Will be CARD-04 / A-21) -->
+<div class="p-space-sm rounded-xl bg-primary-fixed/20 flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-lg bg-primary text-on-primary font-clinical-data text-clinical-data font-bold flex items-center justify-center shrink-0">A-21</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Tariq Mansoor (Active Intake)</span>
+<span class="font-micro-copy text-micro-copy text-primary font-medium">Walk-in Cardiology</span>
+</div>
+</div>
+<span class="font-clinical-data text-clinical-data text-primary font-bold">CURRENT</span>
+</div>
+</div>
+</div>
+<!-- Quick Identity Hardware Scanner Simulation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">qr_code_scanner</span>
+<h3 class="font-headline-5 text-headline-5 text-on-surface">Smart Card Optical Reader</h3>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">usb</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-space-md flex flex-col items-center justify-center text-center gap-space-xs relative overflow-hidden">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[28px]">contactless</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Scan Egyptian E-Health ID</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Place National ID card or Digital Insurance QR on the optical scanner</span>
+<button class="mt-2 px-space-sm py-1 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-clinical-data text-clinical-data shadow-sm transition-colors" type="button">
+            Simulate Card Tap (NFC/BarCode)
+          </button>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy">
+<span>Card Reader: OK • USB 2.0</span>
+<span>Encrypted via ISO-7816</span>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

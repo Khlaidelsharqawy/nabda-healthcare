@@ -1,0 +1,436 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AegisHealth Clinical AI Ecosystem</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#dee2ee", "primary": "#005932", "inverse-primary": "#7ed99e", "tertiary-container": "#ae4202", "error": "#ba1a1a", "surface": "#f9f9ff", "surface-tint": "#006d3e", "primary-container": "#087443", "surface-bright": "#f9f9ff", "secondary-fixed-dim": "#c0c1ff", "secondary-container": "#5d62f3", "on-primary-container": "#9af7b9", "tertiary-fixed-dim": "#ffb597", "background": "#f9f9ff", "on-primary-fixed-variant": "#00522d", "on-tertiary-fixed-variant": "#7d2d00", "inverse-on-surface": "#ecf1fd", "inverse-surface": "#2c313a", "on-error": "#ffffff", "tertiary": "#873100", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdbcd", "outline": "#6f7a70", "on-primary": "#ffffff", "secondary": "#4347d9", "outline-variant": "#becabe", "surface-variant": "#dee2ee", "primary-fixed-dim": "#7ed99e", "surface-container-low": "#f0f3ff", "surface-dim": "#d6dae6", "on-secondary-fixed": "#04006d", "on-error-container": "#93000a", "on-surface": "#171c24", "primary-fixed": "#99f6b9", "on-secondary-fixed-variant": "#2a2bc4", "secondary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#360f00", "on-tertiary": "#ffffff", "on-surface-variant": "#3f4941", "surface-container-high": "#e4e8f4", "surface-container": "#eaeefa", "on-primary-fixed": "#00210f", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-sm": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-lg": "2rem", "margin": "2rem", "space-md": "1rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "margin-lg": "3rem" }, "fontFamily": { "headline-5": ["Plus Jakarta Sans"], "headline-1-mobile": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "headline-4": ["Plus Jakarta Sans"], "clinical-data": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "micro-copy": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-1": ["Plus Jakarta Sans"] }, "fontSize": { "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Clinical AI Platform</span></div><div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">domain</span><span class="font-label-sm text-label-sm font-semibold truncate max-w-[200px]">[Clinic Name]</span><span class="text-on-surface-variant font-micro-copy text-micro-copy font-normal">/ [اسم العيادة]</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span class="">EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><div class="flex items-center gap-space-xs pl-space-xs rtl:pr-space-xs"><div class="hidden sm:flex flex-col items-end rtl:items-start text-right rtl:text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">[Doctor Name] / [اسم الطبيب]</span><span class="font-micro-copy text-micro-copy text-primary-container font-medium">Attending Physician</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 rtl:left-auto rtl:right-0 top-16 bottom-0 w-64 bg-surface-container-low/80 backdrop-blur-md z-40 flex flex-col justify-between py-space-md shadow-[1px_0_8px_rgba(0,0,0,0.02)] rtl:shadow-[-1px_0_8px_rgba(0,0,0,0.02)] overflow-y-auto"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">health_metrics</span><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">Doctor Workspace</span></div><span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">ACTIVE</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><div class="px-space-xs pt-space-xs pb-1 font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">Clinical Care</div><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="doctor-clinical-dashboard" href="#">Clinical Dashboard</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="appointments-and-schedule-management" href="#">Appointments &amp; Schedule</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="patient-directory" href="#">Patient Directory</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="clinical-workspace-and-ai-scribe" href="#">Clinical Workspace &amp; AI Scribe</a><div class="px-space-xs pt-space-sm pb-1 font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">AI &amp; Voice Ambient</div><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="doctor-ai-workspace" href="#">Doctor AI Workspace</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="patient-scoped-ai-workspace" href="#">Patient-Scoped AI</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="new-voice-session" href="#">New Voice Session</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="active-voice-session" href="#">Active Voice Session</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="voice-session-review" href="#">Voice Session Review</a><a aria-current="page" class="px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="clinical-draft-review" href="#">Clinical Draft Review</a></nav></div><div class="flex flex-col gap-space-xs px-space-md pt-space-md"><div class="p-space-sm rounded-xl bg-surface-container border-l-2 border-primary rtl:border-l-0 rtl:border-r-2 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Doctor AI Status</span><span class="h-2 w-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><p class="font-micro-copy text-micro-copy text-on-surface-variant">Aegis Scribe Copilot Ready &amp; Verified</p></div></div></aside><div class="pl-64 rtl:pl-0 rtl:pr-64"><main class="w-full pt-16 bg-background min-h-screen px-margin-sm lg:px-margin pb-margin-lg"><div class="flex flex-col w-full">
+<!-- Subtle decorative ambient backdrops restricted inside container -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-12 -right-12 w-96 h-96 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 left-1/3 w-80 h-80 bg-secondary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+<!-- MAIN GRID CONTAINER -->
+<div class="relative flex flex-col gap-space-lg w-full">
+<!-- 1. DRAFT METADATA HEADER & LIFECYCLE BAR -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md lg:p-space-lg flex flex-col gap-space-md">
+<!-- Top bar: ID and Context Tagging -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm border-b-0">
+<div class="flex flex-wrap items-center gap-space-xs"><span class="px-2.5 py-1 rounded-lg bg-surface-container font-clinical-data text-clinical-data text-on-surface-variant uppercase tracking-wider flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">description</span> DRAFT: <span class="text-on-surface font-bold">[Draft ID]</span></span><span class="px-2.5 py-1 rounded-lg bg-surface-container font-clinical-data text-clinical-data text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-secondary">mic_external_on</span> SOURCE: <span class="text-on-surface">[Voice Session ID]</span></span><span class="px-2.5 py-1 rounded-lg bg-surface-container-high font-clinical-data text-clinical-data text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-primary-container">shield</span> Aegis Clinical Guard v4.2</span></div>
+<!-- Non-Final Alert Badge -->
+<div class="flex items-center gap-space-xs">
+<span class="px-3 py-1.5 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1.5 shadow-sm">
+<span class="h-2 w-2 rounded-full bg-tertiary-container animate-pulse"></span>
+              NON-FINAL • PENDING PHYSICIAN REVIEW / مسودة قيد التدقيق
+            </span>
+</div>
+</div>
+<!-- Middle bar: Patient Profile & Clinical Session Scope -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center bg-surface-container-low p-space-md rounded-xl">
+<div class="md:col-span-4 flex items-center gap-space-md"><div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center font-headline-3 text-headline-3 font-bold shadow-sm">PT</div><div class="flex flex-col min-w-0"><div class="flex items-center gap-2"><span class="font-headline-4 text-headline-4 text-on-surface truncate">[Patient Name]</span><span class="font-label-sm text-label-sm text-on-surface-variant font-normal">/ [اسم المريض]</span></div><div class="flex items-center gap-space-xs font-clinical-data text-clinical-data text-on-surface-variant"><span class="">PID: <strong class="text-on-surface">[Patient ID]</strong></span><span class="">•</span><span class="">[Gender] • [Age] / [النوع] • [العمر]</span><span class="">•</span><span class="">MRN: [Patient ID]</span></div></div></div>
+<div class="md:col-span-4 flex flex-col justify-center">
+<div class="flex items-center gap-1 text-on-surface-variant font-micro-copy text-micro-copy uppercase">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+              Encounter Reference
+            </div>
+<div class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2"><span class="">Enc-[Encounter ID] (Internal Medicine Follow-up)</span></div>
+<div class="font-clinical-data text-clinical-data text-on-surface-variant">
+              Recorded: Oct 24, 2024 • 11:20 AM Cairo Time (EET)
+            </div>
+</div>
+<div class="md:col-span-4 flex flex-col md:items-end justify-center">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-highest text-on-surface font-clinical-data text-clinical-data font-semibold">
+                ASSISTANCE LEVEL: DRAFTING AID ONLY
+              </span>
+</div>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant mt-1 text-right rtl:text-left">
+              Autonomous submission restricted. Requires physician attestation.
+            </p>
+</div>
+</div>
+<!-- Bottom bar: Lifecycle Step Progress -->
+<div class="pt-space-xs flex flex-col gap-2">
+<div class="flex items-center justify-between font-clinical-data text-clinical-data">
+<div class="flex items-center gap-2 text-primary font-bold">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[10px]">1</span>
+<span class="">1. AI DRAFTED</span>
+</div>
+<div class="h-0.5 flex-1 mx-3 bg-primary-fixed-dim"></div>
+<div class="flex items-center gap-2 text-primary-container font-bold">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[10px]">2</span>
+<span class="">2. IN CLINICAL EDITING</span>
+</div>
+<div class="h-0.5 flex-1 mx-3 bg-surface-container-highest"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[10px]">3</span>
+<span class="">3. REQUIRES SIGNATURE</span>
+</div>
+<div class="h-0.5 flex-1 mx-3 bg-surface-container-highest"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[10px]">4</span>
+<span class="">4. LOCKED &amp; FINALIZED</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. WORKSPACE SPLIT: MAIN DRAFT (8 COLS) + CONTEXT DRAWER (4 COLS) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT/CENTER: Editable Clinical Draft Content Area (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Card Container for SOAP Documentation -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md lg:p-space-lg flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="p-2 rounded-xl bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</div>
+<div>
+<h1 class="font-headline-3 text-headline-3 text-on-surface">SOAP Clinical Progress Note</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ملاحظة سريرية شاملة للمريض • Formatted under standardized clinical documentation standards / منسقة وفقاً للمعايير السريرية المعتمدة</p>
+</div>
+</div>
+<!-- Quick formatting toolbar -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl">
+<button class="p-1.5 rounded-lg text-on-surface hover:bg-surface-container-lowest transition-colors" title="Bold" type="button">
+<span class="material-symbols-outlined text-[18px]">format_bold</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface hover:bg-surface-container-lowest transition-colors" title="Bulleted List" type="button">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface hover:bg-surface-container-lowest transition-colors" title="Insert Medical Terminology" type="button">
+<span class="material-symbols-outlined text-[18px]">medical_information</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest mx-1"></div>
+<button class="p-1.5 rounded-lg text-primary hover:bg-surface-container-lowest transition-colors flex items-center gap-1 font-clinical-data text-clinical-data" type="button">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span class="">Re-check Differential</span>
+</button>
+</div>
+</div>
+<!-- SECTION S: Subjective -->
+<div class="bg-surface rounded-xl p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-clinical-data text-clinical-data font-bold">S</span>
+<label class="font-headline-5 text-headline-5 text-on-surface" for="subjective-field">
+                    Subjective &amp; Chief Complaint / الشكوى وتاريخ المرض
+                  </label>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-high font-micro-copy text-micro-copy text-on-surface-variant">
+                    Voice Extracted (Confidence 98%)
+                  </span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant" id="sub-char-count">482 chars</span>
+</div>
+</div>
+<textarea class="w-full bg-surface-container-lowest rounded-lg p-space-sm text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-inner resize-y transition-all" id="subjective-field" oninput="document.getElementById('sub-char-count').innerText = this.value.length + ' chars'" rows="4">Chief Complaint: Persistent retrosternal dull tightness and postprandial fullness for 3 weeks, aggravated by supine posture. Patient denies radiating arm or jaw pain, syncope, diaphoresis, or acute hemoptysis. Notes occasional nocturnal acid regurgitation. 
+Current Compliance: Reports skipping second dose of Metformin 500mg irregularly due to gastrointestinal intolerance.</textarea>
+</div>
+<!-- SECTION O: Objective -->
+<div class="bg-surface rounded-xl p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-lg bg-secondary text-on-secondary flex items-center justify-center font-clinical-data text-clinical-data font-bold">O</span>
+<label class="font-headline-5 text-headline-5 text-on-surface" for="objective-field">
+                    Objective &amp; Physical Examination / الفحص السريري والعلامات الحيوية
+                  </label>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-micro-copy text-micro-copy font-semibold">
+                    Telemetry Synced
+                  </span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant" id="obj-char-count">438 chars</span>
+</div>
+</div>
+<textarea class="w-full bg-surface-container-lowest rounded-lg p-space-sm text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-inner resize-y transition-all" id="objective-field" oninput="document.getElementById('obj-char-count').innerText = this.value.length + ' chars'" rows="4">Vitals: [Blood Pressure] | [Heart Rate] | [Respiratory Rate] | [SpO2] | [Temperature] | [BMI].
+Cardiovascular: S1/S2 present, no murmurs, gallops, or friction rubs. Peripheral pulses 2+ symmetric.
+Chest: Clear to auscultation bilaterally. No wheezing, crackles, or rhonchi.
+Abdomen: Soft, mild non-rebound tenderness localized to epigastric region. Bowel sounds normal. No hepatomegaly.</textarea>
+</div>
+<!-- SECTION A: Assessment -->
+<div class="bg-surface rounded-xl p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-clinical-data text-clinical-data font-bold">A</span>
+<label class="font-headline-5 text-headline-5 text-on-surface" for="assessment-field">
+                    Clinical Assessment &amp; Differential / التقييم والتشخيص السريري
+                  </label>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed font-micro-copy text-micro-copy font-semibold">
+                    Differential Synthesized
+                  </span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant" id="ass-char-count">362 chars</span>
+</div>
+</div>
+<textarea class="w-full bg-surface-container-lowest rounded-lg p-space-sm text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-inner resize-y transition-all" id="assessment-field" oninput="document.getElementById('ass-char-count').innerText = this.value.length + ' chars'" rows="3">1. Gastroesophageal Reflux Disease (GERD) with suspected erosive esophagitis - Primary focus.
+2. Type 2 Diabetes Mellitus - suboptimal glycemic control, partial GI non-tolerance to biguanides.
+3. Essential Hypertension, Stage 1 - reasonably controlled on current ACE-inhibitor regimen. Non-cardiac etiology favored for epigastric tightness.</textarea>
+</div>
+<!-- SECTION P: Diagnostic & Therapeutic Plan -->
+<div class="bg-surface rounded-xl p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-lg bg-primary text-on-primary flex items-center justify-center font-clinical-data text-clinical-data font-bold">P</span>
+<label class="font-headline-5 text-headline-5 text-on-surface" for="plan-field">
+                    Plan &amp; Interventions / الخطة العلاجية والتشخيصية
+                  </label>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-lg bg-surface-container-high font-micro-copy text-micro-copy text-on-surface-variant">
+                    3 Action Items Pending Signature
+                  </span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant" id="plan-char-count">485 chars</span>
+</div>
+</div>
+<textarea class="w-full bg-surface-container-lowest rounded-lg p-space-sm text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary shadow-inner resize-y transition-all" id="plan-field" oninput="document.getElementById('plan-char-count').innerText = this.value.length + ' chars'" rows="4">1. Diagnostic: Order Complete Metabolic Panel, Fasting Blood Glucose, HbA1c, and 12-lead baseline resting ECG.
+2. Pharmacotherapy: Initiate Esomeprazole 40 mg PO qAM 30 min prior to breakfast for 4 weeks. Transition Metformin formulation to XR (Extended Release) 500mg with evening meal.
+3. Counseling &amp; Red Flags: Elevate head of bed 15 degrees; avoid late evening meals. Urgent ED triage instructions given for crushing chest pain or hematemesis. Review in 3 weeks.</textarea>
+</div>
+<!-- Attestation Note Box -->
+<div class="p-space-sm rounded-xl bg-surface-container border-l-4 border-primary rtl:border-l-0 rtl:border-r-4 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">verified_user</span>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant leading-relaxed"><strong class="text-on-surface font-semibold">Physician Regulatory Attestation:</strong> "I hereby confirm that I have reviewed, clinically verified, and modified as necessary the AI-assisted draft documentation above. I accept legal and clinical accountability as the attending licensed physician under institutional clinical governance and professional responsibility / بموجب المسؤولية السريرية والمهنية المعمول بها."</p>
+</div>
+</div>
+<!-- 3. DIRECT DISPATCH HANDLERS (Secondary Actions Hub) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">alt_route</span>
+              Connected Clinical Workflow Dispatch / التوجيه المباشر للسجلات
+            </span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Dispatch: Patient Notes -->
+<a class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between group" href="#">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px] group-hover:scale-110 transition-transform">folder_shared</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Export to EHR Notes</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">/doctor/patients/[id]/notes</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">chevron_right</span>
+</a>
+<!-- Dispatch: Prescriptions -->
+<a class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between group" href="#">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[20px] group-hover:scale-110 transition-transform">prescriptions</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Draft Prescriptions</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">2 items pre-populated</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">chevron_right</span>
+</a>
+<!-- Dispatch: Diagnostic Orders -->
+<a class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between group" href="#">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px] group-hover:scale-110 transition-transform">biotech</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Diagnostic Orders</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">HbA1c + ECG + CMP</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- 4. FINAL CONSEQUENTIAL AUTHORIZATION BAR -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-error font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span class="">Reject Draft / رفض</span>
+</button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span class="">Save In-Progress / حفظ مؤقت</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="hidden sm:inline font-clinical-data text-clinical-data text-on-surface-variant">Dr. [Doctor Name] (ID: [Doctor ID])</span>
+<button class="px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-headline-5 text-headline-5 font-semibold flex items-center gap-2 shadow-sm transition-all transform active:scale-95" id="sign-finalize-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">draw</span>
+<span class="">Sign &amp; Finalize Note / اعتماد وتوقيع الملاحظة</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT: Side-by-Side Context Drawer & Safety Checks (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- CLINICAL SAFETY CROSS-CHECKS -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[20px]">security</span>
+<span class="font-headline-5 text-headline-5 text-on-surface">Safety Cross-Checks</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-error-container text-on-error-container font-clinical-data text-clinical-data font-bold">
+                1 ALLERGY FLAG
+              </span>
+</div>
+<!-- Allergy Alert Item -->
+<div class="p-space-sm rounded-xl bg-error-container/30 flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-error-container font-label-sm text-label-sm font-bold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+                  Known Penicillin Allergy
+                </span>
+<span class="font-micro-copy text-micro-copy uppercase">Flagged in Profile</span>
+</div>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">
+                No beta-lactam antibiotics present in therapeutic draft. Cleared by rule engine.
+              </p>
+</div>
+<!-- Interaction Check Item -->
+<div class="p-space-sm rounded-xl bg-primary-fixed/20 flex flex-col gap-1">
+<div class="flex items-center justify-between text-primary font-label-sm text-label-sm font-semibold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                  Drug-Drug Interaction: Clear
+                </span>
+<span class="font-clinical-data text-clinical-data">Verified</span>
+</div>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">
+                Co-administration of Esomeprazole with Metformin and Lisinopril evaluated: no significant CYP2C19 conflicts.
+              </p>
+</div>
+<!-- Renal Clearance Indicator -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">eGFR Baseline</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Last lab: [eGFR Result]</span>
+</div>
+<span class="font-clinical-data text-clinical-data px-2 py-1 bg-surface-container rounded-lg font-bold text-primary">
+                NORMAL RENAL RANGE
+              </span>
+</div>
+</div>
+<!-- ORIGINATING INTERACTION NOTES & AUDIO TRANSCRIPT SNIPPETS -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">mic</span>
+<span class="font-headline-5 text-headline-5 text-on-surface">Originating Context</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">Session: 08:42 min</span>
+</div>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">
+              Excerpts from ambient clinical transcription recorded during Dr. Mansour's consultation with Kareem Al-Sayed.
+            </p>
+<!-- Audio waveform visual representation (Inline SVG) -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-2">
+<button class="p-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</button>
+<div class="flex-1 flex flex-col gap-1">
+<div class="flex items-center justify-between font-clinical-data text-clinical-data text-on-surface-variant">
+<span class="">Audio Timestamp: 03:14</span>
+<span class="">Chief Symptom Discussion</span>
+</div>
+<svg class="w-full h-6 text-primary" fill="currentColor" viewBox="0 0 200 24">
+<rect height="8" opacity="0.6" rx="1.5" width="3" x="2" y="8"></rect>
+<rect height="16" opacity="0.8" rx="1.5" width="3" x="8" y="4"></rect>
+<rect height="12" opacity="0.7" rx="1.5" width="3" x="14" y="6"></rect>
+<rect height="20" opacity="0.9" rx="1.5" width="3" x="20" y="2"></rect>
+<rect height="10" opacity="0.6" rx="1.5" width="3" x="26" y="7"></rect>
+<rect height="18" opacity="1.0" rx="1.5" width="3" x="32" y="3"></rect>
+<rect height="6" opacity="0.5" rx="1.5" width="3" x="38" y="9"></rect>
+<rect height="14" opacity="0.8" rx="1.5" width="3" x="44" y="5"></rect>
+<rect height="22" opacity="0.95" rx="1.5" width="3" x="50" y="1"></rect>
+<rect height="10" opacity="0.7" rx="1.5" width="3" x="56" y="7"></rect>
+<rect height="4" opacity="0.4" rx="1.5" width="3" x="62" y="10"></rect>
+<rect height="16" opacity="0.85" rx="1.5" width="3" x="68" y="4"></rect>
+<rect height="8" opacity="0.6" rx="1.5" width="3" x="74" y="8"></rect>
+<rect height="20" opacity="0.9" rx="1.5" width="3" x="80" y="2"></rect>
+<rect height="12" opacity="0.7" rx="1.5" width="3" x="86" y="6"></rect>
+<rect height="6" opacity="0.5" rx="1.5" width="3" x="92" y="9"></rect>
+<rect height="18" opacity="0.8" rx="1.5" width="3" x="98" y="3"></rect>
+<rect height="14" opacity="0.75" rx="1.5" width="3" x="104" y="5"></rect>
+<rect height="8" opacity="0.6" rx="1.5" width="3" x="110" y="8"></rect>
+<rect height="20" opacity="0.9" rx="1.5" width="3" x="116" y="2"></rect>
+<rect height="16" opacity="0.8" rx="1.5" width="3" x="122" y="4"></rect>
+<rect height="10" opacity="0.65" rx="1.5" width="3" x="128" y="7"></rect>
+<rect height="4" opacity="0.4" rx="1.5" width="3" x="134" y="10"></rect>
+<rect height="14" opacity="0.75" rx="1.5" width="3" x="140" y="5"></rect>
+<rect height="20" opacity="0.95" rx="1.5" width="3" x="146" y="2"></rect>
+<rect height="12" opacity="0.7" rx="1.5" width="3" x="152" y="6"></rect>
+<rect height="8" opacity="0.6" rx="1.5" width="3" x="158" y="8"></rect>
+<rect height="18" opacity="0.85" rx="1.5" width="3" x="164" y="3"></rect>
+<rect height="10" opacity="0.6" rx="1.5" width="3" x="170" y="7"></rect>
+<rect height="6" opacity="0.5" rx="1.5" width="3" x="176" y="9"></rect>
+<rect height="14" opacity="0.7" rx="1.5" width="3" x="182" y="5"></rect>
+<rect height="8" opacity="0.5" rx="1.5" width="3" x="188" y="8"></rect>
+<rect height="4" opacity="0.3" rx="1.5" width="3" x="194" y="10"></rect>
+</svg>
+</div>
+</div>
+<!-- Dialogue Snippets -->
+<div class="flex flex-col gap-space-xs text-body-sm font-body-sm max-h-72 overflow-y-auto pr-1"><div class="p-space-xs rounded-lg bg-surface"><span class="font-clinical-data text-clinical-data font-bold text-primary">Patient [01:12]:</span><p class="text-on-surface">[Patient Statement / إفادة المريض: Clinical description of chief complaint symptoms]</p><span class="font-micro-copy text-micro-copy text-on-surface-variant italic">Translation: "Doctor, pain worsens when lying down after dinner; burning and epigastric fullness for 3 weeks."</span></div><div class="p-space-xs rounded-lg bg-surface"><span class="font-clinical-data text-clinical-data font-bold text-secondary">Dr. [Doctor Name] [01:45]:</span><p class="text-on-surface">[Doctor Inquiry / استفسار الطبيب المعالج: Symptom clarification]</p><span class="font-micro-copy text-micro-copy text-on-surface-variant italic">Translation: "Did you feel any radiating arm or jaw pain or dizziness?"</span></div><div class="p-space-xs rounded-lg bg-surface"><span class="font-clinical-data text-clinical-data font-bold text-primary">Patient [02:05]:</span><p class="text-on-surface">[Patient Statement / إفادة المريض: Clinical description of chief complaint symptoms]</p><span class="font-micro-copy text-micro-copy text-on-surface-variant italic">Translation: "No, praise be to God, no dizziness at all."</span></div></div>
+<!-- Verification Metadata Box -->
+<div class="p-space-xs rounded-lg bg-surface-container flex items-center justify-between text-on-surface-variant font-clinical-data text-clinical-data">
+<span class="">Bi-Directional Alignment: English / Arabic</span>
+<span class="text-primary font-semibold">100% Parsed</span>
+</div>
+</div>
+<!-- RECENT PATIENT VITALS SUMMARY CARD -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-headline-5 text-headline-5 text-on-surface">Vitals Telemetry Comparison</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">trending_up</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<div class="p-2 rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Blood Pressure</span>
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">[Blood Pressure]</span>
+<span class="font-micro-copy text-micro-copy text-primary-container font-medium">Stage 1 (+4 mmHg)</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Resting Heart Rate</span>
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">[Heart Rate]</span>
+<span class="font-micro-copy text-micro-copy text-primary font-medium">Normocardic</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">BMI Status</span>
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">[BMI]</span>
+<span class="font-micro-copy text-micro-copy text-tertiary font-medium">Overweight category</span>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">SpO2 Oxygen</span>
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">[SpO2]</span>
+<span class="font-micro-copy text-micro-copy text-primary font-medium">Room Air</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interaction modal toast container (Triggered on signing action) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm hidden p-margin-sm" id="sign-modal">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-xl shadow-xl p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm text-primary">
+<span class="material-symbols-outlined text-[32px]">verified</span>
+<div class="flex flex-col">
+<h3 class="font-headline-4 text-headline-4 text-on-surface">Physician Verification Confirmed</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Note DRF-84920-CL Signed</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">The clinical note has been digitally signed with your registered credentials (Dr. [Doctor Name], MD) and securely pushed to the [Clinic Name] Electronic Health Record.</p>
+<div class="p-space-sm rounded-lg bg-surface-container text-on-surface font-clinical-data text-clinical-data flex flex-col gap-1">
+<div class=""><strong>Cryptographic Hash:</strong> SHA256: 7f8a9...b401e</div>
+<div class=""><strong>Timestamp:</strong> Oct 24, 2024 - 11:42:08 EET</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-2">
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="document.getElementById('sign-modal').classList.add('hidden')" type="button">
+          Dismiss &amp; View Patient Directory
+        </button>
+</div>
+</div>
+</div>
+<script>
+    document.getElementById('sign-finalize-btn').addEventListener('click', function() {
+      const modal = document.getElementById('sign-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+      }
+    });
+  </script>
+</div></main></div>
+
+</body></html>

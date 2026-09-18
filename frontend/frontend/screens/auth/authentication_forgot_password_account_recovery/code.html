@@ -1,0 +1,484 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary": "#ffffff", "on-primary-fixed-variant": "#00522d", "surface-container": "#eaeefa", "on-primary-container": "#9af7b9", "inverse-surface": "#2c313a", "outline-variant": "#becabe", "secondary-fixed-dim": "#c0c1ff", "surface-tint": "#006d3e", "outline": "#6f7a70", "tertiary": "#873100", "on-surface": "#171c24", "on-error": "#ffffff", "on-tertiary-container": "#ffdbcd", "on-background": "#171c24", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#2a2bc4", "on-tertiary-fixed": "#360f00", "primary-fixed": "#99f6b9", "primary-fixed-dim": "#7ed99e", "on-tertiary": "#ffffff", "on-secondary-container": "#fffbff", "on-surface-variant": "#3f4941", "error": "#ba1a1a", "secondary-container": "#5d62f3", "tertiary-fixed": "#ffdbcd", "background": "#f9f9ff", "inverse-primary": "#7ed99e", "primary": "#005932", "tertiary-container": "#ae4202", "surface-bright": "#f9f9ff", "surface-container-low": "#f0f3ff", "on-secondary-fixed": "#04006d", "surface-container-highest": "dee2ee", "secondary": "#4347d9", "inverse-on-surface": "#ecf1fd", "surface": "#f9f9ff", "on-secondary": "#ffffff", "surface-variant": "#dee2ee", "surface-container-lowest": "#ffffff", "primary-container": "#087443", "on-tertiary-fixed-variant": "#7d2d00", "secondary-fixed": "#e1e0ff", "surface-dim": "#d6dae6", "tertiary-fixed-dim": "#ffb597", "on-primary-fixed": "#00210f", "surface-container-high": "#e4e8f4", "error-container": "#ffdad6" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "margin": "2rem", "margin-sm": "1rem", "gutter": "1.5rem", "space-xl": "2.5rem", "gutter-lg": "2rem", "gutter-sm": "1rem", "space-sm": "0.5rem", "space-md": "1rem", "space-lg": "1.5rem", "margin-lg": "3rem", "space-xs": "0.25rem" }, fontFamily: { "label-md": ["Inter"], "headline-5": ["Plus Jakarta Sans"], "clinical-data": ["Inter"], "headline-3": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "body-lg": ["Inter"], "headline-2": ["Plus Jakarta Sans"], "headline-1-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "micro-copy": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-1": ["Plus Jakarta Sans"], "headline-4": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #087443
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"><div class="flex items-center gap-space-xs"><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">AegisHealth</span><span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline-block font-normal">| منظومة عافية الطبية</span></div><div class="hidden md:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-0.5 rounded-full"><span class="material-symbols-outlined text-primary text-[14px]">verified_user</span><span class="font-micro-copy text-micro-copy text-on-surface-variant font-medium">Account Recovery • Secure Verification / استعادة الحساب • تحقق آمن</span></div></div><div class="flex items-center gap-space-md"><button aria-label="Toggle Language" class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" type="button"><span class="material-symbols-outlined text-[16px]">language</span><span class="font-label-sm text-label-sm">عربي / EN</span></button><button aria-label="Toggle Theme" class="p-1.5 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" type="button"><span class="material-symbols-outlined text-[18px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 flex-1 flex flex-col justify-center items-center px-margin py-margin-lg bg-background"><div class="flex flex-col w-full max-w-5xl mx-auto">
+<!-- Interactive State Controller (Administrative Preview Bar for Demonstration) -->
+<div class="mb-space-lg flex flex-wrap items-center justify-between gap-space-sm p-space-sm bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant uppercase tracking-wider">Interface State Controller:</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="px-space-sm py-1 rounded font-label-sm text-label-sm bg-surface-container-highest text-on-surface font-semibold shadow-sm transition-all cursor-pointer" id="btn-state-default" type="button">Default Form</button>
+<button class="px-space-sm py-1 rounded font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer" id="btn-state-loading" type="button">Loading State</button>
+<button class="px-space-sm py-1 rounded font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer" id="btn-state-success" type="button">Success Verification</button>
+<button class="px-space-sm py-1 rounded font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all cursor-pointer" id="btn-state-error" type="button">Error Alert</button>
+<span class="text-outline-variant mx-space-xs">|</span>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-medium hover:bg-primary-fixed-dim transition-all cursor-pointer" id="btn-lang-toggle" type="button">
+<span class="material-symbols-outlined text-[15px]">translate</span>
+<span id="lang-indicator" class="">Switch to Arabic (عربي)</span>
+</button>
+</div>
+</div>
+<!-- Main Asymmetrical Grid Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-stretch" dir="ltr" id="main-auth-container">
+<!-- Left Hero Brand & Compliance Panel (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col justify-between p-margin bg-surface-container-low rounded-xl relative overflow-hidden shadow-sm">
+<!-- Subtle Decorative Clinical Watermark Gradient -->
+<div class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col gap-space-md relative z-10">
+<!-- Badge -->
+<div class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-full self-start">
+<span class="material-symbols-outlined text-primary text-[15px]">lock_reset</span>
+<span class="font-clinical-data text-clinical-data text-primary uppercase" data-i18n="badge">Account Recovery</span>
+<span class="text-outline-variant">•</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant" data-i18n="badgeSub">MOH Protocol 4.2</span>
+</div>
+<!-- Section Lead Title -->
+<h2 class="font-headline-2 text-headline-2 text-on-surface mt-space-sm tracking-tight" data-i18n="sideTitle">
+          Deterministic Identity Verification
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant" data-i18n="sideDesc">
+          AegisHealth strictly isolates access recovery paths through cryptographic validation tokens. Your session remains protected under regional healthcare identity regulations.
+        </p>
+<!-- Structured Protocol Points -->
+<div class="mt-space-lg space-y-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold" data-i18n="feat1Title">Zero Speculative Tokens</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="feat1Desc">Direct institutional binding to MOH Doctor IDs and civil verified records.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]">security_update_good</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold" data-i18n="feat2Title">Ephemeral Audit Windows</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="feat2Desc">Password revocation keys expire automatically in 15 minutes.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-highest flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]">shield_person</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold" data-i18n="feat3Title">Human-In-The-Loop Safeguard</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="feat3Desc">Multifactor clearance flagged for clinical personnel on emergency rotations.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Verified System Node Footer -->
+<div class="mt-space-xl pt-space-md bg-surface-container-highest/60 p-space-md rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant" data-i18n="nodeStatus">AUTH NODE CAIRO-01: NOMINAL</span>
+</div>
+<span class="font-micro-copy text-micro-copy text-outline" data-i18n="protocolVersion">v2.4.1 SEC-COMPLIANT</span>
+</div>
+</div>
+<!-- Right Primary Authentication Card (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col justify-center bg-surface-container-lowest p-margin sm:p-margin-lg rounded-xl shadow-sm relative">
+<!-- Card Context Meta Header -->
+<div class="flex items-center justify-between mb-space-lg">
+<div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-low text-secondary">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span class="font-clinical-data text-clinical-data uppercase font-semibold" data-i18n="cardScope">Scoped Verification Node</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[16px]">health_and_safety</span>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant" data-i18n="tlsTag">TLS 1.3 Strict</span>
+</div>
+</div>
+<!-- Title & Instructional Block -->
+<div class="mb-space-lg">
+<h1 class="font-headline-1 text-headline-1 text-on-surface tracking-tight" data-i18n="mainTitle">
+          Forgot your password?
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-space-xs" data-i18n="mainSubtitle">
+          Enter your registered institutional email or national ID, and we'll send you a secure verification link to reset your credentials.
+        </p>
+</div>
+<!-- Operational Error Banner (Dynamic / Dismissible) -->
+<div class="hidden mb-space-lg p-space-md bg-error-container rounded-lg shadow-sm" id="error-alert-banner">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">error</span>
+<div class="flex-1">
+<h4 class="font-headline-5 text-headline-5 text-on-error-container" data-i18n="errorTitle">Identifier Resolution Failure</h4>
+<p class="font-body-sm text-body-sm text-on-error-container mt-space-xs" data-i18n="errorMessage">
+              No account found matching this identifier. Please verify your institutional Egyptian National ID or MOH registry email address and re-attempt.
+            </p>
+</div>
+<button class="text-on-error-container hover:opacity-80 transition-opacity" onclick="document.getElementById('error-alert-banner').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Active Form Component (Default & Loading state container) -->
+<div id="recovery-form-section">
+<form class="space-y-space-md" id="forgot-password-form" onsubmit="event.preventDefault(); triggerSubmit();">
+<!-- Single Neutral Floating Input Field -->
+<div class="flex flex-col gap-space-xs">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined text-on-surface-variant absolute inset-inline-start-3 pointer-events-none text-[20px] ml-3">badge</span>
+<input class="peer w-full h-12 ps-11 pe-4 bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg shadow-sm focus:outline-none focus:bg-surface-container-low transition-all duration-150" id="user-identifier" placeholder=" " required="" style="box-shadow: 0 0 0 1px #becabe;" type="text">
+<label class="absolute inset-inline-start-11 text-on-surface-variant font-label-md text-label-md transition-all duration-150 pointer-events-none -translate-y-5 scale-75 top-4 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-5 peer-focus:text-primary bg-surface-container-lowest px-1" data-i18n="inputLabel" for="user-identifier">
+                Institutional Email or Civil National ID
+              </label>
+</div>
+<!-- Context Assistive Microcopy -->
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-micro-copy text-micro-copy text-on-surface-variant flex items-center gap-space-xs" data-i18n="inputHelp">
+<span class="material-symbols-outlined text-[13px]">info</span>
+                Format: name@hospital.eg or 14-digit Egyptian National ID
+              </span>
+<span class="font-clinical-data text-clinical-data text-outline" data-i18n="inputEncryption">256-BIT SALTED</span>
+</div>
+</div>
+<!-- Primary Interactive Action Button -->
+<div class="pt-space-xs">
+<button class="w-full h-12 bg-primary hover:bg-primary-container text-on-primary font-headline-5 text-headline-5 rounded-lg shadow-md flex items-center justify-center gap-space-sm transition-all duration-200 cursor-pointer active:scale-[0.99]" id="submit-button" type="submit">
+<!-- Idle State Icon & Text -->
+<span class="material-symbols-outlined text-[20px]" id="btn-idle-icon">forward_to_inbox</span>
+<span data-i18n="btnSend" id="btn-text" class="">Send Reset Link</span>
+<!-- Hidden Loading State Spinner -->
+<div class="hidden items-center gap-space-xs" id="btn-spinner">
+<svg class="animate-spin h-5 w-5 text-on-primary" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span data-i18n="btnLoading" class="">Authenticating Node...</span>
+</div>
+</button>
+</div>
+</form>
+</div>
+<!-- Success Confirmation State Panel (Replaces or overlaps form) -->
+<div class="hidden flex flex-col gap-space-md p-space-lg bg-surface-container-low rounded-xl shadow-sm animate-fade-in" id="success-confirmation-section">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[24px]">mark_email_read</span>
+</div>
+<div>
+<h3 class="font-headline-4 text-headline-4 text-on-surface font-semibold" data-i18n="successTitle">Link Sent! Check your inbox</h3>
+<p class="font-clinical-data text-clinical-data text-primary" data-i18n="successSub">DISPATCHED TO REGISTERED RECOVERY CHANNEL</p>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-lg shadow-sm space-y-space-xs">
+<p class="font-body-md text-body-md text-on-surface" data-i18n="successBody">
+            A secured credential restoration token was dispatched to:
+          </p>
+<p class="font-clinical-data text-clinical-data text-primary font-bold tracking-wider" id="dispatched-recipient">
+            dr.tarek.elmasry@cairo-health.gov.eg
+          </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-space-xs" data-i18n="successSpam">
+            Didn't receive the email? Check your junk or spam folder, or verify your hospital domain firewall filter.
+          </p>
+</div>
+<!-- Timer & Resend Controls -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-label-sm text-label-sm" data-i18n="timerPrefix">Resend code available in:</span>
+<span class="font-clinical-data text-clinical-data text-tertiary-container font-bold" id="countdown-timer">59s</span>
+</div>
+<button class="px-space-md py-1.5 rounded font-label-md text-label-md bg-surface-container-high text-outline cursor-not-allowed opacity-60 transition-all" data-i18n="btnResend" disabled="" id="btn-resend-link" type="button">
+            Resend Email
+          </button>
+</div>
+</div>
+<!-- Secondary Navigation Action Footer -->
+<div class="mt-space-xl pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<a class="inline-flex items-center gap-space-xs font-headline-5 text-headline-5 text-primary hover:text-primary-container transition-colors group cursor-pointer" href="/login">
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:-translate-x-1" id="back-arrow-icon">arrow_back</span>
+<span data-i18n="backToLogin" class="">Back to Login</span>
+</a>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-outline text-[15px]">support_agent</span>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-i18n="contactHelpdesk" href="#">Contact Hospital IT Helpdesk</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Verification Trust Strip -->
+<div class="mt-space-lg grid grid-cols-1 md:grid-cols-3 gap-gutter-sm">
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">policy</span>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface font-semibold" data-i18n="trust1Title">Egyptian Healthcare Privacy Act</h5>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant" data-i18n="trust1Desc">Strict non-exposure of clinical credentials per Decree 182/2021.</p>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">enhanced_encryption</span>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface font-semibold" data-i18n="trust2Title">SHA-256 Link Binding</h5>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant" data-i18n="trust2Desc">Single-use cryptographically salted restoration payloads.</p>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[24px]">emergency</span>
+<div>
+<h5 class="font-label-md text-label-md text-on-surface font-semibold" data-i18n="trust3Title">Urgent On-Call Override</h5>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant" data-i18n="trust3Desc">ICU &amp; Emergency staff may dial extension 900 for bio-override.</p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Comprehensive i18n Dictionary for English and Egyptian Arabic
+  const i18n = {
+    en: {
+      badge: "Account Recovery",
+      badgeSub: "MOH Protocol 4.2",
+      sideTitle: "Deterministic Identity Verification",
+      sideDesc: "AegisHealth strictly isolates access recovery paths through cryptographic validation tokens. Your session remains protected under regional healthcare identity regulations.",
+      feat1Title: "Zero Speculative Tokens",
+      feat1Desc: "Direct institutional binding to MOH Doctor IDs and civil verified records.",
+      feat2Title: "Ephemeral Audit Windows",
+      feat2Desc: "Password revocation keys expire automatically in 15 minutes.",
+      feat3Title: "Human-In-The-Loop Safeguard",
+      feat3Desc: "Multifactor clearance flagged for clinical personnel on emergency rotations.",
+      nodeStatus: "AUTH NODE CAIRO-01: NOMINAL",
+      protocolVersion: "v2.4.1 SEC-COMPLIANT",
+      cardScope: "Scoped Verification Node",
+      tlsTag: "TLS 1.3 Strict",
+      mainTitle: "Forgot your password?",
+      mainSubtitle: "Enter your registered institutional email or national ID, and we'll send you a secure verification link to reset your credentials.",
+      inputLabel: "Institutional Email or Civil National ID",
+      inputHelp: "Format: name@hospital.eg or 14-digit Egyptian National ID",
+      inputEncryption: "256-BIT SALTED",
+      btnSend: "Send Reset Link",
+      btnLoading: "Authenticating Node...",
+      errorTitle: "Identifier Resolution Failure",
+      errorMessage: "No account found matching this identifier. Please verify your institutional Egyptian National ID or MOH registry email address and re-attempt.",
+      successTitle: "Link Sent! Check your inbox",
+      successSub: "DISPATCHED TO REGISTERED RECOVERY CHANNEL",
+      successBody: "A secured credential restoration token was dispatched to:",
+      successSpam: "Didn't receive the email? Check your junk or spam folder, or verify your hospital domain firewall filter.",
+      timerPrefix: "Resend code available in:",
+      btnResend: "Resend Email",
+      backToLogin: "Back to Login",
+      contactHelpdesk: "Contact Hospital IT Helpdesk",
+      trust1Title: "Egyptian Healthcare Privacy Act",
+      trust1Desc: "Strict non-exposure of clinical credentials per Decree 182/2021.",
+      trust2Title: "SHA-256 Link Binding",
+      trust2Desc: "Single-use cryptographically salted restoration payloads.",
+      trust3Title: "Urgent On-Call Override",
+      trust3Desc: "ICU & Emergency staff may dial extension 900 for bio-override.",
+      langSwitch: "Switch to Arabic (عربي)"
+    },
+    ar: {
+      badge: "استعادة الحساب",
+      badgeSub: "بروتوكول وزارة الصحة 4.2",
+      sideTitle: "التحقق المعتمد من الهوية الطبية",
+      sideDesc: "تعمل منظومة عافية الطبية على عزل مسارات الاستعادة عبر رموز تحقق مشفرة لضمان سرية البيانات وفقاً للمعايير واللوائح الوطنية المصرية.",
+      feat1Title: "هوية مؤسسية مؤكدة",
+      feat1Desc: "ربط مباشر مع ترخيص مزاولة المهنة بوزارة الصحة والرقم القومي.",
+      feat2Title: "فترات صلاحية محددة",
+      feat2Desc: "تنتهي صلاحية روابط إعادة التعيين تلقائياً خلال 15 دقيقة لضمان الأمان.",
+      feat3Title: "حماية الطواقم الطارئة",
+      feat3Desc: "مسار استثنائي فوري لأطباء الرعاية المركزة والطوارئ للمناوبات الحرجة.",
+      nodeStatus: "عقدة التحقق القاهرة-01: متصلة ونشطة",
+      protocolVersion: "إصدار 2.4.1 متوافق أمنياً",
+      cardScope: "نطاق التحقق الآمن",
+      tlsTag: "تشفير TLS 1.3 صارم",
+      mainTitle: "نسيت كلمة المرور؟",
+      mainSubtitle: "أدخل بريدك الإلكتروني المعتمد أو رقم الهوية المسجل لإرسال رابط آمن لاستعادة حسابك.",
+      inputLabel: "البريد الإلكتروني المعتمد أو الرقم القومي",
+      inputHelp: "الصيغة: name@hospital.eg أو الرقم القومي المكون من 14 رقماً",
+      inputEncryption: "تشفير 256 بت",
+      btnSend: "إرسال رابط الاستعادة",
+      btnLoading: "جارٍ التحقق من العقدة الطبية...",
+      errorTitle: "تعذر العثور على المعرف المدخل",
+      errorMessage: "لم يتم العثور على حساب مرتبط بهذه البيانات. يرجى التأكد من كتابة الرقم القومي أو البريد المؤسسي الصحيح وإعادة المحاولة.",
+      successTitle: "تم إرسال الرابط! تفقد بريدك الإلكتروني",
+      successSub: "تم الإرسال إلى قناة الاسترداد المعتمدة",
+      successBody: "تم إرسال رمز إعادة ضبط بيانات المرور بأمان إلى:",
+      successSpam: "لم يصلك البريد؟ يرجى فحص صندوق الرسائل غير المرغوب فيها (Spam) أو مراجعة مسؤول تقنية المعلومات بالمستشفى.",
+      timerPrefix: "إعادة الإرسال متاحة خلال:",
+      btnResend: "إعادة إرسال الرابط",
+      backToLogin: "العودة لتسجيل الدخول",
+      contactHelpdesk: "التواصل مع الدعم الفني للمستشفى",
+      trust1Title: "قانون حماية البيانات الصحية المصرية",
+      trust1Desc: "التزام كامل بضوابط عدم إفشاء بيانات الاعتماد الطبية وفق القرار 182/2021.",
+      trust2Title: "ارتباط مشفر SHA-256",
+      trust2Desc: "روابط وحيدة الاستخدام مشفرة ومؤمنة تماماً ضد الاختراق.",
+      trust3Title: "استثناء طارئ لأطباء النوبات",
+      trust3Desc: "يمكن لأطباء الطوارئ والعناية طلب التجاوز الحيوي عبر تحويلة 900.",
+      langSwitch: "Switch to English (EN)"
+    }
+  };
+
+  let currentLang = 'en';
+
+  // Toggle Language Handler
+  const langToggleBtn = document.getElementById('btn-lang-toggle');
+  const langIndicator = document.getElementById('lang-indicator');
+  const mainContainer = document.getElementById('main-auth-container');
+  const backArrow = document.getElementById('back-arrow-icon');
+
+  langToggleBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    applyLocale(currentLang);
+  });
+
+  function applyLocale(lang) {
+    mainContainer.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    langIndicator.textContent = i18n[lang].langSwitch;
+    
+    // Flip back arrow for RTL
+    if (lang === 'ar') {
+      backArrow.textContent = 'arrow_forward';
+    } else {
+      backArrow.textContent = 'arrow_back';
+    }
+
+    // Apply translations
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key]) {
+        el.textContent = i18n[lang][key];
+      }
+    });
+  }
+
+  // Visual State Controller Elements
+  const btnDefault = document.getElementById('btn-state-default');
+  const btnLoading = document.getElementById('btn-state-loading');
+  const btnSuccess = document.getElementById('btn-state-success');
+  const btnError = document.getElementById('btn-state-error');
+
+  const formSection = document.getElementById('recovery-form-section');
+  const successSection = document.getElementById('success-confirmation-section');
+  const errorBanner = document.getElementById('error-alert-banner');
+  
+  const submitBtn = document.getElementById('submit-button');
+  const btnIdleIcon = document.getElementById('btn-idle-icon');
+  const btnText = document.getElementById('btn-text');
+  const btnSpinner = document.getElementById('btn-spinner');
+  const userInput = document.getElementById('user-identifier');
+
+  let countdownInterval = null;
+
+  function resetStateStyles() {
+    [btnDefault, btnLoading, btnSuccess, btnError].forEach(b => {
+      b.classList.remove('bg-surface-container-highest', 'font-semibold', 'shadow-sm');
+      b.classList.add('bg-surface-container', 'font-normal');
+    });
+  }
+
+  function activateTab(btn) {
+    resetStateStyles();
+    btn.classList.add('bg-surface-container-highest', 'font-semibold', 'shadow-sm');
+    btn.classList.remove('bg-surface-container', 'font-normal');
+  }
+
+  function setStateDefault() {
+    activateTab(btnDefault);
+    formSection.classList.remove('hidden');
+    successSection.classList.add('hidden');
+    errorBanner.classList.add('hidden');
+
+    submitBtn.disabled = false;
+    btnIdleIcon.classList.remove('hidden');
+    btnText.classList.remove('hidden');
+    btnSpinner.classList.add('hidden');
+    btnSpinner.classList.remove('flex');
+    if (countdownInterval) clearInterval(countdownInterval);
+  }
+
+  function setStateLoading() {
+    activateTab(btnLoading);
+    formSection.classList.remove('hidden');
+    successSection.classList.add('hidden');
+    errorBanner.classList.add('hidden');
+
+    submitBtn.disabled = true;
+    btnIdleIcon.classList.add('hidden');
+    btnText.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+    btnSpinner.classList.add('flex');
+  }
+
+  function setStateSuccess() {
+    activateTab(btnSuccess);
+    formSection.classList.add('hidden');
+    successSection.classList.remove('hidden');
+    errorBanner.classList.add('hidden');
+
+    // Populate email preview if typed
+    const val = userInput.value.trim();
+    if (val && val.includes('@')) {
+      document.getElementById('dispatched-recipient').textContent = val;
+    } else if (val && !isNaN(val)) {
+      document.getElementById('dispatched-recipient').textContent = `MOH Record Linked: ID ending in ...${val.slice(-4)}`;
+    }
+
+    startTimer(59);
+  }
+
+  function setStateError() {
+    activateTab(btnError);
+    formSection.classList.remove('hidden');
+    successSection.classList.add('hidden');
+    errorBanner.classList.remove('hidden');
+
+    submitBtn.disabled = false;
+    btnIdleIcon.classList.remove('hidden');
+    btnText.classList.remove('hidden');
+    btnSpinner.classList.add('hidden');
+    btnSpinner.classList.remove('flex');
+  }
+
+  // Interactive Button Listeners
+  btnDefault.addEventListener('click', setStateDefault);
+  btnLoading.addEventListener('click', setStateLoading);
+  btnSuccess.addEventListener('click', setStateSuccess);
+  btnError.addEventListener('click', setStateError);
+
+  function triggerSubmit() {
+    setStateLoading();
+    setTimeout(() => {
+      setStateSuccess();
+    }, 1200);
+  }
+
+  function startTimer(seconds) {
+    if (countdownInterval) clearInterval(countdownInterval);
+    let rem = seconds;
+    const timerEl = document.getElementById('countdown-timer');
+    const resendBtn = document.getElementById('btn-resend-link');
+    
+    resendBtn.disabled = true;
+    resendBtn.classList.add('cursor-not-allowed', 'opacity-60');
+    resendBtn.classList.remove('bg-primary', 'text-on-primary', 'hover:bg-primary-container', 'cursor-pointer');
+
+    countdownInterval = setInterval(() => {
+      rem--;
+      if (rem > 0) {
+        timerEl.textContent = rem + 's';
+      } else {
+        clearInterval(countdownInterval);
+        timerEl.textContent = '0s';
+        resendBtn.disabled = false;
+        resendBtn.classList.remove('cursor-not-allowed', 'opacity-60', 'bg-surface-container-high', 'text-outline');
+        resendBtn.classList.add('bg-primary', 'text-on-primary', 'hover:bg-primary-container', 'cursor-pointer');
+      }
+    }, 1000);
+  }
+
+  document.getElementById('btn-resend-link').addEventListener('click', function() {
+    if (!this.disabled) {
+      startTimer(59);
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-md shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="w-full px-margin flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[16px]">shield</span><span class="font-clinical-data text-clinical-data text-on-surface-variant">AegisHealth • Protected Session / جلسة محمية</span></div></div></footer>
+
+</body></html>

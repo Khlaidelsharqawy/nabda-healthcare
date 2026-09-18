@@ -1,0 +1,408 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>AegisHealth Clinical AI Ecosystem</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-highest": "#dee2ee", "primary": "#005932", "inverse-primary": "#7ed99e", "tertiary-container": "#ae4202", "error": "#ba1a1a", "surface": "#f9f9ff", "surface-tint": "#006d3e", "primary-container": "#087443", "surface-bright": "#f9f9ff", "secondary-fixed-dim": "#c0c1ff", "secondary-container": "#5d62f3", "on-primary-container": "#9af7b9", "tertiary-fixed-dim": "#ffb597", "background": "#f9f9ff", "on-primary-fixed-variant": "#00522d", "on-tertiary-fixed-variant": "#7d2d00", "inverse-on-surface": "#ecf1fd", "inverse-surface": "#2c313a", "on-error": "#ffffff", "tertiary": "#873100", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdbcd", "outline": "#6f7a70", "on-primary": "#ffffff", "secondary": "#4347d9", "outline-variant": "#becabe", "surface-variant": "#dee2ee", "primary-fixed-dim": "#7ed99e", "surface-container-low": "#f0f3ff", "surface-dim": "#d6dae6", "on-secondary-fixed": "#04006d", "on-error-container": "#93000a", "on-surface": "#171c24", "primary-fixed": "#99f6b9", "on-secondary-fixed-variant": "#2a2bc4", "secondary-fixed": "#e1e0ff", "on-secondary-container": "#fffbff", "error-container": "#ffdad6", "on-tertiary-fixed": "#360f00", "on-tertiary": "#ffffff", "on-surface-variant": "#3f4941", "surface-container-high": "#e4e8f4", "surface-container": "#eaeefa", "on-primary-fixed": "#00210f", "on-secondary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-sm": "1rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter-lg": "2rem", "margin": "2rem", "space-md": "1rem", "gutter": "1.5rem", "margin-sm": "1rem", "space-xs": "0.25rem", "margin-lg": "3rem" }, "fontFamily": { "headline-5": ["Plus Jakarta Sans"], "headline-1-mobile": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "headline-4": ["Plus Jakarta Sans"], "clinical-data": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "micro-copy": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "body-md": ["Inter"], "headline-1": ["Plus Jakarta Sans"] }, "fontSize": { "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Clinical AI Platform</span></div><div class="h-6 w-px bg-surface-variant mx-space-xs hidden sm:block"></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1 rounded-xl bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-[16px] text-primary">domain</span><span class="font-label-sm text-label-sm font-semibold truncate max-w-[200px]">[Clinic Name]</span><span class="text-on-surface-variant font-micro-copy text-micro-copy font-normal">/ [اسم العيادة]</span><span class="material-symbols-outlined text-[14px] text-on-surface-variant">lock</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span class="">EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><div class="flex items-center gap-space-xs pl-space-xs rtl:pr-space-xs"><div class="hidden sm:flex flex-col items-end rtl:items-start text-right rtl:text-left"><span class="font-label-md text-label-md text-on-surface font-semibold">[Doctor Name] / [اسم الطبيب]</span><span class="font-micro-copy text-micro-copy text-primary-container font-medium">Attending Physician</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><aside class="fixed left-0 rtl:left-auto rtl:right-0 top-16 bottom-0 w-64 bg-surface-container-low/80 backdrop-blur-md z-40 flex flex-col justify-between py-space-md shadow-[1px_0_8px_rgba(0,0,0,0.02)] rtl:shadow-[-1px_0_8px_rgba(0,0,0,0.02)] overflow-y-auto"><div class="flex flex-col gap-space-md px-space-md"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">health_metrics</span><span class="font-headline-5 text-headline-5 text-on-surface tracking-tight">Doctor Workspace</span></div><span class="font-clinical-data text-clinical-data px-1.5 py-0.5 rounded-lg bg-surface-container-high text-primary font-semibold">ACTIVE</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-xl"><div class="px-space-xs pt-space-xs pb-1 font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">Clinical Care</div><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="doctor-clinical-dashboard" href="#">Clinical Dashboard</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="appointments-and-schedule-management" href="#">Appointments &amp; Schedule</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="patient-directory" href="#">Patient Directory</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="clinical-workspace-and-ai-scribe" href="#">Clinical Workspace &amp; AI Scribe</a><div class="px-space-xs pt-space-sm pb-1 font-micro-copy text-micro-copy uppercase tracking-wider text-on-surface-variant font-semibold">AI &amp; Voice Ambient</div><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="doctor-ai-workspace" href="#">Doctor AI Workspace</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="patient-scoped-ai-workspace" href="#">Patient-Scoped AI</a><a aria-current="page" class="px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-xl" data-path="new-voice-session" href="#">New Voice Session</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="active-voice-session" href="#">Active Voice Session</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="voice-session-review" href="#">Voice Session Review</a><a class="px-space-sm py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-body-md text-body-md" data-path="clinical-draft-review" href="#">Clinical Draft Review</a></nav></div><div class="flex flex-col gap-space-xs px-space-md pt-space-md"><div class="p-space-sm rounded-xl bg-surface-container border-l-2 border-primary rtl:border-l-0 rtl:border-r-2 flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-semibold text-on-surface">Doctor AI Status</span><span class="h-2 w-2 rounded-full bg-primary-fixed-dim animate-pulse"></span></div><p class="font-micro-copy text-micro-copy text-on-surface-variant">Aegis Scribe Copilot Ready &amp; Verified</p></div></div></aside><div class="pl-64 rtl:pl-0 rtl:pr-64"><main class="w-full pt-16 bg-background min-h-screen px-margin-sm lg:px-margin pb-margin-lg"><div class="flex flex-col w-full">
+<!-- Dynamic Audio Simulation & Interaction Script -->
+<script>
+    function setupVoiceSession() {
+      let isRecording = false;
+      let timerInterval = null;
+      let seconds = 0;
+
+      const consentCheck = document.getElementById('consent-checkbox');
+      const startBtn = document.getElementById('start-session-btn');
+      const timerDisplay = document.getElementById('session-timer');
+      const recBadge = document.getElementById('rec-active-badge');
+      const statusText = document.getElementById('stream-readiness-label');
+      const micStatusDot = document.getElementById('mic-pulse-dot');
+      const cancelBtn = document.getElementById('cancel-session-btn');
+      const meterBars = document.querySelectorAll('.audio-bar');
+
+      function updateTimer() {
+        seconds++;
+        const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+        const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+        const secs = String(seconds % 60).padStart(2, '0');
+        timerDisplay.textContent = `${hrs}:${mins}:${secs}`;
+      }
+
+      function simulateAudioMeter() {
+        if (!isRecording) {
+          meterBars.forEach((bar, idx) => {
+            const h = 15 + Math.sin(idx * 0.8) * 10;
+            bar.style.height = `${h}%`;
+            bar.classList.remove('bg-primary-container');
+            bar.classList.add('bg-surface-variant');
+          });
+          return;
+        }
+        meterBars.forEach((bar) => {
+          const rand = Math.floor(Math.random() * 85) + 12;
+          bar.style.height = `${rand}%`;
+          bar.classList.add('bg-primary-container');
+          bar.classList.remove('bg-surface-variant');
+        });
+      }
+
+      setInterval(simulateAudioMeter, 180);
+
+      window.toggleConsent = function() {
+        if (consentCheck.checked) {
+          startBtn.removeAttribute('disabled');
+          startBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+          startBtn.classList.add('hover:bg-primary', 'shadow-md');
+        } else {
+          if (isRecording) {
+            stopRecording();
+          }
+          startBtn.setAttribute('disabled', 'true');
+          startBtn.classList.add('opacity-40', 'cursor-not-allowed');
+          startBtn.classList.remove('hover:bg-primary', 'shadow-md');
+        }
+      };
+
+      function stopRecording() {
+        isRecording = false;
+        clearInterval(timerInterval);
+        recBadge.classList.add('hidden');
+        statusText.textContent = "Protected Session • Local Audio Stream Ready";
+        statusText.classList.remove('text-primary');
+        micStatusDot.classList.remove('bg-error', 'animate-ping');
+        micStatusDot.classList.add('bg-primary-fixed-dim');
+        startBtn.innerHTML = `
+          <span class="material-symbols-outlined text-[24px]">mic</span>
+          <span class="flex flex-col items-start text-left rtl:items-end rtl:text-right">
+            <span class="font-headline-4 text-headline-4 leading-tight">Start Audio Recording</span>
+            <span class="font-label-sm text-label-sm opacity-90">بدء التسجيل الصوتي</span>
+          </span>
+        `;
+        startBtn.classList.replace('bg-error', 'bg-primary-container');
+      }
+
+      window.handleSessionToggle = function() {
+        if (!consentCheck.checked) return;
+
+        if (!isRecording) {
+          isRecording = true;
+          seconds = 0;
+          timerDisplay.textContent = "00:00:00";
+          timerInterval = setInterval(updateTimer, 1000);
+          recBadge.classList.remove('hidden');
+          statusText.textContent = "Live Ambience Active • Processing Local Buffer";
+          statusText.classList.add('text-primary');
+          micStatusDot.classList.remove('bg-primary-fixed-dim');
+          micStatusDot.classList.add('bg-error', 'animate-ping');
+          startBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[24px]">stop_circle</span>
+            <span class="flex flex-col items-start text-left rtl:items-end rtl:text-right">
+              <span class="font-headline-4 text-headline-4 leading-tight">End Recording & Synthesize</span>
+              <span class="font-label-sm text-label-sm opacity-90">إنهاء التسجيل وتوليد المسودة</span>
+            </span>
+          `;
+          startBtn.classList.replace('bg-primary-container', 'bg-error');
+        } else {
+          stopRecording();
+        }
+      };
+
+      window.cancelSession = function() {
+        if (confirm('Cancel and reset this voice encounter session? / هل تريد إلغاء هذه الجلسة؟')) {
+          if (isRecording) stopRecording();
+          seconds = 0;
+          timerDisplay.textContent = "00:00:00";
+          consentCheck.checked = false;
+          window.toggleConsent();
+        }
+      };
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupVoiceSession);
+    } else {
+      setupVoiceSession();
+    }
+  </script>
+<!-- Ambient Top Visual Gradient Accent -->
+<div class="relative w-full mb-space-lg">
+<div class="absolute -top-10 left-1/4 w-96 h-40 bg-secondary-fixed/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute -top-10 right-1/4 w-96 h-40 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Security & Isolation Attestation Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-primary font-clinical-data text-clinical-data shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="tracking-wide uppercase">Role Restricted: Attending Doctor</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface-variant font-clinical-data text-clinical-data shadow-sm"><span class="material-symbols-outlined text-[15px] text-secondary">domain</span><span class="">Tenant Isolated / معزول للمنشأة</span></div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-secondary-fixed/50 text-secondary font-clinical-data text-clinical-data shadow-sm">
+<span class="material-symbols-outlined text-[15px]">psychology</span>
+<span class="">Audio Processing: Assistance Only (Zero Retention)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 rtl:flex-row-reverse"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider font-semibold">Access Controlled / خاضع لمعايير الأمان</span></div>
+</div>
+</div>
+<!-- Main Bento Grid Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Patient Context & Encounter Binding (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Patient Header & Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-sm border-b-0">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<span class="font-headline-4 text-headline-4 text-on-surface">Encounter Setup</span>
+</div>
+<span class="font-clinical-data text-clinical-data bg-surface-container px-2 py-0.5 rounded-lg text-on-surface-variant">STEP 1 OF 2</span>
+</div>
+<!-- Clinical Patient Banner Pill -->
+<div class="mt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary font-headline-3 text-headline-3 shrink-0">
+            KM
+          </div>
+<div class="flex flex-col min-w-0 flex-1"><div class="flex items-center justify-between gap-1"><span class="font-headline-5 text-headline-5 text-on-surface truncate">[Patient Name] / [اسم المريض]</span><span class="font-clinical-data text-clinical-data text-primary px-1.5 py-0.2 bg-primary-fixed/40 rounded">[Patient ID]</span></div><div class="flex items-center justify-between text-on-surface-variant"><span class="font-label-sm text-label-sm text-on-surface-variant truncate">[العمر] • [النوع]</span><span class="font-micro-copy text-micro-copy text-on-surface-variant">[Age] • [Gender]</span></div></div>
+</div>
+<!-- Clinical Metadata Fields Form -->
+<div class="flex flex-col gap-space-sm mt-space-md">
+<!-- Appointment Binding -->
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center justify-between mb-1">
+<span class="">Appointment Binding</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">الموعد المسجل</span>
+</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg px-3 py-2.5 appearance-none focus:outline-none focus:bg-surface-container-lowest shadow-sm"><option selected="">[Appointment ID] • [Date &amp; Time] ([Clinic Context])</option><option>[Appointment ID] • Follow-Up Lab Review</option><option>[Appointment ID] • Scheduled Consultation</option></select>
+<span class="material-symbols-outlined absolute right-3 rtl:right-auto rtl:left-3 top-2.5 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Session Purpose -->
+<div>
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center justify-between mb-1">
+<span class="">Session Clinical Purpose</span>
+<span class="text-on-surface-variant font-micro-copy text-micro-copy">الغرض الطبي من الجلسة</span>
+</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface font-body-sm text-body-sm rounded-lg px-3 py-2.5 appearance-none focus:outline-none focus:bg-surface-container-lowest shadow-sm"><option selected="">[Appointment ID] • [Date &amp; Time] ([Clinic Context])</option><option>[Appointment ID] • Follow-Up Lab Review</option><option>[Appointment ID] • Scheduled Consultation</option></select>
+<span class="material-symbols-outlined absolute right-3 rtl:right-auto rtl:left-3 top-2.5 text-[18px] text-on-surface-variant pointer-events-none">medical_services</span>
+</div>
+</div>
+<!-- Active Clinical Context Scope -->
+<div class="bg-surface-container-low/70 rounded-lg p-space-sm flex items-start gap-space-xs mt-1">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">folder_shared</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Pre-loaded Longitudinal EHR Baseline</span>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">[Lab Result] • [Medication Summary] • Nil documented drug allergies.</p>
+</div>
+</div>
+<!-- Strict Patient Consent Attestation Panel -->
+<div class="bg-surface-container rounded-xl p-space-md mt-space-xs">
+<div class="flex items-start gap-space-sm">
+<input class="mt-1 w-5 h-5 rounded-lg text-primary focus:ring-0 cursor-pointer accent-primary-container" id="consent-checkbox" onchange="window.toggleConsent()" type="checkbox">
+<label class="flex flex-col cursor-pointer select-none" for="consent-checkbox">
+<span class="font-label-md text-label-md text-on-surface font-bold">
+                  Patient Verbal Consent Obtained
+                </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+                  Patient consent obtained for ambient audio documentation assistance.
+                </span>
+<span class="font-label-sm text-label-sm text-primary font-medium mt-1 rtl:text-right" dir="rtl">
+                  تم الحصول على موافقة المريض الصريحة لتوثيق الحوار الطبي ومساعد الذكاء الاصطناعي السريري.
+                </span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Protocol & Compliance Callout -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">policy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Clinical Privacy &amp; Security Controls / ضوابط الخصوصية والأمان السريري</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Audio stream remains on-premises edge buffer</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[20px]">lock_clock</span>
+</div>
+</div>
+<!-- Right Column: Audio Readiness & Live Session Control Center (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Hardware Audio Calibration Box -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">settings_voice</span>
+<span class="font-headline-4 text-headline-4 text-on-surface">Acoustic &amp; Hardware Telemetry</span>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-lg bg-primary-fixed/40 text-primary font-clinical-data text-clinical-data"><span class="w-2 h-2 rounded-full bg-primary-fixed-dim" id="mic-pulse-dot"></span><span class="">Audio Stream Active / تدفق صوتي نشط</span></div>
+</div>
+<!-- Microphone Selector & Device Indicator -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm items-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Input Transducer</span>
+<div class="flex items-center gap-2 mt-1 bg-surface-container-low px-3 py-2 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-primary">mic</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Audio Input Device / جهاز التقاط الصوت</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Noise Suppression &amp; Diarization</span>
+<div class="flex items-center justify-between mt-1 bg-surface-container-low px-3 py-2 rounded-lg"><span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dual-Speaker Diarization Active / تمييز المتحدثين نشط</span></div>
+</div>
+</div>
+<!-- Sound Spectrum / Level Waveform Visualizer -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-micro-copy text-micro-copy">
+<span class="font-semibold uppercase tracking-wider">Audio Amplitude Waveform / مقياس تدفق الصوت</span>
+<span class="font-clinical-data text-clinical-data text-on-surface font-medium" id="stream-readiness-label">Protected Session • Local Audio Stream Ready</span>
+</div>
+<!-- 28-Bar Equalizer Display -->
+<div class="h-16 flex items-end justify-between gap-1 pt-2 px-2 bg-surface-container rounded-lg overflow-hidden">
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 15%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 22.1736%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 24.9957%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 21.7546%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 14.4163%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 7.43198%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 5.03835%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 8.68733%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 16.1655%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 22.9367%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 24.8936%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 20.8492%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 13.2567%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 6.72174%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 5.20822%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 9.63427%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 17.3151%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 23.5916%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 24.6566%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 19.864%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 12.121%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 6.12433%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 5.51156%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 10.6543%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 18.4331%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 24.1295%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 24.288%;"></div>
+<div class="audio-bar w-full bg-surface-variant rounded-t transition-all duration-150" style="height: 18.8125%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-clinical-data text-clinical-data px-1">
+<span class="">-48 dBFS</span>
+<span class="">-24 dBFS (Optimal Range)</span>
+<span class="">0 dBFS (Peak)</span>
+</div>
+</div>
+</div>
+<!-- Main Voice Encounter Control Center Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md flex flex-col items-center justify-center text-center relative overflow-hidden">
+<!-- Live Recording Indicator Pill -->
+<div class="hidden absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 bg-error-container text-on-error-container rounded-full animate-pulse font-clinical-data text-clinical-data font-bold" id="rec-active-badge">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="">ON AIR • AMBIENT REC</span>
+</div>
+<span class="font-micro-copy text-micro-copy uppercase tracking-widest text-on-surface-variant font-semibold mb-1">
+          Encounter Duration Clock / مدة الجلسة
+        </span>
+<!-- High-Legibility Time Display -->
+<div class="font-display-lg text-display-lg font-bold text-on-surface tracking-tighter tabular-nums mb-space-md select-none" id="session-timer">
+          00:00:00
+        </div>
+<!-- Prominent Dual-Action Recording Button -->
+<div class="w-full max-w-md flex flex-col gap-space-sm items-stretch">
+<button class="opacity-40 cursor-not-allowed w-full bg-primary-container text-on-primary py-4 px-6 rounded-xl flex items-center justify-center gap-space-md transition-all duration-200 group" disabled="" id="start-session-btn" onclick="window.handleSessionToggle()">
+<span class="material-symbols-outlined text-[26px]">mic</span>
+<span class="flex flex-col items-start text-left rtl:items-end rtl:text-right">
+<span class="font-headline-4 text-headline-4 leading-tight">Start Audio Recording</span>
+<span class="font-label-sm text-label-sm opacity-90">بدء التسجيل الصوتي</span>
+</span>
+</button>
+<!-- Secondary Actions Bar -->
+<div class="flex items-center justify-between gap-space-sm pt-2">
+<button class="flex-1 py-2.5 px-space-md bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-lg font-label-md text-label-md font-semibold transition-all flex items-center justify-center gap-1.5" id="cancel-session-btn" onclick="window.cancelSession()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span class="">Cancel Session / إلغاء</span>
+</button>
+<button class="px-space-md py-2.5 bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface rounded-lg font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Input Settings</span>
+</button>
+</div>
+</div>
+<!-- Mandatory Physician Review Legal & Clinical Banner -->
+<div class="mt-space-lg w-full bg-surface-container-high/60 rounded-xl p-space-sm flex items-start gap-space-sm text-left rtl:text-right">
+<div class="p-1 rounded-lg bg-surface-container-lowest text-tertiary-container mt-0.5 shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">
+              Mandatory Clinical Review Notice / إقرار المراجعة الطبية الإلزامية
+            </span>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant leading-relaxed">
+              Voice transcription is an operational documentation aid. Physician review, direct clinical attestation, and signature are mandatory before saving any content to the patient’s official medical chart.
+            </p>
+</div>
+</div>
+</div>
+<!-- Live Clinical Entity Extractor Preview (Pre-session Ready State) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">auto_awesome</span>
+<span class="font-headline-5 text-headline-5 text-on-surface">Real-Time Extraction Channels Ready</span>
+</div>
+<span class="font-clinical-data text-clinical-data text-on-surface-variant">Clinical Coding Assistance Active / المساعدة في الترميز السريري</span>
+</div>
+<div class="grid grid-cols-3 gap-space-sm text-center">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-[20px] mb-1">pill</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Pharmacology</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Dosages, Contraindications</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[20px] mb-1">symptoms</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Symptomatology</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Chief complaints, Duration</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col items-center">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] mb-1">fact_check</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Differential Lab Orders</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">LOINC standard suggestions</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Quick Context Card Mosaic -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-sm mt-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">record_voice_over</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Bilingual Scribe Model</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Medical Arabic (Egyptian Dialect) &amp; English seamlessly parsed</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">privacy_tip</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">PHI Obfuscation Active</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Named entity recognition strips identifiers prior to vector storage</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]">clinical_notes</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">SOAP Auto-Composition</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">Real-time mapping into Subjective, Objective, Assessment, &amp; Plan</span>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

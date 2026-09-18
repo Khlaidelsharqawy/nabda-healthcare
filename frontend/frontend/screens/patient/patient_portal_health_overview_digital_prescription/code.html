@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>AegisHealth Public &amp; Patient Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; } [dir="rtl"] { font-family: 'Noto Sans Arabic', 'Inter', sans-serif; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-variant": "#dee2ee", "on-secondary-container": "#fffbff", "primary-fixed-dim": "#7ed99e", "secondary-fixed": "#e1e0ff", "surface-container-high": "#e4e8f4", "background": "#f9f9ff", "surface-tint": "#006d3e", "on-error-container": "#93000a", "outline-variant": "#becabe", "on-tertiary-fixed": "#360f00", "surface-container-lowest": "#ffffff", "on-surface": "#171c24", "primary-container": "#087443", "on-tertiary": "#ffffff", "outline": "#6f7a70", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#2a2bc4", "surface": "#f9f9ff", "inverse-primary": "#7ed99e", "surface-dim": "#d6dae6", "tertiary-container": "#ae4202", "on-primary-container": "#9af7b9", "surface-container": "#eaeefa", "surface-container-highest": "#dee2ee", "on-background": "#171c24", "on-tertiary-container": "#ffdbcd", "secondary-fixed-dim": "#c0c1ff", "on-tertiary-fixed-variant": "#7d2d00", "secondary": "#4347d9", "surface-container-low": "#f0f3ff", "on-secondary": "#ffffff", "error": "#ba1a1a", "primary-fixed": "#99f6b9", "inverse-on-surface": "#ecf1fd", "primary": "#005932", "on-error": "#ffffff", "on-primary-fixed": "#00210f", "on-primary": "#ffffff", "secondary-container": "#5d62f3", "tertiary": "#873100", "tertiary-fixed-dim": "#ffb597", "inverse-surface": "#2c313a", "tertiary-fixed": "#ffdbcd", "on-surface-variant": "#3f4941", "on-secondary-fixed": "#04006d", "surface-bright": "#f9f9ff", "on-primary-fixed-variant": "#00522d" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin-sm": "1rem", "margin-lg": "3rem", "gutter-sm": "1rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-lg": "2rem", "margin": "2rem" }, "fontFamily": { "body-lg": ["Inter"], "micro-copy": ["Inter"], "headline-4": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-1": ["Plus Jakarta Sans"], "body-md": ["Inter"], "display-lg": ["Plus Jakarta Sans"], "headline-5": ["Plus Jakarta Sans"], "headline-2": ["Plus Jakarta Sans"], "headline-3": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Inter"], "clinical-data": ["Inter"], "headline-1-mobile": ["Plus Jakarta Sans"], "body-sm": ["Inter"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "micro-copy": ["11px", { "lineHeight": "14px", "fontWeight": "400" }], "headline-4": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-1": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-lg": ["48px", { "lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-5": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "headline-2": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-3": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "clinical-data": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }], "headline-1-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><header class="fixed top-0 inset-x-0 h-16 z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-margin-sm lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><img alt="AegisHealth Medical Ecosystem Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"/><div class="flex flex-col"><span class="font-headline-4 text-headline-4 text-primary tracking-tight font-bold">AegisHealth</span><span class="font-micro-copy text-micro-copy text-on-surface-variant uppercase tracking-wider">Al-Nour Medical Center</span></div></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="public-clinic-overview" href="#">Services &amp; Specialties</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="book-consultation" href="#">Book Appointment</a><a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="clinical-team" href="#">Medical Staff</a><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="patient-health-portal" href="#">Patient Records</a></nav><div class="flex items-center gap-space-sm"><div class="flex items-center rounded-xl bg-surface-container p-0.5"><button class="px-space-xs py-1 rounded-lg font-label-sm text-label-sm font-medium text-on-surface hover:bg-surface-container-lowest transition-colors flex items-center gap-1" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl')"><span class="material-symbols-outlined text-[14px]">translate</span><span>EN / عربي</span></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-lowest hover:text-on-surface transition-colors" onclick="document.documentElement.classList.toggle('dark')"><span class="material-symbols-outlined text-[16px]">dark_mode</span></button></div><a class="hidden sm:inline-flex px-space-md py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" data-path="central-auth-login" href="#">Staff Portal Login</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background max-w-7xl mx-auto px-margin-sm lg:px-margin min-h-screen"><div class="flex flex-col w-full pb-16 space-y-8">
+<!-- Patient Context Header / Welcome Banner -->
+<section class="relative overflow-hidden rounded-xl bg-surface-container-low p-6 lg:p-8 shadow-sm">
+<div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<div class="absolute right-1/3 -bottom-20 w-80 h-80 rounded-full bg-secondary-fixed/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="relative">
+<img class="w-16 h-16 rounded-full object-cover shadow-sm ring-2 ring-surface-container-lowest" data-alt="Warm and respectful portrait of an Egyptian middle-aged man smiling gently in natural ambient light, calm teal and neutral tones, high resolution, clinical patient portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp7t_qZ9XE91_h_Z-bW9BaUdsHCTJuIsjjoNQCVwqu-icfTudbCrgSN0RbmfFIzLkCts9F4chT3TwKtFOs2J_MawHIpVFIEWLA5p_f0CqUQVCwtcbuRibd1inHYBs9J3FqCMRPkF2rK4K_jmGtMzAHjKYUQfIvpLdH7Y7NKYvEFSVdIUhc0Arfv8i3FZ3fc5qPTijs5p-H0INsl_uSSmzbDbro5rgPQpNv0oW5Q2o8wm0kWzSFq7KX"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-primary rounded-full border-2 border-surface-container-lowest" title="Profile Active &amp; Verified"></span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-headline-2 text-headline-2 text-on-surface font-semibold tracking-tight">Tariq Mansoor</span>
+<span class="font-headline-3 text-headline-3 text-on-surface-variant font-medium">(طارق منصور)</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-clinical-data text-clinical-data text-on-surface-variant tracking-wider">MRN: #EG-9042</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex flex-wrap items-center gap-x-4 gap-y-1">
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">local_hospital</span>
+              Al-Nour Medical Center (مركز النور الطبي)
+            </span>
+<span class="inline-flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">stethoscope</span>
+              Attending: Dr. Tarek El-Kabbani
+            </span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-lowest rounded-xl p-3 shadow-sm flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Care Coverage</div>
+<div class="font-headline-5 text-headline-5 text-on-surface font-semibold">Takaful Gold • Class A</div>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-4 py-2.5 rounded-xl font-label-md text-label-md font-semibold transition-all flex items-center gap-2 shadow-sm" id="quickHelpBtn">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+<span>Ask Health Copilot</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Emergency & Reassurance Banner -->
+<div class="rounded-xl bg-surface-container p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-on-surface shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Verified Clinical Telemetry Synchronized</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Last synced today at 08:30 AM via Cairo Connected Health Node. For acute medical emergencies, dial 123 or visit Al-Nour ER.</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest font-micro-copy text-micro-copy text-primary font-semibold whitespace-nowrap">STATUS: STABLE</span>
+</div>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Upcoming Consultation & Active Medications (7 cols) -->
+<div class="lg:col-span-7 flex flex-col space-y-8">
+<!-- Card: Next Consultation (ميعادي القادم) -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-6 rounded-full bg-primary inline-block"></span>
+<h2 class="font-headline-3 text-headline-3 text-on-surface font-bold">Next Consultation (ميعادي القادم)</h2>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            Confirmed In-Clinic
+          </span>
+</div>
+<div class="rounded-xl bg-surface-container-low p-5 mb-5 flex flex-col sm:flex-row justify-between gap-5">
+<div class="flex gap-4">
+<div class="flex flex-col items-center justify-center bg-surface-container-lowest px-4 py-3 rounded-lg shadow-sm text-center min-w-[76px]">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">FEB</span>
+<span class="font-display-lg text-display-lg text-primary font-extrabold leading-none my-1">20</span>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant">THU / الخميس</span>
+</div>
+<div>
+<h3 class="font-headline-4 text-headline-4 text-on-surface font-semibold">Dr. Tarek El-Kabbani</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Cardiology &amp; Internal Medicine (أمراض القلب والباطنة)</p>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+                  5:30 PM (Cairo Time)
+                </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                  Building B, 3rd Floor • Suite 304
+                </span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Add to Calendar</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Clinic Route</span>
+</button>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-variant/40 hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-label-md font-semibold transition-colors flex items-center gap-1.5" id="rescheduleBtn">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+<span>Request Reschedule / إعادة جدولة</span>
+</button>
+</div>
+<div class="hidden mt-4 p-3 rounded-lg bg-surface-container font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2 animate-fadeIn" id="rescheduleNote">
+<span class="material-symbols-outlined text-primary text-[18px]">info</span>
+<span>Your reschedule request will be dispatched directly to Clinic Secretary Mona Radwan. She will verify Dr. Tarek's calendar and contact you via SMS.</span>
+</div>
+</div>
+<!-- Card: Active Medications & Digital Prescription (أدويتي الحالية والروشتة) -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col space-y-6">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-6 rounded-full bg-secondary-container inline-block"></span>
+<div>
+<h2 class="font-headline-3 text-headline-3 text-on-surface font-bold">Active Medications (أدويتي الحالية والروشتة)</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Validated under Egyptian Unified Health Protocol</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed/40 text-on-primary-fixed font-clinical-data text-clinical-data">2 REFILS REMAINING</span>
+</div>
+<!-- Electronic Prescription Banner -->
+<div class="rounded-xl bg-surface-container-low p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container-lowest flex items-center justify-center p-1.5 shadow-sm">
+<!-- Inline QR Visual -->
+<svg class="w-full h-full text-on-surface" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 48 48">
+<rect fill="currentColor" fill-opacity="0.1" height="12" rx="2" width="12" x="6" y="6"></rect>
+<rect fill="currentColor" height="4" width="4" x="10" y="10"></rect>
+<rect fill="currentColor" fill-opacity="0.1" height="12" rx="2" width="12" x="30" y="6"></rect>
+<rect fill="currentColor" height="4" width="4" x="34" y="10"></rect>
+<rect fill="currentColor" fill-opacity="0.1" height="12" rx="2" width="12" x="6" y="30"></rect>
+<rect fill="currentColor" height="4" width="4" x="10" y="34"></rect>
+<path d="M24 6v8m0 6v6m6-12h8m-8 6h4m4 8h6m-14 4h4m4 4v6m-14 0h6m-12-8h6"></path>
+</svg>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-5 text-headline-5 text-on-surface font-semibold">Digital e-Prescription (الروشتة الإلكترونية)</span>
+<span class="material-symbols-outlined text-primary text-[18px]" title="Cryptographically Sealed">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ID: RX-2025-EG44910 • Signed digitally by Dr. Tarek El-Kabbani</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">local_pharmacy</span>
+              Al-Ezaby Pharmacy Partner
+            </span>
+<button class="p-2 rounded-lg bg-surface-container-highest hover:bg-surface-variant text-on-surface transition-colors" title="Download Official PDF">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- Medication Cards Schedule -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Medication 1 -->
+<div class="rounded-xl bg-surface-container-low p-4 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">Metformin 850mg</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ميتفورمين (Glucophage) • Blood Glucose Control</p>
+</div>
+<span class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">medication</span>
+</span>
+</div>
+<div class="mt-3 space-y-1.5">
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[16px]">wb_twilight</span>
+<span>Morning &amp; Evening (with meals / مع الأكل)</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Take with a full glass of water. Do not crush.</span>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="font-micro-copy text-micro-copy font-semibold uppercase text-primary">Remaining: 24 doses</span>
+<button class="px-3 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-variant transition-colors shadow-sm">
+                Log Taken
+              </button>
+</div>
+</div>
+<!-- Medication 2 -->
+<div class="rounded-xl bg-surface-container-low p-4 flex flex-col justify-between space-y-4">
+<div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-headline-4 text-headline-4 text-on-surface font-bold">Lisinopril 10mg</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ليزينوبريل (Zestril) • Blood Pressure Support</p>
+</div>
+<span class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">pill</span>
+</span>
+</div>
+<div class="mt-3 space-y-1.5">
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">light_mode</span>
+<span>Once daily (Morning after breakfast / صباحاً)</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Regular BP checks recommended 2 hrs post dose.</span>
+</div>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between">
+<span class="font-micro-copy text-micro-copy font-semibold uppercase text-secondary">Remaining: 18 doses</span>
+<button class="px-3 py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-label-sm hover:bg-surface-variant transition-colors shadow-sm">
+                Log Taken
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Labs & Dietary Snapshot -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-6 rounded-full bg-tertiary-container inline-block"></span>
+<h2 class="font-headline-3 text-headline-3 text-on-surface font-bold">Recent Lab Metrics &amp; Care Guidance</h2>
+</div>
+<a class="font-label-md text-label-md text-primary font-semibold hover:underline" href="#">View Historical Charts</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+<!-- Metric 1: Glucose -->
+<div class="rounded-xl bg-surface-container-low p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Fasting Glucose</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-clinical-data text-[10px]">ELEVATED</span>
+</div>
+<div class="my-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">142</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">mg/dL</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-full h-8 text-tertiary" fill="none" viewbox="0 0 100 25">
+<path d="M0 18 Q 20 22, 40 15 T 70 8 T 100 5" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant mt-1">Target: 80 - 125 mg/dL</span>
+</div>
+<!-- Metric 2: Blood Pressure -->
+<div class="rounded-xl bg-surface-container-low p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Home BP Average</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-clinical-data text-[10px]">NORMAL</span>
+</div>
+<div class="my-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">128/82</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">mmHg</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-full h-8 text-primary" fill="none" viewbox="0 0 100 25">
+<path d="M0 12 Q 25 10, 50 14 T 80 11 T 100 12" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant mt-1">Logged yesterday 9:15 PM</span>
+</div>
+<!-- Metric 3: HbA1c -->
+<div class="rounded-xl bg-surface-container-low p-4 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Glycated Hb (A1c)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-clinical-data text-[10px]">STABLE</span>
+</div>
+<div class="my-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface">6.8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant ml-1">%</span>
+</div>
+<!-- Sparkline SVG -->
+<svg class="w-full h-8 text-secondary" fill="none" viewbox="0 0 100 25">
+<path d="M0 16 Q 30 18, 60 14 T 100 10" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-micro-copy text-micro-copy text-on-surface-variant mt-1">Next test in 45 days</span>
+</div>
+</div>
+<!-- DASH Diet & Doctor Instructions -->
+<div class="rounded-xl bg-surface-container p-4 flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-5 text-headline-5 text-on-surface font-semibold">Low-Sodium DASH Dietary Protocol (حمية خفض الأملاح)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+              Dr. Tarek recommends limiting processed canned foods, drinking 2.5L of water daily, and maintaining a 20-minute post-dinner brisk walk around Heliopolis Club.
+            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Patient AI Reassurance Copilot (5 cols) -->
+<div class="lg:col-span-5 flex flex-col space-y-6">
+<!-- Patient AI Copilot Card -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-md flex flex-col h-full justify-between">
+<div>
+<!-- Header with Strict Scope Badge -->
+<div class="flex items-center justify-between pb-4 mb-4 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">smart_toy</span>
+</div>
+<div>
+<h2 class="font-headline-4 text-headline-4 text-on-surface font-bold leading-tight">Patient AI Copilot</h2>
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">مساعدك الصحي الشخصي الذكي</p>
+</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" title="Ready to assist"></span>
+</div>
+<!-- Scope Disclaimer Badge -->
+<div class="rounded-lg bg-secondary-fixed/40 p-3 mb-4 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">lock</span>
+<p class="font-label-sm text-label-sm text-on-surface leading-tight font-medium">
+<strong class="font-semibold text-secondary">Bounded Scope:</strong> Patient Medical Guidance Only. Cannot diagnose, change dosage, or prescribe drugs. Verified by Al-Nour Medical Board.
+            </p>
+</div>
+<!-- Chat Interactive Container -->
+<div class="space-y-3.5 mb-5 max-h-[380px] overflow-y-auto pr-1" id="chatHistory">
+<!-- Bot Welcome -->
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 text-xs font-bold">AI</div>
+<div class="rounded-2xl rounded-tl-none bg-surface-container-low p-3.5 text-on-surface font-body-md text-body-md max-w-[85%]">
+                أهلاً بك يا أستاذ طارق! أنا مساعدك الشخصي في مركز النور. كيف أستطيع توضيح تعليمات علاجك اليوم؟
+              </div>
+</div>
+<!-- Bot Reassurance Message -->
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 text-xs font-bold">AI</div>
+<div class="rounded-2xl rounded-tl-none bg-surface-container-low p-3.5 text-on-surface font-body-md text-body-md max-w-[85%]">
+                تم تسجيل قراءة السكر الصباحية (142 mg/dL). الدكتور طارق أشار إلى أن هذه القراءة طبيعية نسبياً بعد وجبة عشاء غنية، ولا داعي للقلق. فقط التزم بجرعة الميتفورمين المسائية.
+              </div>
+</div>
+</div>
+<!-- Interactive Quick Prompt Bubbles -->
+<div class="space-y-2 mb-4">
+<div class="font-label-sm text-label-sm text-on-surface-variant font-semibold">أسئلة شائعة يمكنك سؤالها فوراً:</div>
+<div class="flex flex-col gap-2">
+<button class="text-right px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm transition-all flex items-center justify-between" onclick="sendPrompt('إمتى ميعاد جرعة الميتفورمين الجاية؟')">
+<span>إمتى ميعاد جرعة الميتفورمين الجاية؟</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_back</span>
+</button>
+<button class="text-right px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm transition-all flex items-center justify-between" onclick="sendPrompt('إيه هي تعليمات الدكتور بخصوص قياس الضغط بالبيت؟')">
+<span>إيه هي تعليمات الدكتور بخصوص قياس الضغط بالبيت؟</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_back</span>
+</button>
+<button class="text-right px-3 py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-sm text-body-sm transition-all flex items-center justify-between" onclick="sendPrompt('عايز أتواصل مع السكرتارية بخصوص التحاليل المطلوبة')">
+<span>عايز أتواصل مع السكرتارية بخصوص التحاليل المطلوبة</span>
+<span class="material-symbols-outlined text-[16px] text-primary">arrow_back</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Chat Input Field -->
+<div>
+<form class="relative flex items-center" id="chatForm" onsubmit="event.preventDefault(); submitCustomQuestion();">
+<input class="w-full bg-surface-container rounded-xl pl-4 pr-12 py-3 text-on-surface font-body-md text-body-md placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary" id="chatInput" placeholder="اكتب سؤالك الصحي هنا بالعامية أو الفصحى..." type="text"/>
+<button class="absolute right-2 p-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-colors flex items-center justify-center" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+<div class="mt-3 text-center">
+<p class="font-micro-copy text-micro-copy text-on-surface-variant">
+              For acute medical emergencies, dial <strong>123</strong> or proceed directly to the nearest hospital emergency department.
+            </p>
+</div>
+</div>
+</div>
+<!-- Quick Clinic Contact Card -->
+<div class="rounded-xl bg-surface-container p-5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h3 class="font-headline-5 text-headline-5 text-on-surface font-semibold">Need Human Support?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Care Coordinator Mona Radwan is online</p>
+</div>
+</div>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold transition-colors shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">chat</span>
+<span>WhatsApp Care</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for Copilot Prompt buttons
+  function sendPrompt(text) {
+    const chat = document.getElementById('chatHistory');
+    if (!chat) return;
+
+    // User question bubble
+    const userDiv = document.createElement('div');
+    userDiv.className = 'flex items-start gap-2.5 justify-end';
+    userDiv.innerHTML = `
+      <div class="rounded-2xl rounded-tr-none bg-primary text-on-primary p-3.5 font-body-md text-body-md max-w-[85%] text-right">
+        ${text}
+      </div>
+      <div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0 text-xs font-bold">TM</div>
+    `;
+    chat.appendChild(userDiv);
+
+    // Dynamic AI response based on query
+    let responseText = "شكراً لسؤالك. تم تسجيل طلبك وإحالته للمراجعة.";
+    if (text.includes("الميتفورمين")) {
+      responseText = "جرعة الميتفورمين (850mg) القادمة مقررة الليلة مع وجبة العشاء. احرص على تناولها وسط الوجبة مع كوب ماء كبير لراحة المعدة.";
+    } else if (text.includes("الضغط")) {
+      responseText = "تعليمات دكتور طارق: قم بالجلوس مسترخياً لمدة 5 دقائق قبل القياس، وتجنب شرب القهوة قبلها بـ 30 دقيقة. سجل قراءة الصباح بعد الإفطار بساعتين وقراءة المساء.";
+    } else if (text.includes("السكرتارية")) {
+      responseText = "تم إخطار السكرتيرة أ/ منى رضوان بمركز النور الطبي. سيتم التواصل معك عبر الهاتف أو الواتساب لتجهيز تحليل صائم وفاطر ومخزون السكر.";
+    }
+
+    setTimeout(() => {
+      const botDiv = document.createElement('div');
+      botDiv.className = 'flex items-start gap-2.5';
+      botDiv.innerHTML = `
+        <div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary shrink-0 text-xs font-bold">AI</div>
+        <div class="rounded-2xl rounded-tl-none bg-surface-container-low p-3.5 text-on-surface font-body-md text-body-md max-w-[85%]">
+          ${responseText}
+        </div>
+      `;
+      chat.appendChild(botDiv);
+      chat.scrollTop = chat.scrollHeight;
+    }, 450);
+
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  function submitCustomQuestion() {
+    const input = document.getElementById('chatInput');
+    if (!input || !input.value.trim()) return;
+    sendPrompt(input.value.trim());
+    input.value = '';
+  }
+
+  // Toggle Reschedule Details
+  const rescheduleBtn = document.getElementById('rescheduleBtn');
+  const rescheduleNote = document.getElementById('rescheduleNote');
+  if (rescheduleBtn && rescheduleNote) {
+    rescheduleBtn.addEventListener('click', () => {
+      rescheduleNote.classList.toggle('hidden');
+    });
+  }
+
+  // Smooth scroll to Copilot
+  const quickHelpBtn = document.getElementById('quickHelpBtn');
+  if (quickHelpBtn) {
+    quickHelpBtn.addEventListener('click', () => {
+      const input = document.getElementById('chatInput');
+      if (input) {
+        input.focus();
+        input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low py-margin-lg mt-margin-lg shadow-[0_-1px_4px_rgba(0,0,0,0.02)]"><div class="max-w-7xl mx-auto px-margin-sm lg:px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><img alt="AegisHealth Medical Ecosystem Logo" class="h-6 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UEMpHAmy_b9yBHfzExArIuQj82YVE-kkqyeDvtD00jBeKzLXeXpgqV3eT1NASrEi2GtjgkIAK55KV5DKhcz-Jt09PUFsGU1G3bAMIdhAvRV-HdhJoWdIqbq1K363gW0DBSK6vUrtej3gTIYEVb_nZ2ec5D1q3j-MzQASH0wVJQF2ckdum9eYTuCnvJ79ranTbcitlt7U-qTCgDVSYjj4Qg3rg4lzCjattDy3ghgBiD3rhiNCLTHpDlMhU"/><span class="font-headline-5 text-headline-5 text-on-surface">AegisHealth AI Platform</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 AegisHealth Clinical AI. All medical deductions require licensed physician verification.</p><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-primary font-semibold">HIPAA &amp; Egyptian MOH Compliant</span></div></div></footer></body></html>
