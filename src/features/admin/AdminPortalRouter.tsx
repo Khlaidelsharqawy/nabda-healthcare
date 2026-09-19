@@ -26,6 +26,129 @@ export function AdminPortalRouter({ pathname }: AdminPortalRouterProps) {
   const { direction } = useTheme();
   const isRtl = direction === 'rtl';
 
+  // Security Gate: Zero-Trust Air-Gap Rule
+  // Administrative control plane is restricted to local-only access (localhost / 127.0.0.1)
+  const isLocalHost = 
+    typeof window !== 'undefined' && 
+    (window.location.hostname === 'localhost' || 
+     window.location.hostname === '127.0.0.1' || 
+     window.location.hostname === '[::1]');
+
+  if (!isLocalHost) {
+    return (
+      <div 
+        style={{
+          minHeight: '100vh',
+          backgroundColor: '#0a0d14',
+          color: '#f8fafc',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '24px',
+          fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
+          direction: isRtl ? 'rtl' : 'ltr',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: '640px',
+            width: '100%',
+            backgroundColor: '#111827',
+            border: '1px solid #dc2626',
+            borderRadius: '16px',
+            padding: '36px',
+            boxShadow: '0 25px 50px -12px rgba(220, 38, 38, 0.25)',
+            textAlign: 'center',
+          }}
+        >
+          <div
+            style={{
+              width: '72px',
+              height: '72px',
+              borderRadius: '50%',
+              backgroundColor: 'rgba(220, 38, 38, 0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 20px',
+              border: '2px solid #ef4444',
+            }}
+          >
+            <MaterialIcon name="shield_lock" style={{ fontSize: '40px', color: '#ef4444' }} />
+          </div>
+
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '4px 12px',
+              borderRadius: '9999px',
+              backgroundColor: 'rgba(239, 68, 68, 0.2)',
+              color: '#f87171',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
+              marginBottom: '12px',
+            }}
+          >
+            {isRtl ? 'حظر أمني مشدد (Zero-Trust Air-Gap)' : 'Security Violation: 403 Forbidden'}
+          </div>
+
+          <h1 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 12px', color: '#ffffff' }}>
+            {isRtl ? 'لوحة التحكم الإدارية غير متاحة عبر النطاقات العامة' : 'Admin Portal Air-Gapped From Public Access'}
+          </h1>
+
+          <p style={{ fontSize: '0.92rem', color: '#94a3b8', lineHeight: 1.6, margin: '0 0 24px' }}>
+            {isRtl
+              ? 'بموجب السياسات الأمنية الصارمة لمنظومة نبضة الطبية (HIPAA §164.312 & Zero-Trust Protocol)، تم عزل لوحة تحكم الإدارة العليا بالكامل ولا يمكن الوصول إليها إلا محلياً (Localhost / Air-Gapped Network) أو عبر ريبوزيتوري الإدارة المستقل (nabda-saas-admin).'
+              : 'Per Nabda Healthcare Zero-Trust & HIPAA §164.312 security protocols, the administrative plane is completely air-gapped and cannot be accessed via public endpoints. Administration is restricted strictly to local machine access (localhost) or the isolated nabda-saas-admin repository.'}
+          </p>
+
+          <div
+            style={{
+              backgroundColor: '#030712',
+              borderRadius: '10px',
+              padding: '14px 18px',
+              textAlign: isRtl ? 'right' : 'left',
+              fontSize: '0.78rem',
+              color: '#64748b',
+              marginBottom: '28px',
+              border: '1px solid #1f2937',
+              fontFamily: 'monospace',
+            }}
+          >
+            <div><strong>Blocked Host:</strong> {window.location.hostname}</div>
+            <div><strong>Request URI:</strong> {pathname}</div>
+            <div><strong>Security Rule:</strong> LOCAL_ADMIN_AIRGAP_ENFORCED</div>
+            <div><strong>Audit Chaining:</strong> SHA-256 Event Logged to Security Core</div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+            <a
+              href="/"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 20px',
+                borderRadius: '10px',
+                backgroundColor: '#059669',
+                color: '#ffffff',
+                textDecoration: 'none',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                transition: 'background-color 0.2s',
+              }}
+            >
+              <MaterialIcon name="home" style={{ fontSize: '18px' }} />
+              <span>{isRtl ? 'العودة إلى المنظومة الطبية' : 'Return to Healthcare Portal'}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   const renderAdminSubView = () => {
     if (pathname === '/admin/dashboard') return <AdminDashboardPage />;
     if (pathname === '/admin/clinics') return <AdminClinicsPage />;
