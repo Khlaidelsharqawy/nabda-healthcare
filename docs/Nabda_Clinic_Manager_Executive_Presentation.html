@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nabda Clinic Manager - Executive Project Documentation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      max-height: 297mm;
+      padding: 16mm 18mm 14mm 18mm;
+      background: #ffffff;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header & Footer */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2.5mm;
+      border-bottom: 1.5px solid #e2e8f0;
+      margin-bottom: 4.5mm;
+      font-size: 8pt;
+      color: #64748b;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .page-header .brand {
+      color: #087443;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .page-footer {
+      position: absolute;
+      bottom: 8mm;
+      left: 18mm;
+      right: 18mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2.5mm;
+      border-top: 1px solid #e2e8f0;
+      font-size: 7.5pt;
+      color: #94a3b8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+
+    h1 { font-size: 26pt; font-weight: 800; line-height: 1.15; }
+    h2 { font-size: 16pt; font-weight: 700; color: #087443; margin-bottom: 4mm; }
+    h3 { font-size: 11.5pt; font-weight: 700; margin-bottom: 2mm; }
+    p { font-size: 9.5pt; color: #334155; margin-bottom: 3mm; line-height: 1.55; }
+
+    /* Cover Page */
+    .cover-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 26mm 22mm;
+      background: radial-gradient(circle at top right, rgba(8, 116, 67, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.06) 0%, transparent 60%),
+                  #ffffff;
+    }
+
+    .cover-badge-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 8mm;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: #e8f5e9;
+      color: #087443;
+      border: 1px solid rgba(8, 116, 67, 0.2);
+    }
+
+    .pill-badge.dark {
+      background: #0f172a;
+      color: #ffffff;
+      border: none;
+    }
+
+    .cover-title-group h1 {
+      font-size: 34pt;
+      color: #087443;
+      margin-bottom: 3mm;
+    }
+
+    .cover-title-group .subtitle {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 6mm;
+      line-height: 1.4;
+    }
+
+    .cover-title-group .description {
+      font-size: 10.5pt;
+      color: #64748b;
+      max-width: 90%;
+      line-height: 1.6;
+    }
+
+    .cover-divider {
+      width: 60px;
+      height: 4px;
+      background: #087443;
+      border-radius: 2px;
+      margin: 6mm 0;
+    }
+
+    .cover-credits-card {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 7mm 8mm;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .credits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+    }
+
+    .credit-block .label {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #087443;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.5mm;
+    }
+
+    .credit-block .name {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .credit-block .subtext {
+      font-size: 8.5pt;
+      color: #64748b;
+      margin-top: 1px;
+    }
+
+    .cover-meta-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8.5pt;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 4mm;
+    }
+
+    /* Cards & Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      margin-bottom: 4mm;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4mm;
+      margin-bottom: 4mm;
+    }
+
+    .card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 4.5mm 5mm;
+    }
+
+    .card.accent {
+      background: #f0fdf4;
+      border-color: rgba(8, 116, 67, 0.25);
+    }
+
+    .card.warning {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+
+    .card h3 {
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card.accent h3 {
+      color: #087443;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Screenshot containers */
+    .screenshot-box {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1.5px solid #cbd5e1;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      margin-bottom: 4mm;
+      background: #0f172a;
+    }
+
+    .screenshot-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .screenshot-caption {
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 1.5mm;
+      text-align: center;
+    }
+
+    /* Tables */
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8.5pt;
+      margin-bottom: 4mm;
+    }
+
+    .spec-table th, .spec-table td {
+      padding: 2.8mm 3.5mm;
+      border: 1px solid #e2e8f0;
+      text-align: left;
+    }
+
+    .spec-table th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 7.5pt;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .spec-table td strong {
+      color: #087443;
+    }
+
+    /* Flow / Architecture Diagram Boxes */
+    .arch-flow {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 8px;
+      padding: 4mm 5mm;
+      font-family: monospace;
+      font-size: 8pt;
+      line-height: 1.45;
+      margin-bottom: 4mm;
+      overflow: hidden;
+    }
+
+    .arch-flow .layer-title {
+      color: #34d399;
+      font-weight: bold;
+    }
+
+    /* Lists */
+    ul.feature-list {
+      list-style: none;
+      margin-bottom: 3mm;
+    }
+
+    ul.feature-list li {
+      position: relative;
+      padding-left: 5mm;
+      font-size: 9pt;
+      color: #334155;
+      margin-bottom: 1.8mm;
+      line-height: 1.45;
+    }
+
+    ul.feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 1mm;
+      color: #087443;
+      font-weight: bold;
+      font-size: 11pt;
+      line-height: 1;
+    }
+
+    ul.feature-list li strong {
+      color: #0f172a;
+    }
+
+    /* Key metrics row */
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-bottom: 5mm;
+    }
+
+    .metric-card {
+      background: linear-gradient(135deg, rgba(8, 116, 67, 0.06) 0%, rgba(8, 116, 67, 0.02) 100%);
+      border: 1px solid rgba(8, 116, 67, 0.2);
+      border-radius: 8px;
+      padding: 3.5mm 4mm;
+      text-align: center;
+    }
+
+    .metric-card .value {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #087443;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.2;
+    }
+
+    .metric-card .label {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-top: 1mm;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PAGE 1: COVER PAGE ================= -->
+  <div class="page cover-page">
+    <div>
+      <div class="cover-badge-row">
+        <span class="pill-badge">Enterprise Healthcare SaaS</span>
+        <span class="pill-badge">Multi-Tenant Platform</span>
+        <span class="pill-badge dark">Zero-Trust Security</span>
+      </div>
+
+      <div class="cover-title-group">
+        <h1>Nabda Clinic Manager</h1>
+        <div class="subtitle">Next-Generation AI Healthcare Operating System</div>
+        <div class="cover-divider"></div>
+        <div class="description">
+          A comprehensive architectural whitepaper and system specification for Nabda Clinic Manager: an enterprise multi-tenant platform uniting clinic administration, AI-assisted clinical scribing, automated WhatsApp patient journeys, and zero-trust data governance.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="cover-credits-card">
+        <div class="credits-grid">
+          <div class="credit-block">
+            <div class="label">System & UX Architecture</div>
+            <div class="name">ENG / Khaled Elsharkawy</div>
+            <div class="subtext">Lead Architect & System Designer</div>
+          </div>
+          <div class="credit-block">
+            <div class="label">Engineering & Development</div>
+            <div class="name">ENG / Khaled Elsharkawy</div>
+            <div class="name" style="margin-top: 2px;">ENG / Rana Nader</div>
+            <div class="name" style="margin-top: 2px;">ENG / Zyad Mohammed</div>
+            <div class="subtext">Full-Stack & Cloud Engineering Team</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover-meta-footer" style="margin-top: 6mm;">
+        <span>Platform Version: 1.0.0 Production</span>
+        <span>Confidential & Proprietary</span>
+        <span>September 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 2: EXECUTIVE SUMMARY & PROJECT IDEA ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 1: Executive Summary</span>
+    </div>
+
+    <h2>1. Executive Summary & Project Overview</h2>
+    <p>
+      <strong>Nabda Clinic Manager</strong> is an enterprise-grade Software-as-a-Service (SaaS) healthcare platform built from the ground up to solve the operational gridlock facing modern medical centers. Traditional electronic medical records (EMRs) function merely as passive digital filing cabinets, requiring doctors to spend more than 50% of their consultation time typing notes and leaving patients alienated.
+    </p>
+    <p>
+      Nabda transforms clinic operations by introducing <strong>autonomous clinical AI workflows</strong>, <strong>event-driven WhatsApp patient journeys</strong>, and <strong>ironclad multi-tenant isolation</strong>. It seamlessly connects five distinct operational roles into a singular, cohesive ecosystem.
+    </p>
+
+    <div class="metric-strip">
+      <div class="metric-card">
+        <div class="value">70%</div>
+        <div class="label">Less Note Typing</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">100%</div>
+        <div class="label">Zero-Trust Isolation</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">&lt; 3 sec</div>
+        <div class="label">WhatsApp Dispatch</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">5 Roles</div>
+        <div class="label">Unified Ecosystem</div>
+      </div>
+    </div>
+
+    <h3>The Five Unified Operational Roles</h3>
+    <div class="grid-2">
+      <div class="card accent">
+        <h3>1. Super Admin (Platform Command)</h3>
+        <p>Centralized platform governance, multi-tenant clinic provisioning, automated n8n webhook routing, KMS key rotation, and metered subscription management.</p>
+      </div>
+      <div class="card accent">
+        <h3>2. Doctor (Clinical Workspace)</h3>
+        <p>Gemini AI ambient voice scribing, SOAP note attestation, e-prescriptions with interaction safety checks, lab/imaging orders, and longitudinal EMR timelines.</p>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>3. Assistant (Clinic Ops)</h3>
+        <p>Patient intake reception, live waiting queue room dispatch, specimen collection barcode tracking, and automated triage inbox.</p>
+      </div>
+      <div class="card">
+        <h3>4. Patient (Care Portal)</h3>
+        <p>Personal health records, digital prescriptions with visual dosage schedules and audio guidance, direct doctor messaging, and appointment booking.</p>
+      </div>
+      <div class="card">
+        <h3>5. Public Discovery</h3>
+        <p>Public-facing clinic portal, verified doctor directory, medical service catalog, and instant online appointment scheduling.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 2mm; background: #f1f5f9;">
+      <h3>Core Mission</h3>
+      <p style="font-size: 9pt; color: #475569; margin: 0;">
+        "To liberate physicians from administrative burden through ambient clinical intelligence, while giving patients accessible, multilingual, and voice-guided healthcare continuity."
+      </p>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 2</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 3: THE PROBLEM & HOW WE SOLVE IT ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 2: Problem & Solution</span>
+    </div>
+
+    <h2>2. Problem Statement & The Nabda Solution</h2>
+    <p>
+      Healthcare administration today suffers from deep systemic friction. Both independent clinics and multi-branch hospital chains operate with disconnected legacy tools that drain clinical productivity and jeopardize patient care.
+    </p>
+
+    <div class="grid-2">
+      <div class="card warning">
+        <h3 style="color: #b45309;">The Problem in Modern Clinics</h3>
+        <ul class="feature-list" style="margin-top: 2mm;">
+          <li><strong>Physician Documentation Burnout</strong>: Doctors spend 2 to 3 hours daily typing SOAP notes and clinical charts, leading to severe cognitive fatigue.</li>
+          <li><strong>Patient Communication Gaps</strong>: Up to 30% of scheduled appointments result in no-shows due to lack of automated WhatsApp reminders.</li>
+          <li><strong>Medication Non-Adherence</strong>: Elderly and illiterate patients frequently misinterpret handwritten paper prescriptions, causing medication errors.</li>
+          <li><strong>Operational Chaos in Waiting Rooms</strong>: Assistants manually juggle paper tokens, walk-ins, and specimen tubes with zero chain-of-custody tracking.</li>
+          <li><strong>Data Leakage & Security Flaws</strong>: Traditional multi-tenant clinic platforms lack hardware-grade tenant isolation, risking catastrophic data leaks.</li>
+        </ul>
+      </div>
+
+      <div class="card accent">
+        <h3>How Nabda Solves It</h3>
+        <ul class="feature-list" style="margin-top: 2mm;">
+          <li><strong>Ambient AI Voice Scribing</strong>: Listens to natural doctor-patient dialogue and drafts complete, structured SOAP notes in seconds for physician sign-off.</li>
+          <li><strong>n8n WhatsApp Automation</strong>: Instant automated WhatsApp dispatches for booking confirmations, prep checklists, and credential delivery.</li>
+          <li><strong>Multi-Modal Audio Guidance</strong>: Digital prescriptions equipped with visual dosage timing and crystal-clear audio playback for patient accessibility.</li>
+          <li><strong>Digital Specimen Chain of Custody</strong>: Barcoded specimen accessioning, intake validation, and real-time room dispatch queue management.</li>
+          <li><strong>Zero-Trust Row-Level Security</strong>: PostgreSQL RLS and KMS encryption guarantee 100% tenant boundary isolation across clinics.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Direct Comparative Matrix</h3>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Operational Dimension</th>
+          <th>Legacy Clinic Software</th>
+          <th>Nabda Clinic Manager</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Clinical Note Creation</strong></td>
+          <td>Manual typing, 8-12 minutes per patient</td>
+          <td><strong>AI Ambient Scribe, &lt; 45 seconds review</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Patient Onboarding</strong></td>
+          <td>Paper forms, manual username/password</td>
+          <td><strong>Instant WhatsApp dispatch with audio guide</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Prescription Safety</strong></td>
+          <td>Unchecked paper slips or basic text lists</td>
+          <td><strong>Drug interaction checks & audio guidance</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Tenant Architecture</strong></td>
+          <td>Shared database with basic WHERE clauses</td>
+          <td><strong>PostgreSQL Row-Level Security (RLS)</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Automation Integration</strong></td>
+          <td>None or expensive custom middleware</td>
+          <td><strong>Built-in n8n Master Workflow Webhooks</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 3</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 4: SYSTEM ARCHITECTURE ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 3: System Architecture</span>
+    </div>
+
+    <h2>3. System Architecture & Clean Architecture Layers</h2>
+    <p>
+      Nabda is engineered following strict <strong>Clean Architecture</strong> and <strong>Domain-Driven Design (DDD)</strong> principles. The core business rules and domain entities remain completely independent of external frameworks, databases, or presentation layers.
+    </p>
+
+    <div class="arch-flow">
+      <div class="layer-title">+--- LAYER 1: PRESENTATION LAYER (React 19, TypeScript, Vanilla CSS Tokens) ---+</div>
+      |  [Super Admin Console]  [Doctor Workspace]  [Assistant Portal]  [Patient App]  [Public Clinic] |
+      +-----------------------------------------------------------------------------------------------+
+                                                      |
+                                                      v
+      <div class="layer-title">+--- LAYER 2: APPLICATION LAYER (Pure Business Use Cases & Orchestration) ------+</div>
+      |  * RegisterPatientUseCase (Generates MRN, hashes temp pass, dispatches n8n WhatsApp event)   |
+      |  * AttestSoapNoteUseCase (Digital signature, cryptographic hash, AI training corpus sync)     |
+      |  * CreatePrescriptionUseCase (Dosage validation, contraindication scan, audio link generator)|
+      |  * ProcessSpecimenIntakeUseCase (Barcode accessioning, chain-of-custody immutable record)     |
+      +-----------------------------------------------------------------------------------------------+
+                                                      |
+                                                      v
+      <div class="layer-title">+--- LAYER 3: DOMAIN LAYER (Pure Domain Entities, Events, Security Policies) ---+</div>
+      |  * Entities: ClinicTenant, User, Doctor, Patient, Appointment, Prescription, LabOrder, Audit   |
+      |  * Domain Events: PatientCreated, SoapNoteAttested, PrescriptionIssued, WhatsAppDispatched    |
+      |  * Security: RBAC Permission Matrix, Tenant Boundary Assertion Guard                          |
+      +-----------------------------------------------------------------------------------------------+
+                                                      |
+                                                      v
+      <div class="layer-title">+--- LAYER 4: INFRASTRUCTURE & PERSISTENCE (Supabase, PostgreSQL, n8n, Gemini) --+</div>
+      |  * Supabase PostgreSQL: Row-Level Security (RLS) enforcing tenant isolation at database level |
+      |  * n8n Workflow Automation: Webhook event ingestion and Meta WhatsApp Cloud API dispatcher    |
+      |  * AI Engine: Google Gemini Multimodal LLM for speech-to-text and clinical SOAP extraction    |
+      +-----------------------------------------------------------------------------------------------+
+    </div>
+
+    <h3>Architectural Design Guarantees</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Zero-Trust Data Boundary</h3>
+        <p>Every SQL query automatically inherits the authenticated user's `clinic_id` claim via Supabase RLS. No clinic can read or mutate another clinic's data under any circumstance.</p>
+      </div>
+      <div class="card">
+        <h3>Offline-First Resilience</h3>
+        <p>The client application maintains a fault-tolerant in-memory and local cache repository layer, allowing medical staff to consult and record notes even during network latency drops.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Event-Driven Automation</h3>
+        <p>Whenever a clinical use case finishes, a domain event is published to the n8n webhook dispatcher asynchronously, ensuring the UI remains ultra-fast (sub-50ms response times).</p>
+      </div>
+      <div class="card">
+        <h3>Audit Trail Immutability</h3>
+        <p>Every administrative key rotation, user invitation, prescription issuance, and clinical note attestation writes to an append-only audit log for forensic compliance.</p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 4</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 5: ROLE 1: SUPER ADMIN COMMAND CENTER ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 4: Super Admin Command Center</span>
+    </div>
+
+    <h2>4. Role 1: Super Admin Command Center</h2>
+    <p>
+      The <strong>Super Admin Command Center</strong> is the operational brain of the SaaS platform. It provides executive oversight across all onboarded healthcare organizations, metered resource quotas, and system security.
+    </p>
+
+    <div class="screenshot-box">
+      <img src="pdf_assets/admin_dashboard.png" alt="Super Admin Platform Dashboard">
+    </div>
+    <div class="screenshot-caption">Figure 4.1: Super Admin Command Center featuring live multi-tenant telemetry and metric computation</div>
+
+    <div class="grid-2" style="margin-top: 3mm;">
+      <div>
+        <h3>Key Administrator Capabilities</h3>
+        <ul class="feature-list">
+          <li><strong>Multi-Tenant Clinic Directory</strong>: Real-time status monitoring, branch management, doctor headcounts, and subscription tiers.</li>
+          <li><strong>Zero-Trust Security Auditor</strong>: Interactive 5-point scanner verifying KMS key rotation, tenant isolation, and audit log immutability.</li>
+          <li><strong>n8n WhatsApp Integrations Hub</strong>: 1-click JSON workflow download, clinic phone binding, and live interactive WhatsApp simulator.</li>
+          <li><strong>Cloud Terminal CLI</strong>: Interactive remote console executing cluster telemetry, KMS rotation, and automation synchronizations.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="screenshot-box" style="margin-bottom: 1.5mm;">
+          <img src="pdf_assets/admin_clinics.png" alt="Clinics Directory">
+        </div>
+        <div class="screenshot-caption">Figure 4.2: Multi-Tenant Clinic Provisioning Directory</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 5</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 6: ROLE 2: DOCTOR CLINICAL AI WORKSPACE ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 5: Doctor Clinical AI Workspace</span>
+    </div>
+
+    <h2>5. Role 2: Doctor Clinical AI Workspace</h2>
+    <p>
+      Designed specifically to eliminate administrative friction, the <strong>Doctor Portal</strong> pairs the physician with an ambient AI clinical copilot that transcribes conversations, structures medical notes, and verifies prescription safety in real time.
+    </p>
+
+    <div class="screenshot-box">
+      <img src="pdf_assets/doctor_ai_scribe.png" alt="Doctor Clinical AI Workspace">
+    </div>
+    <div class="screenshot-caption">Figure 5.1: Ambient AI Voice Scribing Workspace with real-time dialogue transcription and SOAP note extraction</div>
+
+    <div class="grid-2" style="margin-top: 3mm;">
+      <div>
+        <h3>Physician Capabilities & Clinical Tools</h3>
+        <ul class="feature-list">
+          <li><strong>Ambient Voice Scribing</strong>: Real-time speech-to-text powered by Gemini AI, converting consultations into Subjective, Objective, Assessment, and Plan (SOAP).</li>
+          <li><strong>E-Prescription Writer</strong>: Smart dosage validation, route guidance, and automated drug contraindication checking.</li>
+          <li><strong>Diagnostic Orders</strong>: One-click lab and radiology order dispatches directly connected to hospital laboratory queues.</li>
+          <li><strong>Longitudinal Patient Timeline</strong>: Instant overview of past visits, vital trends, chronic conditions, and previous medication history.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="screenshot-box" style="margin-bottom: 1.5mm;">
+          <img src="pdf_assets/doctor_prescription.png" alt="Doctor Prescription Writer">
+        </div>
+        <div class="screenshot-caption">Figure 5.2: Digital E-Prescription Writer with Dosage Validation</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 6</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 7: ROLE 3: ASSISTANT & CLINIC OPERATIONS ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 6: Assistant & Clinic Operations</span>
+    </div>
+
+    <h2>6. Role 3: Assistant & Clinic Operations</h2>
+    <p>
+      The <strong>Assistant & Nurse Portal</strong> coordinates frontline patient flow, reception intake, and diagnostic specimen chain of custody. It ensures that the clinic runs on time with zero paperwork bottlenecks.
+    </p>
+
+    <div class="screenshot-box">
+      <img src="pdf_assets/assistant_intake.png" alt="Assistant Patient Registration and Reception Intake">
+    </div>
+    <div class="screenshot-caption">Figure 6.1: Fast Patient Intake with automated credential generation and instant WhatsApp onboarding</div>
+
+    <div class="grid-2" style="margin-top: 3mm;">
+      <div>
+        <h3>Reception & Clinical Support Workflows</h3>
+        <ul class="feature-list">
+          <li><strong>Instant Patient Registration</strong>: Captures vitals, assigns Medical Record Number (MRN), and generates secure access credentials in seconds.</li>
+          <li><strong>Automated WhatsApp Credential Dispatch</strong>: Directly sends login details and audio onboarding guide to patient's WhatsApp.</li>
+          <li><strong>Live Waiting Room Queue</strong>: Real-time room assignment, doctor availability monitoring, and patient status updates.</li>
+          <li><strong>Specimen Accessioning</strong>: Barcoded specimen collection and chain-of-custody tracking for diagnostic blood, urine, and swab samples.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="screenshot-box" style="margin-bottom: 1.5mm;">
+          <img src="pdf_assets/assistant_whatsapp.png" alt="Assistant WhatsApp Communications Hub">
+        </div>
+        <div class="screenshot-caption">Figure 6.2: WhatsApp Patient Triage & Inquiries Hub</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 7</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 8: ROLE 4 & 5: PATIENT PORTAL & PUBLIC DISCOVERY ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 7: Patient & Public Portals</span>
+    </div>
+
+    <h2>7. Roles 4 & 5: Patient Portal & Public Discovery</h2>
+    <p>
+      Patients are active partners in their health journeys. Nabda bridges the clinic and home through an accessible <strong>Patient Portal</strong>, multi-format medication guidance, and an integrated <strong>Public Discovery</strong> engine.
+    </p>
+
+    <div class="screenshot-box">
+      <img src="pdf_assets/patient_portal.png" alt="Patient AI Health Workspace">
+    </div>
+    <div class="screenshot-caption">Figure 7.1: Patient Personal Health Dashboard with medication schedules, lab results, and AI consultation assistant</div>
+
+    <div class="grid-2" style="margin-top: 3mm;">
+      <div>
+        <div class="screenshot-box" style="margin-bottom: 1.5mm;">
+          <img src="pdf_assets/patient_prescription.png" alt="Digital Prescription with Audio Guidance">
+        </div>
+        <div class="screenshot-caption">Figure 7.2: Digital Prescription with Audio Guidance</div>
+        <p style="font-size: 8.5pt; color: #475569; margin-top: 2mm;">
+          <strong>Audio Guidance Links</strong>: Each medication includes an interactive audio guide explaining dosage, timing, and food instructions for elderly patients.
+        </p>
+      </div>
+
+      <div>
+        <div class="screenshot-box" style="margin-bottom: 1.5mm;">
+          <img src="pdf_assets/public_booking.png" alt="Public Clinic Online Booking">
+        </div>
+        <div class="screenshot-caption">Figure 7.3: Public Clinic Online Appointment Booking</div>
+        <p style="font-size: 8.5pt; color: #475569; margin-top: 2mm;">
+          <strong>Public Discovery</strong>: Prospective patients can search verified clinic doctors, compare services, and book appointments with instant WhatsApp confirmation.
+        </p>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 8</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 9: TECHNICAL STACK & SPECIFICATIONS ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 8: Technical Specifications</span>
+    </div>
+
+    <h2>8. Technical Stack & Engineering Specifications</h2>
+    <p>
+      The platform is engineered using modern, battle-tested web and cloud standards. It prioritizes sub-second load times, absolute data isolation, and low operational overhead.
+    </p>
+
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Implementation Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frontend UI</strong></td>
+          <td>React 19 + TypeScript + Vite</td>
+          <td>Clean component architecture, client-side routing, 0 compile errors, 489ms production build.</td>
+        </tr>
+        <tr>
+          <td><strong>Styling & Theme</strong></td>
+          <td>Vanilla CSS Design System</td>
+          <td>Zero bloated CSS frameworks. Native CSS custom properties, WCAG 2.1 AA contrast, light/dark modes.</td>
+        </tr>
+        <tr>
+          <td><strong>Internationalization</strong></td>
+          <td>Bilingual (Arabic & English)</td>
+          <td>Full RTL/LTR bidirectional layout support with Noto Sans Arabic and Plus Jakarta Sans typography.</td>
+        </tr>
+        <tr>
+          <td><strong>Database</strong></td>
+          <td>Supabase PostgreSQL 15</td>
+          <td>Row-Level Security (RLS), ACID clinical transaction schemas, relational foreign key constraints.</td>
+        </tr>
+        <tr>
+          <td><strong>Automation Engine</strong></td>
+          <td>n8n Workflow Automation</td>
+          <td>Master event-driven webhook workflow for WhatsApp dispatch, triage routing, and appointment alerts.</td>
+        </tr>
+        <tr>
+          <td><strong>Clinical AI</strong></td>
+          <td>Google Gemini Multimodal API</td>
+          <td>Ambient consultation speech-to-text, SOAP clinical note extraction, and conversational triage.</td>
+        </tr>
+        <tr>
+          <td><strong>Security & Auth</strong></td>
+          <td>Zero-Trust RBAC + KMS</td>
+          <td>Role-based permissions guard, tenant boundary assertions, cryptographic audit log hashing.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>n8n Master Automation Workflow Architecture</h3>
+    <div class="card" style="margin-bottom: 4mm;">
+      <p style="font-size: 9pt; margin-bottom: 2mm;">
+        The workflow file (<code>n8n-workflows/aegis_master_automation_workflow.json</code>) routes platform events automatically:
+      </p>
+      <ul class="feature-list">
+        <li><strong>PATIENT_CREATED</strong>: Receives patient details &rarr; normalizes phone number &rarr; generates credentials &rarr; dispatches WhatsApp onboarding welcome message.</li>
+        <li><strong>APPOINTMENT_BOOKED</strong>: Formats clinic date, doctor name, and room number &rarr; dispatches WhatsApp confirmation with preparation checklist.</li>
+        <li><strong>PRESCRIPTION_ISSUED</strong>: Formats medication schedule &rarr; attaches audio guide link &rarr; dispatches WhatsApp prescription card.</li>
+        <li><strong>WHATSAPP_INBOUND</strong>: Ingests incoming patient query &rarr; routes through Gemini AI triage &rarr; provides automated answer or alerts clinic nurse.</li>
+      </ul>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 9</span>
+    </div>
+  </div>
+
+  <!-- ================= PAGE 10: VISION & FUTURE ROADMAP ================= -->
+  <div class="page">
+    <div class="page-header">
+      <span class="brand">Nabda Clinic Manager</span>
+      <span>Section 9: Vision & Future Roadmap</span>
+    </div>
+
+    <h2>9. Vision & Future Roadmap</h2>
+    <p>
+      The long-term vision of <strong>Nabda Clinic Manager</strong> is to transcend traditional clinic management software and evolve into an intelligent, autonomous clinical operating system that powers medical centers worldwide.
+    </p>
+
+    <div class="card accent" style="margin-bottom: 5mm;">
+      <h3>Strategic Vision</h3>
+      <p style="font-size: 9.5pt; color: #334155;">
+        "We envision a world where doctors never have to look away from their patients to type notes on a screen, where patients never leave a clinic confused about their medications, and where clinics of all sizes operate with the technological sophistication of world-leading medical institutions."
+      </p>
+    </div>
+
+    <h3>Four-Phase Strategic Roadmap</h3>
+    <div class="grid-2">
+      <div class="card" style="border-left: 3px solid #087443;">
+        <h3>Phase 1: Foundation (Completed)</h3>
+        <ul class="feature-list" style="margin-top: 2mm;">
+          <li>Multi-tenant SaaS core with PostgreSQL RLS.</li>
+          <li>Five unified roles: Admin, Doctor, Assistant, Patient, Public.</li>
+          <li>Ambient AI Voice Scribe with SOAP note generation.</li>
+          <li>n8n WhatsApp automated patient onboarding.</li>
+          <li>Interactive Super Admin Command Center & CLI.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-left: 3px solid #0284c7;">
+        <h3>Phase 2: Telehealth & Translation (Q1 2027)</h3>
+        <ul class="feature-list" style="margin-top: 2mm;">
+          <li>Encrypted WebRTC high-definition video consultations.</li>
+          <li>Real-time multilingual voice translation for foreign patients.</li>
+          <li>Automated insurance claim pre-authorization engine.</li>
+          <li>Patient digital signature pad for informed consent forms.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card" style="border-left: 3px solid #7c3aed;">
+        <h3>Phase 3: IoT & Telemetry Sync (Q3 2027)</h3>
+        <ul class="feature-list" style="margin-top: 2mm;">
+          <li>Bluetooth & IoT medical device telemetry ingestion (blood pressure monitors, pulse oximeters, glucometers).</li>
+          <li>Predictive chronic disease deterioration alerts.</li>
+          <li>Automated prescription refill delivery dispatch via local pharmacy networks.</li>
+        </ul>
+      </div>
+
+      <div class="card" style="border-left: 3px solid #b45309;">
+        <h3>Phase 4: National Health Interop (2028)</h3>
+        <ul class="feature-list" style="margin-top: 2mm;">
+          <li>Full FHIR (Fast Healthcare Interoperability Resources) compliance.</li>
+          <li>Direct integration with national EHR systems and Ministry of Health registries.</li>
+          <li>Cross-hospital emergency patient medical passport.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 4mm; text-align: center; background: #0f172a; color: #ffffff;">
+      <h3 style="color: #34d399; justify-content: center;">Nabda Healthcare Platform</h3>
+      <p style="color: #cbd5e1; font-size: 8.5pt; margin-top: 1mm;">
+        Developed with pride by Khaled Elsharkawy, Rana Nader, and Zyad Mohammed.<br>
+        Proprietary and Confidential • All Rights Reserved.
+      </p>
+    </div>
+
+    <div class="page-footer">
+      <span>Nabda Healthcare • Executive Documentation</span>
+      <span>Page 10</span>
+    </div>
+  </div>
+
+</body>
+</html>
