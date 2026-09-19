@@ -15,9 +15,8 @@ import {
 } from '../../components/ui';
 import { useTheme } from '../../theme/ThemeProvider';
 import { adminMessages } from '../../i18n/messages';
-import { repositories } from '../../repositories';
+import { adminApiClient } from '../../services/adminApiClient';
 import { Clinic, Doctor, PlatformService } from '../../domain';
-import { assertPermission } from '../../security/rbac';
 
 export function AdminClinicsPage() {
   const { direction } = useTheme();
@@ -36,19 +35,19 @@ export function AdminClinicsPage() {
   // Instant Feedback Banner
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
-  // Load all data
+  // Load all data via AdminApiClient
   useEffect(() => {
     async function load() {
       setLoading(true);
       try {
-        const [cList, dList, sList] = await Promise.all([
-          repositories.clinics.list(),
-          repositories.doctors.list(),
-          repositories.platform.getServices(),
+        const [cRes, dRes, sRes] = await Promise.all([
+          adminApiClient.getClinics(),
+          adminApiClient.getDoctors(),
+          adminApiClient.getServices(),
         ]);
-        setClinics(cList);
-        setDoctors(dList);
-        setServices(sList);
+        if (cRes.success) setClinics(cRes.data);
+        if (dRes.success) setDoctors(dRes.data);
+        if (sRes.success) setServices(sRes.data);
       } catch (e) {
         console.error('Failed to load admin clinic & discovery data', e);
       } finally {
@@ -65,57 +64,63 @@ export function AdminClinicsPage() {
     }, 4000);
   };
 
-  // Toggle Clinic Visibility
+  // Toggle Clinic Visibility via AdminApiClient
   const handleToggleClinicVisibility = async (clinic: Clinic) => {
     try {
-      assertPermission('super_admin', 'MANAGE_PUBLIC_VISIBILITY', 'Toggle Clinic Visibility');
       const newStatus = clinic.showOnPublicSite === false ? true : false;
-      const updated: Clinic = { ...clinic, showOnPublicSite: newStatus };
-      await repositories.clinics.save(updated);
-      setClinics((prev) => prev.map((c) => (c.id === clinic.id ? updated : c)));
-      triggerToast(
-        isRtl
-          ? `تم ${newStatus ? 'تفعيل ظهور' : 'إخفاء'} مركز "${clinic.nameAr}" في الموقع العام بنجاح`
-          : `Clinic "${clinic.name}" is now ${newStatus ? 'visible on' : 'hidden from'} the public site`
-      );
+      const res = await adminApiClient.updateClinicVisibility(clinic.id, newStatus);
+      if (res.success) {
+        setClinics((prev) => prev.map((c) => (c.id === clinic.id ? res.data : c)));
+        triggerToast(
+          isRtl
+            ? `تم ${newStatus ? 'تفعيل ظهور' : 'إخفاء'} مركز "${clinic.nameAr}" في الموقع العام بنجاح (زمن الاستجابة: ${res.latencyMs}ms)`
+            : `Clinic "${clinic.name}" is now ${newStatus ? 'visible on' : 'hidden from'} public site (${res.latencyMs}ms)`
+        );
+      } else {
+        alert(res.error || 'Failed to update visibility');
+      }
     } catch (err: any) {
-      alert(err.message || 'Security assertion failed');
+      alert(err.message || 'API request failed');
     }
   };
 
-  // Toggle Doctor Visibility
+  // Toggle Doctor Visibility via AdminApiClient
   const handleToggleDoctorVisibility = async (doctor: Doctor) => {
     try {
-      assertPermission('super_admin', 'MANAGE_PUBLIC_VISIBILITY', 'Toggle Doctor Visibility');
       const newStatus = doctor.showOnPublicSite === false ? true : false;
-      const updated: Doctor = { ...doctor, showOnPublicSite: newStatus };
-      await repositories.doctors.save(updated);
-      setDoctors((prev) => prev.map((d) => (d.id === doctor.id ? updated : d)));
-      triggerToast(
-        isRtl
-          ? `تم ${newStatus ? 'تفعيل ظهور' : 'إخفاء'} د. "${doctor.nameAr}" في الموقع العام بنجاح`
-          : `Dr. "${doctor.name}" is now ${newStatus ? 'visible on' : 'hidden from'} the public site`
-      );
+      const res = await adminApiClient.updateDoctorVisibility(doctor.id, newStatus);
+      if (res.success) {
+        setDoctors((prev) => prev.map((d) => (d.id === doctor.id ? res.data : d)));
+        triggerToast(
+          isRtl
+            ? `تم ${newStatus ? 'تفعيل ظهور' : 'إخفاء'} د. "${doctor.nameAr}" في الموقع العام بنجاح (زمن الاستجابة: ${res.latencyMs}ms)`
+            : `Dr. "${doctor.name}" is now ${newStatus ? 'visible on' : 'hidden from'} public site (${res.latencyMs}ms)`
+        );
+      } else {
+        alert(res.error || 'Failed to update visibility');
+      }
     } catch (err: any) {
-      alert(err.message || 'Security assertion failed');
+      alert(err.message || 'API request failed');
     }
   };
 
-  // Toggle Service Visibility
+  // Toggle Service Visibility via AdminApiClient
   const handleToggleServiceVisibility = async (service: PlatformService) => {
     try {
-      assertPermission('super_admin', 'MANAGE_PUBLIC_VISIBILITY', 'Toggle Service Visibility');
       const newStatus = service.showOnPublicSite === false ? true : false;
-      const updated: PlatformService = { ...service, showOnPublicSite: newStatus };
-      await repositories.platform.saveService(updated);
-      setServices((prev) => prev.map((s) => (s.id === service.id ? updated : s)));
-      triggerToast(
-        isRtl
-          ? `تم ${newStatus ? 'تفعيل ظهور' : 'إخفاء'} خدمة "${service.titleAr}" في الموقع العام بنجاح`
-          : `Service "${service.title}" is now ${newStatus ? 'visible on' : 'hidden from'} the public site`
-      );
+      const res = await adminApiClient.updateServiceVisibility(service.id, newStatus);
+      if (res.success) {
+        setServices((prev) => prev.map((s) => (s.id === service.id ? res.data : s)));
+        triggerToast(
+          isRtl
+            ? `تم ${newStatus ? 'تفعيل ظهور' : 'إخفاء'} خدمة "${service.titleAr}" في الموقع العام بنجاح (زمن الاستجابة: ${res.latencyMs}ms)`
+            : `Service "${service.title}" is now ${newStatus ? 'visible on' : 'hidden from'} public site (${res.latencyMs}ms)`
+        );
+      } else {
+        alert(res.error || 'Failed to update visibility');
+      }
     } catch (err: any) {
-      alert(err.message || 'Security assertion failed');
+      alert(err.message || 'API request failed');
     }
   };
 

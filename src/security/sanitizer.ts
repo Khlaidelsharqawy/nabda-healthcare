@@ -56,14 +56,17 @@ export function sanitizeSearchQuery(query: string): string {
 export function sanitizeObject<T extends Record<string, unknown>>(obj: T): T {
   if (!obj || typeof obj !== 'object') return obj;
 
-  const clean = (Array.isArray(obj) ? [] : {}) as Record<string, unknown>;
+  const isArr = Array.isArray(obj);
+  const clean = (isArr ? [] : Object.create(null)) as Record<string, unknown>;
 
-  for (const [key, value] of Object.entries(obj)) {
+  const keys = Object.getOwnPropertyNames(obj);
+  for (const key of keys) {
     // Block prototype pollution vectors
     if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
       continue;
     }
 
+    const value = (obj as any)[key];
     if (typeof value === 'string') {
       clean[key] = sanitizeText(value);
     } else if (value && typeof value === 'object') {

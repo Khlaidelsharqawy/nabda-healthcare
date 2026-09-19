@@ -40,10 +40,11 @@ export class TamperEvidentAuditLedger {
   private lastHash: string = '0000000000000000000000000000000000000000000000000000000000000000';
 
   private constructor() {
-    // Load last hash from local storage if exists
-    const stored = localStorage.getItem('nabda_audit_last_hash');
-    if (stored) {
-      this.lastHash = stored;
+    if (typeof localStorage !== 'undefined') {
+      const stored = localStorage.getItem('nabda_audit_last_hash');
+      if (stored) {
+        this.lastHash = stored;
+      }
     }
   }
 

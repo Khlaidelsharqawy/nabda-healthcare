@@ -53,19 +53,10 @@ const PublicClinicHomePage = lazy(() => import('./features/public/PublicClinicHo
 const PublicClinicDoctorsPage = lazy(() => import('./features/public/PublicClinicDoctorsPage').then(m => ({ default: m.PublicClinicDoctorsPage })));
 const PublicClinicServicesPage = lazy(() => import('./features/public/PublicClinicServicesPage').then(m => ({ default: m.PublicClinicServicesPage })));
 const PublicClinicBookingConfirmedPage = lazy(() => import('./features/public/PublicClinicBookingConfirmedPage').then(m => ({ default: m.PublicClinicBookingConfirmedPage })));
-const AdminDashboardPage = lazy(() => import('./features/admin/AdminDashboardPage').then(m => ({ default: m.AdminDashboardPage })));
-const AdminClinicsPage = lazy(() => import('./features/admin/AdminClinicsPage').then(m => ({ default: m.AdminClinicsPage })));
-const AdminClinicProvisionPage = lazy(() => import('./features/admin/AdminClinicProvisionPage').then(m => ({ default: m.AdminClinicProvisionPage })));
-const AdminUsersPage = lazy(() => import('./features/admin/AdminUsersPage').then(m => ({ default: m.AdminUsersPage })));
-const AdminClinicDetailPage = lazy(() => import('./features/admin/AdminClinicDetailPage').then(m => ({ default: m.AdminClinicDetailPage })));
-const AdminSecurityPage = lazy(() => import('./features/admin/AdminSecurityPage').then(m => ({ default: m.AdminSecurityPage })));
-const AdminSubscriptionsPage = lazy(() => import('./features/admin/AdminSubscriptionsPage').then(m => ({ default: m.AdminSubscriptionsPage })));
-const AdminRemoteConsolePage = lazy(() => import('./features/admin/AdminRemoteConsolePage').then(m => ({ default: m.AdminRemoteConsolePage })));
-const AdminClinicUsersPage = lazy(() => import('./features/admin/AdminClinicUsersPage').then(m => ({ default: m.AdminClinicUsersPage })));
-const AdminClinicUsagePage = lazy(() => import('./features/admin/AdminClinicUsagePage').then(m => ({ default: m.AdminClinicUsagePage })));
-const AdminApiIntegrationsPage = lazy(() => import('./features/admin/AdminApiIntegrationsPage').then(m => ({ default: m.AdminApiIntegrationsPage })));
+const AdminPortalRouter = lazy(() => import('./features/admin/AdminPortalRouter').then(m => ({ default: m.AdminPortalRouter })));
 const GlobalAiChatPage = lazy(() => import('./features/chat/GlobalAiChatPage').then(m => ({ default: m.GlobalAiChatPage })));
 const UserProfilePage = lazy(() => import('./features/profile/UserProfilePage').then(m => ({ default: m.UserProfilePage })));
+import { PageLoadingIndicator } from './components/ui/LoadingScreen';
 import { AuthShell } from './layouts/AuthShell';
 import { DoctorShell } from './layouts/DoctorShell';
 import { AssistantShell } from './layouts/AssistantShell';
@@ -79,6 +70,9 @@ const getLocation = () => ({
 });
 
 function renderScreen(pathname: string) {
+  if (pathname.startsWith('/admin')) {
+    return <AdminPortalRouter pathname={pathname} />;
+  }
   if (pathname === '/' || pathname === '/find-doctor') return <BrandLandingPage initialTab="doctors" />;
   if (pathname === '/clinics') return <BrandLandingPage initialTab="clinics" />;
   if (pathname === '/login') {
@@ -143,94 +137,6 @@ function renderScreen(pathname: string) {
   if (pathname === '/clinic/al-nour/services') return <PublicClinicServicesPage />;
   if (pathname === '/clinic/al-nour/booking/confirmed') return <PublicClinicBookingConfirmedPage />;
 
-  if (pathname === '/admin/dashboard') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminDashboardPage />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/clinics') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminClinicsPage />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/clinics/provision') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminClinicProvisionPage />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/users') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminUsersPage />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/security') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminSecurityPage />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/subscriptions') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminSubscriptionsPage />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/remote-console') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminRemoteConsolePage />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/integrations') {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminApiIntegrationsPage />
-      </AdminShell>
-    );
-  }
-
-  const adminClinicDetailMatch = pathname.match(/^\/admin\/clinics\/([^/]+)$/);
-  if (adminClinicDetailMatch) {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminClinicDetailPage clinicId={adminClinicDetailMatch[1]} />
-      </AdminShell>
-    );
-  }
-  const adminClinicUsersMatch = pathname.match(/^\/admin\/clinics\/([^/]+)\/users$/);
-  if (adminClinicUsersMatch) {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminClinicUsersPage clinicId={adminClinicUsersMatch[1]} />
-      </AdminShell>
-    );
-  }
-  const adminClinicUsageMatch = pathname.match(/^\/admin\/clinics\/([^/]+)\/usage$/);
-  if (adminClinicUsageMatch) {
-    return (
-      <AdminShell pathname={pathname}>
-        <AdminClinicUsagePage clinicId={adminClinicUsageMatch[1]} />
-      </AdminShell>
-    );
-  }
-  if (pathname === '/admin/profile') {
-    return (
-      <AdminShell pathname={pathname}>
-        <UserProfilePage role="admin" />
-      </AdminShell>
-    );
-  }
 
   if (pathname === '/doctor/dashboard') {
     return (
@@ -588,7 +494,7 @@ export function App() {
 
   return (
     <ThemeProvider>
-      <Suspense fallback={null}>
+      <Suspense fallback={<PageLoadingIndicator />}>
         {renderScreen(location.pathname)}
       </Suspense>
     </ThemeProvider>
