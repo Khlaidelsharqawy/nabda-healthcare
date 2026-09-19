@@ -1,5 +1,13 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
 import { resolveScreenRoute } from './routeRegistry';
+import { PageLoadingIndicator } from './components/ui/LoadingScreen';
+import { AuthShell } from './layouts/AuthShell';
+import { DoctorShell } from './layouts/DoctorShell';
+import { AssistantShell } from './layouts/AssistantShell';
+import { PatientShell } from './layouts/PatientShell';
+import { ThemeProvider } from './theme/ThemeProvider';
+
+// Lazy load feature components
 const DoctorDashboardPage = lazy(() => import('./features/doctor/DoctorDashboardPage').then(m => ({ default: m.DoctorDashboardPage })));
 const DoctorAppointmentsPage = lazy(() => import('./features/doctor/DoctorAppointmentsPage').then(m => ({ default: m.DoctorAppointmentsPage })));
 const DoctorPatientsPage = lazy(() => import('./features/doctor/DoctorPatientsPage').then(m => ({ default: m.DoctorPatientsPage })));
@@ -23,6 +31,7 @@ const DoctorActiveVoiceSessionPage = lazy(() => import('./features/doctor/Doctor
 const DoctorVoiceSessionReviewPage = lazy(() => import('./features/doctor/DoctorVoiceSessionReviewPage').then(m => ({ default: m.DoctorVoiceSessionReviewPage })));
 const DoctorCommunicationsPage = lazy(() => import('./features/doctor/DoctorCommunicationsPage').then(m => ({ default: m.DoctorCommunicationsPage })));
 const DoctorRefillsPage = lazy(() => import('./features/doctor/DoctorRefillsPage').then(m => ({ default: m.DoctorRefillsPage })));
+
 const AssistantPatientsPage = lazy(() => import('./features/assistant/AssistantPatientsPage').then(m => ({ default: m.AssistantPatientsPage })));
 const AssistantPatientRegisterPage = lazy(() => import('./features/assistant/AssistantPatientRegisterPage').then(m => ({ default: m.AssistantPatientRegisterPage })));
 const AssistantAppointmentsPage = lazy(() => import('./features/assistant/AssistantAppointmentsPage').then(m => ({ default: m.AssistantAppointmentsPage })));
@@ -31,6 +40,7 @@ const AssistantCommunicationsPage = lazy(() => import('./features/assistant/Assi
 const AssistantAiPage = lazy(() => import('./features/assistant/AssistantAiPage').then(m => ({ default: m.AssistantAiPage })));
 const AssistantAiCommunicationsPage = lazy(() => import('./features/assistant/AssistantAiCommunicationsPage').then(m => ({ default: m.AssistantAiCommunicationsPage })));
 const AssistantSpecimenIntakePage = lazy(() => import('./features/assistant/AssistantSpecimenIntakePage').then(m => ({ default: m.AssistantSpecimenIntakePage })));
+
 const PatientDashboardPage = lazy(() => import('./features/patient/PatientDashboardPage').then(m => ({ default: m.PatientDashboardPage })));
 const PatientProfilePage = lazy(() => import('./features/patient/PatientProfilePage').then(m => ({ default: m.PatientProfilePage })));
 const PatientAppointmentsPage = lazy(() => import('./features/patient/PatientAppointmentsPage').then(m => ({ default: m.PatientAppointmentsPage })));
@@ -40,6 +50,7 @@ const PatientAiPage = lazy(() => import('./features/patient/PatientAiPage').then
 const PatientAiContextPage = lazy(() => import('./features/patient/PatientAiContextPage').then(m => ({ default: m.PatientAiContextPage })));
 const PatientAiHistoryPage = lazy(() => import('./features/patient/PatientAiHistoryPage').then(m => ({ default: m.PatientAiHistoryPage })));
 const PatientVitalsPage = lazy(() => import('./features/patient/PatientVitalsPage').then(m => ({ default: m.PatientVitalsPage })));
+
 const BrandLandingPage = lazy(() => import('./features/brand/BrandLandingPage').then(m => ({ default: m.BrandLandingPage })));
 const AuthLoginPage = lazy(() => import('./features/auth/AuthLoginPage').then(m => ({ default: m.AuthLoginPage })));
 const AuthSignupPage = lazy(() => import('./features/auth/AuthSignupPage').then(m => ({ default: m.AuthSignupPage })));
@@ -49,428 +60,166 @@ const AuthResetPasswordPage = lazy(() => import('./features/auth/AuthResetPasswo
 const AuthVerifyPage = lazy(() => import('./features/auth/AuthVerifyPage').then(m => ({ default: m.AuthVerifyPage })));
 const AuthSessionExpiredPage = lazy(() => import('./features/auth/AuthSessionExpiredPage').then(m => ({ default: m.AuthSessionExpiredPage })));
 const AuthUnauthorizedPage = lazy(() => import('./features/auth/AuthUnauthorizedPage').then(m => ({ default: m.AuthUnauthorizedPage })));
+
 const PublicClinicHomePage = lazy(() => import('./features/public/PublicClinicHomePage').then(m => ({ default: m.PublicClinicHomePage })));
 const PublicClinicDoctorsPage = lazy(() => import('./features/public/PublicClinicDoctorsPage').then(m => ({ default: m.PublicClinicDoctorsPage })));
 const PublicClinicServicesPage = lazy(() => import('./features/public/PublicClinicServicesPage').then(m => ({ default: m.PublicClinicServicesPage })));
 const PublicClinicBookingConfirmedPage = lazy(() => import('./features/public/PublicClinicBookingConfirmedPage').then(m => ({ default: m.PublicClinicBookingConfirmedPage })));
+
 const AdminPortalRouter = lazy(() => import('./features/admin/AdminPortalRouter').then(m => ({ default: m.AdminPortalRouter })));
 const GlobalAiChatPage = lazy(() => import('./features/chat/GlobalAiChatPage').then(m => ({ default: m.GlobalAiChatPage })));
 const UserProfilePage = lazy(() => import('./features/profile/UserProfilePage').then(m => ({ default: m.UserProfilePage })));
-import { PageLoadingIndicator } from './components/ui/LoadingScreen';
-import { AuthShell } from './layouts/AuthShell';
-import { DoctorShell } from './layouts/DoctorShell';
-import { AssistantShell } from './layouts/AssistantShell';
-import { PatientShell } from './layouts/PatientShell';
-import { AdminShell } from './layouts/AdminShell';
-import { ThemeProvider } from './theme/ThemeProvider';
 
 const getLocation = () => ({
   pathname: window.location.pathname.replace(/\/$/, '') || '/',
   search: window.location.search,
 });
 
-function renderScreen(pathname: string) {
+// Authentication Routes Configuration
+function getAuthConfig(pathname: string): { title: string; subtitle: string; component: ReactNode } | null {
+  switch (pathname) {
+    case '/login':
+      return { title: 'Login', subtitle: 'Secure access for Nabda Healthcare Platform.', component: <AuthLoginPage /> };
+    case '/signup':
+      return { title: 'Patient Registration', subtitle: 'Create your personal healthcare account to manage care and appointments.', component: <AuthSignupPage /> };
+    case '/request-access':
+      return { title: 'Healthcare Provider Access', subtitle: 'Clinical onboarding and credential verification for healthcare facilities.', component: <AuthRequestAccessPage /> };
+    case '/forgot-password':
+      return { title: 'Account recovery', subtitle: 'Demo-only flow: this frontend build does not send emails.', component: <AuthPasswordRecoveryPage /> };
+    case '/reset-password':
+      return { title: 'Reset password', subtitle: 'Preview only. Passwords are not stored or validated against a live system.', component: <AuthResetPasswordPage /> };
+    case '/verify':
+      return { title: 'Verify account', subtitle: 'Demo-only verification. No live identity provider is connected.', component: <AuthVerifyPage /> };
+    case '/session-expired':
+      return { title: 'Session expired', subtitle: 'Your current preview session has ended.', component: <AuthSessionExpiredPage /> };
+    case '/unauthorized':
+      return { title: 'Unauthorized access', subtitle: 'This is a frontend-only access state.', component: <AuthUnauthorizedPage /> };
+    default:
+      return null;
+  }
+}
+
+// Doctor Sub-view Resolver
+function getDoctorSubView(pathname: string): ReactNode {
+  if (pathname === '/doctor/dashboard') return <DoctorDashboardPage />;
+  if (pathname === '/doctor/appointments') return <DoctorAppointmentsPage />;
+  if (pathname === '/doctor/patients') return <DoctorPatientsPage />;
+  if (pathname === '/doctor/orders') return <DoctorOrdersPage />;
+  if (pathname === '/doctor/orders/lab/new') return <DoctorLabOrderPage />;
+  if (pathname === '/doctor/orders/imaging/new') return <DoctorImagingOrderPage />;
+  if (pathname === '/doctor/prescriptions/new') return <DoctorPrescriptionWriterPage />;
+  if (pathname === '/doctor/ai') return <DoctorAiWorkspacePage />;
+  if (pathname === '/doctor/voice-sessions') return <DoctorVoiceSessionsPage />;
+  if (pathname === '/doctor/voice-sessions/new') return <DoctorNewVoiceSessionPage />;
+  if (pathname === '/doctor/communications') return <DoctorCommunicationsPage />;
+  if (pathname === '/doctor/refills') return <DoctorRefillsPage />;
+  if (pathname === '/doctor/chat') return <GlobalAiChatPage role="doctor" />;
+  if (pathname === '/doctor/profile') return <UserProfilePage role="doctor" />;
+
+  // Parameterized Doctor Routes
+  const match = (pattern: RegExp) => pathname.match(pattern);
+  let m: RegExpMatchArray | null;
+
+  if ((m = match(/^\/doctor\/patients\/([^/]+)\/history$/))) return <DoctorPatientHistoryPage patientId={m[1]} />;
+  if ((m = match(/^\/doctor\/patients\/([^/]+)\/timeline$/))) return <DoctorPatientTimelinePage patientId={m[1]} />;
+  if ((m = match(/^\/doctor\/patients\/([^/]+)\/notes$/))) return <DoctorPatientNotesPage patientId={m[1]} />;
+  if ((m = match(/^\/doctor\/patients\/([^/]+)\/documents$/))) return <DoctorPatientDocumentsPage patientId={m[1]} />;
+  if ((m = match(/^\/doctor\/patients\/([^/]+)\/prescriptions$/))) return <DoctorPatientPrescriptionsPage patientId={m[1]} />;
+  if ((m = match(/^\/doctor\/patients\/([^/]+)$/))) return <DoctorPatientProfilePage patientId={m[1]} />;
+  if ((m = match(/^\/doctor\/medications\/([^/]+)$/))) return <DoctorMedicationDetailsPage medicationId={m[1]} />;
+  if ((m = match(/^\/doctor\/ai\/patient\/([^/]+)$/))) return <DoctorPatientAiPage patientId={m[1]} />;
+  if ((m = match(/^\/doctor\/ai\/drafts\/([^/]+)$/))) return <DoctorAiDraftPage draftId={m[1]} />;
+  if ((m = match(/^\/doctor\/voice-sessions\/([^/]+)\/review$/))) return <DoctorVoiceSessionReviewPage sessionId={m[1]} />;
+  if ((m = match(/^\/doctor\/voice-sessions\/([^/]+)$/))) return <DoctorActiveVoiceSessionPage sessionId={m[1]} />;
+
+  return <DoctorDashboardPage />;
+}
+
+// Assistant Sub-view Resolver
+function getAssistantSubView(pathname: string): ReactNode {
+  switch (pathname) {
+    case '/assistant/patients': return <AssistantPatientsPage />;
+    case '/assistant/patients/register': return <AssistantPatientRegisterPage />;
+    case '/assistant/appointments': return <AssistantAppointmentsPage />;
+    case '/assistant/queue': return <AssistantQueuePage />;
+    case '/assistant/communications': return <AssistantCommunicationsPage />;
+    case '/assistant/ai': return <AssistantAiPage />;
+    case '/assistant/ai/communications': return <AssistantAiCommunicationsPage />;
+    case '/assistant/orders/intake': return <AssistantSpecimenIntakePage />;
+    case '/assistant/chat': return <GlobalAiChatPage role="assistant" />;
+    case '/assistant/profile': return <UserProfilePage role="assistant" />;
+    default: return <AssistantAppointmentsPage />;
+  }
+}
+
+// Patient Sub-view Resolver
+function getPatientSubView(pathname: string): ReactNode {
+  switch (pathname) {
+    case '/patient/dashboard': return <PatientDashboardPage />;
+    case '/patient/profile': return <PatientProfilePage />;
+    case '/patient/appointments': return <PatientAppointmentsPage />;
+    case '/patient/medications': return <PatientMedicationsPage />;
+    case '/patient/labs': return <PatientLabsPage />;
+    case '/patient/ai': return <PatientAiPage />;
+    case '/patient/ai/context': return <PatientAiContextPage />;
+    case '/patient/ai/history': return <PatientAiHistoryPage />;
+    case '/patient/vitals': return <PatientVitalsPage />;
+    case '/patient/chat': return <GlobalAiChatPage role="patient" />;
+    default: return <PatientDashboardPage />;
+  }
+}
+
+// Central Screen Dispatcher
+function renderScreen(pathname: string): ReactNode {
+  // 1. Admin Control Plane (Air-Gapped Local-Only Protected)
   if (pathname.startsWith('/admin')) {
     return <AdminPortalRouter pathname={pathname} />;
   }
+
+  // 2. Brand & Discovery
   if (pathname === '/' || pathname === '/find-doctor') return <BrandLandingPage initialTab="doctors" />;
   if (pathname === '/clinics') return <BrandLandingPage initialTab="clinics" />;
-  if (pathname === '/login') {
-    return (
-      <AuthShell title="Login" subtitle="Secure access for Nabda Healthcare Platform.">
-        <AuthLoginPage />
-      </AuthShell>
-    );
-  }
-  if (pathname === '/signup') {
-    return (
-      <AuthShell title="Patient Registration" subtitle="Create your personal healthcare account to manage care and appointments.">
-        <AuthSignupPage />
-      </AuthShell>
-    );
-  }
-  if (pathname === '/request-access') {
-    return (
-      <AuthShell title="Healthcare Provider Access" subtitle="Clinical onboarding and credential verification for healthcare facilities.">
-        <AuthRequestAccessPage />
-      </AuthShell>
-    );
-  }
-  if (pathname === '/forgot-password') {
-    return (
-      <AuthShell title="Account recovery" subtitle="Demo-only flow: this frontend build does not send emails.">
-        <AuthPasswordRecoveryPage />
-      </AuthShell>
-    );
-  }
-  if (pathname === '/reset-password') {
-    return (
-      <AuthShell title="Reset password" subtitle="Preview only. Passwords are not stored or validated against a live system.">
-        <AuthResetPasswordPage />
-      </AuthShell>
-    );
-  }
-  if (pathname === '/verify') {
-    return (
-      <AuthShell title="Verify account" subtitle="Demo-only verification. No live identity provider is connected.">
-        <AuthVerifyPage />
-      </AuthShell>
-    );
-  }
-  if (pathname === '/session-expired') {
-    return (
-      <AuthShell title="Session expired" subtitle="Your current preview session has ended.">
-        <AuthSessionExpiredPage />
-      </AuthShell>
-    );
-  }
-  if (pathname === '/unauthorized') {
-    return (
-      <AuthShell title="Unauthorized access" subtitle="This is a frontend-only access state.">
-        <AuthUnauthorizedPage />
-      </AuthShell>
-    );
-  }
 
+  // 3. Public Clinic Showcase
   if (pathname === '/clinic/al-nour') return <PublicClinicHomePage />;
   if (pathname === '/clinic/al-nour/doctors') return <PublicClinicDoctorsPage />;
   if (pathname === '/clinic/al-nour/services') return <PublicClinicServicesPage />;
   if (pathname === '/clinic/al-nour/booking/confirmed') return <PublicClinicBookingConfirmedPage />;
 
+  // 4. Authentication Shell
+  const authConfig = getAuthConfig(pathname);
+  if (authConfig) {
+    return (
+      <AuthShell title={authConfig.title} subtitle={authConfig.subtitle}>
+        {authConfig.component}
+      </AuthShell>
+    );
+  }
 
-  if (pathname === '/doctor/dashboard') {
+  // 5. Doctor Portal
+  if (pathname.startsWith('/doctor')) {
+    const isRegistry = pathname === '/doctor/patients' || pathname === '/doctor/communications' || pathname === '/doctor/refills';
     return (
-      <DoctorShell pathname={pathname}>
-        <DoctorDashboardPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/appointments') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorAppointmentsPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/patients') {
-    return (
-      <DoctorShell pathname={pathname} navigationVariant="registry">
-        <DoctorPatientsPage />
+      <DoctorShell pathname={pathname} navigationVariant={isRegistry ? 'registry' : undefined}>
+        {getDoctorSubView(pathname)}
       </DoctorShell>
     );
   }
 
-  const patientHistoryMatch = pathname.match(/^\/doctor\/patients\/([^/]+)\/history$/);
-  if (patientHistoryMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPatientHistoryPage patientId={patientHistoryMatch[1]} />
-      </DoctorShell>
-    );
-  }
-  const patientTimelineMatch = pathname.match(/^\/doctor\/patients\/([^/]+)\/timeline$/);
-  if (patientTimelineMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPatientTimelinePage patientId={patientTimelineMatch[1]} />
-      </DoctorShell>
-    );
-  }
-  const patientNotesMatch = pathname.match(/^\/doctor\/patients\/([^/]+)\/notes$/);
-  if (patientNotesMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPatientNotesPage patientId={patientNotesMatch[1]} />
-      </DoctorShell>
-    );
-  }
-  const patientDocumentsMatch = pathname.match(/^\/doctor\/patients\/([^/]+)\/documents$/);
-  if (patientDocumentsMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPatientDocumentsPage patientId={patientDocumentsMatch[1]} />
-      </DoctorShell>
-    );
-  }
-  const patientPrescriptionsMatch = pathname.match(/^\/doctor\/patients\/([^/]+)\/prescriptions$/);
-  if (patientPrescriptionsMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPatientPrescriptionsPage patientId={patientPrescriptionsMatch[1]} />
-      </DoctorShell>
-    );
-  }
-
-  if (/^\/doctor\/patients\/[^/]+$/.test(pathname)) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPatientProfilePage patientId={pathname.split('/').at(-1) ?? 'PT-DEMO-01'} />
-      </DoctorShell>
-    );
-  }
-
-  if (pathname === '/doctor/orders') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorOrdersPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/orders/lab/new') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorLabOrderPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/orders/imaging/new') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorImagingOrderPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/prescriptions/new') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPrescriptionWriterPage />
-      </DoctorShell>
-    );
-  }
-
-  const medicationDetailsMatch = pathname.match(/^\/doctor\/medications\/([^/]+)$/);
-  if (medicationDetailsMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorMedicationDetailsPage medicationId={medicationDetailsMatch[1]} />
-      </DoctorShell>
-    );
-  }
-
-  if (pathname === '/doctor/ai') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorAiWorkspacePage />
-      </DoctorShell>
-    );
-  }
-
-  const doctorPatientAiMatch = pathname.match(/^\/doctor\/ai\/patient\/([^/]+)$/);
-  if (doctorPatientAiMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorPatientAiPage patientId={doctorPatientAiMatch[1]} />
-      </DoctorShell>
-    );
-  }
-  const doctorAiDraftMatch = pathname.match(/^\/doctor\/ai\/drafts\/([^/]+)$/);
-  if (doctorAiDraftMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorAiDraftPage draftId={doctorAiDraftMatch[1]} />
-      </DoctorShell>
-    );
-  }
-
-  if (pathname === '/doctor/voice-sessions') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorVoiceSessionsPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/voice-sessions/new') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorNewVoiceSessionPage />
-      </DoctorShell>
-    );
-  }
-
-  const doctorVoiceReviewMatch = pathname.match(/^\/doctor\/voice-sessions\/([^/]+)\/review$/);
-  if (doctorVoiceReviewMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorVoiceSessionReviewPage sessionId={doctorVoiceReviewMatch[1]} />
-      </DoctorShell>
-    );
-  }
-  const doctorVoiceSessionMatch = pathname.match(/^\/doctor\/voice-sessions\/([^/]+)$/);
-  if (doctorVoiceSessionMatch) {
-    return (
-      <DoctorShell pathname={pathname}>
-        <DoctorActiveVoiceSessionPage sessionId={doctorVoiceSessionMatch[1]} />
-      </DoctorShell>
-    );
-  }
-
-  if (pathname === '/doctor/communications') {
-    return (
-      <DoctorShell pathname={pathname} navigationVariant="registry">
-        <DoctorCommunicationsPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/refills') {
-    return (
-      <DoctorShell pathname={pathname} navigationVariant="registry">
-        <DoctorRefillsPage />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/chat') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <GlobalAiChatPage role="doctor" />
-      </DoctorShell>
-    );
-  }
-  if (pathname === '/doctor/profile') {
-    return (
-      <DoctorShell pathname={pathname}>
-        <UserProfilePage role="doctor" />
-      </DoctorShell>
-    );
-  }
-
-  if (pathname === '/assistant/patients') {
+  // 6. Assistant Portal
+  if (pathname.startsWith('/assistant')) {
     return (
       <AssistantShell pathname={pathname}>
-        <AssistantPatientsPage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/patients/register') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <AssistantPatientRegisterPage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/appointments') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <AssistantAppointmentsPage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/queue') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <AssistantQueuePage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/communications') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <AssistantCommunicationsPage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/ai') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <AssistantAiPage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/ai/communications') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <AssistantAiCommunicationsPage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/orders/intake') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <AssistantSpecimenIntakePage />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/chat') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <GlobalAiChatPage role="assistant" />
-      </AssistantShell>
-    );
-  }
-  if (pathname === '/assistant/profile') {
-    return (
-      <AssistantShell pathname={pathname}>
-        <UserProfilePage role="assistant" />
+        {getAssistantSubView(pathname)}
       </AssistantShell>
     );
   }
 
-  if (pathname === '/patient/dashboard') {
+  // 7. Patient Portal
+  if (pathname.startsWith('/patient')) {
     return (
       <PatientShell pathname={pathname}>
-        <PatientDashboardPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/profile') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientProfilePage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/appointments') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientAppointmentsPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/medications') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientMedicationsPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/labs') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientLabsPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/ai') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientAiPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/ai/context') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientAiContextPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/ai/history') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientAiHistoryPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/vitals') {
-    return (
-      <PatientShell pathname={pathname}>
-        <PatientVitalsPage />
-      </PatientShell>
-    );
-  }
-  if (pathname === '/patient/chat') {
-    return (
-      <PatientShell pathname={pathname}>
-        <GlobalAiChatPage role="patient" />
+        {getPatientSubView(pathname)}
       </PatientShell>
     );
   }
@@ -513,3 +262,4 @@ function MissingRoute({ pathname }: { pathname: string }) {
     </main>
   );
 }
+export default App;
