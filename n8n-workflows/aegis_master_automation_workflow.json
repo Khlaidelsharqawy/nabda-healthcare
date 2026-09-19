@@ -1,0 +1,254 @@
+{
+  "name": "AegisHealth Enterprise Multi-Tenant Healthcare Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aegis-healthcare-hub",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "node-webhook-trigger",
+      "name": "AegisHealth Webhook Ingestion",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract event data and tenant configuration\nconst body = $input.first().json.body || $input.first().json;\n\nconst eventType = body.eventType || 'UNKNOWN';\nconst tenantId = body.tenantId || 'tenant-demo-01';\nconst payload = body.data || {};\n\n// Format recipient phone number to E.164 (remove spaces, dashes)\nlet cleanPhone = (payload.phone || payload.whatsappPhone || payload.patientPhone || '').replace(/[^0-9+]/g, '');\nif (cleanPhone.startsWith('00')) {\n  cleanPhone = '+' + cleanPhone.substring(2);\n} else if (!cleanPhone.startsWith('+') && cleanPhone.length >= 10) {\n  cleanPhone = '+' + cleanPhone;\n}\n\nreturn [{\n  json: {\n    eventId: body.eventId || `evt_${Date.now()}`,\n    eventType,\n    tenantId,\n    recipientPhone: cleanPhone,\n    patientName: payload.fullNameAr || payload.patientName || payload.fullName || 'المريض الكريم',\n    payload,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "node-payload-normalizer",
+      "name": "Normalize Healthcare Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.eventType }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "PATIENT_CREATED",
+              "outputKey": "patient_onboarding"
+            },
+            {
+              "value2": "APPOINTMENT_BOOKED",
+              "outputKey": "appointment_booking"
+            },
+            {
+              "value2": "PRESCRIPTION_ISSUED",
+              "outputKey": "prescription_guidance"
+            },
+            {
+              "value2": "WHATSAPP_INBOUND",
+              "outputKey": "ai_triage_chatbot"
+            }
+          ]
+        }
+      },
+      "id": "node-event-router",
+      "name": "Route by Healthcare Event",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare Patient Onboarding WhatsApp Message with Emojis & Credentials\nconst data = $input.first().json;\nconst p = data.payload;\n\nconst messageAr = `مرحباً بك يا ${data.patientName} في ${p.clinicName || 'مجمعنا الطبي'} 🏥✨\n\nتم فتح ملفك الطبي ورقم سجلك هو: *${p.medicalRecordNumber || 'MRN-PENDING'}*\n\n🔐 *بيانات الدخول لبوابتك الصحية:*\n👤 اسم المستخدم / الهاتف: ${data.recipientPhone}\n🔑 كلمة المرور المؤقتة: *${p.temporaryPassword || 'Aegis@2026!'}*\n\n📲 رابط البوابة وتطبيق المريض:\nhttps://aegishealth.med/patient/dashboard\n\n🎧 للإرشادات الصوتية خطوة بخطوة، اضغط هنا:\nhttps://aegishealth.med/voice-guide/${p.patientId || 'demo'}\n\nنتمنى لك دوام الصحة والعافية! 💚`;\n\nreturn [{\n  json: {\n    ...data,\n    whatsappMessage: messageAr,\n    messageType: 'onboarding'\n  }\n}];"
+      },
+      "id": "node-format-onboarding",
+      "name": "Format Patient Onboarding WhatsApp",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [940, 140]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare Appointment Confirmation WhatsApp Message\nconst data = $input.first().json;\nconst p = data.payload;\n\nconst messageAr = `تأكيد حجز الموعد الطبي 📅🩺\n\nعزيزنا المريض: *${data.patientName}*\nتم تأكيد موعدك مع: *${p.clinicianName || 'الطبيب الاستشاري'}*\n\n🗓️ الموعد: *${p.dateFormatted || p.scheduledAt || 'اليوم'}*\n⏰ الوقت: *${p.timeSlot || '04:30 PM'}*\n📍 العيادة: *${p.clinicName || 'العيادات التخصصية'}* — غرفة: *${p.room || '102'}*\n\n⚠️ *إرشادات قبل الحضور:*\n${(p.preparationChecklist || ['يرجى الحضور قبل الموعد بـ 15 دقيقة', 'إحضار الهوية الوطنية']).map(c => '• ' + c).join('\\n')}\n\nلإلغاء أو تعديل الموعد يرجى الرد على هذه الرسالة. 🌿`;\n\nreturn [{\n  json: {\n    ...data,\n    whatsappMessage: messageAr,\n    messageType: 'appointment_confirmation'\n  }\n}];"
+      },
+      "id": "node-format-appointment",
+      "name": "Format Appointment WhatsApp",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [940, 260]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Prepare Prescription with Emoji Badges & Voice Guidance\nconst data = $input.first().json;\nconst p = data.payload;\n\nconst meds = p.medications || [];\nconst medListText = meds.map((m, i) => {\n  return `${i + 1}. *${m.nameAr || m.nameEn}* ${m.formEmoji || '💊'}\n   الجرعة: ${m.dosage}\n   التوقيت: ${m.timingEmoji || '☀️🌙'} (${m.frequencyAr || m.frequencyEn})\n   إرشادات الطعام: ${m.foodInstructionAr || 'مع أو بعد الأكل'} 🍽️`;\n}).join('\\n\\n');\n\nconst messageAr = `روشتتك الطبية الإلكترونية 📋💊\n\nعزيزنا: *${data.patientName}*\nأصدر لك *${p.doctorName || 'الطبيب المعالج'}* خطة العلاج التالية:\n\n${medListText || '1. أدوية خافضة للضغط ومكملات غذائية 💊'}\n\n🔊 *للاستماع إلى الإرشادات الصوتية لجرعاتك:*\nhttps://aegishealth.med/rx/voice/${p.prescriptionId || 'demo'}\n\nمع تمنياتنا لك بالشفاء العاجل! 💚`;\n\nreturn [{\n  json: {\n    ...data,\n    whatsappMessage: messageAr,\n    messageType: 'prescription_guidance'\n  }\n}];"
+      },
+      "id": "node-format-prescription",
+      "name": "Format Prescription WhatsApp",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [940, 380]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Clinical AI Triage Chatbot Logic\nconst data = $input.first().json;\nconst p = data.payload;\nconst query = p.incomingMessage || p.query || '';\n\nlet aiReply = '';\nif (query.includes('صداع') || query.includes('ضغط') || query.includes('ألم')) {\n  aiReply = `أهلاً بك يا ${data.patientName}، أنا المساعد الطبي الذكي لمجمع عافية 🩺.\\n\\nبناءً على الأعراض المذكورة، يرجى قياس ضغط الدم والراحة في مكان هادئ. إذا استمر العارض، نوصي بحجز استشارة فورية مع طبيب الباطنة أو القلب.\\n\\nهل ترغب في حجز موعد الآن؟`;\n} else if (query.includes('موعد') || query.includes('حجز')) {\n  aiReply = `أهلاً بك! يمكنك استعراض المواعيد المتاحة لأطبائنا وحجز موعدك فوراً عبر هذا الرابط:\\nhttps://aegishealth.med/find-doctor\\n\\nأو أخبرني بالتخصص المطلوب لأساعدك.`;\n} else {\n  aiReply = `أهلاً بك في خدمة الرعاية الصحية الذكية 🏥.\\nرسالتك مسجلة وسيتم توجيهها للفريق الطبي المختص. في حالات الطوارئ يرجى التوجه فوراً لأقرب قسم طوارئ.`;\n}\n\nreturn [{\n  json: {\n    ...data,\n    whatsappMessage: aiReply,\n    messageType: 'ai_triage'\n  }\n}];"
+      },
+      "id": "node-format-triage",
+      "name": "AI Clinical Triage Chatbot",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [940, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/{{ $env.WHATSAPP_PHONE_NUMBER_ID || '10492810928' }}/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $env.WHATSAPP_CLOUD_API_TOKEN || 'DEMO_WHATSAPP_BEARER_TOKEN' }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "body": "={\n  \"messaging_product\": \"whatsapp\",\n  \"recipient_type\": \"individual\",\n  \"to\": \"{{ $json.recipientPhone }}\",\n  \"type\": \"text\",\n  \"text\": {\n    \"preview_url\": true,\n    \"body\": \"{{ $json.whatsappMessage.replace(/\\\"/g, '\\\\\\\"').replace(/\\n/g, '\\\\n') }}\"\n  }\n}",
+        "options": {}
+      },
+      "id": "node-dispatch-whatsapp",
+      "name": "Send WhatsApp via Meta Cloud API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1260, 300],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"message\": \"Healthcare automation workflow executed successfully\",\n  \"eventId\": \"{{ $json.eventId }}\",\n  \"recipient\": \"{{ $json.recipientPhone }}\",\n  \"messageType\": \"{{ $json.messageType }}\",\n  \"dispatchedAt\": \"{{ $json.timestamp }}\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "node-webhook-response",
+      "name": "Respond to AegisHealth Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1520, 300]
+    }
+  ],
+  "connections": {
+    "node-webhook-trigger": {
+      "main": [
+        [
+          {
+            "node": "node-payload-normalizer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "node-payload-normalizer": {
+      "main": [
+        [
+          {
+            "node": "node-event-router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "node-event-router": {
+      "main": [
+        [
+          {
+            "node": "node-format-onboarding",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "node-format-appointment",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "node-format-prescription",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "node-format-triage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "node-format-onboarding": {
+      "main": [
+        [
+          {
+            "node": "node-dispatch-whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "node-format-appointment": {
+      "main": [
+        [
+          {
+            "node": "node-dispatch-whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "node-format-prescription": {
+      "main": [
+        [
+          {
+            "node": "node-dispatch-whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "node-format-triage": {
+      "main": [
+        [
+          {
+            "node": "node-dispatch-whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "node-dispatch-whatsapp": {
+      "main": [
+        [
+          {
+            "node": "node-webhook-response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
