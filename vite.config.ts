@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     port: 5173,
     strictPort: false,
-    allowedHosts: ['nabda-healthcare.loca.lt', '.loca.lt', 'all'],
+    allowedHosts: true,
   },
   build: {
     chunkSizeWarningLimit: 800,
