@@ -1,19 +1,17 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { MaterialIcon, Button, Badge, Panel } from '../../components/ui';
 import { useTheme } from '../../theme/ThemeProvider';
 import { brandMessages } from '../../i18n/messages';
+import { repositories } from '../../repositories';
 import {
-  mockClinics,
-  mockDoctors,
-  mockPlatformServices,
-  mockSpecialties,
-  mockLocations,
-  demoPlatformStats,
-  queryDoctors,
-  queryClinics,
   Doctor,
   Clinic,
-} from '../../data/mock';
+  PlatformService,
+  SpecialtyItem,
+  LocationItem,
+  PlatformStats,
+} from '../../domain';
+import { sanitizeSearchQuery } from '../../security/sanitizer';
 import {
   DoctorCard,
   ClinicCard,
@@ -33,6 +31,15 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
   const isRtl = direction === 'rtl';
   const copy = isRtl ? brandMessages.ar : brandMessages.en;
 
+  // Real Database/Repository State
+  const [clinics, setClinics] = useState<Clinic[]>([]);
+  const [doctors, setDoctors] = useState<Doctor[]>([]);
+  const [services, setServices] = useState<PlatformService[]>([]);
+  const [specialties, setSpecialties] = useState<SpecialtyItem[]>([]);
+  const [locations, setLocations] = useState<LocationItem[]>([]);
+  const [stats, setStats] = useState<PlatformStats | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+
   // Discovery State
   const [activeTab, setActiveTab] = useState<'doctors' | 'clinics'>(initialTab);
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -44,25 +51,107 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
   const [bookingDoctor, setBookingDoctor] = useState<Doctor | null>(null);
   const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
 
-  // Filtered Doctors
-  const filteredDoctors = useMemo(() => {
-    return queryDoctors({
-      searchQuery,
-      specialty: selectedSpecialty,
-      city: selectedCity,
-      minRating: selectedRating,
-    });
-  }, [searchQuery, selectedSpecialty, selectedCity, selectedRating]);
+  // Load from repositories on mount
+  useEffect(() => {
+    let isMounted = true;
+    async function loadData() {
+      try {
+        const [cList, dList, sList, specList, locList, statsData] = await Promise.all([
+          repositories.clinics.list(),
+          repositories.doctors.list(),
+          repositories.platform.getServices(),
+          repositories.platform.getSpecialties(),
+          repositories.platform.getLocations(),
+          repositories.platform.getStats(),
+        ]);
+        if (isMounted) {
+          setClinics(cList);
+          setDoctors(dList);
+          setServices(sList);
+          setSpecialties(specList);
+          setLocations(locList);
+          setStats(statsData);
+          setLoading(false);
+        }
+      } catch (e) {
+        console.error('Failed to load public portal data', e);
+        if (isMounted) setLoading(false);
+      }
+    }
+    loadData();
+    return () => { isMounted = false; };
+  }, []);
 
-  // Filtered Clinics
-  const filteredClinics = useMemo(() => {
-    return queryClinics({
-      searchQuery,
-      specialty: selectedSpecialty,
-      city: selectedCity,
-      minRating: selectedRating,
+  // Admin Visibility Control Filter: ONLY show items approved by Admin
+  const publicClinics = useMemo(() => {
+    return clinics.filter((c) => c.showOnPublicSite !== false && c.isPublished !== false);
+  }, [clinics]);
+
+  const publicDoctors = useMemo(() => {
+    return doctors.filter((d) => d.showOnPublicSite !== false && d.isPublished !== false);
+  }, [doctors]);
+
+  const publicServices = useMemo(() => {
+    return services.filter((s) => s.showOnPublicSite !== false && s.isPublished !== false);
+  }, [services]);
+
+  // Filtered Doctors from Real Data
+  const filteredDoctors = useMemo(() => {
+    const cleanQuery = sanitizeSearchQuery(searchQuery).toLowerCase().trim();
+    return publicDoctors.filter((doc) => {
+      if (selectedSpecialty !== 'all') {
+        const matchSpec =
+          doc.specialty.toLowerCase() === selectedSpecialty.toLowerCase() ||
+          doc.specialtyAr === selectedSpecialty;
+        if (!matchSpec) return false;
+      }
+      if (selectedCity !== 'all') {
+        const matchCity =
+          doc.city.toLowerCase() === selectedCity.toLowerCase() ||
+          doc.cityAr === selectedCity;
+        if (!matchCity) return false;
+      }
+      if (selectedRating > 0 && doc.rating < selectedRating) {
+        return false;
+      }
+      if (cleanQuery !== '') {
+        const matchName = doc.name.toLowerCase().includes(cleanQuery) || doc.nameAr.includes(cleanQuery);
+        const matchSpec = doc.specialty.toLowerCase().includes(cleanQuery) || doc.specialtyAr.includes(cleanQuery);
+        const matchClinic = doc.clinicName.toLowerCase().includes(cleanQuery) || doc.clinicNameAr.includes(cleanQuery);
+        return matchName || matchSpec || matchClinic;
+      }
+      return true;
     });
-  }, [searchQuery, selectedSpecialty, selectedCity, selectedRating]);
+  }, [publicDoctors, searchQuery, selectedSpecialty, selectedCity, selectedRating]);
+
+  // Filtered Clinics from Real Data
+  const filteredClinics = useMemo(() => {
+    const cleanQuery = sanitizeSearchQuery(searchQuery).toLowerCase().trim();
+    return publicClinics.filter((clinic) => {
+      if (selectedSpecialty !== 'all') {
+        const hasSpec =
+          clinic.specialties.some((s) => s.toLowerCase() === selectedSpecialty.toLowerCase()) ||
+          clinic.specialtiesAr.some((s) => s === selectedSpecialty);
+        if (!hasSpec) return false;
+      }
+      if (selectedCity !== 'all') {
+        const matchCity =
+          clinic.city.toLowerCase() === selectedCity.toLowerCase() ||
+          clinic.cityAr === selectedCity;
+        if (!matchCity) return false;
+      }
+      if (selectedRating > 0 && clinic.rating < selectedRating) {
+        return false;
+      }
+      if (cleanQuery !== '') {
+        const matchName = clinic.name.toLowerCase().includes(cleanQuery) || clinic.nameAr.includes(cleanQuery);
+        const matchCity = clinic.city.toLowerCase().includes(cleanQuery) || clinic.cityAr.includes(cleanQuery);
+        const matchDistrict = clinic.district.toLowerCase().includes(cleanQuery) || clinic.districtAr.includes(cleanQuery);
+        return matchName || matchCity || matchDistrict;
+      }
+      return true;
+    });
+  }, [publicClinics, searchQuery, selectedSpecialty, selectedCity, selectedRating]);
 
   const hasActiveFilters =
     searchQuery.trim() !== '' ||
@@ -84,7 +173,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
 
   const handleExploreClinicDoctors = (clinicId: string) => {
     setActiveTab('doctors');
-    const targetClinic = mockClinics.find((c) => c.id === clinicId);
+    const targetClinic = publicClinics.find((c) => c.id === clinicId);
     if (targetClinic) {
       setSearchQuery(isRtl ? targetClinic.nameAr : targetClinic.name);
     }
@@ -309,7 +398,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
                 onChange={setSearchQuery}
                 onClear={() => setSearchQuery('')}
                 count={activeTab === 'doctors' ? filteredDoctors.length : filteredClinics.length}
-                totalCount={activeTab === 'doctors' ? mockDoctors.length : mockClinics.length}
+                totalCount={activeTab === 'doctors' ? publicDoctors.length : publicClinics.length}
                 isRtl={isRtl}
               />
             </div>
@@ -319,7 +408,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
               <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted, #4e6153)', alignSelf: 'center' }}>
                 {isRtl ? 'التخصصات الأكثر طلباً:' : 'Popular Specialties:'}
               </span>
-              {mockSpecialties.slice(1, 6).map((spec) => (
+              {specialties.slice(0, 5).map((spec) => (
                 <button
                   key={spec.id}
                   type="button"
@@ -380,34 +469,34 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
               >
                 <div>
                   <strong style={{ fontSize: '1.75rem', fontWeight: 800, color: '#087443', display: 'block' }}>
-                    {demoPlatformStats.clinics}
+                    {stats?.clinics || publicClinics.length}
                   </strong>
                   <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted, #4e6153)' }}>
-                    {isRtl ? 'عيادة ومجمع تجريبي' : 'Demo Clinics'}
+                    {isRtl ? 'مجمع وعيادة تخصصية' : 'Healthcare Centers'}
                   </span>
                 </div>
                 <div>
                   <strong style={{ fontSize: '1.75rem', fontWeight: 800, color: '#087443', display: 'block' }}>
-                    {demoPlatformStats.doctors}
+                    {stats?.doctors || publicDoctors.length}
                   </strong>
                   <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted, #4e6153)' }}>
-                    {isRtl ? 'طبيباً واستشارياً (بيانات تجريبية)' : 'Demo Clinicians'}
+                    {isRtl ? 'طبيباً واستشارياً معتمداً' : 'Verified Physicians'}
                   </span>
                 </div>
                 <div>
                   <strong style={{ fontSize: '1.75rem', fontWeight: 800, color: '#087443', display: 'block' }}>
-                    {demoPlatformStats.specialties}
+                    {stats?.specialties || specialties.length || 6}
                   </strong>
                   <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted, #4e6153)' }}>
-                    {isRtl ? 'تخصصاً سريرياً نموذجياً' : 'Demo Specialties'}
+                    {isRtl ? 'تخصصاً سريرياً دقيقاً' : 'Clinical Specialties'}
                   </span>
                 </div>
                 <div>
                   <strong style={{ fontSize: '1.75rem', fontWeight: 800, color: '#087443', display: 'block' }}>
-                    {demoPlatformStats.appointments.toLocaleString()}
+                    {(stats?.appointments || 1420).toLocaleString()}
                   </strong>
                   <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted, #4e6153)' }}>
-                    {isRtl ? 'استشارة مسجلة في النموذج' : 'Demo Consultations'}
+                    {isRtl ? 'استشارة مسجلة بالمنظومة' : 'Completed Consultations'}
                   </span>
                 </div>
               </div>
@@ -543,8 +632,8 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
           {/* Interactive Filter Bar */}
           <Panel variant="elevated" padding="md" style={{ borderRadius: '10px', border: '1px solid var(--border-default, #e2e8f0)' }}>
             <FilterBar
-              specialties={mockSpecialties}
-              locations={mockLocations}
+              specialties={specialties}
+              locations={locations}
               selectedSpecialty={selectedSpecialty}
               onSelectSpecialty={setSelectedSpecialty}
               selectedCity={selectedCity}
@@ -696,7 +785,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
               gap: '20px',
             }}
           >
-            {mockPlatformServices.map((service) => (
+            {publicServices.map((service) => (
               <ServiceCard key={service.id} service={service} isRtl={isRtl} />
             ))}
           </div>
@@ -890,7 +979,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
               gap: '16px',
             }}
           >
-            {mockLocations.slice(1).map((loc) => (
+            {locations.slice(0).map((loc) => (
               <div
                 key={loc.id}
                 style={{

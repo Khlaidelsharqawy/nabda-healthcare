@@ -84,6 +84,8 @@ export interface IDoctorRepository {
 
 export interface IPlatformRepository {
   getServices(): Promise<PlatformService[]>;
+  saveService(service: PlatformService): Promise<PlatformService>;
+  deleteService(id: string): Promise<void>;
   getSpecialties(): Promise<SpecialtyItem[]>;
   getLocations(): Promise<LocationItem[]>;
   getStats(): Promise<PlatformStats>;

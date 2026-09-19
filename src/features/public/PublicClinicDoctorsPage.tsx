@@ -1,9 +1,11 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { PublicClinicShell } from '../../layouts/PublicClinicShell';
 import { useTheme } from '../../theme/ThemeProvider';
 import { publicMessages } from '../../i18n/messages';
 import { MaterialIcon, PageHeader, Panel, Badge, Button } from '../../components/ui';
-import { mockDoctors, Doctor } from '../../data/mock';
+import { repositories } from '../../repositories';
+import { Doctor } from '../../domain';
+import { sanitizeSearchQuery } from '../../security/sanitizer';
 import { RatingDisplay, SearchBar, BookingModal } from '../../components/discovery';
 
 export function PublicClinicDoctorsPage() {
@@ -19,20 +21,44 @@ export function PublicClinicDoctorsPage() {
   const [bookingDoctor, setBookingDoctor] = useState<Doctor | null>(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
-  // Al-Nour specific doctors
-  const alNourDoctors = useMemo(() => {
-    return mockDoctors.filter((d) => d.clinicId === 'al-nour');
+  // Real Database Doctors
+  const [allDoctors, setAllDoctors] = useState<Doctor[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function load() {
+      try {
+        const list = await repositories.doctors.list();
+        if (isMounted) {
+          setAllDoctors(list);
+          setLoading(false);
+        }
+      } catch (e) {
+        console.error('Failed to load clinic doctors', e);
+        if (isMounted) setLoading(false);
+      }
+    }
+    load();
+    return () => { isMounted = false; };
   }, []);
 
+  // Al-Nour specific doctors filtered by Admin visibility
+  const alNourDoctors = useMemo(() => {
+    return allDoctors.filter(
+      (d) => d.clinicId === 'al-nour' && d.showOnPublicSite !== false && d.isPublished !== false
+    );
+  }, [allDoctors]);
+
   const filteredDoctors = useMemo(() => {
+    const cleanQuery = sanitizeSearchQuery(searchQuery).toLowerCase().trim();
     return alNourDoctors.filter((doc) => {
       if (selectedSpecialty !== 'all' && doc.specialty !== selectedSpecialty) {
         return false;
       }
-      if (searchQuery.trim() !== '') {
-        const q = searchQuery.toLowerCase().trim();
-        const matchName = doc.name.toLowerCase().includes(q) || doc.nameAr.includes(q);
-        const matchSpec = doc.specialty.toLowerCase().includes(q) || doc.specialtyAr.includes(q);
+      if (cleanQuery !== '') {
+        const matchName = doc.name.toLowerCase().includes(cleanQuery) || doc.nameAr.includes(cleanQuery);
+        const matchSpec = doc.specialty.toLowerCase().includes(cleanQuery) || doc.specialtyAr.includes(cleanQuery);
         return matchName || matchSpec;
       }
       return true;

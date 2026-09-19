@@ -246,6 +246,8 @@ export interface Clinic {
   consultationFeeRangeAr: string;
   emergencyAvailable: boolean;
   isDemo: boolean;
+  showOnPublicSite?: boolean;
+  isPublished?: boolean;
   mapCoordinates: {
     latApprox: number;
     lngApprox: number;
@@ -286,6 +288,8 @@ export interface Doctor {
   avatarLetter: string;
   availableSlots: string[];
   isDemo: boolean;
+  showOnPublicSite?: boolean;
+  isPublished?: boolean;
 }
 
 /**
@@ -303,6 +307,8 @@ export interface PlatformService {
   features: string[];
   featuresAr: string[];
   route: string;
+  showOnPublicSite?: boolean;
+  isPublished?: boolean;
 }
 
 /**

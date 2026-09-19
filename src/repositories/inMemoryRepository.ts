@@ -1006,6 +1006,8 @@ const SEED_SERVICES: PlatformService[] = [
     features: ['Direct specialty filtering', 'Real-time slot availability', 'Credentials & experience review'],
     featuresAr: ['تصفية دقيقة حسب التخصص', 'عرض المواعيد المتاحة لحظياً', 'الاطلاع على المؤهلات والخبرات'],
     route: '/clinic/al-nour/doctors',
+    showOnPublicSite: true,
+    isPublished: true,
   },
   {
     id: 'appointment-booking',
@@ -1019,6 +1021,8 @@ const SEED_SERVICES: PlatformService[] = [
     features: ['Instant slot reservation', 'Calendar sync & SMS notifications', 'Live waiting room check-in'],
     featuresAr: ['حجز فوري للمواعيد', 'تزامن مع التقويم وإشعارات نصية', 'تسجيل وصول رقمي في صالة الانتظار'],
     route: '/clinic/al-nour',
+    showOnPublicSite: true,
+    isPublished: true,
   },
   {
     id: 'patient-portal',
@@ -1032,6 +1036,8 @@ const SEED_SERVICES: PlatformService[] = [
     features: ['Unified health records', 'Laboratory result trends', 'Self-reported blood pressure & glucose'],
     featuresAr: ['سجل صحي موحد ومتكامل', 'مخططات بيانية لنتائج الفحوصات', 'تسجيل ومتابعة المؤشرات الحيوية'],
     route: '/patient/dashboard',
+    showOnPublicSite: true,
+    isPublished: true,
   },
   {
     id: 'ambient-scribe',
@@ -1045,6 +1051,8 @@ const SEED_SERVICES: PlatformService[] = [
     features: ['Conversational transcription', 'Structured SOAP note drafts', 'Physician review & attestation'],
     featuresAr: ['تحويل المحادثة الطبية لنص', 'مسودات SOAP دقيقة ومنظمة', 'مراجعة الطبيب واعتماده بنقرة واحدة'],
     route: '/doctor/voice-sessions',
+    showOnPublicSite: true,
+    isPublished: true,
   },
 ];
 
@@ -1064,8 +1072,26 @@ const SEED_LOCATIONS: LocationItem[] = [
 ];
 
 export class InMemoryPlatformRepository implements IPlatformRepository {
+  private services: PlatformService[] = loadStore<PlatformService>('services', SEED_SERVICES);
+
   async getServices(): Promise<PlatformService[]> {
-    return SEED_SERVICES.map((s) => ({ ...s }));
+    return this.services.map((s) => ({ ...s }));
+  }
+
+  async saveService(service: PlatformService): Promise<PlatformService> {
+    const idx = this.services.findIndex((s) => s.id === service.id);
+    if (idx >= 0) {
+      this.services[idx] = { ...service };
+    } else {
+      this.services.unshift(service);
+    }
+    saveStore('services', this.services);
+    return { ...service };
+  }
+
+  async deleteService(id: string): Promise<void> {
+    this.services = this.services.filter((s) => s.id !== id);
+    saveStore('services', this.services);
   }
 
   async getSpecialties(): Promise<SpecialtyItem[]> {

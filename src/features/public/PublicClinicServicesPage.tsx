@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { PublicClinicShell } from '../../layouts/PublicClinicShell';
 import { useTheme } from '../../theme/ThemeProvider';
 import { publicMessages } from '../../i18n/messages';
 import { MaterialIcon, PageHeader, Panel, PanelBody, Badge, Button } from '../../components/ui';
+import { repositories } from '../../repositories';
+import { PlatformService } from '../../domain';
 
 interface ClinicServiceItem {
   id: string;
@@ -16,9 +18,10 @@ interface ClinicServiceItem {
   icon: string;
   turnaround: string;
   turnaroundAr: string;
+  showOnPublicSite?: boolean;
 }
 
-const alNourServices: ClinicServiceItem[] = [
+const fallbackAlNourServices: ClinicServiceItem[] = [
   {
     id: 'primary-care',
     title: 'Comprehensive Primary & Family Care',
@@ -31,6 +34,7 @@ const alNourServices: ClinicServiceItem[] = [
     icon: 'medical_services',
     turnaround: 'Same-Day Availability',
     turnaroundAr: 'متاح في نفس اليوم',
+    showOnPublicSite: true,
   },
   {
     id: 'cardiology',
@@ -44,6 +48,7 @@ const alNourServices: ClinicServiceItem[] = [
     icon: 'cardiology',
     turnaround: 'Consultant Roster',
     turnaroundAr: 'وفق جدول الاستشاريين',
+    showOnPublicSite: true,
   },
   {
     id: 'pediatrics',
@@ -57,6 +62,7 @@ const alNourServices: ClinicServiceItem[] = [
     icon: 'child_care',
     turnaround: 'Daily Walk-in Slots',
     turnaroundAr: 'مواعيد يومية متاحة',
+    showOnPublicSite: true,
   },
   {
     id: 'diagnostics-lab',
@@ -70,6 +76,7 @@ const alNourServices: ClinicServiceItem[] = [
     icon: 'biotech',
     turnaround: 'Results in 2–4 Hours',
     turnaroundAr: 'النتائج خلال ٢–٤ ساعات',
+    showOnPublicSite: true,
   },
   {
     id: 'imaging-ultrasound',
@@ -83,6 +90,7 @@ const alNourServices: ClinicServiceItem[] = [
     icon: 'radiology',
     turnaround: 'Digital Archiving',
     turnaroundAr: 'أرشفة رقمية فورية',
+    showOnPublicSite: true,
   },
   {
     id: 'chronic-care',
@@ -96,17 +104,40 @@ const alNourServices: ClinicServiceItem[] = [
     icon: 'monitor_heart',
     turnaround: 'Comprehensive Program',
     turnaroundAr: 'برنامج متابعة دوري',
+    showOnPublicSite: true,
   },
 ];
 
 export function PublicClinicServicesPage() {
   const { direction } = useTheme();
   const isRtl = direction === 'rtl';
-  const copy = isRtl ? publicMessages.ar : publicMessages.en;
+  const copy = publicMessages.ar;
 
   const [filter, setFilter] = useState<'all' | 'clinical' | 'diagnostic' | 'chronic'>('all');
+  const [platformServices, setPlatformServices] = useState<PlatformService[]>([]);
 
-  const filteredServices = alNourServices.filter((s) => {
+  useEffect(() => {
+    let isMounted = true;
+    async function loadServices() {
+      try {
+        const list = await repositories.platform.getServices();
+        if (isMounted) {
+          setPlatformServices(list);
+        }
+      } catch (e) {
+        console.error('Failed to load platform services', e);
+      }
+    }
+    loadServices();
+    return () => { isMounted = false; };
+  }, []);
+
+  // Filter ONLY items approved by Admin
+  const activeServices = useMemo(() => {
+    return fallbackAlNourServices.filter((s) => s.showOnPublicSite !== false);
+  }, []);
+
+  const filteredServices = activeServices.filter((s) => {
     if (filter === 'all') return true;
     return s.category === filter;
   });
