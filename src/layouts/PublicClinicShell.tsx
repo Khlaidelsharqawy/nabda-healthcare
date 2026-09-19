@@ -24,13 +24,13 @@ export function PublicClinicShell({ children }: { children: ReactNode }) {
   return (
     <div className="public-clinic-shell" data-direction={isRtl ? 'rtl' : 'ltr'}>
       <header className="public-clinic-shell__header">
-        <a href="/" className="public-clinic-shell__brand" aria-label={isRtl ? 'الصفحة الرئيسية لمنظومة عافية' : 'AegisHealth home'}>
+        <a href="/" className="public-clinic-shell__brand" aria-label={isRtl ? 'الصفحة الرئيسية لمنظومة نبضة الطبية' : 'Nabda Healthcare Platform'}>
           <span className="public-clinic-shell__mark">
-            <MaterialIcon name="medical_information" />
+            <img src="/logo.png" alt="Nabda Logo" style={{ width: '1.75rem', height: '1.75rem', objectFit: 'contain' }} />
           </span>
           <span>
-            <strong>{isRtl ? 'منظومة عافية' : 'AegisHealth'}</strong>
-            <small>{isRtl ? 'مجمع عافية الطبي التجريبي' : 'AegisHealth Demo Medical Center'}</small>
+            <strong>{isRtl ? 'منظومة نبضة الطبية' : 'Nabda Healthcare'}</strong>
+            <small>{isRtl ? 'المنظومة السريرية الذكية متعددة العيادات' : 'Multi-Tenant Clinical AI Platform'}</small>
           </span>
         </a>
 
@@ -96,7 +96,7 @@ export function PublicClinicShell({ children }: { children: ReactNode }) {
         aria-label="Clinic navigation"
       >
         <div className="public-clinic-shell__drawer-brand">
-          <strong>{isRtl ? 'مجمع عافية التجريبي' : 'AegisHealth Demo Center'}</strong>
+          <strong>{isRtl ? 'منظومة نبضة الطبية' : 'Nabda Healthcare'}</strong>
         </div>
         {navLinks.map((link) => {
           const isActive = currentPath === link.href;
@@ -119,7 +119,7 @@ export function PublicClinicShell({ children }: { children: ReactNode }) {
 
       <footer className="public-clinic-shell__footer">
         <div className="public-clinic-shell__footer-brand">
-          <strong>{isRtl ? 'منظومة عافية' : 'AegisHealth'}</strong>
+          <strong>{isRtl ? 'منظومة نبضة الطبية' : 'Nabda Healthcare'}</strong>
           <span>{isRtl ? 'نظام العيادات الذكية الموحد' : 'Unified Clinical Healthcare Ecosystem'}</span>
         </div>
         <div className="public-clinic-shell__footer-links">

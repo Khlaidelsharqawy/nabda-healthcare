@@ -46,13 +46,13 @@ export function AssistantHeader({
       <a
         className="assistant-header__brand"
         href="/assistant/patients"
-        aria-label={arabic ? 'مساحة عمل المساعد - منظومة عافية' : 'AegisHealth Assistant Workspace'}
+        aria-label={arabic ? 'مساحة عمل المساعد - منظومة نبضة' : 'Nabda Assistant Workspace'}
       >
         <span className="assistant-header__mark">
           <MaterialIcon name="support_agent" />
         </span>
         <span className="assistant-header__text">
-          <strong>{arabic ? 'منظومة عافية' : 'AegisHealth'}</strong>
+          <strong>{arabic ? 'منظومة نبضة' : 'Nabda'}</strong>
           <small>{messages.operations}</small>
         </span>
       </a>

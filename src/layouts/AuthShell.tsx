@@ -47,12 +47,12 @@ export function AuthShell({
   return (
     <div className="auth-shell" data-direction={isRtl ? 'rtl' : 'ltr'}>
       <header className="auth-shell__topbar">
-        <a href="/" className="auth-shell__brand" aria-label={isRtl ? 'الصفحة الرئيسية لمنظومة عافية' : 'AegisHealth home'}>
+        <a href="/" className="auth-shell__brand" aria-label={isRtl ? 'الصفحة الرئيسية لمنظومة نبضة الطبية' : 'Nabda Healthcare Platform'}>
           <span className="auth-shell__brand-mark">
-            <MaterialIcon name="medical_information" />
+            <img src="/logo.png" alt="Nabda Logo" style={{ width: '1.75rem', height: '1.75rem', objectFit: 'contain' }} />
           </span>
           <span>
-            <strong>{isRtl ? 'منظومة عافية' : 'AegisHealth'}</strong>
+            <strong>{isRtl ? 'منظومة نبضة الطبية' : 'Nabda Healthcare'}</strong>
             <small>{copy.shellBrand}</small>
           </span>
         </a>

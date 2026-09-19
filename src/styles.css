@@ -1097,8 +1097,11 @@ body {
   pointer-events: auto;
 }
 
-/* Sidebar - Smooth Off-Canvas Drawer (Closed by default) */
-.admin-sidebar {
+/* Sidebar - Smooth Off-Canvas Drawer (Closed by default across all roles) */
+.admin-sidebar,
+.doctor-sidebar,
+.assistant-sidebar,
+.patient-sidebar {
   position: fixed;
   inset-block: 0;
   inset-inline-start: 0;
@@ -1124,23 +1127,38 @@ body {
   pointer-events: none;
 }
 
-[dir='rtl'] .admin-sidebar {
+[dir='rtl'] .admin-sidebar,
+[dir='rtl'] .doctor-sidebar,
+[dir='rtl'] .assistant-sidebar,
+[dir='rtl'] .patient-sidebar {
   transform: translateX(105%);
 }
 
-.is-nav-open .admin-sidebar {
+.is-nav-open .admin-sidebar,
+.is-nav-open .doctor-sidebar,
+.is-nav-open .assistant-sidebar,
+.is-nav-open .patient-sidebar {
   transform: translateX(0);
   visibility: visible;
   pointer-events: auto;
 }
 
-.admin-sidebar::-webkit-scrollbar {
+.admin-sidebar::-webkit-scrollbar,
+.doctor-sidebar::-webkit-scrollbar,
+.assistant-sidebar::-webkit-scrollbar,
+.patient-sidebar::-webkit-scrollbar {
   width: 4px;
 }
-.admin-sidebar::-webkit-scrollbar-track {
+.admin-sidebar::-webkit-scrollbar-track,
+.doctor-sidebar::-webkit-scrollbar-track,
+.assistant-sidebar::-webkit-scrollbar-track,
+.patient-sidebar::-webkit-scrollbar-track {
   background: transparent;
 }
-.admin-sidebar::-webkit-scrollbar-thumb {
+.admin-sidebar::-webkit-scrollbar-thumb,
+.doctor-sidebar::-webkit-scrollbar-thumb,
+.assistant-sidebar::-webkit-scrollbar-thumb,
+.patient-sidebar::-webkit-scrollbar-thumb {
   background: var(--color-surface-container-highest);
   border-radius: 9999px;
 }

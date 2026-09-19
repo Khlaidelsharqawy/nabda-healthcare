@@ -31,18 +31,18 @@ export function AuthLoginPage() {
       let targetRole: string | null = null;
       let targetRoute = '/';
 
-      if (cleanEmail === 'admin@aegishealth.com' && cleanPass === 'AegisAdmin@2026!') {
+      if ((cleanEmail === 'admin@nabda.health' || cleanEmail === 'admin@aegishealth.com') && (cleanPass === 'AegisAdmin@2026!' || cleanPass === 'NabdaAdmin@2026!')) {
         targetRole = 'super_admin';
         targetRoute = '/admin/dashboard';
-      } else if (cleanEmail === 'doctor@aegishealth.com' && cleanPass === 'Doctor@2026!') {
+      } else if ((cleanEmail === 'doctor@nabda.health' || cleanEmail === 'doctor@aegishealth.com') && (cleanPass === 'Doctor@2026!' || cleanPass === 'NabdaDoctor@2026!')) {
         targetRole = 'doctor';
         targetRoute = '/doctor/dashboard';
-      } else if (cleanEmail === 'assistant@aegishealth.com' && cleanPass === 'Assistant@2026!') {
+      } else if ((cleanEmail === 'assistant@nabda.health' || cleanEmail === 'assistant@aegishealth.com') && (cleanPass === 'Assistant@2026!' || cleanPass === 'NabdaAssistant@2026!')) {
         targetRole = 'assistant';
         targetRoute = '/assistant/patients';
       } else if (
-        (cleanEmail === 'patient@aegishealth.com' || cleanEmail === 'patient') &&
-        cleanPass === 'Aegis@PT2026!'
+        (cleanEmail === 'patient@nabda.health' || cleanEmail === 'patient@aegishealth.com' || cleanEmail === 'patient') &&
+        (cleanPass === 'Aegis@PT2026!' || cleanPass === 'Nabda@PT2026!')
       ) {
         targetRole = 'patient';
         targetRoute = '/patient/dashboard';
@@ -110,14 +110,14 @@ export function AuthLoginPage() {
 
   const autofillCredentials = (role: 'admin' | 'doctor' | 'patient') => {
     if (role === 'admin') {
-      setEmail('admin@aegishealth.com');
-      setPassword('AegisAdmin@2026!');
+      setEmail('admin@nabda.health');
+      setPassword('NabdaAdmin@2026!');
     } else if (role === 'doctor') {
-      setEmail('doctor@aegishealth.com');
-      setPassword('Doctor@2026!');
+      setEmail('doctor@nabda.health');
+      setPassword('NabdaDoctor@2026!');
     } else {
-      setEmail('patient@aegishealth.com');
-      setPassword('Aegis@PT2026!');
+      setEmail('patient@nabda.health');
+      setPassword('Nabda@PT2026!');
     }
   };
 

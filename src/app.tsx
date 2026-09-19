@@ -83,7 +83,7 @@ function renderScreen(pathname: string) {
   if (pathname === '/clinics') return <BrandLandingPage initialTab="clinics" />;
   if (pathname === '/login') {
     return (
-      <AuthShell title="Login" subtitle="Demo-only secure access for the AegisHealth frontend preview.">
+      <AuthShell title="Login" subtitle="Secure access for Nabda Healthcare Platform.">
         <AuthLoginPage />
       </AuthShell>
     );
@@ -598,7 +598,7 @@ export function App() {
 function MissingRoute({ pathname }: { pathname: string }) {
   return (
     <main className="missing-route" aria-labelledby="missing-route-title">
-      <p className="missing-route__eyebrow">AegisHealth frontend</p>
+      <p className="missing-route__eyebrow">Nabda Healthcare Platform</p>
       <h1 id="missing-route-title">Screen not mapped</h1>
       <p>
         No screen is registered for <code>{pathname}</code>.

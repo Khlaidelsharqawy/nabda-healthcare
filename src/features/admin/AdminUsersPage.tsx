@@ -403,7 +403,7 @@ export function AdminUsersPage() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="user@aegishealth.com"
+                    placeholder="user@nabda.health"
                     required
                     iconStart="mail"
                   />

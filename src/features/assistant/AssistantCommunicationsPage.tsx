@@ -114,8 +114,8 @@ export function AssistantCommunicationsPage() {
     filteredConversations.find((conversation) => conversation.id === activeConversationId) ?? filteredConversations[0] ?? conversationSeeds[0];
 
   const aiDraft = isRtl
-    ? 'أهلاً بك! نؤكد موعدك مع الدكتور طارق القباني غداً الساعة 05:00 مساءً في مجمع عافية الطبي (العيادة رقم 1). يرجى الحضور قبل الموعد بـ 15 دقيقة لقياس العلامات الحيوية.'
-    : 'Hello Mr. Hassan! We confirm your appointment with Dr. Tarek El-Kabbani tomorrow at 05:00 PM at AegisHealth Medical Center (Clinic Suite #1). Please arrive 15 minutes early for vital sign triage.';
+    ? 'أهلاً بك! نؤكد موعدك مع الدكتور طارق منصور غداً الساعة 05:00 مساءً في مستشفى النور التخصصي (العيادة رقم 1). يرجى الحضور قبل الموعد بـ 15 دقيقة لقياس العلامات الحيوية.'
+    : 'Hello Mr. Hassan! We confirm your appointment with Dr. Tarek Mansour tomorrow at 05:00 PM at Al-Nour Medical Center (Clinic Suite #1). Please arrive 15 minutes early for vital sign triage.';
 
   return (
     <div className="assistant-page assistant-communications" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -339,7 +339,7 @@ export function AssistantCommunicationsPage() {
 
             <div style={{ alignSelf: 'flex-end', maxWidth: '75%', padding: '0.75rem 1rem', borderRadius: 'var(--radius-lg)', backgroundColor: 'var(--brand-primary-light)', border: '1px solid rgba(8, 116, 67, 0.2)' }}>
               <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--brand-primary)' }}>
-                {isRtl ? 'أهلاً بحضرتك في مجمع عافية الطبي التجريبي. تم تسجيل موعدك التجريبي ليوم الجمعة الساعة 5:00 مساءً مع د. طارق الكباني.' : 'Welcome to AegisHealth Demo Medical Center. Your provisional booking is recorded for Friday at 05:00 PM with Dr. Tarek El-Kabbani.'}
+                {isRtl ? 'أهلاً بحضرتك في مستشفى النور التخصصي. تم تسجيل موعدك ليوم الجمعة الساعة 5:00 مساءً مع د. طارق منصور.' : 'Welcome to Al-Nour Medical Center. Your booking is recorded for Friday at 05:00 PM with Dr. Tarek Mansour.'}
               </p>
               <small style={{ color: 'var(--text-tertiary)', fontSize: '0.72rem', marginTop: '0.35rem', display: 'block', textAlign: 'end' }}>
                 <MaterialIcon name="done_all" /> {copy.botAutomation}

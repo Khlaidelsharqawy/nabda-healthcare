@@ -1,73 +1,167 @@
 import { MaterialIcon } from '../ui/MaterialIcon';
 import { doctorShellMessages } from '../../i18n/messages';
 
-const links = [
-  { href: '/doctor/dashboard', icon: 'grid_view', message: 'dashboard' as const },
-  { href: '/doctor/appointments', icon: 'calendar_month', message: 'schedule' as const },
-  { href: '/doctor/patients', icon: 'groups', message: 'patients' as const },
-  { href: '/doctor/orders', icon: 'menu_book', message: 'orders' as const },
-  { href: '/doctor/ai', icon: 'clinical_notes', message: 'aiScribe' as const },
+interface DoctorNavSection {
+  titleAr: string;
+  titleEn: string;
+  items: {
+    href: string;
+    icon: string;
+    labelAr: string;
+    labelEn: string;
+    badge?: { textAr: string; textEn: string; variant: 'live' | 'n8n' | 'rbac' | 'audit' | 'cli' };
+  }[];
+}
+
+const doctorSections: DoctorNavSection[] = [
+  {
+    titleAr: 'السريرية والاستشارات',
+    titleEn: 'Clinical & Consultations',
+    items: [
+      { href: '/doctor/dashboard', icon: 'grid_view', labelAr: 'لوحة العمل السريري', labelEn: 'Clinical Dashboard', badge: { textAr: 'مباشر', textEn: 'Live', variant: 'live' } },
+      { href: '/doctor/appointments', icon: 'calendar_month', labelAr: 'جدول المواعيد والعيادة', labelEn: 'Appointments Schedule' },
+      { href: '/doctor/ai', icon: 'stethoscope', labelAr: 'مساحة الذكاء الاصطناعي', labelEn: 'AI Clinical Workspace', badge: { textAr: 'AI Scribe', textEn: 'AI Scribe', variant: 'audit' } },
+      { href: '/doctor/voice-sessions', icon: 'mic', labelAr: 'جلسات الاستماع الصوتي', labelEn: 'Ambient Voice Scribe', badge: { textAr: 'Voice', textEn: 'Voice', variant: 'n8n' } },
+    ],
+  },
+  {
+    titleAr: 'المرضى والسجلات الطبية',
+    titleEn: 'Patients & Records',
+    items: [
+      { href: '/doctor/patients', icon: 'groups', labelAr: 'دليل المرضى وسجلات EMR', labelEn: 'Patients & EMR', badge: { textAr: 'EMR', textEn: 'EMR', variant: 'rbac' } },
+      { href: '/doctor/orders', icon: 'menu_book', labelAr: 'أوامر التحاليل والأشعة', labelEn: 'Clinical Orders' },
+      { href: '/doctor/refills', icon: 'autorenew', labelAr: 'تجديد وإعادة صرف الروشتات', labelEn: 'Prescription Refills', badge: { textAr: 'Refills', textEn: 'Refills', variant: 'cli' } },
+    ],
+  },
+  {
+    titleAr: 'التواصل والدعم السريري',
+    titleEn: 'Communications & Triage',
+    items: [
+      { href: '/doctor/communications', icon: 'support_agent', labelAr: 'فرز واستفسارات المرضى', labelEn: 'Patient Inquiries Hub' },
+    ],
+  },
 ];
 
-const registryLinks = [
-  ...links.slice(0, 2),
-  links[2],
-  { href: '/doctor/ai', icon: 'stethoscope', message: 'workspaceShort' as const },
-  { href: '/doctor/voice-sessions', icon: 'mic', message: 'scribe' as const },
-  { href: '/doctor/orders', icon: 'menu_book', message: 'protocols' as const },
-  { href: '/doctor/refills', icon: 'autorenew', message: 'refills' as const },
-  { href: '/doctor/communications', icon: 'support_agent', message: 'help' as const },
-];
-
-export function DoctorSidebar({ pathname, arabic, variant = 'default', onNavigate }: { pathname: string; arabic: boolean; variant?: 'default' | 'registry'; onNavigate?: () => void }) {
+export function DoctorSidebar({
+  pathname,
+  arabic,
+  onClose,
+}: {
+  pathname: string;
+  arabic: boolean;
+  variant?: 'default' | 'registry';
+  onNavigate?: () => void;
+  onClose?: () => void;
+}) {
   const messages = arabic ? doctorShellMessages.ar : doctorShellMessages.en;
-  const navigation = variant === 'registry' ? registryLinks : links;
 
-  const isActive = (link: typeof links[number] | typeof registryLinks[number]) => {
-    if (link.href === '/doctor/patients') return pathname.startsWith('/doctor/patients');
-    if (link.href === '/doctor/orders') return pathname.startsWith('/doctor/orders') || pathname.startsWith('/doctor/medications/') || pathname.startsWith('/doctor/prescriptions/');
-    if (link.href === '/doctor/ai') return pathname.startsWith('/doctor/ai');
-    if (link.href === '/doctor/voice-sessions') return pathname.startsWith('/doctor/voice-sessions');
-    if (link.href === '/doctor/communications') return pathname === '/doctor/communications';
-    if (link.href === '/doctor/refills') return pathname === '/doctor/refills';
-    return pathname === link.href;
+  const isActive = (href: string) => {
+    if (href === '/doctor/patients') return pathname.startsWith('/doctor/patients');
+    if (href === '/doctor/orders') return pathname.startsWith('/doctor/orders') || pathname.startsWith('/doctor/medications/') || pathname.startsWith('/doctor/prescriptions/');
+    if (href === '/doctor/ai') return pathname.startsWith('/doctor/ai');
+    if (href === '/doctor/voice-sessions') return pathname.startsWith('/doctor/voice-sessions');
+    if (href === '/doctor/communications') return pathname === '/doctor/communications';
+    if (href === '/doctor/refills') return pathname === '/doctor/refills';
+    return pathname === href;
   };
 
   return (
     <aside className="doctor-sidebar" id="doctor-nav" aria-label={messages.workspace}>
-      <div className="doctor-sidebar__brand">
-        <div className="doctor-sidebar__brand-mark"><MaterialIcon name="health_metrics" /></div>
-        <span>{messages.workspace}</span>
-        <span className="doctor-sidebar__active">{messages.active}</span>
+      {/* Top Header Bar with Close Action */}
+      <div className="admin-sidebar__header">
+        <div className="admin-sidebar__header-brand">
+          <span className="admin-sidebar__header-icon"><MaterialIcon name="medical_services" /></span>
+          <span className="admin-sidebar__header-title">{arabic ? 'عيادة الطبيب المعالج' : 'Doctor Clinical Workspace'}</span>
+        </div>
+        <button
+          type="button"
+          className="admin-sidebar__close-btn"
+          onClick={onClose}
+          aria-label={arabic ? 'إغلاق القائمة' : 'Close navigation menu'}
+          title={arabic ? 'إغلاق القائمة' : 'Close navigation menu'}
+        >
+          <MaterialIcon name="close" />
+        </button>
       </div>
-      <div className="doctor-sidebar__attestation">
-        <MaterialIcon name="verified_user" />
-        <span>{messages.attestation}</span>
+
+      {/* Active Clinic / Tenant Context Banner */}
+      <div className="admin-sidebar__tenant-card">
+        <div className="admin-sidebar__tenant-icon">
+          <MaterialIcon name="domain" />
+        </div>
+        <div className="admin-sidebar__tenant-info">
+          <div className="admin-sidebar__tenant-header">
+            <span className="admin-sidebar__tenant-status-dot" aria-hidden="true" />
+            <span className="admin-sidebar__tenant-status-label">{arabic ? 'العيادة متصلة ومزامنة' : 'Clinic Online & Synced'}</span>
+          </div>
+          <strong className="admin-sidebar__tenant-title">{arabic ? 'مستشفى النور التخصصي' : 'Al-Nour Medical Center'}</strong>
+          <span className="admin-sidebar__tenant-sub">{arabic ? 'قسم الباطنة والقلب' : 'Cardiology & Internal Medicine'}</span>
+        </div>
       </div>
-      <nav className="doctor-sidebar__nav">
-        {navigation.map((link, index) => {
-          const active = isActive(link);
-          return (
-            <a
-              className={active ? 'doctor-sidebar__link is-active' : 'doctor-sidebar__link'}
-              href={link.href}
-              key={`${link.href}-${index}`}
-              aria-current={active ? 'page' : undefined}
-              onClick={() => {
-                document.body.style.overflow = 'auto';
-                onNavigate?.();
-              }}
-            >
-              <MaterialIcon name={link.icon} />
-              <span>{messages[link.message]}</span>
-            </a>
-          );
-        })}
+
+      {/* Categorized Navigation */}
+      <nav className="admin-sidebar__nav">
+        {doctorSections.map((sec, secIdx) => (
+          <div key={secIdx} className="admin-sidebar__section">
+            <div className="admin-sidebar__section-title">
+              {arabic ? sec.titleAr : sec.titleEn}
+            </div>
+            <div className="admin-sidebar__section-items">
+              {sec.items.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className={`admin-sidebar__link ${active ? 'is-active' : ''}`}
+                    aria-current={active ? 'page' : undefined}
+                    onClick={() => {
+                      document.body.style.overflow = 'auto';
+                      onClose?.();
+                    }}
+                  >
+                    <span className="admin-sidebar__link-icon">
+                      <MaterialIcon name={link.icon} />
+                    </span>
+                    <span className="admin-sidebar__link-text">{arabic ? link.labelAr : link.labelEn}</span>
+                    {link.badge && (
+                      <span className={`admin-sidebar__badge admin-sidebar__badge--${link.badge.variant}`}>
+                        {arabic ? link.badge.textAr : link.badge.textEn}
+                      </span>
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </nav>
-      <div className="doctor-sidebar__status">
-        <span className="doctor-sidebar__status-title">{messages.aiStatus}</span>
-        <span className="doctor-sidebar__status-copy">{messages.aiReady}</span>
-        <span className="doctor-sidebar__status-dot" />
+
+      {/* Bottom User Profile & Security Card */}
+      <div className="admin-sidebar__footer">
+        <div className="admin-sidebar__user-card">
+          <div className="admin-sidebar__user-avatar">
+            <span>DR</span>
+            <span className="admin-sidebar__user-status-indicator" />
+          </div>
+          <div className="admin-sidebar__user-details">
+            <strong className="admin-sidebar__user-name">{arabic ? 'د. طارق منصور' : 'Dr. Tarek Mansour'}</strong>
+            <span className="admin-sidebar__user-email">doctor@nabda.health</span>
+          </div>
+          <a
+            href="/login"
+            className="admin-sidebar__logout-btn"
+            title={arabic ? 'تسجيل الخروج' : 'Sign Out'}
+            aria-label={arabic ? 'تسجيل الخروج' : 'Sign Out'}
+          >
+            <MaterialIcon name="logout" />
+          </a>
+        </div>
+
+        <div className="admin-sidebar__security-pill">
+          <MaterialIcon name="verified_user" />
+          <span>{arabic ? 'حماية Zero-Trust • معتمد HIPAA' : 'Zero-Trust • HIPAA Compliant'}</span>
+        </div>
       </div>
     </aside>
   );

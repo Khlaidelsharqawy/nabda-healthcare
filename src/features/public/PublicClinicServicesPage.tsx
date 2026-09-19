@@ -120,8 +120,8 @@ export function PublicClinicServicesPage() {
           title={copy.services}
           subtitle={
             isRtl
-              ? 'الخدمات والعيادات التخصصية والفحوصات المخبرية في مجمع عافية الطبي التجريبي'
-              : 'Specialized clinical departments, diagnostic laboratory panels, and imaging services at AegisHealth Demo Medical Center'
+              ? 'الخدمات والعيادات التخصصية والفحوصات المخبرية في مستشفى النور التخصصي'
+              : 'Specialized clinical departments, diagnostic laboratory panels, and imaging services at Al-Nour Medical Center'
           }
         />
 

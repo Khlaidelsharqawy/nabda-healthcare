@@ -15,7 +15,7 @@ const screen = (path: string, label: string, role: ScreenRole, source?: string):
 });
 
 export const screenRoutes: ScreenRoute[] = [
-  screen('/', 'AegisHealth platform overview', 'brand', 'aegishealth_clinical_ai_ecosystem'),
+  screen('/', 'Nabda Healthcare platform overview', 'brand', 'aegishealth_clinical_ai_ecosystem'),
   screen('/find-doctor', 'Find a doctor', 'brand', 'aegishealth_clinical_ai_ecosystem'),
   screen('/clinics', 'Clinics directory', 'brand', 'aegishealth_clinical_ai_ecosystem'),
   screen('/login', 'Unified secure login', 'auth', 'aegishealth_unified_secure_login_role_based_dispatch_login'),
@@ -61,9 +61,9 @@ export const screenRoutes: ScreenRoute[] = [
   screen('/admin/integrations', 'APIs & Automation Manager', 'admin'),
   screen('/admin/subscriptions', 'Subscriptions', 'admin', 'super_admin_subscriptions_billing_plans_metered_quotas'),
   screen('/admin/remote-console', 'Remote operations console', 'admin', 'company_headquarters_remote_console_master_saas_operations_global_control_admin'),
-  screen('/clinic/al-nour', 'AegisHealth Demo public clinic', 'public', 'public_clinic_al_nour_medical_center_booking'),
-  screen('/clinic/al-nour/doctors', 'AegisHealth Demo clinic doctors', 'public', 'public_clinic_attending_doctors_directory_clinic_al_nour_doctors'),
-  screen('/clinic/al-nour/services', 'AegisHealth Demo clinic services', 'public', 'public_clinic_medical_services_clinics_clinic_al_nour_services'),
+  screen('/clinic/al-nour', 'Nabda Al-Nour public clinic', 'public', 'public_clinic_al_nour_medical_center_booking'),
+  screen('/clinic/al-nour/doctors', 'Nabda Al-Nour clinic doctors', 'public', 'public_clinic_attending_doctors_directory_clinic_al_nour_doctors'),
+  screen('/clinic/al-nour/services', 'Nabda Al-Nour clinic services', 'public', 'public_clinic_medical_services_clinics_clinic_al_nour_services'),
   screen('/clinic/al-nour/booking/confirmed', 'Booking confirmation', 'public', 'public_clinic_booking_confirmation_clinic_al_nour_booking_confirmed'),
   screen('/doctor/chat', 'Clinical AI Assistant Chat', 'doctor'),
   screen('/assistant/chat', 'Operations AI Assistant Chat', 'assistant'),

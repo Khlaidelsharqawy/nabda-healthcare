@@ -33,9 +33,9 @@ export function DoctorDashboardPage() {
           <span>
             {copy.welcome},{' '}
             <strong style={{ color: 'var(--text-main)' }}>
-              {isRtl ? 'د. [اسم الطبيب المعالج]' : 'Dr. [Doctor Name]'}
+              {isRtl ? 'د. طارق منصور' : 'Dr. Tarek Mansour'}
             </strong>{' '}
-            • {copy.morningShift} • {isRtl ? '[اسم العيادة]' : '[Clinic Name]'}
+            • {copy.morningShift} • {isRtl ? 'مستشفى النور التخصصي' : 'Al-Nour Medical Center'}
           </span>
         }
         actions={

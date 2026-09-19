@@ -176,16 +176,16 @@ export function AdminApiIntegrationsPage() {
 
       if (simEvent === 'PATIENT_CREATED') {
         preview = isRtl
-          ? `مرحباً بك يا طارق الصباح في مجمع النور الطبي 🏥✨\nتم فتح ملفك الطبي ورقم سجلك: #MRN-9021\n\n🔐 بيانات الدخول لبوابتك الصحية:\n👤 اسم المستخدم: ${simPhone}\n🔑 كلمة المرور: ${tempPass}\n\n📲 رابط البوابة: https://aegishealth.med/patient/dashboard\n🎧 الإرشادات الصوتية: https://aegishealth.med/voice-guide/demo`
-          : `Welcome Tariq to Al-Nour Medical Center 🏥✨\nYour MRN: #MRN-9021\n\n🔐 Portal Access:\n👤 User: ${simPhone}\n🔑 Pass: ${tempPass}\n\n📲 Portal Link: https://aegishealth.med/patient/dashboard\n🎧 Audio Guide: https://aegishealth.med/voice-guide/demo`;
+          ? `مرحباً بك يا طارق الصباح في مجمع النور الطبي 🏥✨\nتم فتح ملفك الطبي ورقم سجلك: #MRN-9021\n\n🔐 بيانات الدخول لبوابتك الصحية:\n👤 اسم المستخدم: ${simPhone}\n🔑 كلمة المرور: ${tempPass}\n\n📲 رابط البوابة: https://nabda.health/patient/dashboard\n🎧 الإرشادات الصوتية: https://nabda.health/voice-guide/demo`
+          : `Welcome Tariq to Al-Nour Medical Center 🏥✨\nYour MRN: #MRN-9021\n\n🔐 Portal Access:\n👤 User: ${simPhone}\n🔑 Pass: ${tempPass}\n\n📲 Portal Link: https://nabda.health/patient/dashboard\n🎧 Audio Guide: https://nabda.health/voice-guide/demo`;
       } else if (simEvent === 'APPOINTMENT_BOOKED') {
         preview = isRtl
           ? `تأكيد حجز الموعد الطبي 📅🩺\nعزيزنا المريض: طارق الصباح\nتم تأكيد موعدك مع: د. سارة منصور (أمراض القلب)\n\n🗓️ الموعد: اليوم، الساعة 04:30 مساءً\n📍 العيادة: مجمع النور الطبي — عيادة 102\n\n⚠️ يرجى الحضور قبل الموعد بـ 15 دقيقة وإحضار الهوية الوطنية.`
           : `Appointment Confirmed 📅🩺\nPatient: Tariq Al-Sabah\nDoctor: Dr. Sarah Mansour (Cardiology)\n\n🗓️ Date: Today, 04:30 PM\n📍 Room: 102, Al-Nour Medical Center\n\n⚠️ Please arrive 15 minutes early.`;
       } else if (simEvent === 'PRESCRIPTION_ISSUED') {
         preview = isRtl
-          ? `روشتتك الطبية الإلكترونية 📋💊\nعزيزنا المريض: طارق الصباح\nأصدر لك د. سارة منصور خطة العلاج التالية:\n\n1. كارفيديلول 6.25 مجم 💊\n   التوقيت: ☀️🌙 مرتين يومياً (مع الأكل 🍽️)\n2. أوميجا 3 نقي 1000 مجم 💊\n   التوقيت: ☀️ مرة يومياً بعد الغداء 🍽️\n\n🔊 للاستماع للإرشادات الصوتية: https://aegishealth.med/rx/voice/rx-demo`
-          : `Your Digital Prescription 📋💊\nPatient: Tariq Al-Sabah\nPrescribed by Dr. Sarah Mansour:\n\n1. Carvedilol 6.25mg 💊\n   Timing: ☀️🌙 Twice daily (with meals 🍽️)\n2. Omega-3 1000mg 💊\n   Timing: ☀️ Once daily after lunch 🍽️\n\n🔊 Listen to Voice Guide: https://aegishealth.med/rx/voice/rx-demo`;
+          ? `روشتتك الطبية الإلكترونية 📋💊\nعزيزنا المريض: طارق الصباح\nأصدر لك د. سارة منصور خطة العلاج التالية:\n\n1. كارفيديلول 6.25 مجم 💊\n   التوقيت: ☀️🌙 مرتين يومياً (مع الأكل 🍽️)\n2. أوميجا 3 نقي 1000 مجم 💊\n   التوقيت: ☀️ مرة يومياً بعد الغداء 🍽️\n\n🔊 للاستماع للإرشادات الصوتية: https://nabda.health/rx/voice/rx-demo`
+          : `Your Digital Prescription 📋💊\nPatient: Tariq Al-Sabah\nPrescribed by Dr. Sarah Mansour:\n\n1. Carvedilol 6.25mg 💊\n   Timing: ☀️🌙 Twice daily (with meals 🍽️)\n2. Omega-3 1000mg 💊\n   Timing: ☀️ Once daily after lunch 🍽️\n\n🔊 Listen to Voice Guide: https://nabda.health/rx/voice/rx-demo`;
       } else {
         preview = isRtl
           ? `المساعد الذكي للفرز السريري 🩺:\nأهلاً بك يا طارق، استلمنا استفسارك بشأن أعراض الصداع وضغط الدم.\nنوصي بالراحة وقياس الضغط الآن، وإذا استمر يرجى حجز استشارة فورية مع طبيب القلب أو الباطنة.\nهل تود حجز موعد فوري؟`

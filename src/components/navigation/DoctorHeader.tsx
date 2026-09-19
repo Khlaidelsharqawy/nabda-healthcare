@@ -48,7 +48,7 @@ export function DoctorHeader({
           <MaterialIcon name="medical_services" />
         </span>
         <span className="doctor-header__wordmark">
-          <strong>{arabic ? 'منظومة عافية' : 'AegisHealth'}</strong>
+          <strong>{arabic ? 'منظومة نبضة' : 'Nabda'}</strong>
           <small>{arabic ? 'المنصة السريرية الذكية' : 'CLINICAL AI PLATFORM'}</small>
         </span>
       </a>

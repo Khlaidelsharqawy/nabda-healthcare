@@ -136,7 +136,7 @@ export function exportCorpusToJsonl(): void {
       messages: [
         {
           role: 'system',
-          content: 'You are AegisHealth Clinical AI, a specialized medical clinical assistant grounded in clinical guidelines, tenant isolation, and strict safety.',
+          content: 'You are Nabda Clinical AI, a specialized medical clinical assistant grounded in clinical guidelines, tenant isolation, and strict safety.',
         },
         { role: 'user', content: item.de_identified_prompt },
         { role: 'assistant', content: item.de_identified_response },

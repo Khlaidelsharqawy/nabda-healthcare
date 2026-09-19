@@ -55,8 +55,8 @@ export function PublicClinicDoctorsPage() {
           title={copy.doctors}
           subtitle={
             isRtl
-              ? 'الكوادر الطبية السريرية والاستشاريون في مجمع عافية الطبي التجريبي — [المنطقة أ — تجريبي]'
-              : 'Attending clinical consultants and physicians at AegisHealth Demo Medical Center — [City / Area — Demo A]'
+              ? 'الكوادر الطبية السريرية والاستشاريون في مستشفى النور التخصصي — القاهرة'
+              : 'Attending clinical consultants and physicians at Al-Nour Medical Center — Cairo'
           }
         />
 
@@ -257,7 +257,7 @@ export function PublicClinicDoctorsPage() {
           >
             <MaterialIcon name="person_search" style={{ fontSize: '40px', color: 'var(--text-muted, #94a3b8)' }} />
             <p style={{ marginTop: '8px', color: 'var(--text-muted, #64748b)' }}>
-              {isRtl ? 'لا يوجد أطباء مطابقين في مجمع عافية الطبي التجريبي' : 'No doctors match query at AegisHealth Demo Medical Center'}
+              {isRtl ? 'لا يوجد أطباء مطابقين في مستشفى النور التخصصي' : 'No doctors match query at Al-Nour Medical Center'}
             </p>
             <Button variant="ghost" size="sm" onClick={() => { setSearchQuery(''); setSelectedSpecialty('all'); }}>
               {isRtl ? 'إعادة التعيين' : 'Reset'}

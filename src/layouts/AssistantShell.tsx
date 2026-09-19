@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { AssistantHeader } from '../components/navigation/AssistantHeader';
 import { AssistantSidebar } from '../components/navigation/AssistantSidebar';
 import { useTheme } from '../theme/ThemeProvider';
@@ -11,12 +11,40 @@ export function AssistantShell({ pathname, children }: { pathname: string; child
 
   const toggleLanguage = () => setDirection(isRtl ? 'ltr' : 'rtl');
 
+  // Keyboard shortcut (Ctrl+B / Cmd+B) for smooth sidebar toggling
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'b') {
+        e.preventDefault();
+        mobileNavigation.toggle();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [mobileNavigation]);
+
   return (
     <div className={`assistant-app ${mobileNavigation.open ? 'is-nav-open' : ''}`} data-direction={isRtl ? 'rtl' : 'ltr'}>
-      <AssistantHeader arabic={isRtl} onLanguageToggle={toggleLanguage} menuOpen={mobileNavigation.open} onMenuToggle={mobileNavigation.toggle} controls="assistant-nav" />
+      <AssistantHeader
+        arabic={isRtl}
+        onLanguageToggle={toggleLanguage}
+        menuOpen={mobileNavigation.open}
+        onMenuToggle={mobileNavigation.toggle}
+        controls="assistant-nav"
+      />
       <div className="assistant-app__body">
-        {mobileNavigation.open && <button className="mobile-drawer-backdrop" type="button" aria-label={isRtl ? 'إغلاق قائمة التنقل' : 'Close navigation menu'} onClick={mobileNavigation.close} />}
-        <AssistantSidebar pathname={pathname} arabic={isRtl} onNavigate={mobileNavigation.close} />
+        {/* Smooth Backdrop overlay */}
+        <div
+          className={`admin-sidebar-backdrop ${mobileNavigation.open ? 'is-active' : ''}`}
+          aria-hidden="true"
+          onClick={mobileNavigation.close}
+        />
+        <AssistantSidebar
+          pathname={pathname}
+          arabic={isRtl}
+          onClose={mobileNavigation.close}
+          onNavigate={mobileNavigation.close}
+        />
         <main className="assistant-content">{children}</main>
       </div>
     </div>

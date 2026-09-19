@@ -484,7 +484,7 @@ const SEED_USERS: User[] = [
   {
     id: 'usr-admin-01',
     tenantId: 'tenant-demo-01',
-    email: 'admin@aegishealth.com',
+    email: 'admin@nabda.health',
     fullName: 'Platform Super Admin',
     role: 'super_admin',
     phone: '+966 50 000 0001',
@@ -495,7 +495,7 @@ const SEED_USERS: User[] = [
   {
     id: 'usr-doctor-01',
     tenantId: 'tenant-demo-01',
-    email: 'doctor@aegishealth.com',
+    email: 'doctor@nabda.health',
     fullName: 'Dr. Sarah Mansour',
     role: 'doctor',
     phone: '+966 50 000 0002',
@@ -506,7 +506,7 @@ const SEED_USERS: User[] = [
   {
     id: 'usr-assistant-01',
     tenantId: 'tenant-demo-01',
-    email: 'assistant@aegishealth.com',
+    email: 'assistant@nabda.health',
     fullName: 'Nurse Nourhan Mostafa',
     role: 'assistant',
     phone: '+966 50 000 0003',
@@ -517,7 +517,7 @@ const SEED_USERS: User[] = [
   {
     id: 'usr-patient-01',
     tenantId: 'tenant-demo-01',
-    email: 'patient@aegishealth.com',
+    email: 'patient@nabda.health',
     fullName: 'Tariq Al-Sabah',
     role: 'patient',
     phone: '+966 50 000 0004',

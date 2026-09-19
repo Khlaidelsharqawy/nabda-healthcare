@@ -143,22 +143,22 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
               style={{
                 width: '38px',
                 height: '38px',
-                borderRadius: '8px',
-                backgroundColor: '#087443',
-                color: '#ffffff',
+                borderRadius: '10px',
+                background: '#e8f5e9',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                boxShadow: '0 2px 8px rgba(8, 116, 67, 0.15)',
               }}
             >
-              <MaterialIcon name="medical_information" style={{ fontSize: '22px' }} />
+              <img src="/logo.png" alt="Nabda Logo" style={{ width: '24px', height: '24px', objectFit: 'contain' }} />
             </span>
             <div className="aegis-brand__text" style={{ display: 'flex', flexDirection: 'column' }}>
               <span
                 className="aegis-brand__title"
                 style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--text-main, #0f172a)', lineHeight: '1.2' }}
               >
-                {isRtl ? 'منظومة عافية' : 'AegisHealth'}
+                {isRtl ? 'منظومة نبضة الطبية' : 'Nabda Healthcare'}
               </span>
               <span
                 className="aegis-brand__subtitle"
@@ -203,7 +203,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
               style={{ color: '#087443', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}
             >
               <MaterialIcon name="local_hospital" style={{ fontSize: '16px' }} />
-              <span>{isRtl ? 'مجمع عافية الطبي التجريبي' : 'AegisHealth Demo Center'}</span>
+              <span>{isRtl ? 'مستشفى النور التخصصي' : 'Al-Nour Medical Center'}</span>
             </a>
           </nav>
         </div>
@@ -747,13 +747,13 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
                     lineHeight: '1.3',
                   }}
                 >
-                  {isRtl ? 'مجمع عافية الطبي التجريبي — المركز النموذجي' : 'AegisHealth Demo Medical Center — Flagship Demo'}
+                  {isRtl ? 'مستشفى النور التخصصي — المركز النموذجي المعتمد' : 'Al-Nour Medical Center — Flagship Facility'}
                 </h2>
 
                 <p style={{ fontSize: '0.9375rem', color: 'var(--text-muted, #4e6153)', lineHeight: '1.6', margin: 0 }}>
                   {isRtl
-                    ? 'يعد مجمع عافية الطبي المنشأة النموذجية التجريبية في بيئة عافية، ويضم عيادات استشارية في أمراض القلب والطب الباطني والأطفال، ومختبرات تشخيصية رقمية تعمل بالتكامل مع المنظومة السحابية.'
-                    : 'AegisHealth Demo Medical Center serves as our flagship demonstration facility, housing comprehensive outpatient suites across cardiology, internal medicine, pediatrics, and integrated digital pathology.'}
+                    ? 'يعد مستشفى النور التخصصي المنشأة النموذجية في بيئة منظومة نبضة الطبية، ويضم عيادات استشارية في أمراض القلب والطب الباطني والأطفال، ومختبرات تشخيصية رقمية تعمل بالتكامل مع المنظومة السحابية.'
+                    : 'Al-Nour Medical Center serves as our flagship demonstration facility within Nabda Healthcare, housing comprehensive outpatient suites across cardiology, internal medicine, pediatrics, and integrated digital pathology.'}
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.875rem' }}>
@@ -1014,7 +1014,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <MaterialIcon name="medical_information" style={{ fontSize: '20px', color: '#087443' }} />
                 <strong style={{ fontSize: '1rem', color: 'var(--text-main, #0f172a)' }}>
-                  {isRtl ? 'منظومة عافية الطبية' : 'AegisHealth Clinical'}
+                  {isRtl ? 'منظومة نبضة الطبية' : 'Nabda Healthcare'}
                 </strong>
               </div>
               <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted, #64748b)', margin: 0, lineHeight: '1.5' }}>
@@ -1033,10 +1033,10 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
                 {isRtl ? 'البحث عن طبيب' : 'Find a Doctor'}
               </a>
               <a href="/clinic/al-nour" style={{ color: 'var(--text-muted, #64748b)', textDecoration: 'none' }}>
-                {isRtl ? 'مجمع عافية الطبي التجريبي' : 'AegisHealth Demo Medical Center'}
+                {isRtl ? 'مستشفى النور التخصصي' : 'Al-Nour Medical Center'}
               </a>
               <a href="/clinic/al-nour/doctors" style={{ color: 'var(--text-muted, #64748b)', textDecoration: 'none' }}>
-                {isRtl ? 'استشاريو مجمع عافية' : 'AegisHealth Demo Attending Staff'}
+                {isRtl ? 'استشاريو مستشفى النور' : 'Al-Nour Attending Staff'}
               </a>
               <a href="/clinic/al-nour/services" style={{ color: 'var(--text-muted, #64748b)', textDecoration: 'none' }}>
                 {isRtl ? 'الخدمات والتحاليل' : 'Clinical Diagnostics'}
@@ -1089,7 +1089,7 @@ export function BrandLandingPage({ initialTab = 'doctors' }: BrandLandingPagePro
             }}
           >
             <span>
-              © 2026 {isRtl ? 'منظومة عافية للرعاية الصحية. جميع الحقوق محفوظة.' : 'AegisHealth Clinical Platform. All rights reserved.'}
+              © 2026 {isRtl ? 'منظومة نبضة للرعاية الصحية. جميع الحقوق محفوظة.' : 'Nabda Healthcare Platform. All rights reserved.'}
             </span>
             <div style={{ display: 'flex', gap: '16px' }}>
               <span>{isRtl ? 'بيانات تجريبية مصرح بها' : 'Demonstration & Simulation Environment'}</span>

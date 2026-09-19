@@ -80,7 +80,7 @@ export function AdminShell({ pathname, children }: { pathname: string; children:
         <a href="/admin/dashboard" className="admin-header__brand" aria-label={copy.brandAria}>
           <span className="admin-header__mark"><MaterialIcon name="admin_panel_settings" /></span>
           <span className="admin-header__wordmark">
-            <strong>{isRtl ? 'منظومة عافية' : 'AegisHealth'}</strong>
+            <strong>{isRtl ? 'منظومة نبضة' : 'Nabda'}</strong>
             <small>{copy.brandSub}</small>
           </span>
         </a>

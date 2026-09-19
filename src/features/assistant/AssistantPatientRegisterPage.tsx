@@ -131,8 +131,8 @@ export function AssistantPatientRegisterPage() {
   const copyCredentialsToClipboard = () => {
     if (!createdCredentials) return;
     const text = isRtl
-      ? `مرحباً ${createdCredentials.patientName}،\nتم إنشاء حسابك على منصة الرعاية الصحية:\nاسم المستخدم: ${createdCredentials.username}\nكلمة المرور المؤقتة: ${createdCredentials.tempPassword}\nرابط الدخول: ${window.location.origin}/login`
-      : `Hello ${createdCredentials.patientName},\nYour AegisHealth patient account has been created:\nUsername: ${createdCredentials.username}\nTemporary Password: ${createdCredentials.tempPassword}\nLogin Portal: ${window.location.origin}/login`;
+      ? `مرحباً ${createdCredentials.patientName}،\nتم إنشاء حسابك في منظومة نبضة الطبية:\nاسم المستخدم: ${createdCredentials.username}\nكلمة المرور المؤقتة: ${createdCredentials.tempPassword}\nرابط الدخول: ${window.location.origin}/login`
+      : `Hello ${createdCredentials.patientName},\nYour Nabda Healthcare patient account has been created:\nUsername: ${createdCredentials.username}\nTemporary Password: ${createdCredentials.tempPassword}\nLogin Portal: ${window.location.origin}/login`;
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 3000);

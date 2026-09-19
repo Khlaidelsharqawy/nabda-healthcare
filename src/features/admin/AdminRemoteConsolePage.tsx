@@ -22,7 +22,7 @@ export function AdminRemoteConsolePage() {
       id: 'log-1',
       time: '19:00:12 UTC',
       type: 'info',
-      message: '[SYSTEM_INIT] AegisHealth Enterprise Cluster initialized in Zero-Trust mode.',
+      message: '[SYSTEM_INIT] Nabda Healthcare Enterprise Cluster initialized in Zero-Trust mode.',
     },
     {
       id: 'log-2',
